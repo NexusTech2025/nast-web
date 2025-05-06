@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sol data scintist</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
+<style>
+
+    .hero-section {
+        position: relative;
+        overflow: hidden; /* To contain the image */
+        height: 400px; /* Adjust as needed */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Align text to the left */
+        color: white;
+        text-align: left;
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover the container, may crop */
+        z-index: -1; /* Place image behind text */
+        filter: brightness(70%); /* Optional: darken the image for better text contrast */
+    }
+
+    .hero-content {
+        padding: 50px; /* Adjust padding as needed */
+    }
+
+    .hero-heading {
+        font-size: 2.5rem; /* Adjust as needed */
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .hero-subheading {
+        font-size: 1rem; /* Adjust as needed */
+        opacity: 0.8;
+    }
+
+
+
+
+    .problem-section {
+        padding: 40px 0;
+        background-color: #f8f9fa; /* Light grey background */
+    }
+
+    .problem-title {
+        font-size: 2rem;
+        color: #343a40; /* Dark grey text */
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .problem-card {
+        background-color: white;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+    }
+
+    .problem-image-container {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+        border: 1px solid #ced4da;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .problem-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .problem-description {
+        color: #6c757d; /* Grey text */
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .problem-list-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .problem-list-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+        color: #007bff; /* Bootstrap primary color */
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .problem-list-text {
+        color: #343a40;
+        font-weight: bold;
+    }
+
+
+
+
+    .solution-section {
+        padding: 40px 0;
+        background-color: #f8f9fa; /* Light grey background */
+        text-align: center;
+    }
+
+    .solution-title {
+        font-size: 2.5rem;
+        color: #343a40; /* Dark grey text */
+        margin-bottom: 40px;
+    }
+
+    .solution-item {
+        padding: 20px;
+    }
+
+    .solution-image-container {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+    }
+
+    .solution-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .solution-heading {
+        font-size: 1.2rem;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .solution-paragraph {
+        color: #6c757d; /* Grey text */
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .solution-link {
+        color: #007bff; /* Bootstrap primary color */
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .solution-link:hover {
+        text-decoration: underline;
+    }
+
+
+    .learning-section {
+        padding: 40px 0;
+        background-color: #f8f9fa; /* Light grey background */
+        text-align: center;
+    }
+
+    .learning-title {
+        font-size: 2rem;
+        color: #343a40; /* Dark grey text */
+        margin-bottom: 10px;
+    }
+
+    .learning-subtitle {
+        font-size: 1rem;
+        color: #6c757d; /* Grey text */
+        margin-bottom: 30px;
+    }
+
+    .learning-card {
+        background-color: white;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        text-align: left;
+    }
+
+    .learning-card-image-container {
+        position: relative;
+        width: 100%;
+        height: auto; /* Adjust height as needed */
+    }
+
+    .learning-card-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .learning-card-badge {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: #007bff; /* Default badge color */
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .learning-card-badge.blog {
+        background-color: #6c757d; /* Grey for Blog */
+    }
+
+    .learning-card-badge.event {
+        background-color: #ffc107; /* Yellow for Event */
+        color: #212529;
+    }
+
+    .learning-card-badge.webinar {
+        background-color: #17a2b8; /* Cyan for Webinar */
+    }
+
+    .learning-card-body {
+        padding: 20px;
+    }
+
+    .learning-card-title {
+        font-size: 1.1rem;
+        color: #343a40;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .learning-card-meta {
+        color: #6c757d;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .learning-card-text {
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+
+
+
+
+    .success-story-section {
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 30px;
+    }
+
+    .success-story-card {
+        background-color: white;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .success-story-content {
+        flex-grow: 1;
+        margin-right: 20px;
+    }
+
+    .success-story-badge {
+        color: #28a745; /* Bootstrap success color */
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .success-story-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .success-story-description {
+        color: #6c757d; /* Bootstrap secondary text color */
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .get-whitepaper-btn {
+        background-color: white;
+        color: #9c27b0; /* Example purple color */
+        border: 1px solid #9c27b0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .get-whitepaper-btn:hover {
+        background-color: #9c27b0;
+        color: white;
+    }
+
+    .success-story-image-container {
+        width: 200px; /* Adjust as needed */
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .success-story-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .view-all-link {
+        color: #0d6efd;
+        font-size: 0.9rem;
+        text-decoration: none;
+        margin-top: 10px;
+        display: block;
+        text-align: right;
+    }
+
+    .view-all-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Navigation arrows (simplified) */
+    .navigation-arrow {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #6c757d;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .navigation-arrow:hover {
+        color: #0d6efd;
+    }
+
+    
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container  gap-3" style="background-color: rgb(246, 246, 246);">
+            <div>
+                <img src="https://datatron.com/wp-content/uploads/2021/10/logo.svg" alt="">
+            </div>
+
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                <ul class="navbar-nav  gap-4 d-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            PLATFORMS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./MLOPS.html">MLOPS</a></li>
+                            <li><a class="dropdown-item" href="./AI MODEL MONOTERING & AI GOVERENCE.html">AI MODEL MONOTERING & AI GOVERENCE</a></li>
+                            <li><a class="dropdown-item" href="./ENTERPRICE.html">ENTRRPRICE-READY</a></li>
+                            <li><a class="dropdown-item" href="./HOW ITS WORKS.html">HOW ITS WORKS</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SOLUTIONS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./BUSSINESS EDUCATIVE.HTML">BUSINESS-EDUCATIVE</a></li>
+                            <li><a class="dropdown-item" href="./DATA SCEINTIST.HTML">DATA SCEINTIST</a></li>
+                            <li><a class="dropdown-item" href="./ENGINEERING & DEVELOP.HTML">ENGINEERING & DEVLOP</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            LEARN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./MOPS & AI GOVERENCE">MLOPS & AI GOVERENCE</a></li>
+                            <li><a class="dropdown-item" href="./EVENTS.HTML">EVENTS</a></li>
+                            <li><a class="dropdown-item" href="./WEBINAR">WEBINAR</a></li>
+                            <li><a class="dropdown-item" href="./WHITE PAPERS.HTML">WHITE PAPERS</a></li>
+                            <li><a class="dropdown-item" href="./BLOGS.HTML">BLOGS</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            COMPANY
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                            <li><a class="dropdown-item" href="./ABOUT.HTML">About Us</a></li>
+                            <li><a class="dropdown-item" href="./TEAM.HTML">Team</a></li>
+                            <li><a class="dropdown-item" href="./CAREERS.HTML">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-secondary rounded-pill" href="#">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <img src="https://datatron.com/wp-content/uploads/2021/10/hero-data-scientist.jpg" alt="Hero Image" class="hero-image">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="hero-content">
+                        <h1 class="hero-heading">Get More Models into Production</h1>
+                        <p class="hero-subheading">Data Scientists: Graduate More Models into Production, Create More Models, and Know What Your Models are Doing with Datatron.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <div class="container">
+            <h2 class="problem-title">The Problem</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="problem-card">
+                        <div class="problem-image-container">
+                            <img src="https://datatron.com/wp-content/uploads/2021/10/1_img-2-1.jpg" alt="User" class="problem-image">
+                        </div>
+                        <p class="problem-description">Data Scientists aren't as effective as they could be when having to wear multiple hats to deploy models to production, monitor them, and explain what they are doing in the case of an audit. Time that could be better spent creating new models is often spent on other areas outside of their domain expertise.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 offset-md-1">
+                    <ul class="list-unstyled">
+                        <li class="problem-list-item">
+                            <div class="problem-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16">
+                                    <path d="M6 12.5a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H6zm.03-.87a.5.5 0 0 0-.48.37l-.3 2a.5.5 0 0 0 .48.63h1.11a.5.5 0 0 0 .48-.63l-.3-2a.5.5 0 0 0-.48-.37H6.03zM7 8a1 1 0 0 0-1 1v1.5a.5.5 0 0 0 1 0V9a1 1 0 0 0-1-1zm2 0a1 1 0 0 0-1 1v1.5a.5.5 0 0 0 1 0V9a1 1 0 0 0-1-1zM8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM6 4c0-.535.16-.995.449-1.34A3 3 0 0 1 8 2c1.362 0 2.517.634 3.03 1.66a2.99 2.99 0 0 1 .449 1.34V7c0 .535-.16.995-.449 1.34a3 3 0 0 1-3.03 1.66c-1.362 0-2.517-.634-3.03-1.66A2.99 2.99 0 0 1 6 7V4z"/>
+                                </svg>
+                            </div>
+                            <span class="problem-list-text">Not Getting AI/ML Models out of the Lab and into Production</span>
+                        </li>
+                        <li class="problem-list-item">
+                            <div class="problem-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                                    <path d="M11.5 2h-3v1.5a.5.5 0 0 1-1 0V2h-3l-.5.5v1a.5.5 0 0 1 .5.5v4.5h2V4a.5.5 0 0 1 1 0v4.5h2V4a.5.5 0 0 1 1 0v1h.5l-.5.5v1.5h2l-.5.5v1h.5l-.5.5v4h-3v-1.5a.5.5 0 0 1 1 0V14h-3v-1.5a.5.5 0 0 1 1 0V14h-3l-.5-.5v-4h2v1.5a.5.5 0 0 1-1 0V8.5h-2V13h3v-1.5a.5.5 0 0 1-1 0V11h3v-1.5a.5.5 0 0 1-1 0V11h3v-4.5a.5.5 0 0 1 1 0V8.5h2V10l-.5-.5v-4l.5-.5V3l-.5-.5z"/>
+                                </svg>
+                            </div>
+                            <span class="problem-list-text">Wasting Time Maintaining Models Instead of Creating New Models</span>
+                        </li>
+                        <li class="problem-list-item">
+                            <div class="problem-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                    <path d="M11.568 10.578a3.182 3.182 0 0 0-2.832-2.982.777.777 0 0 1-.137.142c-.499.499-1.119.706-1.465.706-.346 0-.866-.207-1.365-.706a.777.777 0 0 1-.143-.142 3.182 3.182 0 0 0-2.832 2.982.777.777 0 0 1 .143.142.499.499 1.119.706 1.465.706.346 0 .866-.207 1.365-.706a.777.777 0 0 1 .137-.142 3.182 3.182 0 0 0 2.832-2.982.777.777 0 0 1-.143-.142.499-.499-1.119-.706-1.465-.706-.346 0-.866.207-1.365.706a.777.777 0 0 1-.137.142 3.182 3.182 0 0 0 2.832 2.982c.499-.499 1.119-.706 1.465-.706.346 0 .866.207 1.365.706a.777.777 0 0 1 .143.142z"/>
+                                    <path d="M14 8.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zM8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z"/>
+                                </svg>
+                            </div>
+                            <span class="problem-list-text">Forced to Become an Ersatz DevOp Engineer Outside of Domain Expertise</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="solution-section">
+        <div class="container">
+            <h2 class="solution-title">The Solution</h2>
+            <div class="row">
+                <div class="col-md-4 solution-item">
+                    <div class="solution-image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/icon-8s-1.svg" alt="Enterprise at Scale" class="solution-image">
+                    </div>
+                    <h3 class="solution-heading">Enterprise at Scale</h3>
+                    <p class="solution-paragraph">Regardless of your Model development stack, Datatron can house your models on-prem or via our API. The more Models you can produce, the more revenue you generate for your company.</p>
+                    <a href="#" class="solution-link">→ Get Your Models Into Production</a>
+                </div>
+                <div class="col-md-4 solution-item">
+                    <div class="solution-image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/icon-8s-2.svg" alt="AI Monitoring & AI Governance" class="solution-image">
+                    </div>
+                    <h3 class="solution-heading">AI Monitoring & AI Governance</h3>
+                    <p class="solution-paragraph">When the Risk & Compliance team asks you tough questions, be armed with the answers. Datatron helps anticipate these types of conversations and delivers the "Explainability," "Reliability," and "Responsibility" of a sophisticated AI/ML program.</p>
+                    <a href="#" class="solution-link">→ Get ready for an Audit</a>
+                </div>
+                <div class="col-md-4 solution-item">
+                    <div class="solution-image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/icon-8s-3.svg" alt="Model Operationalization (ModelOps)" class="solution-image">
+                    </div>
+                    <h3 class="solution-heading">Model Operationalization (ModelOps)</h3>
+                    <p class="solution-paragraph">Data Scientists need to stop moonlighting as DevOps Engineers or ML Engineers and focus on building more models. With Datatron, your ModelOps team can be a team of one, so Data Scientists can spend more time building models.</p>
+                    <a href="#" class="solution-link">→ Learn More about Operationalization</a>
+                </div>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="learning-section">
+        <div class="container">
+            <h2 class="learning-title">Datatron Learning</h2>
+            <p class="learning-subtitle">Enhance Your ML Ops Expertise</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="learning-card h-100">
+                        <div class="learning-card-image-container">
+                            <img src="https://datatron.com/wp-content/uploads/2021/04/Machine-Learning.jpeg" class="learning-card-image" alt="Machine Learning Lifecycle">
+                            <span class="learning-card-badge blog">BLOG</span>
+                        </div>
+                        <div class="learning-card-body">
+                            <h5 class="learning-card-title">A Walkthrough of the Machine Learning Life Cycle</h5>
+                            <p class="learning-card-meta">Datatron Technologies</p>
+                            <p class="learning-card-text">Do you have a project idea but you don't know where to start? Or maybe you have a dataset and want to build a machine [...]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="learning-card h-100">
+                        <div class="learning-card-image-container">
+                            <img src="https://datatron.com/wp-content/uploads/2021/10/event_odsc_rohan.jpg" class="learning-card-image" alt="Datatron in Action">
+                            <span class="learning-card-badge event">EVENT</span>
+                        </div>
+                        <div class="learning-card-body">
+                            <h5 class="learning-card-title">Machine Learning Lifecycle 2021</h5>
+                            <p class="learning-card-meta">March 30th - April 1st</p>
+                            <p class="learning-card-text">Datatron in Action: Take Your ML Models From Training to Production</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="learning-card h-100">
+                        <div class="learning-card-image-container">
+                            <img src="https://datatron.com/wp-content/uploads/2021/10/upcoming-webinar-may-21.png" class="learning-card-image" alt="Model Operations & Governance">
+                            <span class="learning-card-badge webinar">WEBINAR</span>
+                        </div>
+                        <div class="learning-card-body">
+                            <h5 class="learning-card-title">Build Enterprise Solution For Model Operations & Governance</h5>
+                            <p class="learning-card-meta">By Herish Doddi, Co-founder & CEO</p>
+                            <p class="learning-card-text">A look at the landscape of tools for building and deploying robust, production-ready machine learning models.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <button class="navigation-arrow">&lt;</button>
+                    <div class="success-story-card">
+                        <div class="success-story-content">
+                            <span class="success-story-badge fs-4 ">WHITEPAPER</span>
+                            <h2 class="success-story-title fs-3">Success Story: Global Bank Monitors 1,000's of Models On Datatron</h2>
+                            <p class="success-story-description">A top global bank was looking for an AI Governance platform and discovered so much more. With Datatron, executives can now easily monitor the “Health” of thousands of models, data scientists decreased the time required to identify issues with models and uncover the root cause by 65%, and each BU decreased their audit reporting time by 85%.</p>
+                            <a href="#" class="get-whitepaper-btn rounded-pill">GET WHITEPAPER</a>
+                        </div>
+                        <div class="success-story-image-container">
+                            <img src="https://datatron.com/wp-content/uploads/Success-Story-Bank-AI-Governance-Cover.jpg" alt="Success Story Preview" class="success-story-image">
+                        </div>
+                    </div>
+                    <button class="navigation-arrow">&gt;</button>
+                </div>
+                <a href="#" class="view-all-link">→ view all</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer ">
+        <div class="container">
+            <div class="footer-top  justify-content-evenely align-items-evenely">
+                <div class="row ">
+                    <div class="col-md-3 fs-6">
+                        <h5>Platform</h5>
+                        <ul>
+                            <li><a href="#">ModelOps</a></li>
+                            <li><a href="#">AI Monitoring & AI Governance</a></li>
+                            <li><a href="#">Enterprise-ready</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 fs-6">
+                        <h5>Solutions</h5>
+                        <ul>
+                            <li><a href="#">Business Executive</a></li>
+                            <li><a href="#">Data Scientist</a></li>
+                            <li><a href="#">Engineering & DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 fs-6">
+                        <h5>Learn</h5>
+                        <ul>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Whitepapers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 fs-6">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Datatron</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="d-flex align-items-center">
+                    <span class="footer-logo">
+                        <img src="https://datatron.com/wp-content/themes/datatron/images/placeholder/logo.svg" alt="Datatron Logo">
+                    </span>
+                    <span class="mr-3">The Reliable AI™ platform built for enterprise</span>
+                    <span class="mx-3">Built with Love in San Francisco, CA USA!</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <p>© Copyright 2025. All Rights Reserved.</p>
+                 <p>San Francisco Web Design by Thomas Digital</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

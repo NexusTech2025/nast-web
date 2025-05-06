@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webinar</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        .filter-section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            /* Light grey background */
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .category-label {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-right: 10px;
+        }
+
+        .category-buttons button {
+            background-color: white;
+            color: #007bff;
+            /* Primary color for buttons */
+            border: 1px solid #007bff;
+            border-radius: 20px;
+            padding: 6px 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .category-buttons button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .search-label {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-right: 10px;
+        }
+
+        .search-input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 0.9rem;
+            width: 200px;
+            /* Adjust width as needed */
+        }
+
+        .search-button {
+            background-color: white;
+            color: #007bff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .search-button svg {
+            fill: #007bff;
+        }
+
+        .filter-section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            /* Light grey background */
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .category-label {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-right: 10px;
+        }
+
+        .category-buttons button {
+            background-color: white;
+            color: #007bff;
+            /* Primary color for buttons */
+            border: 1px solid #007bff;
+            border-radius: 20px;
+            padding: 6px 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .category-buttons button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .search-label {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-right: 10px;
+        }
+
+        .search-input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 0.9rem;
+            width: 200px;
+            /* Adjust width as needed */
+        }
+
+        .search-button {
+            background-color: white;
+            color: #007bff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .search-button svg {
+            fill: #007bff;
+        }
+
+        .filter-section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            /* Light grey background */
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .category-label {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-right: 10px;
+        }
+
+        .category-buttons button {
+            background-color: white;
+            color: #007bff;
+            /* Primary color for buttons */
+            border: 1px solid #007bff;
+            border-radius: 20px;
+            padding: 6px 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .category-buttons button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .search-label {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-right: 10px;
+        }
+
+        .search-input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 0.9rem;
+            width: 200px;
+            /* Adjust width as needed */
+        }
+
+        .search-button {
+            background-color: white;
+            color: #007bff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .search-button svg {
+            fill: #007bff;
+        }
+
+
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .custom-card {
+            width: calc(33.33% - 20px);
+            /* Adjust width for spacing */
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            background-color: #ced4da;
+            /* Placeholder for image */
+            height: 150px;
+            /* Adjust as needed */
+            object-fit: cover;
+            /* Maintain aspect ratio */
+        }
+
+        .webinar-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .card-subtitle {
+            color: #6c757d;
+            /* Bootstrap secondary text color */
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f8f9fa;
+            /* Light gray background */
+            color: #6c757d;
+            padding: 3px 8px;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 992px) {
+            .custom-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .custom-card {
+                width: 100%;
+            }
+        }
+
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .custom-card {
+            width: calc(33.33% - 20px);
+            /* Adjust width for spacing */
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            background-color: #ced4da;
+            /* Placeholder for image */
+            height: 150px;
+            /* Adjust as needed */
+            object-fit: cover;
+            /* Maintain aspect ratio */
+        }
+
+        .webinar-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .card-subtitle {
+            color: #6c757d;
+            /* Bootstrap secondary text color */
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f8f9fa;
+            /* Light gray background */
+            color: #6c757d;
+            padding: 3px 8px;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 992px) {
+            .custom-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .custom-card {
+                width: 100%;
+            }
+        }
+
+        .load-more-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+
+
+
+
+
+        .whitepaper-section {
+            background-color: #f8f9fa;
+            /* Light gray background */
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .whitepaper-content {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .whitepaper-label {
+            color: #6c757d;
+            /* Gray text */
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .whitepaper-title {
+            color: #343a40;
+            /* Dark gray text */
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .whitepaper-description {
+            color: #6c757d;
+            /* Gray text */
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .whitepaper-button {
+            border: 1px solid #8856c2;
+            /* Purple border */
+            color: #8856c2;
+            /* Purple text */
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .whitepaper-button:hover {
+            background-color: #8856c2;
+            color: white;
+        }
+
+        .whitepaper-image-placeholder {
+            width: 200px;
+            /* Adjust as needed */
+            height: 150px;
+            /* Adjust as needed */
+            background-color: #e9ecef;
+            /* Light gray placeholder */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #6c757d;
+            font-size: 0.8rem;
+        }
+
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #adb5bd;
+            /* Light gray */
+            cursor: pointer;
+            padding: 0;
+            outline: none;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .view-all-link {
+            color: #8856c2;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .view-all-link:hover {
+            text-decoration: underline;
+        }
+
+        .button-link-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .whitepaper-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .whitepaper-content {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .whitepaper-image-placeholder {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .arrow-button {
+                display: none;
+                /* Hide arrows on smaller screens */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container  gap-3" style="background-color: rgb(246, 246, 246);">
+            <div>
+                <img src="https://datatron.com/wp-content/uploads/2021/10/logo.svg" alt="">
+            </div>
+
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                <ul class="navbar-nav  gap-4 d-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            PLATFORMS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./MLOPS.html">MLOPS</a></li>
+                            <li><a class="dropdown-item" href="./AI MODEL MONOTERING & AI GOVERENCE.html">AI MODEL
+                                    MONOTERING & AI GOVERENCE</a></li>
+                            <li><a class="dropdown-item" href="./ENTERPRICE.html">ENTRRPRICE-READY</a></li>
+                            <li><a class="dropdown-item" href="./HOW ITS WORKS.html">HOW ITS WORKS</a></li>
+                        </ul>
+                    </li>
+
+                    
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SOLUTIONS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./BUSSINESS EDUCATIVE.HTML">BUSINESS-EDUCATIVE</a></li>
+                            <li><a class="dropdown-item" href="./DATA SCEINTIST.HTML">DATA SCEINTIST</a></li>
+                            <li><a class="dropdown-item" href="./ENGINEERING & DEVELOP.HTML">ENGINEERING & DEVLOP</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            LEARN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./MOPS & AI GOVERENCE">MLOPS & AI GOVERENCE</a></li>
+                            <li><a class="dropdown-item" href="./EVENTS.HTML">EVENTS</a></li>
+                            <li><a class="dropdown-item" href="./WEBINAR">WEBINAR</a></li>
+                            <li><a class="dropdown-item" href="./WHITE PAPERS.HTML">WHITE PAPERS</a></li>
+                            <li><a class="dropdown-item" href="./BLOGS.HTML">BLOGS</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            COMPANY
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                            <li><a class="dropdown-item" href="./ABOUT.HTML">About Us</a></li>
+                            <li><a class="dropdown-item" href="./TEAM.HTML">Team</a></li>
+                            <li><a class="dropdown-item" href="./Contact us.HTML">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-secondary rounded-pill" href="#">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="filter-section d-flex">
+        <span class="category-label fs-5">Category</span>
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-auto">
+                    <div class="d-flex align-items-center">
+
+                        <div class="category-buttons">
+                            <button class="active">All</button>
+                            <button>AI Governance</button>
+                            <button>Brand</button>
+                            <button>Business Executives</button>
+                            <button>Data Scientists</button> <br>
+
+                            <button>Explainability</button>
+                            <button>Machine Learning</button>
+                            <button>ML Engineers</button>
+                            <button>MLOps</button> <br>
+                            <button>Model Governance</button>
+                            <button>Model Management</button>
+                            <button>ModelOps</button>
+                            <button>Webinar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-auto">
+                    <div class="d-flex align-items-center">
+                        <span class="search-label">Search</span>
+                        <div class="search-input-group">
+                            <input type="text" class="search-input" placeholder="Search...">
+                            <button class="search-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-container">
+        <div class="card custom-card position-relative">
+            <div class="card-img-top">
+                <span class="webinar-badge">WEBINAR</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">MLOps Webinar: MLOps Best Practices – “Hybrid” MLOps</h5>
+                <h6 class="card-subtitle">By Lance Wills, Head of AI Growth</h6>
+                <div>
+                    <a href="#" class="tag">MLOps</a>
+                    <a href="#" class="tag">Webinar</a>
+                </div>
+                <p class="card-text mt-3">Register for our latest upcoming MLOps webinar!</p>
+            </div>
+        </div>
+
+        <div class="card custom-card position-relative">
+            <div class="card-img-top">
+                <span class="webinar-badge">WEBINAR</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Product Release: “Datatron 3.0” – Simplifying MLOps Workflows</h5>
+                <h6 class="card-subtitle">By Datatron President, Victor Thu</h6>
+                <div>
+                    <a href="#" class="tag">Brand</a>
+                    <a href="#" class="tag">Business Executives</a>
+                    <a href="#" class="tag">Data Scientists</a>
+                    <a href="#" class="tag">Machine Learning</a>
+                    <a href="#" class="tag">ML Engineers</a>
+                    <a href="#" class="tag">MLOps</a>
+                    <a href="#" class="tag">ModelOps</a>
+                </div>
+                <p class="card-text mt-3">Datatron shares their latest product release, “Datatron 3.0” in this
+                    informative webinar; features include a JupyterHub integration, simplified Kubernetes management,
+                    and more enterprise feature enhancements.</p>
+            </div>
+        </div>
+
+        <div class="card custom-card position-relative">
+            <div class="card-img-top">
+                <span class="webinar-badge">WEBINAR</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">MLOps Webinar - Key Strategies Enterprises Can Implement Now to be Successful
+                    with AI</h5>
+                <h6 class="card-subtitle">By Datatron CEO Harini Doddi, Domino’s Senior Data Science Manager, Zeki
+                    Fragoso, & 451 Research Founder, Nick Patience</h6>
+                <div>
+                    <a href="#" class="tag">AI Governance</a>
+                    <a href="#" class="tag">Business Executives</a>
+                    <a href="#" class="tag">Data Scientists</a>
+                    <a href="#" class="tag">Explainability</a>
+                    <a href="#" class="tag">Machine Learning</a>
+                    <a href="#" class="tag">ML Engineers</a>
+                    <a href="#" class="tag">MLOps</a>
+                    <a href="#" class="tag">Model Management</a>
+                    <a href="#" class="tag">ModelOps</a>
+                </div>
+                <p class="card-text mt-3">Learn from experienced enterprise AI/ML practitioners as they discuss how they
+                    get AI up and running consistently and deliver business value quickly. Panelists will cover
+                    real-world “gotchas” and how they tackled them. Learn critical elements that you can implement today
+                    to yield positive results.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-container">
+        <div class="card custom-card position-relative">
+            <div class="card-img-top">
+                <span class="webinar-badge">WEBINAR</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">AI Governance: Your Path To Regulatory Excellence</h5>
+                <h6 class="card-subtitle">By Lakshmi Randall, Sarah Gadd, Venkata Gunnu, Bich-Thuy Le</h6>
+                <div>
+                    <a href="#" class="tag">Model Governance</a>
+                </div>
+                <p class="card-text mt-3">Leading organizations are implementing MLOps to optimize processes and
+                    production, increase revenue, and reduce cost and risks. Success depends on AI governance to meet
+                    compliance with current and future regulatory requirements and provide transparency to customers.
+                </p>
+            </div>
+        </div>
+
+        <div class="card custom-card position-relative">
+            <div class="card-img-top">
+                <span class="webinar-badge">WEBINAR</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Build Enterprise Solution For Model Operations & Governance</h5>
+                <h6 class="card-subtitle">By Harish Doddi, Co-founder & CEO</h6>
+                <div>
+                    <a href="#" class="tag">Model Governance</a>
+                    <a href="#" class="tag">Model Management</a>
+                    <a href="#" class="tag">ModelOps</a>
+                </div>
+                <p class="card-text mt-3">A look at the landscape of tools for building and deploying robust,
+                    production-ready machine learning models.</p>
+            </div>
+        </div>
+
+        <div class="card custom-card position-relative">
+            <div class="card-img-top">
+                <span class="webinar-badge">WEBINAR</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Long-Term ML Models in Production</h5>
+                <h6 class="card-subtitle">By Harish Doddi, Co-founder & CPO</h6>
+                <div>
+                    <a href="#" class="tag">Machine Learning</a>
+                    <a href="#" class="tag">Model Governance</a>
+                    <a href="#" class="tag">Model Management</a>
+                    <a href="#" class="tag">ModelOps</a>
+                </div>
+                <p class="card-text mt-3">A look at the landscape of tools for building and deploying robust,
+                    production-ready machine learning models.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="load-more-container">
+        <button class="btn btn-outline-primary">LOAD MORE</button>
+    </div>
+
+
+
+    <div class="whitepaper-section">
+        <button class="arrow-button arrow-left">&lt;</button>
+        <div class="whitepaper-content">
+            <div class="whitepaper-label">WHITEPAPER</div>
+            <h2 class="whitepaper-title">5 Reasons Your AI/ML Models are Stuck in the Lab</h2>
+            <p class="whitepaper-description">AI/ML Executive need more ROI from AI/ML? Data Scientist want to get more models into production? <br> ML DevOps Engineer/IT want an easier way to manage multiple models. Learn how enterprises with mature <br>
+                s AI/ML programs overcome obstacles to operationalize more models with greater ease and less manpower.</p>
+            <div class="button-link-container">
+                <a href="#" class="whitepaper-button rounded pill">GET WHITEPAPER</a>
+                <a href="#" class="view-all-link">→ view all</a>
+            </div>
+        </div>
+        <div class="whitepaper-image-placeholder">
+            <img src="" alt="">
+        </div>
+        <button class="arrow-button arrow-right">&gt;</button>
+    </div>
+
+    <footer class="footer ">
+        <div class="container">
+            <div class="footer-top  justify-content-evenely align-items-evenely">
+                <div class="row ">
+                    <div class="col-md-3 fs-6">
+                        <h5>Platform</h5>
+                        <ul>
+                            <li><a href="#">ModelOps</a></li>
+                            <li><a href="#">AI Monitoring & AI Governance</a></li>
+                            <li><a href="#">Enterprise-ready</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 fs-6">
+                        <h5>Solutions</h5>
+                        <ul>
+                            <li><a href="#">Business Executive</a></li>
+                            <li><a href="#">Data Scientist</a></li>
+                            <li><a href="#">Engineering & DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 fs-6">
+                        <h5>Learn</h5>
+                        <ul>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Whitepapers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 fs-6">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Datatron</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="d-flex align-items-center">
+                    <span class="footer-logo">
+                        <img src="https://datatron.com/wp-content/themes/datatron/images/placeholder/logo.svg" alt="Datatron Logo">
+                    </span>
+                    <span class="mr-3">The Reliable AI™ platform built for enterprise</span>
+                    <span class="mx-3">Built with Love in San Francisco, CA USA!</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom gap-5">
+                 <p>© Copyright 2025. All Rights Reserved.</p>
+                 <p>San Francisco Web Design by Thomas Digital</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

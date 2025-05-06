@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learnblog</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .blog-header-image {
+            background-image: url('https://datatron.com/wp-content/uploads/2021/10/blog-hero.jpg');
+            /* Replace with the actual path to your image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 150px;
+            /* Adjust padding as needed */
+            text-align: left;
+            position: relative;
+            /* For overlay if needed */
+        }
+
+        /* Optional: Dark overlay for better text readability */
+        .blog-header-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Adjust opacity as needed */
+        }
+
+        .blog-header-content {
+            position: relative;
+            /* To be above the overlay */
+            z-index: 1;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .blog-subtitle {
+            font-size: 1rem;
+        }
+
+
+
+
+        .filter-search-section {
+            background-color: #f8f9fa;
+            /* Light gray background */
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+        }
+
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .category-label {
+            margin-right: 0.5rem;
+            color: #343a40;
+            /* Dark gray text */
+            font-weight: bold;
+        }
+
+        .category-button {
+            border: 1px solid #00bcd4;
+            /* Teal border */
+            color: #00bcd4;
+            /* Teal text */
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+        }
+
+        .category-button:hover,
+        .category-button.active {
+            background-color: #00bcd4;
+            color: white;
+            border-color: #00bcd4;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-label {
+            margin-right: 0.5rem;
+            color: #343a40;
+            /* Dark gray text */
+            font-weight: bold;
+        }
+
+        .search-input {
+            border: 1px solid #ced4da;
+            /* Light gray border */
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.25rem;
+            margin-right: 0.25rem;
+        }
+
+        .search-button {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #2e6168;
+            /* Teal icon color */
+            font-size: 1.1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .filter-search-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .category-container {
+                margin-bottom: 0.75rem;
+            }
+
+            .search-container {
+                width: 100%;
+            }
+
+            .search-input {
+                flex-grow: 1;
+            }
+        }
+
+
+
+
+
+        .blog-card-img-top {
+            height: 250px;
+            object-fit: cover;
+            background-color: #f8f9fa;
+            /* Placeholder background */
+        }
+
+        .blog-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            /* Bootstrap primary */
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        .blog-card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            /* Dark gray */
+            margin-bottom: 0.5rem;
+            min-height: 3rem;
+            /* Adjust as needed for title length */
+        }
+
+        .blog-card-subtitle {
+            color: #6c757d;
+            /* Light gray */
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            /* Light gray */
+            color: #495057;
+            /* Darker gray */
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            margin-right: 0.2rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.75rem;
+        }
+
+        .blog-card-text {
+            color: #495057;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Adjust number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+
+
+
+
+
+        .badge-blog {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            /* Bootstrap primary */
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            /* Dark gray */
+            margin-bottom: 0.5rem;
+            min-height: 3rem;
+            /* Adjust as needed for title length */
+        }
+
+        .card-subtitle {
+            color: #6c757d;
+            /* Light gray */
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            /* Light gray */
+            color: #495057;
+            /* Darker gray */
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            margin-right: 0.2rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.75rem;
+        }
+
+        .card-text {
+            color: #495057;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Adjust number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+
+
+
+
+
+
+        .badge-blog {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            /* Bootstrap primary */
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            /* Dark gray */
+            margin-bottom: 0.5rem;
+            min-height: 3rem;
+            /* Adjust as needed for title length */
+        }
+
+        .card-subtitle {
+            color: #6c757d;
+            /* Light gray */
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            /* Light gray */
+            color: #495057;
+            /* Darker gray */
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            margin-right: 0.2rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.75rem;
+        }
+
+        .card-text {
+            color: #495057;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Adjust number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+
+
+
+
+        .carousel-item {
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-card {
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: left;
+            max-width: 1000px;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .carousel-card-image {
+            max-width: 300px;
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+
+        .carousel-card-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-card-body {
+            flex-grow: 1;
+        }
+
+        .whitepaper-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-whitepaper {
+            border: 1px solid #8856c2;
+            color: #8856c2;
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-whitepaper:hover {
+            background-color: #8856c2;
+            color: white;
+        }
+
+        .view-all-link {
+            color: #8856c2;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .view-all-link:hover {
+            text-decoration: underline;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 0.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container  gap-3" style="background-color: rgb(246, 246, 246);">
+            <div>
+                <img src="https://datatron.com/wp-content/uploads/2021/10/logo.svg" alt="">
+            </div>
+
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                <ul class="navbar-nav  gap-4 d-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            PLATFORMS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./MLOPS.html">MLOPS</a></li>
+                            <li><a class="dropdown-item" href="./AI MODEL MONOTERING & AI GOVERENCE.html">AI MODEL
+                                    MONOTERING & AI GOVERENCE</a></li>
+                            <li><a class="dropdown-item" href="./ENTERPRICE.html">ENTRRPRICE-READY</a></li>
+                            <li><a class="dropdown-item" href="./HOW ITS WORKS.html">HOW ITS WORKS</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            SOLUTIONS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./BUSSINESS EDUCATIVE.HTML">BUSINESS-EDUCATIVE</a></li>
+                            <li><a class="dropdown-item" href="./DATA SCEINTIST.HTML">DATA SCEINTIST</a></li>
+                            <li><a class="dropdown-item" href="./ENGINEERING & DEVELOP.HTML">ENGINEERING & DEVLOP</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            LEARN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+                            <li><a class="dropdown-item" href="./MOPS & AI GOVERENCE">MLOPS & AI GOVERENCE</a></li>
+                            <li><a class="dropdown-item" href="./EVENTS.HTML">EVENTS</a></li>
+                            <li><a class="dropdown-item" href="./WEBINAR">WEBINAR</a></li>
+                            <li><a class="dropdown-item" href="./WHITE PAPERS.HTML">WHITE PAPERS</a></li>
+                            <li><a class="dropdown-item" href="./BLOGS.HTML">BLOGS</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            COMPANY
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                            <li><a class="dropdown-item" href="./ABOUT.HTML">About Us</a></li>
+                            <li><a class="dropdown-item" href="./TEAM.HTML">Team</a></li>
+                            <li><a class="dropdown-item" href="./Contact us.HTML">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-secondary rounded-pill" href="#">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blog-header-image">
+        <div class="blog-header-content">
+            <h1 class="blog-title">Datatron Blog</h1>
+            <p class="blog-subtitle">Stay Current with AI/ML</p>
+        </div>
+    </div>
+
+
+    <div class="filter-search-section d-flex flex-wrap align-items-center justify-content-between  p-3">
+        <div class="d-flex flex-wrap align-items-center gap-2  w-75">
+            <span class="category-label">Category</span>
+            <button class="category-button active">All</button>
+            <button class="category-button">AI Governance</button>
+            <button class="category-button">Brand</button>
+            <button class="category-button">Business Executives</button>
+            <button class="category-button">Data Scientists</button>
+            <button class="category-button">Explainability</button>
+            <button class="category-button">Gartner</button>
+            <button class="category-button">Machine Learning</button> <br>
+            <button class="category-button">ML Engineers</button>
+            <button class="category-button">MLOps</button>
+            <button class="category-button">Model Governance</button>
+            <button class="category-button">Model Management</button>
+            <button class="category-button">ModelOps</button>
+        </div>
+        <div class=" d-flex align-items-center" style="width: 20%;">
+            <label for="search-input" class="search-label">Search</label>
+            <input type="text" class="search-input form-control form-control-sm" id="search-input"
+                placeholder="Enter keywords...">
+            <button class="search-button" type="submit">
+
+            </button>
+        </div>
+    </div>
+
+
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card position-relative h-100">
+                    <img src="https://datatron.com/wp-content/uploads/No-Hidden-Cost.jpg"
+                        class="card-img-top blog-card-img-top" alt="...">
+                    <span class="blog-badge">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title blog-card-title">3 Dirty Secrets of MLOps - The Hidden Costs of Open
+                            Source Software & Big Cloud</h5>
+                        <h6 class="card-subtitle blog-card-subtitle">Victor Thu</h6>
+                        <div>
+                            <a href="#" class="blog-tag">MLOps</a>
+                            <a href="#" class="blog-tag">Cost</a>
+                        </div>
+                        <p class="card-text blog-card-text">A Guide for AI Executives to Accelerate ROI from AI/ML and
+                            Avoid Common Delays The proverbial “best [...]</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card position-relative h-100">
+                    <img src="https://datatron.com/wp-content/uploads/M3HeroImage.png"
+                        class="card-img-top blog-card-img-top" alt="...">
+                    <span class="blog-badge">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title blog-card-title">MLOps Maturity Model (M3) - What’s Your Maturity in
+                            MLOps?</h5>
+                        <h6 class="card-subtitle blog-card-subtitle">Victor Thu</h6>
+                        <div>
+                            <a href="#" class="blog-tag">AI Governance</a>
+                            <a href="#" class="blog-tag">Machine Learning</a>
+                            <a href="#" class="blog-tag">MLOps</a>
+                            <a href="#" class="blog-tag">Model Governance</a>
+                            <a href="#" class="blog-tag">Model Management</a>
+                        </div>
+                        <p class="card-text blog-card-text">Every journey of 1,000 miles begins with a single step and
+                            your AI/ML journey into gaining business value from your [...]</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card position-relative h-100">
+                    <img src="https://datatron.com/wp-content/uploads/aim-1.jpg" class="card-img-top blog-card-img-top"
+                        alt="...">
+                    <span class="blog-badge">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title blog-card-title">AI Governance: Artificial Intelligence Model Governance
+                        </h5>
+                        <h6 class="card-subtitle blog-card-subtitle">Datatron Technologies</h6>
+                        <div>
+                            <a href="#" class="blog-tag">AI Governance</a>
+                        </div>
+                        <p class="card-text blog-card-text">What is AI governance? At the federal level (e.g., United
+                            States government), Artificial intelligence governance is the [...]</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://datatron.com/wp-content/uploads/OvercomeItHeroImage-scaled.jpg"
+                        class="card-img-top" alt="...">
+                    <span class="badge badge-blog">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title">MLOps: 5 Common Pitfalls and How to Overcome Them</h5>
+                        <h6 class="card-subtitle">Aaron Reed</h6>
+                        <div>
+                            <a href="#" class="tag">AI Governance</a>
+                            <a href="#" class="tag">Business Executives</a>
+                            <a href="#" class="tag">Data Scientists</a>
+                            <a href="#" class="tag">Machine Learning</a>
+                            <a href="#" class="tag">ML Engineers</a>
+                            <a href="#" class="tag">MLOps</a>
+                        </div>
+                        <p class="card-text">Tell me if this sounds familiar: Your company decided to use data to solve
+                            a problem but new problems [...]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://datatron.com/wp-content/uploads/Part-XI-Advice-For-Early-AI-Programs-Video-Thumb-Overlay.jpg"
+                        class="card-img-top" alt="...">
+                    <span class="badge badge-blog">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title">MLOps Webinar - “Key Strategies Enterprises Can Implement Today to be
+                            Successful with AI”</h5>
+                        <h6 class="card-subtitle">Margaux Kroux</h6>
+                        <div>
+                            <a href="#" class="tag">AI Governance</a>
+                            <a href="#" class="tag">Business Executives</a>
+                            <a href="#" class="tag">Data Scientists</a>
+                            <a href="#" class="tag">Machine Learning</a>
+                            <a href="#" class="tag">ML Engineers</a>
+                            <a href="#" class="tag">MLOps</a>
+                            <a href="#" class="tag">Model Governance</a>
+                            <a href="#" class="tag">Model Management</a>
+                            <a href="#" class="tag">ModelOps</a>
+                        </div>
+                        <p class="card-text">Join 451 Research’s Nick Patience, Datatron Founder/CEO Harish Doddi, and
+                            Domino’s Sr. Data Science Manager [...]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://datatron.com/wp-content/uploads/Datatron-Part-III-MLOps-Model-Catalog-600x330-1.jpg"
+                        class="card-img-top" alt="...">
+                    <span class="badge badge-blog">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title">Datatron: MLOps Platform - Self-Guided In-Product Demo Series (7
+                            Mini-Videos)</h5>
+                        <h6 class="card-subtitle">Victor Thu</h6>
+                        <div>
+                            <a href="#" class="tag">AI Governance</a>
+                            <a href="#" class="tag">Business Executives</a>
+                            <a href="#" class="tag">Data Scientists</a>
+                            <a href="#" class="tag">Machine Learning</a>
+                            <a href="#" class="tag">ML Engineers</a>
+                            <a href="#" class="tag">MLOps</a>
+                            <a href="#" class="tag">Model Governance</a>
+                            <a href="#" class="tag">Model Management</a>
+                            <a href="#" class="tag">ModelOps</a>
+                        </div>
+                        <p class="card-text">Explore Datatron’s FLEXIBLE MLOps and AI Governance features at your own
+                            pace in this self-guided in-product demo [...]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://datatron.com/wp-content/uploads/img-1.jpg" class="card-img-top" alt="...">
+                    <span class="badge badge-blog">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title">What is Model Risk Management</h5>
+                        <h6 class="card-subtitle">Datatron Technologies</h6>
+                        <div>
+                            <a href="#" class="tag">Model Management</a>
+                        </div>
+                        <p class="card-text">The number of large institutions relying on models is rising and this trend
+                            will continue across all industries into the [...]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://datatron.com/wp-content/uploads/AI-Centers-of-Excellence-1600x836-2.jpg"
+                        class="card-img-top" alt="...">
+                    <span class="badge badge-blog">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title">Why AI “Centers of Excellence” (CoE’s) Love MLOps and AI Governance
+                            Platforms</h5>
+                        <h6 class="card-subtitle">Victor Thu</h6>
+                        <div>
+                            <a href="#" class="tag">AI Governance</a>
+                            <a href="#" class="tag">Business Executives</a>
+                            <a href="#" class="tag">Explainability</a>
+                            <a href="#" class="tag">Machine Learning</a>
+                            <a href="#" class="tag">ML Engineers</a>
+                            <a href="#" class="tag">MLOps</a>
+                            <a href="#" class="tag">Model Governance</a>
+                            <a href="#" class="tag">Model Management</a>
+                            <a href="#" class="tag">ModelOps</a>
+                        </div>
+                        <p class="card-text">Artificial Intelligence is commonly accepted as the linchpin of Digital
+                            Transformation. While AI is in its nascent [...]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://datatron.com/wp-content/uploads/castle-with-moat-title-1000x435-1.jpg"
+                        class="card-img-top" alt="...">
+                    <span class="badge badge-blog">BLOG</span>
+                    <div class="card-body">
+                        <h5 class="card-title">The Three “Lines of Defense” Every ML Program Needs: AI Governance</h5>
+                        <h6 class="card-subtitle">Victor Thu</h6>
+                        <div>
+                            <a href="#" class="tag">AI Governance</a>
+                        </div>
+                        <p class="card-text">As Artificial Intelligence and Machine Learning creep further and further
+                            into our businesses and everyday lives [...]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-primary rounded-pill">LOAD MORE</button>
+        </div>
+    </div>
+
+
+
+
+    <div id="carouselExampleControls" class="carousel slide bg-light py-3 justify-content-center align-items-center" data-bs-ride="carousel ">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-card">
+                    <div class="carousel-card-body">
+                        <div class="whitepaper-label">WHITEPAPER</div>
+                        <h5 class="card-title">Datatron 3.0 Product Release - Enterprise Feature Enhancements</h5>
+                        <p class="card-text">Streamlined features that improve operational workflows, enforce
+                            enterprise-grade security, and simplify troubleshooting.</p>
+                        <a href="#" class="btn btn-whitepaper">GET WHITEPAPER</a>
+                        <a href="#" class="view-all-link ms-2">→ view all</a>
+                    </div>
+                    <div class="carousel-card-image">
+                        <img src="https://datatron.com/wp-content/uploads/Enterprise-Feature-Enhancements-Datatron-30-Cover.jpg"
+                            alt="Whitepaper Preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer ">
+        <div class="container">
+            <div class="footer-top  justify-content-evenely align-items-evenely">
+                <div class="row ">
+                    <div class="col-md-3 fs-6">
+                        <h5>Platform</h5>
+                        <ul>
+                            <li><a href="#">ModelOps</a></li>
+                            <li><a href="#">AI Monitoring & AI Governance</a></li>
+                            <li><a href="#">Enterprise-ready</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 fs-6">
+                        <h5>Solutions</h5>
+                        <ul>
+                            <li><a href="#">Business Executive</a></li>
+                            <li><a href="#">Data Scientist</a></li>
+                            <li><a href="#">Engineering & DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 fs-6">
+                        <h5>Learn</h5>
+                        <ul>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Whitepapers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 fs-6">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Datatron</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="d-flex align-items-center">
+                    <span class="footer-logo">
+                        <img src="https://datatron.com/wp-content/themes/datatron/images/placeholder/logo.svg" alt="Datatron Logo">
+                    </span>
+                    <span class="mr-3">The Reliable AI™ platform built for enterprise</span>
+                    <span class="mx-3">Built with Love in San Francisco, CA USA!</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom gap-5">
+                 <p>© Copyright 2025. All Rights Reserved.</p>
+                 <p>San Francisco Web Design by Thomas Digital</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

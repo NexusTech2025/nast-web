@@ -1,0 +1,603 @@
+/* Custom CSS for the header */
+.navbar-light .navbar-brand {
+    color: #000;
+    /* Adjust logo text color */
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* Adjust logo font size */
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #212529;
+    /* Adjust navigation link text color */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #007bff;
+    /* Adjust navigation link hover color */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    /* Adjust button background color */
+    border-color: #007bff;
+    /* Adjust button border color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Adjust button background color on hover */
+    border-color: #0056b3;
+
+}
+
+
+.hero-section {
+    padding: 5rem 0;
+    /* Vertical padding */
+    background-color: #f8f9fa;
+    /* Light background */
+    /* If you want the subtle background pattern,
+   it would require a background-image CSS rule.
+   Example: background-image: url('path/to/your/pattern.svg'); */
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    /* Bolder heading */
+    color: #212529;
+    /* Darker text color */
+    line-height: 1.3;
+}
+
+.hero-section p {
+    color: #6c757d;
+    /* Grey text color for subheading */
+    font-size: 1.1rem;
+}
+
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Ensure container takes height for alignment */
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    /* Slightly rounded corners for the placeholder */
+}
+
+/* Ensure columns stack nicely on smaller screens */
+@media (max-width: 767.98px) {
+    .hero-section .row>div {
+        text-align: center;
+        /* Center text on small screens */
+    }
+
+    .hero-image-container {
+        margin-top: 2rem;
+        /* Add space above image when stacked */
+    }
+}
+
+
+
+.ml-process-section {
+    padding: 5rem 0;
+    /* Approximate gradient background from the image */
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #ffffff;
+    /* White text for contrast */
+}
+
+.ml-process-section h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.ml-process-section .lead {
+    color: rgba(255, 255, 255, 0.9);
+    /* Slightly transparent white */
+    max-width: 800px;
+    /* Limit width of paragraphs */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.ml-process-section .sub-lead {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+    /* Space before the boxes */
+}
+
+.process-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    /* Rounded corners */
+    padding: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    height: 100%;
+    /* Make boxes in the same row equal height */
+    display: flex;
+    /* Enable flexbox for centering */
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    min-height: 120px;
+    /* Minimum height for boxes */
+}
+
+.process-box:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.process-box strong {
+    /* Style for main text in box */
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Add some margin between rows of boxes */
+.row+.row {
+    margin-top: 1.5rem;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Apply Inter font */
+    color: #343a40;
+    /* Default text color */
+}
+
+.info-section {
+    padding: 4rem 1rem;
+    /* Vertical and horizontal padding */
+    background-color: #ffffff;
+    /* White background */
+}
+
+.info-section h2 {
+    font-weight: 700;
+    /* Bold heading */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    color: #212529;
+    /* Darker heading color */
+}
+
+.info-section p {
+    line-height: 1.7;
+    /* Improve paragraph readability */
+    margin-bottom: 1rem;
+    /* Space below paragraphs */
+    color: #495057;
+    /* Slightly lighter paragraph text */
+}
+
+.info-section .list-intro {
+    margin-top: 1.5rem;
+    /* Space above the list intro */
+    margin-bottom: 0.5rem;
+    /* Space below the list intro */
+    font-weight: 600;
+    /* Make list intro slightly bolder */
+}
+
+.info-section ul {
+    padding-left: 1.5rem;
+    /* Indent list */
+    margin-bottom: 0;
+    /* Remove default bottom margin from ul */
+}
+
+.info-section li {
+    margin-bottom: 0.5rem;
+    /* Space between list items */
+    color: #495057;
+}
+
+/* Optional: Style the trademark symbol */
+.tm {
+    font-size: 0.6em;
+    vertical-align: super;
+}
+
+
+
+
+/* --- Top Section (MLOps Intro) --- */
+.mlops-intro-section {
+    padding: 4rem 0;
+    /* Vertical padding */
+    background-color: #ffffff;
+    /* White background */
+}
+
+.mlops-intro-section h2 {
+    font-weight: 700;
+    /* Bold heading */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    color: #212529;
+    /* Darker heading color */
+}
+
+.mlops-intro-section p {
+    margin-bottom: 1rem;
+    /* Space below paragraphs */
+    color: #495057;
+    /* Slightly lighter paragraph text */
+}
+
+.mlops-image {
+    border-radius: 0.5rem;
+    /* Rounded corners for image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    max-width: 100%;
+    /* Ensure image is responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments for stacking */
+@media (max-width: 767.98px) {
+    .mlops-intro-section .image-col {
+        order: -1;
+        /* Move image above text on small screens */
+        margin-bottom: 2rem;
+        /* Add space below image when stacked */
+    }
+
+    .mlops-intro-section .text-col {
+        text-align: center;
+        /* Center text when stacked */
+    }
+}
+
+
+/* --- Features Section --- */
+.features-section {
+    padding: 4rem 0;
+    /* Vertical padding */
+    background-color: #f8f9fa;
+    /* Light grey background for separation */
+}
+
+.features-section h4 {
+    font-weight: 600;
+    /* Slightly less bold than h2 */
+    margin-bottom: 2rem;
+    /* More space below Features heading */
+    color: #212529;
+    text-align: center;
+    /* Center the Features heading */
+}
+
+/* Style for the feature list columns */
+.features-list-column ul {
+    padding-left: 1.5rem;
+    /* Indent list items */
+    list-style: disc;
+    /* Use standard bullets */
+    margin-bottom: 1rem;
+    /* Space below each list column */
+}
+
+.features-list-column li {
+    margin-bottom: 0.75rem;
+    /* Space between list items */
+    color: #495057;
+}
+
+/* Wrapper for the explore button for centering and spacing */
+.explore-button-wrapper {
+    margin-top: 3rem;
+    /* Space above the button */
+    text-align: center;
+    /* Center the button */
+}
+
+/* Styling for the explore button */
+.explore-button {
+    padding: 0.75rem 2rem;
+    /* Button padding */
+    font-weight: 600;
+    /* Bold button text */
+    border-width: 2px;
+    /* Slightly thicker border for outline button */
+}
+
+
+
+
+
+
+.monitoring-governance-section {
+    padding: 4rem 0;
+    /* Vertical padding */
+    background-color: #ffffff;
+    /* White background */
+}
+
+.monitoring-governance-section h2 {
+    font-weight: 700;
+    /* Bold heading */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    color: #212529;
+    /* Darker heading color */
+    line-height: 1.3;
+    /* Adjust heading line height */
+}
+
+.monitoring-governance-section p {
+    margin-bottom: 1rem;
+    /* Space below paragraphs */
+    color: #495057;
+    /* Slightly lighter paragraph text */
+}
+
+.section-image {
+    border-radius: 0.5rem;
+    /* Rounded corners for image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    max-width: 100%;
+    /* Ensure image is responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments: Stack image above text on small screens */
+@media (max-width: 767.98px) {
+    .monitoring-governance-section .image-col {
+        order: -1;
+        /* Move image above text */
+        margin-bottom: 2rem;
+        /* Add space below image when stacked */
+        text-align: center;
+        /* Center image when stacked */
+    }
+
+    .monitoring-governance-section .text-col {
+        text-align: center;
+        /* Center text when stacked */
+    }
+}
+
+
+
+
+
+.features-section-boxed {
+    padding: 3rem 1rem;
+    /* Padding inside the section */
+    /* Light blueish-grey background similar to the image */
+    background-color: #f0f4f8;
+    border-radius: 0.5rem;
+    /* Slightly rounded corners for the container */
+    margin-top: 2rem;
+    /* Add some margin above the section if needed */
+    margin-bottom: 2rem;
+    /* Add some margin below the section if needed */
+}
+
+.features-section-boxed h4 {
+    font-weight: 600;
+    /* Semi-bold heading */
+    margin-bottom: 1.5rem;
+    /* Space below heading */
+    color: #212529;
+    /* Darker heading color */
+}
+
+/* Styling for the feature lists */
+.features-section-boxed ul {
+    padding-left: 1.25rem;
+    /* Indent list items */
+    list-style: disc;
+    /* Use standard bullets */
+    margin-bottom: 1rem;
+    /* Space below each list */
+}
+
+.features-section-boxed li {
+    margin-bottom: 0.75rem;
+    /* Space between list items */
+    color: #495057;
+    /* Slightly lighter list item text */
+    line-height: 1.6;
+    /* Ensure good line spacing */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Custom Button Style */
+.btn-custom-outline-purple {
+    /* Use Bootstrap variables where possible, override specifics */
+    --bs-btn-color: #0B1C48;
+    /* Dark blue text color (adjust as needed) */
+    --bs-btn-border-color: #9b59b6;
+    /* Purple border color (adjust as needed) */
+    --bs-btn-hover-color: #ffffff;
+    /* White text on hover */
+    --bs-btn-hover-bg: #9b59b6;
+    /* Purple background on hover */
+    --bs-btn-hover-border-color: #9b59b6;
+    /* Purple border on hover */
+    --bs-btn-active-color: #ffffff;
+    /* White text when active/clicked */
+    --bs-btn-active-bg: #8e44ad;
+    /* Slightly darker purple when active */
+    --bs-btn-active-border-color: #8e44ad;
+    /* Slightly darker purple border when active */
+    --bs-btn-border-width: 2px;
+    /* Slightly thicker border */
+    --bs-btn-padding-y: 0.5rem;
+    /* Adjust vertical padding */
+    --bs-btn-padding-x: 1.5rem;
+    /* Adjust horizontal padding */
+    --bs-btn-font-weight: 600;
+    /* Semi-bold text */
+
+    /* Apply Bootstrap's button outline mixin logic */
+    color: var(--bs-btn-color);
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    background-color: transparent;
+    /* Ensure background is initially transparent */
+
+    /* Ensure hover/focus states use the variables */
+    &:hover,
+    &:focus,
+    &:active {
+        color: var(--bs-btn-hover-color);
+        background-color: var(--bs-btn-hover-bg);
+        border-color: var(--bs-btn-hover-border-color);
+    }
+
+    &:active {
+        background-color: var(--bs-btn-active-bg);
+        border-color: var(--bs-btn-active-border-color);
+    }
+
+    /* Add text transform */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Optional: slight letter spacing */
+}
+
+
+.enterprise-section {
+    padding: 50px 0;
+}
+
+.enterprise-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.enterprise-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.enterprise-image {
+    flex: 1;
+    text-align: right;
+}
+
+.enterprise-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.features-section {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features-list li {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.footer {
+    background-color: #b1b3b5;
+    /* Light background */
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-top ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.footer-top ul li {
+    margin-bottom: 10px;
+}
+
+.footer-top ul li a {
+    color: #555;
+    /* Darker text for links */
+    text-decoration: none;
+}
+
+.footer-top ul li a:hover {
+    color: #007bff;
+    /* Highlight on hover */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Vertically center items */
+    border-top: 1px solid #ddd;
+    /* Subtle border */
+    padding-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+
+.footer-logo img {
+    max-height: 30px;
+    /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.social-icons a {
+    color: #555;
+    margin-left: 10px;
+    font-size: 18px;
+    /* Adjust size as needed */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}

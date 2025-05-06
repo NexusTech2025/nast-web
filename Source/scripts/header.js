@@ -8,9 +8,11 @@ function createNavbar(config) {
     let navbarHTML = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container gap-3" style="background-color: ${config.backgroundColor};">
-                <a class="navbar-brand" href="#">
-                    <img src="${config.logo.src}" alt="${config.logo.alt}">
-                </a>
+                <h1 style='font-size:50px; 
+                    font-family: inter; 
+                    color: #212529;' 
+                    class='navbar-brand'>NAST</h1>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,7 +47,7 @@ function createNavbar(config) {
                 </li>
             `;
         }
-         else {
+        else {
             navbarHTML += `
                 <li class="nav-item">
                     <a class="nav-link" href="${item.href}">${item.label}</a>
@@ -63,7 +65,7 @@ function createNavbar(config) {
 
     navbarContainer.innerHTML = navbarHTML;
     // Add Bootstrap JS for dropdown functionality
-        
+
 }
 
 

@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Web & Mobile Application Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="../scripts/header.js"></script>
+
+    <style>
+        .mlops-section {
+            padding: 50px 0;
+            /* background-color: #f0f8f4;  Light background, you can adjust */
+        }
+
+        .mlops-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center text and image */
+            justify-content: space-between;
+            /* Space between text and image */
+        }
+
+        .mlops-text {
+            flex: 1;
+            /* Take up available space */
+            padding-right: 20px;
+            /* Add some spacing if needed */
+        }
+
+        .mlops-text h2 {
+            font-size: 2.5rem;
+            /* Larger heading */
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .mlops-text p {
+            font-size: 1.1rem;
+            /* Slightly larger paragraph text */
+            color: #555;
+            /* Darker text for better readability */
+            margin-bottom: 1rem;
+        }
+
+        .mlops-image {
+            flex: 1;
+            text-align: right;
+            /* Align image to the right */
+        }
+
+        .mlops-image img {
+            max-width: 100%;
+            /* Ensure image doesn't overflow its container */
+            height: auto;
+            /* Maintain image aspect ratio */
+        }
+
+        @media (max-width: 768px) {
+            .mlops-content {
+                flex-direction: column;
+                /* Stack text and image on smaller screens */
+                text-align: center;
+                /* Center text on smaller screens */
+            }
+
+            .mlops-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+                /* Add space below text on small screens */
+            }
+
+            .mlops-image {
+                text-align: center;
+            }
+        }
+
+
+        .mlops-what-is-section {
+            padding: 50px 0;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            /* Gradient background */
+        }
+
+        .mlops-what-is-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .mlops-what-is-title {
+            font-size: 2.5rem;
+            /* Larger heading */
+            margin-bottom: 20px;
+            color: #333;
+            /* Darker heading color */
+        }
+
+        .mlops-what-is-description {
+            font-size: 1.1rem;
+            /* Slightly larger text */
+            color: #555;
+            /* Darker text */
+            line-height: 1.7;
+            /* Improved line height for readability */
+            max-width: 800px;
+            /* Limit text width for better readability */
+            margin: 0 auto;
+            /* Center the text */
+        }
+
+
+
+
+        .challenges-section {
+            padding: 50px 0;
+        }
+
+        .challenges-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center content */
+            gap: 20px;
+            /* Space between text and image */
+        }
+
+        .challenges-text {
+            flex: 1;
+            /* Allow text to take up available space */
+        }
+
+        .challenges-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .challenges-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .challenges-image {
+            flex: 1;
+            /* Allow image to take up space */
+            text-align: right;
+        }
+
+        .challenges-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .challenges-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .challenges-image {
+                text-align: center;
+            }
+
+            .challenges-text {
+                padding-right: 0;
+            }
+        }
+
+        .mlops-features-section {
+            padding: 50px 0;
+        }
+
+        .mlops-features-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Align items to the start (top in column direction) */
+        }
+
+        .mlops-features-header {
+            margin-bottom: 20px;
+        }
+
+        .mlops-features-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .mlops-features-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .mlops-framework-agnostic {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mlops-framework-agnostic h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mlops-framework-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Center logos horizontally */
+            gap: 20px;
+            /* Space between logos */
+            margin-top: 1rem;
+        }
+
+        .mlops-framework-logos img {
+            max-height: 40px;
+            /* Adjust as needed */
+            /*width: auto;  Maintain aspect ratio */
+        }
+
+        @media (max-width: 768px) {
+            .mlops-features-content {
+                align-items: center;
+                text-align: center;
+            }
+
+            .mlops-features-header h2 {
+                font-size: 2rem;
+            }
+
+            .mlops-framework-logos {
+                gap: 15px;
+            }
+        }
+
+
+
+
+
+        .model-catalog-section {
+            padding: 50px 0;
+        }
+
+        .model-catalog-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .model-catalog-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .model-catalog-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .model-catalog-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .model-catalog-image {
+            align-self: center;
+            text-align: center;
+        }
+
+        .model-catalog-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .model-catalog-content {
+                text-align: center;
+            }
+
+            .model-catalog-header {
+                flex-direction: column;
+            }
+
+            .model-catalog-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+
+
+        .deployment-models-section {
+            padding: 50px 0;
+        }
+
+        .deployment-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center content */
+            gap: 20px;
+            /* Space between text and image */
+        }
+
+        .deployment-text {
+            flex: 1;
+            /* Allow text to take up available space */
+        }
+
+        .deployment-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .deployment-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .deployment-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .deployment-image {
+            flex: 1;
+            /* Allow image to take up space */
+            text-align: right;
+        }
+
+        .deployment-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .deployment-content {
+                flex-direction: column;
+                /* Stack text and image on small screens */
+                text-align: center;
+                /* Center text on small screens */
+            }
+
+            .deployment-image {
+                text-align: center;
+            }
+
+            .deployment-text {
+                padding-right: 0;
+            }
+        }
+
+
+
+        .gateway-section {
+            padding: 50px 0;
+        }
+
+        .gateway-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .gateway-header {
+            margin-bottom: 20px;
+        }
+
+        .gateway-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .gateway-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .gateway-images {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .gateway-images img {
+            max-width: 48%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .gateway-features {
+            margin-top: 20px;
+        }
+
+        .gateway-features h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .gateway-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .gateway-features ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .gateway-content {
+                text-align: center;
+            }
+
+            .gateway-header {
+                flex-direction: column;
+            }
+
+            .gateway-header h2 {
+                font-size: 2rem;
+            }
+
+            .gateway-images {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .gateway-images img {
+                max-width: 100%;
+            }
+        }
+
+        .image1 {
+            width: 500px;
+            height: 700px;
+
+        }
+
+
+        .features-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+
+        .feature-item {
+            margin-bottom: 30px;
+        }
+
+        .feature-item h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .feature-item h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .model-rollback-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .model-rollback-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .model-rollback-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .model-rollback-logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .gpu-support-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .gpu-support-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .gpu-support-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .gpu-support-logo svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        .parallel-computing-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .parallel-computing-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .parallel-computing-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .parallel-computing-logo svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        .model-rollout-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .model-rollout-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .model-rollout-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .model-rollout-logo svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .deployment-options {
+            list-style-type: disc;
+            /* Use filled circles for list items */
+            margin-left: 20px;
+            /* Add some indentation for the list */
+            margin-bottom: 15px;
+        }
+
+        .deployment-options li {
+            margin-bottom: 5px;
+            /* Add some spacing between list items */
+        }
+
+
+
+        .why-love-datatron-section {
+            padding: 30px 0;
+            /* Add some vertical padding to the section */
+            text-align: center;
+            /* Center the main heading */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            /* Adjust as needed */
+            font-weight: bold;
+            color: #343a40;
+            /* Dark gray heading color */
+            margin-bottom: 30px;
+        }
+
+        .problem-solution-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allow columns to wrap on smaller screens */
+            justify-content: center;
+            /* Center the problem and solution boxes */
+            gap: 20px;
+            /* Space between the boxes */
+            padding: 0 20px;
+            /* Add some horizontal padding for the container */
+        }
+
+        .problem-box,
+        .solution-box {
+            background-color: #f8f9fa;
+            /* Light gray background for boxes */
+            border: 1px solid #dee2e6;
+            /* Light gray border */
+            border-radius: 5px;
+            padding: 20px;
+            text-align: left;
+            flex: 1 1 400px;
+            /* Grow and shrink, with a minimum width */
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            /* Adjust as needed */
+            font-weight: bold;
+            color: #007bff;
+            /* Bootstrap primary color */
+            margin-bottom: 15px;
+        }
+
+        .problem-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .problem-list li {
+            margin-bottom: 8px;
+        }
+
+        .solution-paragraph {
+            margin-bottom: 15px;
+        }
+
+        .learn-more-link {
+            color: #6c757d;
+            /* Gray link color */
+            text-decoration: none;
+        }
+
+        .learn-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .data-scientists-button {
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+            /* To control margin */
+        }
+
+        .data-scientists-button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        .whitepapers-section {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .whitepapers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .whitepaper-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+            /* Adjust card width as needed */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .whitepaper-image-container {
+            width: 100%;
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        .whitepaper-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .whitepaper-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .whitepaper-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 10px;
+            text-decoration: none;
+            /* Remove default link underline */
+        }
+
+        .whitepaper-title:hover {
+            color: #007bff;
+            /* Change color on hover */
+            text-decoration: underline;
+        }
+
+
+
+        .footer {
+            background-color: #b1b3b5;
+            /* Light background */
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-top ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .footer-top ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-top ul li a {
+            color: #555;
+            /* Darker text for links */
+            text-decoration: none;
+        }
+
+        .footer-top ul li a:hover {
+            color: #007bff;
+            /* Highlight on hover */
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically center items */
+            border-top: 1px solid #ddd;
+            /* Subtle border */
+            padding-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .footer-logo img {
+            max-height: 30px;
+            /* Adjust as needed */
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #555;
+            margin-left: 10px;
+            font-size: 18px;
+            /* Adjust size as needed */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="navbar-container"></header>
+    <script>
+        createNavbar(navbarConfig);
+    </script>
+
+    <div class="container mlops-section">
+        <div class="mlops-content">
+            <div class="mlops-text">
+                <h2>Web & Mobile Frameworks</h2>
+                <h2 class="fs-4">AI-Powered Development for Future-Ready Applications</h2>
+                <p>At NAST, we revolutionize web and mobile development with cutting-edge AI
+                    frameworks. Whether you're building dynamic web solutions or intelligent mobile
+                    apps, our AI-enhanced tools help streamline development, optimize performance,
+                    and elevate user experiences.
+                </p>
+            </div>
+            <div class="mlops-image">
+                <img src="https://datatron.com/wp-content/uploads/2021/10/hero-2-4.svg"
+                     alt="MLOps Diagram">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mlops-what-is-section mb-5">
+        <div class="mlops-what-is-content">
+            <h2 class="mlops-what-is-title fs-1">Rapid Development with AI Tools</h2>
+            <p class="mlops-what-is-description">
+                At our company, we harness revolutionary AI tools for rapid, intelligent development
+                that transforms ideas into scalable apps. Using Bolt for swift code generation,
+                GitHub Copilot for context-aware coding insights, and Cursor to streamline our code
+                editing, we enhance developer productivity and deliver quality solutions faster.
+                Integrating Firebase Studio from Google empowers our full-stack workflows with AI
+                assistance, enabling seamless prototyping, testing, and deployment across web and
+                mobile platforms.
+            </p>
+            <p class="mlops-what-is-description">
+                Our advanced stack, including Flutter, Kotlin, Node.js, and Python, ensures robust
+                performance, security, and scalability while driving innovative, AI-powered
+                application development that meets real-world challenges head-on. Accelerating
+                progress and digital transformation.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="container challenges-section mb-5 ">
+        <div class="row py-5">
+
+            <div class="container-fluid col-7 col-md-7">
+                <h1 class="mb-5 fs-2">AI-Powered Solutions
+                    for Developer Challenges</h1>
+                <ul class="list-group">
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Time-Consuming Code Generation</h2>
+                        <p>Manually writing repetitive boilerplate code can slow progress. Tools
+                            like <strong>Bolt</strong> instantly generate scaffold code, letting
+                            developers focus on complex logic.</p>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Debugging and Code Quality</h2>
+                        <p>Identifying bugs in extensive codebases is challenging. <strong>GitHub
+                                Copilot</strong> and <strong>Cursor</strong> provide context-aware
+                            suggestions and in-editor hints that streamline debugging and elevate
+                            code quality.</p>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Complex Integration Processes</h2>
+                        <p>Merging diverse technologies (Flutter, Kotlin, Node.js, Python) can lead
+                            to integration errors. AI-powered insights ease connector development
+                            and compatibility checks.</p>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Testing and Deployment Hurdles</h2>
+                        <p>Comprehensive testing and smooth deployments are crucial.
+                            <strong>Firebase Studio</strong> from Google automates end-to-end tests,
+                            previews deployments, and ensures robust security.
+                        </p>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Security Vulnerabilities</h2>
+                        <p>Continuously monitoring for vulnerabilities is time-intensive. AI-driven
+                            tools detect potential risks early and recommend proactive security
+                            measures.</p>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Scalability and Performance Optimization</h2>
+                        <p>Balancing loads and scaling efficiently is intricate. AI analytics
+                            pinpoint performance bottlenecks and suggest resource optimizations.</p>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <h2 class="h5 mb-2">Maintaining Documentation</h2>
+                        <p>Keeping documentation current is often overlooked. In-editor AI like
+                            GitHub Copilot auto-generates contextual documentation, reducing manual
+                            overhead.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5 col-md-5 d-flex align-items-center justify-content-center">
+                <img class="w-100 img-fluid"
+                     src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
+                     alt="Challenges Illustration">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-6 col-md-6">
+                <div class="mlops-features-header">
+                    <h2 class="fs-2">Frontend & Mobile Experience</h2>
+                    <p>Rect + Next.js, Flutter, Kotlin, Python</p>
+                </div>
+                <p class="mlops-features-description">
+                    We build immersive digital experiences by leveraging cutting-edge tools and
+                    frameworks. For the web, we use React with Next.js to craft dynamic,
+                    server-rendered pages that are fast, SEO-friendly, and visually captivating.
+                </p>
+                <p class="mlops-features-description">
+                    On mobile, our approach is equally versatile. Flutter lets us write once and
+                    deploy natively across Android, iOS, web, and desktop—accelerating release
+                    cycles with stunning designs. To further enhance cross-platform performance, we
+                    also employ React Native for seamless native app experiences.
+                </p>
+                <p class="mlops-features-description">
+                    We don’t stop there. For rapid prototyping and specialized solutions, we
+                    integrate Python-based frameworks like Kivy and BeeWare, offering
+                    platform-agnostic development options. For Android-specific needs, we harness
+                    the modern safety and conciseness of Kotlin alongside the robust, time-tested
+                    ecosystem of Java.
+                </p>
+
+                <p class="mlops-features-description">
+                    This streamlined yet diverse toolkit empowers us to deliver responsive,
+                    high-performance applications that delight users at every touch point.
+                </p>
+
+            </div>
+
+            <div class="col-6 col-md-6">
+
+                <div>
+                    <img class="w-100 img-fluid"
+                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-2.jpg"
+                         alt="SAS">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 my-5 bg-light">
+        <div class="mb-4 py-5">
+            <div class="text-center mb-5">
+                <h2 class="fs-2">Backend & AI Integration</h2>
+                <p>Python, Java, Php, Node.js</p>
+                <p class="text-center fs-5">Our backend architecture forms the core of our
+                    applications—ensuring speed,
+                    scalability, and security while integrating AI-driven automation. We embrace a
+                    microservices-based approach that offers modularity and flexibility, using
+                    Node.js with Express for handling RESTful APIs and asynchronous tasks, alongside
+                    Python with FastAPI for AI services, such as machine learning and predictive
+                    analytics.</p>
+
+            </div>
+
+            <div class="row px-4 my-5">
+                <div class="col-6 col-md-6">
+                    <img class="w-100 img-fluid"
+                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-3.jpg"
+                         alt="Backend Integration">
+                </div>
+                <div class="col-6 col-md-6">
+                    <h3 class="fs-3 mb-4">Expanding Backend Capabilities with Django & Flask</h3>
+                    <p class="mlops-features-description">
+                        For Python-based web development, we incorporate Django, a high-level
+                        framework that simplifies backend logic, manages databases efficiently, and
+                        enhances security with built-in authentication systems. When lightweight
+                        solutions are needed, we turn to Flask, which offers rapid prototyping and
+                        flexibility for creating microservices that interact seamlessly with larger
+                        architectures.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row px-4">
+
+                <div class="col-6 col-md-6">
+                    <h3 class="fs-3 mb-4">Java Spring & Spring Boot for Enterprise-Grade
+                        Applications</h3>
+                    <p class="mlops-features-description">
+                        For enterprise-level backends, we use Spring and Spring Boot, enabling
+                        highly scalable, maintainable applications with built-in security
+                        mechanisms. These frameworks streamline complex workflows and database
+                        interactions while supporting cloud-native deployments, making them ideal
+                        for business applications that demand reliability at scale.
+                    </p>
+                </div>
+
+                <div class="col-6 col-md-6">
+                    <img class="w-100 img-fluid"
+                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-3.jpg"
+                         alt="Backend Integration">
+                </div>
+            </div>
+
+            <div class="row px-4 my-5">
+                <div class="col-6 col-md-6">
+                    <img class="w-100 img-fluid"
+                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-3.jpg"
+                         alt="Backend Integration">
+                </div>
+                <div class="col-6 col-md-6">
+                    <h3 class="fs-3 mb-4">AI-Powered Backend Innovation</h3>
+                    <p class="mlops-features-description">
+                        We supercharge our backend with Firebase Studio, an AI-enhanced full-stack
+                        workspace that accelerates development through AI-assisted coding,
+                        debugging, and API generation. Firebase Studio allows seamless integration
+                        with database systems, authentication services, and real-time analytics,
+                        optimizing backend processes and enabling intelligent automation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mb-5 py-5 px-4">
+                <h3 class="fs-3 mb-4">CI/CD & Scalability</h3>
+                <p class="fs-5">
+                    By containerizing services using Docker and orchestrating them with Kubernetes,
+                    we ensure fault tolerance and elastic scalability, keeping our applications
+                    adaptable to demand. Through AI-powered insights, predictive analytics, and
+                    intelligent monitoring, we build backends that are not only robust and efficient
+                    but also future-proofed for evolving technological advancements.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container my-5 bg-primary-subtle mb-5">
+        <h1 class="fs-1 text-center mb-5">Key Features</h1>
+
+        <div class="row g-4 d-flex text-center">
+            <div class="col-md-4 d-flex">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title fs-5">Cross-Platform Excellence</h2>
+                        <p class="card-text">Leverage React/Next.js, Flutter, React Native, Kotlin,
+                            Java, and Python for stunning, responsive apps with a consistent user
+                            experience across web and mobile.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title fs-5">AI-Driven Automation</h2>
+                        <p class="card-text">Accelerate development with AI tools like Bolt, GitHub
+                            Copilot, Cursor, and Firebase Studio for rapid code generation and
+                            backend automation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title fs-5">Robust and Scalable Backend</h2>
+                        <p class="card-text">Build a resilient infrastructure with Node.js, Python
+                            frameworks (FastAPI, Django, Flask), and Java’s Spring Boot for
+                            high-performance backend operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4 d-flex text-center">
+            <div class="col-md-4 d-flex">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title fs-5">Enterprise-Level Security</h2>
+                        <p class="card-text">Incorporate JWT/OAuth, vulnerability scanning, Docker
+                            containerization, and Kubernetes orchestration for a fortified
+                            environment against threats.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title fs-5">Intelligent API and Data Management</h2>
+                        <p class="card-text">Utilize Firebase's real-time database, API integration,
+                            and AI-supported analytics to streamline data flow and automate testing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title fs-5">Enhanced Developer Productivity</h2>
+                        <p class="card-text">Empower teams with AI-driven tools for streamlined code
+                            editing, automated documentation, and collaboration, leading to faster
+                            development cycles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem; margin-top:7rem">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

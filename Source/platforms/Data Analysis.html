@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="../scripts/header.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .mlops-section {
+            padding: 50px 0;
+            /* background-color: #f0f8f4;  Light background, you can adjust */
+        }
+
+        .mlops-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center text and image */
+            justify-content: space-between;
+            /* Space between text and image */
+        }
+
+        .mlops-text {
+            flex: 1;
+            /* Take up available space */
+            padding-right: 20px;
+            /* Add some spacing if needed */
+        }
+
+        .mlops-text h2 {
+            font-size: 2.5rem;
+            /* Larger heading */
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .mlops-text p {
+            font-size: 1.1rem;
+            /* Slightly larger paragraph text */
+            color: #555;
+            /* Darker text for better readability */
+            margin-bottom: 1rem;
+        }
+
+        .mlops-image {
+            flex: 1;
+            text-align: right;
+            /* Align image to the right */
+        }
+
+        .mlops-image img {
+            max-width: 100%;
+            /* Ensure image doesn't overflow its container */
+            height: auto;
+            /* Maintain image aspect ratio */
+        }
+
+        @media (max-width: 768px) {
+            .mlops-content {
+                flex-direction: column;
+                /* Stack text and image on smaller screens */
+                text-align: center;
+                /* Center text on smaller screens */
+            }
+
+            .mlops-text {
+                padding-right: 0;
+                margin-bottom: 20px;
+                /* Add space below text on small screens */
+            }
+
+            .mlops-image {
+                text-align: center;
+            }
+        }
+
+
+        .mlops-what-is-section {
+            padding: 50px 0;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            /* Gradient background */
+        }
+
+        .mlops-what-is-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .mlops-what-is-title {
+            font-size: 2.5rem;
+            /* Larger heading */
+            margin-bottom: 20px;
+            color: #333;
+            /* Darker heading color */
+        }
+
+        .mlops-what-is-description {
+            font-size: 1.1rem;
+            /* Slightly larger text */
+            color: #555;
+            /* Darker text */
+            line-height: 1.7;
+            /* Improved line height for readability */
+            max-width: 800px;
+            /* Limit text width for better readability */
+            margin: 0 auto;
+            /* Center the text */
+        }
+
+
+
+
+        .challenges-section {
+            padding: 50px 0;
+        }
+
+        .challenges-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center content */
+            gap: 20px;
+            /* Space between text and image */
+        }
+
+        .challenges-text {
+            flex: 1;
+            /* Allow text to take up available space */
+        }
+
+        .challenges-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .challenges-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .challenges-image {
+            flex: 1;
+            /* Allow image to take up space */
+            text-align: right;
+        }
+
+        .challenges-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .challenges-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .challenges-image {
+                text-align: center;
+            }
+
+            .challenges-text {
+                padding-right: 0;
+            }
+        }
+
+        .mlops-features-section {
+            padding: 50px 0;
+        }
+
+        .mlops-features-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Align items to the start (top in column direction) */
+        }
+
+        .mlops-features-header {
+            margin-bottom: 20px;
+        }
+
+        .mlops-features-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .mlops-features-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .mlops-framework-agnostic {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mlops-framework-agnostic h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mlops-framework-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Center logos horizontally */
+            gap: 20px;
+            /* Space between logos */
+            margin-top: 1rem;
+        }
+
+        .mlops-framework-logos img {
+            max-height: 40px;
+            /* Adjust as needed */
+            /*width: auto;  Maintain aspect ratio */
+        }
+
+        @media (max-width: 768px) {
+            .mlops-features-content {
+                align-items: center;
+                text-align: center;
+            }
+
+            .mlops-features-header h2 {
+                font-size: 2rem;
+            }
+
+            .mlops-framework-logos {
+                gap: 15px;
+            }
+        }
+
+
+
+
+
+        .model-catalog-section {
+            padding: 50px 0;
+        }
+
+        .model-catalog-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .model-catalog-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .model-catalog-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .model-catalog-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .model-catalog-image {
+            align-self: center;
+            text-align: center;
+        }
+
+        .model-catalog-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .model-catalog-content {
+                text-align: center;
+            }
+
+            .model-catalog-header {
+                flex-direction: column;
+            }
+
+            .model-catalog-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+
+
+        .deployment-models-section {
+            padding: 50px 0;
+        }
+
+        .deployment-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center content */
+            gap: 20px;
+            /* Space between text and image */
+        }
+
+        .deployment-text {
+            flex: 1;
+            /* Allow text to take up available space */
+        }
+
+        .deployment-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .deployment-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .deployment-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .deployment-image {
+            flex: 1;
+            /* Allow image to take up space */
+            text-align: right;
+        }
+
+        .deployment-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .deployment-content {
+                flex-direction: column;
+                /* Stack text and image on small screens */
+                text-align: center;
+                /* Center text on small screens */
+            }
+
+            .deployment-image {
+                text-align: center;
+            }
+
+            .deployment-text {
+                padding-right: 0;
+            }
+        }
+
+
+
+        .gateway-section {
+            padding: 50px 0;
+        }
+
+        .gateway-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .gateway-header {
+            margin-bottom: 20px;
+        }
+
+        .gateway-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .gateway-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .gateway-images {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .gateway-images img {
+            max-width: 48%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .gateway-features {
+            margin-top: 20px;
+        }
+
+        .gateway-features h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .gateway-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .gateway-features ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .gateway-content {
+                text-align: center;
+            }
+
+            .gateway-header {
+                flex-direction: column;
+            }
+
+            .gateway-header h2 {
+                font-size: 2rem;
+            }
+
+            .gateway-images {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .gateway-images img {
+                max-width: 100%;
+            }
+        }
+
+        .image1 {
+            width: 500px;
+            height: 700px;
+
+        }
+
+
+        .features-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+
+        .feature-item {
+            margin-bottom: 30px;
+        }
+
+        .feature-item h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .feature-item h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .model-rollback-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .model-rollback-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .model-rollback-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .model-rollback-logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .gpu-support-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .gpu-support-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .gpu-support-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .gpu-support-logo svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        .parallel-computing-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .parallel-computing-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .parallel-computing-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .parallel-computing-logo svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        .model-rollout-section {
+            background-color: #e9ecef;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .model-rollout-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .model-rollout-logo {
+            width: 30px;
+            /* Adjust size as needed */
+            height: 30px;
+            margin-right: 10px;
+            /* You'll likely use an actual image or icon here */
+            background-color: #6c757d;
+            /* Placeholder background */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .model-rollout-logo svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .deployment-options {
+            list-style-type: disc;
+            /* Use filled circles for list items */
+            margin-left: 20px;
+            /* Add some indentation for the list */
+            margin-bottom: 15px;
+        }
+
+        .deployment-options li {
+            margin-bottom: 5px;
+            /* Add some spacing between list items */
+        }
+
+
+
+        .why-love-datatron-section {
+            padding: 30px 0;
+            /* Add some vertical padding to the section */
+            text-align: center;
+            /* Center the main heading */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            /* Adjust as needed */
+            font-weight: bold;
+            color: #343a40;
+            /* Dark gray heading color */
+            margin-bottom: 30px;
+        }
+
+        .problem-solution-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allow columns to wrap on smaller screens */
+            justify-content: center;
+            /* Center the problem and solution boxes */
+            gap: 20px;
+            /* Space between the boxes */
+            padding: 0 20px;
+            /* Add some horizontal padding for the container */
+        }
+
+        .problem-box,
+        .solution-box {
+            background-color: #f8f9fa;
+            /* Light gray background for boxes */
+            border: 1px solid #dee2e6;
+            /* Light gray border */
+            border-radius: 5px;
+            padding: 20px;
+            text-align: left;
+            flex: 1 1 400px;
+            /* Grow and shrink, with a minimum width */
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            /* Adjust as needed */
+            font-weight: bold;
+            color: #007bff;
+            /* Bootstrap primary color */
+            margin-bottom: 15px;
+        }
+
+        .problem-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .problem-list li {
+            margin-bottom: 8px;
+        }
+
+        .solution-paragraph {
+            margin-bottom: 15px;
+        }
+
+        .learn-more-link {
+            color: #6c757d;
+            /* Gray link color */
+            text-decoration: none;
+        }
+
+        .learn-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .data-scientists-button {
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+            /* To control margin */
+        }
+
+        .data-scientists-button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        .whitepapers-section {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .whitepapers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .whitepaper-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+            /* Adjust card width as needed */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .whitepaper-image-container {
+            width: 100%;
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        .whitepaper-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .whitepaper-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .whitepaper-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 10px;
+            text-decoration: none;
+            /* Remove default link underline */
+        }
+
+        .whitepaper-title:hover {
+            color: #007bff;
+            /* Change color on hover */
+            text-decoration: underline;
+        }
+
+
+
+        .footer {
+            background-color: #b1b3b5;
+            /* Light background */
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-top ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .footer-top ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-top ul li a {
+            color: #555;
+            /* Darker text for links */
+            text-decoration: none;
+        }
+
+        .footer-top ul li a:hover {
+            color: #007bff;
+            /* Highlight on hover */
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically center items */
+            border-top: 1px solid #ddd;
+            /* Subtle border */
+            padding-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .footer-logo img {
+            max-height: 30px;
+            /* Adjust as needed */
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #555;
+            margin-left: 10px;
+            font-size: 18px;
+            /* Adjust size as needed */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="navbar-container"></header>
+    <script>
+        createNavbar(navbarConfig);
+    </script>
+
+    <div class="container mlops-section">
+        <div class="mlops-content">
+            <div class="mlops-text">
+                <h2>Empowering Decisions with Intelligent Data Analysis</h2>
+
+                <p>Transforming raw data into strategic insights using cutting-edge AI and advanced
+                    analytics.</p>
+            </div>
+            <div class="mlops-image">
+                <img src="https://datatron.com/wp-content/uploads/2021/10/hero-2-4.svg"
+                     alt="MLOps Diagram">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mlops-what-is-section  d-flex justify-content-center">
+        <div class="w-50 text-center ml-auto">
+            <h2 class="fs-1">Data Analysis</h2>
+            <p class="">
+                At NAST, our mission is to revolutionize data analysis by automating complex
+                processes. We're committed to minimizing human error and maximizing efficiency,
+                giving businesses like yours the invaluable gift of time.
+            </p>
+            <p class="">
+                Our vision is to harmonize intelligent automation with advanced analytics,
+                transforming raw data into actionable insights that fuel growth across diverse
+                sectors from healthcare to marketing. To achieve this, we blend user-friendly tools
+                like Excel, Power BI, and Tableau for accessible reporting with the power of Python
+                and R for custom, in-depth analysis, ensuring every client unlocks the full
+                potential of their data.
+            </p>
+        </div>
+    </div>
+
+    <div class="container-fluid mlops-what-is-section d-flex justify-content-center">
+        <div class="w-50 text-center ml-auto">
+            <h2 class="fs-1">Our Approach</h2>
+            <p class="">
+                Tools like Excel, Power BI, and Tableau serve as the foundation of our data
+                visualization and reporting capabilities. These platforms enable us to create
+                intuitive, interactive dashboards and detailed reports that cater to both everyday
+                business questions and complex analytical challenges.
+            </p>
+            <p class="">
+                For deeper customization and precise control over our analytical processes, our team
+                harnesses the power of Python and R. These programming languages allow us to build
+                custom models, perform sophisticated statistical analyses, and tailor solutions that
+                address the unique challenges of each industry.
+            </p>
+
+            <p class="">
+                At NAST, our commitment is to blend the strengths of automation with the expertise
+                of data scientists, delivering solutions that not only enhance operational
+                efficiency but also unlock the full potential of your data.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Data Analysis tools Challenges -->
+    <div class="bg-light py-5">
+        <div class="container challenges-section py-5 my-5">
+
+            <div class="challenges-text">
+
+                <div class="d-flex flex-column align-items-center mb-5">
+                    <div class="w-50">
+                        <h2 class="challenges-title mb-5 text-center">Challenges with Traditional
+                            Data
+                            Analysis
+                            Tools</h2>
+                        <p class="text-center">Organizations frequently rely on familiar tools such
+                            as
+                            Excel, Power BI,
+                            and
+                            Tableau for their data operations, yet these tools have inherent
+                            limitations
+                            when handling complex or large-scale datasets. </p>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h4 class="fs-4 mb-3">Excel’s Limitations in Handling Large-Scale Data and
+                            Complex
+                            Analysis</h4>
+                        <p class="challenges-paragraph">
+                            Excel, for instance,
+                            often
+                            struggles with large volumes of data—exceeding its optimal capacity of
+                            one
+                            million rows—which results in sluggish processing or even crashes.
+                            Additionally,
+                            while Excel is widely used for basic tasks, its built-in functions can
+                            fall
+                            short for more complex data manipulation, such as merging and reshaping
+                            datasets. Statistical analysis in Excel can also be prone to
+                            inaccuracies, and
+                            its collaboration features often prove cumbersome. Moreover, although
+                            Excel
+                            supports macros and VBA, automating intricate tasks remains challenging
+                            compared
+                            to more flexible programming solutions like Python.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 img-fluid">
+                        <img class="w-100"
+                             style="height: 300px; width: 300px;"
+                             src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
+                             alt="test-img">
+                    </div>
+                </div>
+
+
+                <div class="row mb-5 ">
+                    <div class="col-md-6 img-fluid">
+                        <img class="w-100"
+                             style="height: 300px; width: 300px;"
+                             src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
+                             alt="test-img">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4 class="fs-4 mb-3">Power BI: Performance and Customization Limitations
+                        </h4>
+                        <p class="challenges-paragraph">
+                            Power BI offers powerful visualizations and dynamic dashboards; however,
+                            it,
+                            too, encounters performance issues with very large datasets. Its
+                            inherent
+                            data
+                            cleaning and preprocessing capabilities lack the flexibility of Python’s
+                            advanced libraries, and customizing visuals often requires intricate
+                            workarounds
+                            beyond the standard templates. The platform’s built-in statistical
+                            functions
+                            and
+                            machine learning tools are limited, which may necessitate the use of
+                            additional
+                            specialized software for in-depth analysis.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row mb-5 ">
+                    <div class="col-md-6">
+                        <h4 class="fs-4 mb-3">Tableau: Licensing, Data Preparation, and Advanced
+                            Analytics
+                            Limitations</h4>
+                        <p class="challenges-paragraph">
+                            Tableau is celebrated for its interactive visualizations but comes with
+                            its
+                            own
+                            set of challenges. Licensing fees and associated costs can be high for
+                            large
+                            organizations, potentially limiting its accessibility. Its data
+                            preparation
+                            features aren’t as robust as those in specialized analytical tools,
+                            frequently
+                            compelling users to depend on external systems for comprehensive data
+                            cleaning.
+                            Furthermore, Tableau’s capabilities for advanced statistical analysis
+                            and
+                            machine learning remain limited, and its automation and scripting
+                            functionalities do not offer the same level of flexibility as
+                            programming-based
+                            solutions.
+                        </p>
+                    </div>
+                    <div class="col-md-6 img-fluid">
+                        <img class="w-100"
+                             style="height: 300px; width: 300px;"
+                             src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
+                             alt="test-img">
+                    </div>
+
+
+                </div>
+
+
+                <div class="d-flex justify-content-center mb-5">
+                    <p class="w-75 fs-5 text-center">
+                        At NAST, we understand these challenges and have developed AI-driven
+                        solutions
+                        that bridge these gaps, ultimately enhancing analytical efficiency, reducing
+                        human error, and unlocking deeper insights from your data.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="container-fluid mlops-what-is-section d-flex justify-content-center">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <h2 class="fs-1 text-center mb-5 w-50">Overcoming the Limitations of
+                    Traditional
+                    Data Tools
+                </h2>
+            </div>
+
+            <div class="container px-4 py-5">
+
+                <div class="row g-4">
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex">
+                        <div class="card shadow-lg flex-fill">
+                            <div class="card-header rounded-top text-center">
+                                <i class="bi bi-database-gear fs-1"></i>
+                                <h3 class="card-title text-xl font-semibold">Data
+                                    Engineering
+                                    Services</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-gray-700">
+                                    NAST offers robust data engineering services designed to handle
+                                    large,
+                                    complex datasets with ease. By utilizing Python libraries such
+                                    as Pandas
+                                    and Dask alongside cloud-based solutions, we efficiently process
+                                    and
+                                    store data before it even reaches tools like Excel, Power BI, or
+                                    Tableau. This means you never have to worry about system
+                                    slowdowns or
+                                    data crashes due to overwhelming volumes—the heavy lifting is
+                                    done for
+                                    you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex">
+                        <div class="card shadow-lg flex-fill">
+                            <div class="card-header rounded-top text-center">
+                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
+                                <h3 class="card-title text-xl font-semibold">Custom
+                                    Analytical
+                                    Solutions</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-gray-700">
+                                    Our team develops tailor-made analytical solutions using Python
+                                    and R to
+                                    perform complex data manipulation, advanced statistical
+                                    analysis, and
+                                    machine learning. These solutions go far beyond the
+                                    out-of-the-box
+                                    capabilities of traditional platforms. Whether it’s uncovering
+                                    hidden
+                                    trends or solving specific business challenges, our customized
+                                    analysis
+                                    provides deep insights that standard tools simply can’t match.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex">
+                        <div class="card shadow-lg flex-fill">
+                            <div class="card-header rounded-top text-center">
+                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
+                                <h3 class="card-title text-xl font-semibold">Automation
+                                    and
+                                    Reporting Pipelines</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-gray-700">
+                                    NAST designs and implements automated pipelines that extract
+                                    data from
+                                    various sources, process it efficiently, and generate accurate
+                                    reports
+                                    or feed seamlessly into your visualization tools. By automating
+                                    recurring tasks and reducing the potential for human error, we
+                                    ensure
+                                    your data remains fresh and your analysis is always up to
+                                    date—empowering you to focus on strategic decision-making.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex">
+                        <div class="card shadow-lg flex-fill">
+                            <div class="card-header rounded-top text-center">
+                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
+                                <h3 class="card-title text-xl font-semibold">Integration
+                                    and
+                                    Extension</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-gray-700">
+                                    We extend the functionality of your favorite tools by
+                                    integrating Python
+                                    and R directly with Excel, Power BI, and Tableau. This
+                                    integration
+                                    bridges the gap between familiar interfaces and the powerful
+                                    capabilities of advanced programming, providing you with
+                                    enhanced
+                                    control and flexibility. In doing so, you get the best of both
+                                    worlds:
+                                    an intuitive user experience with the robustness of custom
+                                    analytics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex">
+                        <div class="card shadow-lg flex-fill">
+                            <div class="card-header rounded-top text-center">
+                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
+                                <h3 class="card-title text-xl font-semibold">Training
+                                    and
+                                    Support</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-gray-700">
+                                    At NAST, we don’t just deliver solutions—we empower your team.
+                                    Our
+                                    comprehensive training programs and ongoing support help your
+                                    staff
+                                    master these advanced analytical tools and techniques. With
+                                    expert
+                                    guidance, your team can leverage Python and R to become truly
+                                    self-sufficient in navigating complex data challenges.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex">
+                        <div class="card shadow-lg flex-fill">
+                            <div class="card-header rounded-top text-center">
+                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
+                                <h3 class="card-title text-xl font-semibold">Consulting
+                                    Services
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-gray-700">
+                                    Our consulting services are designed to assess your unique data
+                                    analysis
+                                    needs and craft a strategy that integrates the right mix of
+                                    traditional
+                                    tools and custom-built solutions. We provide expert guidance to
+                                    ensure
+                                    that every step, from data ingestion to actionable insights, is
+                                    optimized for your business. With NAST on your side, you can
+                                    maximize
+                                    your data’s potential and set a course for sustainable growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="bg-light py-5">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <h2 class="fs-1 text-center mb-5 w-50">Our Big Data Toolkit</h2>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <img width="400px"
+                         height="400px"
+                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
+                         alt="test-img"
+                         class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <p class="">
+                        At NAST, we integrate cutting-edge big data tools to enhance efficiency and
+                        scalability. Apache Spark and Hadoop ensure fast processing and reliable
+                        storage for massive datasets. For real-time analytics, Apache Kafka enables
+                        seamless data ingestion and stream processing.
+                    </p>
+                    <p class="">
+                        We leverage Google BigQuery and Snowflake for cloud-based data warehousing,
+                        providing scalable, high-speed querying. Additionally, ThoughtSpot offers
+                        AI-powered, search-driven analytics for intuitive data exploration.
+
+                    </p>
+                    <p class="">
+                        By incorporating these advanced technologies, NAST ensures powerful,
+                        streamlined solutions that drive smarter, faster decision-making. Want to
+                        see how these tools can work for your business?
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="container w-75">
+                <h2 class="fs-2 text-center">Key Features</h2>
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><strong>Scalable Data Solutions</strong><br>Your
+                                company
+                                should ensure
+                                that all data analysis tools and workflows can seamlessly handle
+                                small
+                                to massive datasets across various domains without performance
+                                issues.
+                            </li>
+                            <li class="mb-3"><strong>AI-Powered Analytics</strong><br>Implement
+                                machine
+                                learning and
+                                AI-driven approaches to enhance data processing, predictive
+                                analytics,
+                                and automation, making analysis more efficient and insightful.</li>
+                            <li class="mb-3"><strong>Seamless Integration</strong><br>Ensure
+                                compatibility between
+                                Excel, Power BI, Tableau, and programming languages like Python and
+                                R,
+                                enabling businesses to use AI alongside traditional tools without
+                                disrupting existing workflows.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><strong>Automation & Optimization</strong><br>Develop
+                                automated data
+                                pipelines that reduce manual workload, minimize human error, and
+                                optimize the speed and accuracy of data analysis.</li>
+                            <li class="mb-3"><strong>User-Centric Customization</strong><br>Provide
+                                tailored
+                                analytics solutions that address industry-specific needs, ensuring
+                                businesses get deeper insights beyond standard visualizations and
+                                reporting.</li>
+                            <li class="mb-3"><strong>Security & Compliance</strong><br>Maintain
+                                stringent data
+                                security protocols and ensure compliance with global regulations,
+                                safeguarding sensitive business and customer data while providing
+                                reliable analytics solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

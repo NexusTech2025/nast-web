@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .solution-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .key-feature-badge {
+            font-size: 0.85em;
+        }
+
+        .section-image {
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 0.375rem;
+        }
+
+        .overview-image {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.375rem;
+        }
+
+        .nast-bg-gradient-1 {
+            background: linear-gradient(90deg, #66ADD9 0%, #6B54BF 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #66ADD9, #6B54BF);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* New styles for glowing circles */
+        .glowing-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: pulse 4s infinite;
+            /* Adjust for overall pulse speed */
+        }
+
+        .glowing-circle.circle1 {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(102, 173, 217, 0.3);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            /* Start immediately */
+        }
+
+        .glowing-circle.circle2 {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(107, 84, 191, 0.3);
+            top: 40%;
+            left: 30%;
+            animation-delay: 1s;
+            /* Start after 1 second */
+        }
+
+        .glowing-circle.circle3 {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(102, 173, 217, 0.3);
+            top: 10%;
+            left: 60%;
+            animation-delay: 2s;
+            /* Start after 2 seconds */
+        }
+
+        .glowing-circle.circle4 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(107, 84, 191, 0.3);
+            top: 60%;
+            left: 80%;
+            animation-delay: 0.5s;
+            /* Start after 0.5 seconds */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-dark">
+    <header class="bg-white shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand"
+                   href="#">
+                    <h1 class="h3 mb-0 fw-bold text-primary">NAST</h1>
+                    <p class="small mb-0 text-muted">Nexus Autonomous Systems & Technologies</p>
+                </a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse"
+                     id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#overview">Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#solutions">Our Solutions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#contact">Join Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mb-5">
+        <div class="bg-light py-5">
+            <div class="container">
+                <section class="row mb-5 bg-light">
+                    <div class="col-md-6">
+                        <h2 class="text-gradient">Healthcare Solutions: AI-Powered Innovations for
+                            Modern Medicine</h2>
+                        <p class="lead">Revolutionizing healthcare with flexible, robust, and
+                            AI-driven solutions integrated with web and mobile technologies.</p>
+                        <p>Enhancing medical diagnostics, treatment personalization, and patient
+                            engagement through intelligent automation.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://placehold.co/600x400/EEE/31343C"
+                             alt="AI in Healthcare"
+                             class="img-fluid rounded">
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section id="overview"
+                 class="py-5 position-relative overflow-hidden">
+            <div class="glowing-circle circle1"></div>
+            <div class="glowing-circle circle2"></div>
+            <div class="glowing-circle circle3"></div>
+            <div class="glowing-circle circle4"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="h1 fw-bold mb-4 text-gradient">Our Vision</h2>
+                        <p class="lead mb-2">Revolutionizing healthcare with flexible, robust, and
+                            AI-driven solutions integrated with web and mobile technologies.</p>
+                        <p class="mb-2">Enhancing medical diagnostics, treatment personalization,
+                            and patient engagement through intelligent automation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions"
+                 class="py-5">
+            <h2 class="h1 fw-bold text-center mb-5">Our AI-Powered Healthcare Solutions</h2>
+            <div class="container">
+                <div class="row gap-3 py-5">
+                    <div class="col-md-4 col-lg-5 mb-4">
+                        <div class="card solution-card shadow-sm p-3">
+                            <img src="https://placehold.co/400x250/EEE/31343C"
+                                 class="card-img-top section-image"
+                                 alt="Medical Diagnostics & Imaging">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-3">
+                                    <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
+                                    </h4>
+                                    <ul class="list-unstyled text-muted small">
+                                        <li>✓ Utilize AI for imaging analysis.</li>
+                                        <li>✓ Implement deep-learning for diagnosis.</li>
+                                        <li>✓ Streamline diagnostic workflows.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:</h4>
+                                    <ul class="list-unstyled text-muted small">
+                                        <li>✓ Improve diagnostic precision and speed.</li>
+                                        <li>✓ Assist healthcare professionals.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <h3 class="mb-4 fs-3 text-gradient">Medical Diagnostics & Imaging</h3>
+                        <p>
+                            Utilize AI-driven imaging analysis to detect anomalies with higher
+                            accuracy. Implement deep-learning models for early disease diagnosis
+                            using medical scans. Streamline diagnostic workflows with real-time
+                            AI-assisted evaluations. Improve diagnostic precision and speed to
+                            support timely interventions. Assist healthcare professionals with
+                            AI-powered decision support systems.
+                        </p>
+                        <div class="mt-auto">
+                            <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                            <span
+                                  class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">AI
+                                Imaging Analysis</span>
+                            <span
+                                  class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Early
+                                Disease Detection</span>
+                            <span
+                                  class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Real-time
+                                Evaluation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row gap-3 py-5">
+                        <div class="col-md-4 col-lg-5">
+                            <div class="card solution-card shadow-sm">
+                                <img src="https://placehold.co/400x250/EEE/31343C"
+                                     class="card-img-top section-image"
+                                     alt="Drug Discovery & Biomedical Research">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
+                                        </h4>
+                                        <ul class="list-unstyled text-muted small">
+                                            <li>✓ Accelerate drug discovery with AI.</li>
+                                            <li>✓ Use predictive modeling.</li>
+                                            <li>✓ Optimize research data.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
+                                        </h4>
+                                        <ul class="list-unstyled text-muted small">
+                                            <li>✓ Reduce drug development time and cost.</li>
+                                            <li>✓ Enable breakthroughs in research.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <h3 class="mb-4 fs-3 text-gradient">Drug Discovery & Biomedical Research
+                            </h3>
+                            <p>
+                                Accelerate drug discovery by analyzing molecular patterns with AI.
+                                Use predictive modeling for identifying potential treatments.
+                                Optimize research data with intelligent automation and knowledge
+                                graphs. Reduce the time and cost of pharmaceutical development.
+                                Enable breakthroughs in medical research through AI-enhanced
+                                insights.
+                            </p>
+                            <div class="mt-auto">
+                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                <span
+                                      class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">AI-driven
+                                    Analysis</span>
+                                <span
+                                      class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">Predictive
+                                    Modeling</span>
+                                <span
+                                      class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">Intelligent
+                                    Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row gap-3 py-5">
+                        <div class="col-md-4 col-lg-5">
+                            <div class="card solution-card shadow-sm">
+                                <img src="https://placehold.co/400x250/EEE/31343C"
+                                     class="card-img-top section-image"
+                                     alt="Personalized Treatment Plan">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
+                                        </h4>
+                                        <ul class="list-unstyled text-muted small">
+                                            <li>✓ Deploy AI for treatment recommendations.</li>
+                                            <li>✓ Integrate predictive analytics.</li>
+                                            <li>✓ Use AI-assisted monitoring.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
+                                        </h4>
+                                        <ul class="list-unstyled text-muted small">
+                                            <li>✓ Enhance patient outcomes.</li>
+                                            <li>✓ Support data-driven decisions.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <h3 class="mb-4 fs-3 text-gradient">Personalized Treatment Plan</h3>
+                            <p>
+                                Deploy AI to recommend treatment paths based on patient history and
+                                genetic factors. Integrate predictive analytics to adjust treatment
+                                plans dynamically. Use AI-assisted monitoring to track progress and
+                                refine interventions. Enhance patient outcomes with tailored medical
+                                care. Support healthcare providers in making informed, data-driven
+                                treatment decisions.
+                            </p>
+                            <div class="mt-auto">
+                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                <span
+                                      class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">AI
+                                    Treatment Recommendations</span>
+                                <span
+                                      class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">Dynamic
+                                    Plan Adjustment</span>
+                                <span
+                                      class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">AI-Assisted
+                                    Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-light">
+                <div class="container">
+                    <div class="row gap-3 py-5">
+                        <div class="col-md-4 col-lg-5 mb-4">
+                            <div class="card solution-card shadow-sm">
+                                <img src="https://placehold.co/400x250/EEE/31343C"
+                                     class="card-img-top section-image"
+                                     alt="Virtual Health Assistants & Telemedicine">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
+                                        </h4>
+                                        <ul class="list-unstyled text-muted small">
+                                            <li>✓ Implement AI virtual assistants.</li>
+                                            <li>✓ Enable remote consultations.</li>
+                                            <li>✓ Refine assistant capabilities.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
+                                        </h4>
+                                        <ul class="list-unstyled text-muted small">
+                                            <li>✓ Expand access to healthcare.</li>
+                                            <li>✓ Foster patient engagement.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <h3 class="mb-4 fs-3 text-gradient">Virtual Health Assistants &
+                                Telemedicine</h3>
+                            <p>
+                                Implement AI-powered virtual assistants for patient queries and
+                                medical guidance. Enable remote consultations via secure
+                                telemedicine platforms. Continuously refine assistant capabilities
+                                to improve patient interaction. Expand access to healthcare with
+                                virtual support and remote diagnostics. Foster patient engagement
+                                and proactive health management.
+                            </p>
+                            <div class="mt-auto">
+                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">AI
+                                    Virtual Assistants</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Telemedicine
+                                    Platforms</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Patient
+                                    Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="contact"
+                 class="nast-bg-gradient-1 text-white py-5 mt-5">
+            <div class="container text-center">
+                <h2 class="h2 fw-bold mb-4">Our Vision for AI-Powered Healthcare</h2>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-8">
+                        <p class="lead mb-2">Revolutionizing healthcare with flexible, robust, and
+                            AI-driven solutions integrated with web and mobile technologies.</p>
+                        <p class="lead">Enhancing medical diagnostics, treatment personalization,
+                            and patient engagement through intelligent automation.</p>
+                    </div>
+                </div>
+                <h3 class="h2 fw-semibold mb-3">Join the Transformation</h3>
+                <p class="text-light opacity-75 mb-4 mx-auto"
+                   style="max-width: 600px;">Discover how NAST is transforming healthcare through
+                    AI-powered solutions. Partner with us to implement solutions that drive success.
+                </p>
+                <a href="#contact-form-placeholder"
+                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">Learn More &
+                    Partner With Us</a>
+                <div id="contact-form-placeholder"
+                     class="mt-4 text-light small">
+                    (Contact Form or Link to Contact Page Coming Soon)
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

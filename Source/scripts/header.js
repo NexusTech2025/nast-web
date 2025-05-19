@@ -70,6 +70,13 @@ function createNavbar(config) {
 
 
 //============================================================//
+
+const BASE_URL = "http://127.0.0.1:5550/"
+
+const PLATFORMS = BASE_URL + "/Source/platforms"
+const SOLUTIONS = BASE_URL + "/Source/solutions"
+const LEARN = BASE_URL + "/Source/learn"
+
 const navbarConfig = {
     backgroundColor: 'rgb(246, 246, 246)',
     logo: {
@@ -82,11 +89,12 @@ const navbarConfig = {
             id: 'platformsDropdown',
             label: 'PLATFORMS',
             dropdownLinks: [
-                { href: './MLOPS.html', label: 'MLOPS' },
-                { href: './AI MODEL MONOTERING & AI GOVERENCE.html', label: 'AI MODEL MONOTERING & AI GOVERENCE' },
-                { href: './ENTERPRICE.html', label: 'ENTRRPRICE-READY' },
-                { href: './HOW ITS WORKS.html', label: 'HOW ITS WORKS' },
-                { href: '#', label: 'My Link Test' }
+                // { href: PLATFORMS + '/MLOPS.html', label: 'MLOPS' },
+                { href: PLATFORMS + '/Web & Mobile Development.html', label: 'Web & Mobile Development' },
+                { href: PLATFORMS + '/Data Analysis.html', label: 'Data Analysis' },
+                { href: PLATFORMS + '/MODEL & MONITORING.html', label: 'AI Model & Monitoring' },
+                // { href: PLATFORMS + '/HOW ITS WORKS.html', label: 'HOW ITS WORKS' },
+
             ]
         },
         {
@@ -94,9 +102,10 @@ const navbarConfig = {
             id: 'solutionsDropdown',
             label: 'SOLUTIONS',
             dropdownLinks: [
-                { href: './BUSSINESS EDUCATIVE.HTML', label: 'BUSINESS-EDUCATIVE' },
-                { href: './DATA SCEINTIST.HTML', label: 'DATA SCEINTIST' },
-                { href: './ENGINEERING & DEVELOP.HTML', label: 'ENGINEERING & DEVLOP' }
+                { href: SOLUTIONS + '/education.html', label: 'Education' },
+                { href: SOLUTIONS + '/business.html', label: 'Business' },
+                { href: SOLUTIONS + '/e-commerce.html', label: 'E Commerce' },
+                { href: SOLUTIONS + '/healthcare.html', label: 'Healthcare' },
             ]
         },
         {

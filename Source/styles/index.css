@@ -125,10 +125,10 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0.75rem;
     /* Rounded corners */
-    padding: 1.5rem;
+    padding: 0.4rem;
     text-align: center;
     color: #ffffff;
-    height: 100%;
+    width: 10rem;
     /* Make boxes in the same row equal height */
     display: flex;
     /* Enable flexbox for centering */
@@ -136,8 +136,16 @@
     justify-content: center;
     /* Center content vertically */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    min-height: 120px;
     /* Minimum height for boxes */
+    min-height: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.process-box-light {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    /* Lighter background for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Lighter border for contrast */
 }
 
 .process-box:hover {
@@ -229,14 +237,6 @@ body {
     /* White background */
 }
 
-.mlops-intro-section h2 {
-    font-weight: 700;
-    /* Bold heading */
-    margin-bottom: 1.5rem;
-    /* Space below heading */
-    color: #212529;
-    /* Darker heading color */
-}
 
 .mlops-intro-section p {
     margin-bottom: 1rem;
@@ -336,23 +336,9 @@ body {
     /* White background */
 }
 
-.monitoring-governance-section h2 {
-    font-weight: 700;
-    /* Bold heading */
-    margin-bottom: 1.5rem;
-    /* Space below heading */
-    color: #212529;
-    /* Darker heading color */
-    line-height: 1.3;
-    /* Adjust heading line height */
-}
 
-.monitoring-governance-section p {
-    margin-bottom: 1rem;
-    /* Space below paragraphs */
-    color: #495057;
-    /* Slightly lighter paragraph text */
-}
+
+
 
 .section-image {
     border-radius: 0.5rem;

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>ENTRRPRICE-READY</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="../scripts/header.js"></script>
+
+    <style>
+        .heading-image-section {
+            padding: 40px 0;
+            /* Adjust vertical padding as needed */
+            text-align: center;
+            /* Center content by default */
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Center items horizontally */
+            align-items: center;
+            /* Vertically align items */
+            gap: 30px;
+            /* Space between heading and image */
+            padding: 0 20px;
+            /* Add some horizontal padding */
+        }
+
+        .main-heading {
+            font-size: 3rem;
+            /* Adjust main heading size */
+            font-weight: bold;
+            color: #343a40;
+            /* Dark heading color */
+            margin-bottom: 0;
+            /* Remove default bottom margin */
+            text-align: center;
+            /* Center heading text */
+        }
+
+        .image-container {
+            max-width: 400px;
+            /* Adjust maximum image width */
+            width: 100%;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            /* Optional: Add rounded corners to the image */
+            /* Optional: Add a subtle shadow */
+        }
+
+        /* Responsive layout - image on the left on larger screens */
+        @media (min-width: 768px) {
+            .section-content {
+                flex-direction: row;
+                /* Arrange heading and image in a row */
+                text-align: left;
+                /* Align heading to the left */
+                justify-content: space-around;
+                /* Space out heading and image */
+            }
+
+            .main-heading {
+                text-align: center;
+                margin-bottom: 0;
+                /* Reset bottom margin for row layout */
+                /* Adjust width for text */
+            }
+
+            .image-container {
+                max-width: 35%;
+                /* Adjust width for image */
+            }
+        }
+
+
+
+        .enterprise-ready-definition-section {
+            padding: 60px 0;
+            /* Adjust vertical padding as needed */
+            background: linear-gradient(to right, #8da4d0, #c084fc);
+            /* Example gradient background */
+            color: white;
+            /* White text for contrast */
+            text-align: center;
+        }
+
+        .section-content {
+            /* Adjust maximum width for content */
+            margin: 0 auto;
+            /* Center the content */
+            padding: 0 20px;
+            /* Add horizontal padding */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            /* Adjust heading size */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .paragraph {
+            font-size: 1.1rem;
+            /* Adjust paragraph size */
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+
+        .enterprise-grade-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .feature-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .feature-button {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #343a40;
+            font-size: 1rem;
+        }
+
+        .feature-button:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .feature-button i {
+            font-size: 1.5rem;
+            color: #007bff;
+            /* Bootstrap primary color */
+        }
+
+        .image-container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .paragraph {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        /* Responsive adjustments for buttons */
+        @media (max-width: 576px) {
+            .feature-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+
+
+        .ldap-auth-section {
+            padding: 30px 0;
+            text-align: left;
+            /* Adjust as needed */
+        }
+
+        .feature-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: inline-flex;
+            /* Use inline-flex to contain content */
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            /* Add some space below */
+        }
+
+        .feature-icon-bg {
+            background-color: white;
+            border-radius: 50%;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #dee2e6;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            /* Bootstrap primary color */
+        }
+
+        .feature-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-right: auto;
+            /* Push the plus icon to the right */
+        }
+
+        .feature-expand-button {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+
+
+
+        .why-engineering-section {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            /* Adjusted font size */
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .problem-solution-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allow columns to wrap on smaller screens */
+            justify-content: center;
+            /* Center the problem and solution boxes */
+            gap: 20px;
+            /* Space between the boxes */
+            padding: 0 20px;
+            /* Add some horizontal padding for the container */
+        }
+
+        .problem-box,
+        .solution-box {
+            background-color: #f8f9fa;
+            /* Light gray background for boxes */
+            border: 1px solid #dee2e6;
+            /* Light gray border */
+            border-radius: 5px;
+            padding: 20px;
+            text-align: left;
+            flex: 1 1 400px;
+            /* Grow and shrink, with a minimum width */
+            position: relative;
+            /* For positioning the image */
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            /* Adjust as needed */
+            font-weight: bold;
+            color: #007bff;
+            /* Bootstrap primary color */
+            margin-bottom: 15px;
+        }
+
+        .problem-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .problem-list li {
+            margin-bottom: 8px;
+        }
+
+        .solution-paragraph {
+            margin-bottom: 15px;
+        }
+
+        .learn-more-link {
+            color: #6c757d;
+            /* Gray link color */
+            text-decoration: none;
+        }
+
+        .learn-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .engineering-button {
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+            /* To control margin */
+        }
+
+        .engineering-button:hover {
+            background-color: #0056b3;
+        }
+
+        .profile-image-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 80px;
+            /* Adjust size as needed */
+            height: 80px;
+            /* Adjust size as needed */
+            border: 2px solid white;
+            /* Optional: White border */
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            /* Maintain image aspect ratio */
+        }
+
+
+
+        .footer {
+            background-color: #b1b3b5;
+            /* Light background */
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-top ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .footer-top ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-top ul li a {
+            color: #555;
+            /* Darker text for links */
+            text-decoration: none;
+        }
+
+        .footer-top ul li a:hover {
+            color: #007bff;
+            /* Highlight on hover */
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically center items */
+            border-top: 1px solid #ddd;
+            /* Subtle border */
+            padding-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .footer-logo img {
+            max-height: 30px;
+            /* Adjust as needed */
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #555;
+            margin-left: 10px;
+            font-size: 18px;
+            /* Adjust size as needed */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header id="navbar-container"></header>
+    <script>
+        createNavbar(navbarConfig);
+    </script>
+
+
+
+    <div class="heading-image-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="main-heading">Enterprise-Ready.<br>Production-Proven.</h2>
+
+                <div class="">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/hero-2-3.svg"
+                         alt="Enterprise-Ready Illustration"
+                         class="section-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="enterprise-ready-definition-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="main-heading">What is Enterprise-Ready in an AI Platform?</h2>
+                <p class="paragraph">Datatron has already been battle-tested by Fortune 1,000
+                    Enterprise brands in production. Many AI/ML platforms exist, but once you ask
+                    the right questions, you soon learn that they do not have models in production
+                    on their platform. To deliver this, Datatron was designed with Enterprise
+                    requirements in mind, anticipating common approaches to infrastructure,
+                    technologies, security, and access control.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="enterprise-grade-section">
+        <h2 class="main-heading">Enterprise-Grade Features</h2>
+        <div class="container">
+            <div class="feature-buttons">
+                <a href="#"
+                   class="feature-button">
+                    <i class="bi bi-gear"></i>
+                    Flexible GUI and API Interface
+                    <span class="ms-auto">+</span>
+                </a>
+                <a href="#"
+                   class="feature-button">
+                    <i class="bi bi-cloud"></i>
+                    Support any cloud - On-prem, Public Cloud
+                    <span class="ms-auto">+</span>
+                </a>
+                <a href="#"
+                   class="feature-button">
+                    <i class="bi bi-shield-lock"></i>
+                    Role-based Access Control
+                    <span class="ms-auto">-</span>
+                </a>
+                <a href="#"
+                   class="feature-button">
+                    <i class="bi bi-database"></i>
+                    Connectors with Popular Data Warehouse
+                    <span class="ms-auto">+</span>
+                </a>
+            </div>
+            <div class="image-container">
+                <img src="https://datatron.com/wp-content/uploads/2021/10/img-5-1.png"
+                     alt="Role-based Access Control Interface"
+                     class="section-image">
+            </div>
+            <p class="paragraph">Enterprises have multiple business units with different security
+                and authorization requirements. The HR team will have access to certain resources
+                from the marketing team and vice versa. Within those same teams, you have technical
+                users who will have different access levels compared to business users.</p>
+            <p class="paragraph">Datatron allows you to define these varying user access controls to
+                ensure proper security and privacy are being adhered to.</p>
+        </div>
+    </div>
+
+
+
+    <div class="ldap-auth-section">
+        <div class="container">
+            <div class="feature-item">
+                <div class="feature-icon-bg">
+                    <i class="bi bi-phone"></i>
+                </div>
+                <span class="feature-title">LDAP Authentication</span>
+                <button class="feature-expand-button">+</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="why-engineering-section">
+        <h2 class="main-heading">Why AI/ML DevOps &amp; ML Engineers Love Datatron</h2>
+        <div class="container">
+            <div class="problem-solution-container">
+                <div class="problem-box">
+                    <h3 class="sub-heading">Problem</h3>
+                    <ul class="problem-list">
+                        <li>Models not performing in production the same as in the lab</li>
+                        <li>Models built on different tech stacks, languages, and libraries</li>
+                        <li>Supporting model health, explainability, &amp; Governance requirements
+                            from Executives, Data Scientists, &amp; multiple LOBs or BUs</li>
+                    </ul>
+                    <div class="profile-image-container">
+                        <img src="path/to/your/profile_image.jpg"
+                             alt="Profile"
+                             class="profile-image">
+                    </div>
+                </div>
+                <div class="solution-box">
+                    <h3 class="sub-heading">Solution</h3>
+                    <p class="solution-paragraph">With Datatron, AI/ML DevOps Engineers and ML
+                        Engineers have one simplified platform that is development stack agnostic.
+                        It has an easy-to-read Dashboard that tracks model bias, drift, anomalies,
+                        and performance. The Model Catalog and other Governance features make audits
+                        a breeze.</p>
+                    <button class="engineering-button">Engineering/DevOps</button>
+                    <span class="ms-2">&rarr;</span> <a href="#"
+                       class="learn-more-link">Learn about Engineering/DevOps &amp; Datatron</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer ">
+        <div class="container">
+            <div class="footer-top  justify-content-evenely align-items-evenely">
+                <div class="row ">
+                    <div class="col-md-3 fs-6">
+                        <h5>Platform</h5>
+                        <ul>
+                            <li><a href="#">ModelOps</a></li>
+                            <li><a href="#">AI Monitoring & AI Governance</a></li>
+                            <li><a href="#">Enterprise-ready</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 fs-6">
+                        <h5>Solutions</h5>
+                        <ul>
+                            <li><a href="#">Business Executive</a></li>
+                            <li><a href="#">Data Scientist</a></li>
+                            <li><a href="#">Engineering & DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 fs-6">
+                        <h5>Learn</h5>
+                        <ul>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Whitepapers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 fs-6">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Datatron</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="d-flex align-items-center">
+                    <span class="footer-logo">
+                        <img src="https://datatron.com/wp-content/themes/datatron/images/placeholder/logo.svg"
+                             alt="Datatron Logo">
+                    </span>
+                    <span class="mr-3">The Reliable AI™ platform built for enterprise</span>
+                    <span class="mx-3">Built with Love in San Francisco, CA USA!</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#"
+                       target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"
+                       target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2025. All Rights Reserved.</p>
+                <p>San Francisco Web Design by Thomas Digital</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

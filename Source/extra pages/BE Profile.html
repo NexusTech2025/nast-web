@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Business Executive Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .section-title {
+            @apply text-3xl font-bold text-center mb-12 text-gray-800;
+        }
+
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden p-6 md:p-8;
+        }
+
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900;
+        }
+
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/607d8b/ffffff?text=Modern+Tech+Background');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom styling for active nav link */
+        .nav-link.active {
+            @apply bg-blue-600 text-white;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#"
+                       class="flex-shrink-0 text-xl font-bold text-blue-600">
+                        [Executive Name]
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#profile"
+                           class="nav-link active">Profile</a>
+                        <a href="#vision"
+                           class="nav-link">Vision</a>
+                        <a href="#philosophy"
+                           class="nav-link">Philosophy</a>
+                        <a href="#company"
+                           class="nav-link">Company</a>
+                        <a href="#achievements"
+                           class="nav-link">Achievements</a>
+                        <a href="#media"
+                           class="nav-link">Media</a>
+                        <a href="#events"
+                           class="nav-link">Events</a>
+                        <a href="#blog"
+                           class="nav-link">Blog</a>
+                        <a href="#contact"
+                           class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button"
+                            id="mobile-menu-button"
+                            class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                            aria-controls="mobile-menu"
+                            aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden"
+             id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#profile"
+                   class="nav-link block active">Profile</a>
+                <a href="#vision"
+                   class="nav-link block">Vision</a>
+                <a href="#philosophy"
+                   class="nav-link block">Philosophy</a>
+                <a href="#company"
+                   class="nav-link block">Company</a>
+                <a href="#achievements"
+                   class="nav-link block">Achievements</a>
+                <a href="#media"
+                   class="nav-link block">Media</a>
+                <a href="#events"
+                   class="nav-link block">Events</a>
+                <a href="#blog"
+                   class="nav-link block">Blog</a>
+                <a href="#contact"
+                   class="nav-link block">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-bg pt-16">
+        <div class="bg-black bg-opacity-50">
+            <div class="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center">
+                <img class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg"
+                     src="https://placehold.co/200x200/e2e8f0/333333?text=Executive"
+                     alt="[Executive Name]">
+                <h1 class="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+                    [Executive Name]
+                </h1>
+                <p class="mt-6 text-xl text-gray-200 max-w-3xl mx-auto">
+                    [Executive Title] at [Company Name] | Driving Innovation in Technology
+                </p>
+                <div class="mt-10">
+                    <a href="#contact"
+                       class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                        Connect With Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+
+        <section id="profile"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Executive Profile</h2>
+            <div class="card md:flex md:items-start">
+                <img class="md:w-1/3 w-full h-auto rounded-lg shadow-md mb-6 md:mb-0 md:mr-8"
+                     src="https://placehold.co/400x400/90cdf4/333333?text=Profile+Pic"
+                     alt="[Executive Name] - Professional Photo"
+                     onerror="this.src='https://placehold.co/400x400/cccccc/333333?text=Image+Not+Found'">
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">[Executive Name]</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        With over [Number] years of experience in the IT industry, [Executive Name]
+                        has a proven track record of [mention key skills like driving growth,
+                        leading transformations, building high-performing teams]. Key achievements
+                        include [mention 1-2 significant achievements briefly].
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Currently, as [Executive Title] at [Company Name], [he/she/they] is
+                        responsible for [briefly describe role and responsibilities].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Vision & Mission</h2>
+            <div class="card">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3"><i
+                               class="fas fa-eye mr-2"></i>Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            To be a global leader in [specific IT field, e.g., cloud solutions, AI
+                            development] by consistently delivering innovative and impactful
+                            technology solutions that empower businesses and individuals.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3"><i
+                               class="fas fa-bullseye mr-2"></i>Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            To leverage cutting-edge technology and top-tier talent to solve complex
+                            challenges, drive digital transformation for our clients, and contribute
+                            positively to the tech ecosystem. [Executive Name] champions this by
+                            [briefly explain how executive contributes].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Leadership Philosophy</h2>
+            <div class="card">
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    "[Insert a compelling quote from the executive about leadership here. For
+                    example: 'True leadership is about empowering others to achieve their full
+                    potential and fostering a culture of continuous innovation.']" - <span
+                          class="font-semibold">[Executive Name]</span>
+                </p>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    My approach to leadership is rooted in [mention 2-3 core principles, e.g.,
+                    collaboration, transparency, and a growth mindset]. I believe in building
+                    diverse teams where every voice is heard and valued.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    In the ever-evolving IT landscape, staying ahead requires a commitment to
+                    [mention approach to innovation, e.g., agile methodologies, investing in R&D,
+                    fostering experimentation]. We embrace new technologies like [mention 1-2
+                    relevant tech trends, e.g., AI, Quantum Computing] to drive future success.
+                </p>
+            </div>
+        </section>
+
+        <section id="company"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">About [Company Name]</h2>
+            <div class="card">
+                <div class="text-center mb-6">
+                    <img src="https://placehold.co/200x100/03a9f4/ffffff?text=Company+Logo"
+                         alt="[Company Name] Logo"
+                         class="mx-auto h-16"
+                         onerror="this.src='https://placehold.co/200x100/cccccc/333333?text=Logo+Not+Found'">
+                </div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    [Company Name] is a leading IT services and solutions provider specializing in
+                    [mention key services, e.g., software development, cybersecurity, data
+                    analytics, cloud computing]. Founded in [Year], we have consistently helped
+                    businesses transform and thrive in the digital age.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Our impact on the industry is demonstrated through [mention key impacts, e.g.,
+                    successful client projects, innovative product launches, contributions to
+                    open-source]. We are committed to delivering excellence and building long-term
+                    partnerships.
+                </p>
+                <div class="mt-6 text-center">
+                    <a href="[Company Website Link]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Learn more about [Company Name] <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Achievements & Milestones</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-trophy text-3xl text-yellow-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700">[Award/Recognition 1]</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">[Year] - Brief description of the achievement
+                        or award. Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="card">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-star text-3xl text-yellow-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700">[Milestone 1]</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">[Date/Year] - Description of a significant
+                        company or personal milestone. Consectetur adipiscing elit.</p>
+                </div>
+                <div class="card">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-award text-3xl text-yellow-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700">[Industry Recognition]</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm">[Year] - Details about being recognized by an
+                        industry body or publication. Sed do eiusmod tempor.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="media"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Media & Press</h2>
+            <div class="space-y-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">[Article Title/Interview
+                        Headline 1]</h3>
+                    <p class="text-gray-500 text-sm mb-2">Published by: [Publication Name] | Date:
+                        [Date]</p>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        A brief summary or key takeaway from the media mention. Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit...
+                    </p>
+                    <a href="[Link to Article/Media]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Read Full Article <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">[Podcast/Video Title 2]
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-2">Platform: [Podcast/Platform Name] | Date:
+                        [Date]</p>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Key discussion points or a short description of the content. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua...
+                    </p>
+                    <a href="[Link to Podcast/Video]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Listen/Watch Now <i class="fas fa-play-circle ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="events"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Speaking Engagements & Events</h2>
+            <div class="space-y-8">
+                <div class="card border-l-4 border-green-500">
+                    <span
+                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 mb-2">
+                        Upcoming
+                    </span>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-1">[Event Name 1]</h3>
+                    <p class="text-gray-500 text-sm mb-2">Date: [Date] | Location: [Location/Online]
+                    </p>
+                    <p class="text-gray-600 mb-3 leading-relaxed">
+                        Topic: "[Speaking Topic]". Brief description of the event or [Executive
+                        Name]'s role.
+                    </p>
+                    <a href="[Link to Event Page]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-blue-600 hover:text-blue-800 font-semibold">
+                        Event Details & Registration <i class="fas fa-calendar-alt ml-1"></i>
+                    </a>
+                </div>
+                <div class="card border-l-4 border-gray-400">
+                    <span
+                          class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-600 bg-gray-200 mb-2">
+                        Past
+                    </span>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-1">[Conference Name 2]</h3>
+                    <p class="text-gray-500 text-sm mb-2">Date: [Date] | Location: [Location]</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recap: Discussed [Topic] at this industry-leading conference. Key takeaways
+                        included...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog"
+                 class="mb-20 pt-16 -mt-16">
+            <h2 class="section-title">Insights & Articles</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card flex flex-col">
+                    <img src="https://placehold.co/600x400/cbd5e0/333333?text=Article+Image+1"
+                         alt="Blog post thumbnail"
+                         class="w-full h-48 object-cover rounded-t-lg mb-4"
+                         onerror="this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found'">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">[Article Title 1]</h3>
+                    <p class="text-gray-500 text-sm mb-2">Published: [Date]</p>
+                    <p class="text-gray-600 leading-relaxed flex-grow">
+                        A short excerpt from the article. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Focus on AI ethics...
+                    </p>
+                    <a href="[Link to Full Article]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-4 text-blue-600 hover:text-blue-800 font-semibold self-start">
+                        Read More <i class="fas fa-book-open ml-1"></i>
+                    </a>
+                </div>
+                <div class="card flex flex-col">
+                    <img src="https://placehold.co/600x400/a0aec0/333333?text=Article+Image+2"
+                         alt="Blog post thumbnail"
+                         class="w-full h-48 object-cover rounded-t-lg mb-4"
+                         onerror="this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found'">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">[Thought Leadership Piece
+                        Title 2]</h3>
+                    <p class="text-gray-500 text-sm mb-2">Published: [Date]</p>
+                    <p class="text-gray-600 leading-relaxed flex-grow">
+                        Another insightful piece. Sed do eiusmod tempor incididunt ut labore et
+                        dolore. The future of cybersecurity...
+                    </p>
+                    <a href="[Link to Full Article]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-4 text-blue-600 hover:text-blue-800 font-semibold self-start">
+                        Read More <i class="fas fa-book-open ml-1"></i>
+                    </a>
+                </div>
+                <div class="card flex flex-col">
+                    <img src="https://placehold.co/600x400/718096/ffffff?text=Article+Image+3"
+                         alt="Blog post thumbnail"
+                         class="w-full h-48 object-cover rounded-t-lg mb-4"
+                         onerror="this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found'">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">[Industry Trends Analysis]
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-2">Published: [Date]</p>
+                    <p class="text-gray-600 leading-relaxed flex-grow">
+                        Exploring the impact of quantum computing on data processing. Ut enim ad
+                        minim veniam...
+                    </p>
+                    <a href="[Link to Full Article]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-4 text-blue-600 hover:text-blue-800 font-semibold self-start">
+                        Read More <i class="fas fa-book-open ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact"
+                 class="mb-10 pt-16 -mt-16 bg-gray-800 text-white py-20 rounded-lg">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Connect & Collaborate</h2>
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to
+                    be part of something impactful. Feel free to reach out.
+                </p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="[LinkedIn Profile URL]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-linkedin text-4xl"></i>
+                    </a>
+                    <a href="[Twitter Profile URL]"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-twitter text-4xl"></i>
+                    </a>
+                    <a href="mailto:[Email Address]"
+                       class="text-gray-300 hover:text-blue-400 transition duration-300">
+                        <i class="fas fa-envelope text-4xl"></i>
+                    </a>
+                </div>
+
+                <h3 class="text-2xl font-semibold mb-3">Explore Our Services</h3>
+                <p class="text-gray-300 mb-6">
+                    Discover how [Company Name] can help your business achieve its technology goals.
+                </p>
+                <a href="[Company Services Page Link or Contact Form]"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                    Learn More About Our Solutions
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <p>&copy; <span id="currentYear"></span> [Executive Name] & [Company Name]. All Rights
+            Reserved.</p>
+        <p class="text-sm">Designed with <i class="fas fa-heart text-red-500"></i> using Tailwind
+            CSS.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icon
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Smooth scrolling and active nav link highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Adjust for fixed navbar height (64px or 4rem)
+                if (pageYOffset >= (sectionTop - 70) && pageYOffset < (sectionTop + sectionHeight - 70)) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active', 'bg-blue-600', 'text-white'); // Reset all
+                link.classList.add('text-gray-700', 'hover:bg-gray-200', 'hover:text-gray-900'); // Default non-active mobile styles
+
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active', 'bg-blue-600', 'text-white');
+                    link.classList.remove('text-gray-700', 'hover:bg-gray-200', 'hover:text-gray-900');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+        // Call once on load to set initial active link
+        updateActiveNavLink();
+
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>

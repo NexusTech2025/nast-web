@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>MODEL & MONOTERING</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <script src="../scripts/header.js"></script>
+    <style>
+        .ai-monitoring-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            max-width: 400px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            text-align: center;
+            /* Center image */
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+        }
+
+
+
+        .why-ai-monitoring-section {
+            background-color: #343a40;
+            /* Dark background */
+            color: white;
+            padding: 50px 0;
+            text-align: left;
+            /* Align text to the left */
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .text-content {
+            max-width: 600px;
+            /* Adjust as needed */
+        }
+
+        .main-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .paragraph1 {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .video-placeholder {
+            background-color: #212529;
+            /* Darker background for video placeholder */
+            width: 400px;
+            /* Adjust as needed */
+            height: 225px;
+            /* Maintain 16:9 aspect ratio */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            color: #6c757d;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .video-placeholder svg {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .section-content {
+                flex-direction: column;
+                /* Stack content on smaller screens */
+                align-items: flex-start;
+                /* Align text to the left */
+            }
+
+            .video-placeholder {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+                /* Maintain aspect ratio */
+            }
+        }
+
+
+        .ai-monitoring-features-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .feature-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .image-wrapper {
+            max-width: 500px;
+            /* Adjust as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .feature-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust as needed */
+        }
+
+        .feature-sub-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            /* Bootstrap primary color */
+            margin-bottom: 15px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .feature-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-content {
+                text-align: center;
+            }
+        }
+
+
+        .overall-health-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+
+            .text-content {
+                order: 1;
+                /* Place text before image on larger screens */
+            }
+
+            .image-container {
+                order: 2;
+                /* Place image after text on larger screens */
+            }
+        }
+
+
+
+        .bias-drift-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            /* Align items to the top */
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .image-container {
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .main-heading {
+            font-size: 2.2rem;
+            /* Slightly smaller than other main headings */
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .sub-headin {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .paragraph2 {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .list-style {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .list-style li {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+
+            .image-container {
+                order: 1;
+                /* Place image before text on larger screens */
+            }
+
+            .text-content {
+                order: 2;
+                /* Place text after image on larger screens */
+            }
+        }
+
+
+
+        .drift-performance-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            /* Align items to the top */
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .image-container {
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .list-style {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .list-style li {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+
+            .image-container {
+                order: 2;
+                /* Place image after text on larger screens */
+            }
+
+            .text-content {
+                order: 1;
+                /* Place text before image on larger screens */
+            }
+        }
+
+
+
+        .alerts-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            /* Vertically align text and image */
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .image-container {
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+
+            .text-content {
+                order: 1;
+                /* Place text before image on larger screens */
+            }
+
+            .image-container {
+                order: 2;
+                /* Place image after text on larger screens */
+            }
+        }
+
+
+
+        .custom-metrics-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            /* Vertically align text and image */
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .image-container {
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+
+            .image-container {
+                order: 1;
+                /* Place image before text on larger screens */
+            }
+
+            .text-content {
+                order: 2;
+                /* Place text after image on larger screens */
+            }
+        }
+
+
+
+        .activity-log-section {
+            padding: 40px 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            /* Align items to the top */
+            justify-content: center;
+            /* Center content on smaller screens */
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .image-container {
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .section-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .text-content {
+            text-align: left;
+            max-width: 500px;
+            /* Adjust maximum width as needed */
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .list-style {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .list-style li {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .section-content {
+                justify-content: space-around;
+                /* Distribute space on larger screens */
+            }
+
+            .image-container {
+                order: 2;
+                /* Place image after text on larger screens */
+            }
+
+            .text-content {
+                order: 1;
+                /* Place text before image on larger screens */
+            }
+        }
+
+
+
+        .why-executives-section {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            /* Adjusted font size */
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .problem-solution-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allow columns to wrap on smaller screens */
+            justify-content: center;
+            /* Center the problem and solution boxes */
+            gap: 20px;
+            /* Space between the boxes */
+            padding: 0 20px;
+            /* Add some horizontal padding for the container */
+        }
+
+        .problem-box,
+        .solution-box {
+            background-color: #f8f9fa;
+            /* Light gray background for boxes */
+            border: 1px solid #dee2e6;
+            /* Light gray border */
+            border-radius: 5px;
+            padding: 20px;
+            text-align: left;
+            flex: 1 1 400px;
+            /* Grow and shrink, with a minimum width */
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            /* Adjust as needed */
+            font-weight: bold;
+            color: #007bff;
+            /* Bootstrap primary color */
+            margin-bottom: 15px;
+        }
+
+        .problem-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .problem-list li {
+            margin-bottom: 8px;
+        }
+
+        .solution-paragraph {
+            margin-bottom: 15px;
+        }
+
+        .learn-more-link {
+            color: #6c757d;
+            /* Gray link color */
+            text-decoration: none;
+        }
+
+        .learn-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .executives-button {
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+            /* To control margin */
+        }
+
+        .executives-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .whitepapers-section {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+            /* Adjust card width as needed */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .card-image-container {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 10px;
+            text-decoration: none;
+            /* Remove default link underline */
+        }
+
+        .card-title:hover {
+            color: #007bff;
+            /* Change color on hover */
+            text-decoration: underline;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+            /* Add more specific styling for the text within the card if needed */
+        }
+
+        .card-link {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+
+
+        .footer {
+            background-color: #b1b3b5;
+            /* Light background */
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .footer-top ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .footer-top ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-top ul li a {
+            color: #555;
+            /* Darker text for links */
+            text-decoration: none;
+        }
+
+        .footer-top ul li a:hover {
+            color: #007bff;
+            /* Highlight on hover */
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Vertically center items */
+            border-top: 1px solid #ddd;
+            /* Subtle border */
+            padding-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .footer-logo img {
+            max-height: 30px;
+            /* Adjust as needed */
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #555;
+            margin-left: 10px;
+            font-size: 18px;
+            /* Adjust size as needed */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .carousel-item {
+            height: 450px;
+            /* Increased height for better visibility */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background for text */
+            padding: 3rem;
+            border-radius: 10px;
+            left: 0;
+            bottom: 50px;
+            /* Increased distance from bottom */
+            text-align: center;
+            width: 100%;
+            /* Increased width of caption */
+            margin: auto;
+            /* Center the caption */
+            height: 400px;
+
+        }
+
+        .carousel-caption h3 {
+            font-size: 2rem;
+            /* Increased font size for heading */
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            /* Increased font size for paragraph */
+            color: white;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 10%;
+            /* Reduced width of the control buttons */
+            color: #343a40;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            font-size: 2rem;
+            /* Increased font size of the icons */
+            color: #343a40;
+        }
+    </style>
+
+    <style>
+        .section {
+            margin-block: 4rem;
+            padding-block: 4rem;
+        }
+
+        .img-md {
+            height: 350px;
+            width: 350px;
+        }
+
+        .content-block {}
+    </style>
+
+</head>
+
+<body>
+    <header id="navbar-container"></header>
+    <script>
+        createNavbar(navbarConfig);
+    </script>
+
+
+
+
+    <div class="ai-monitoring-section mt-5">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-content">
+                    <h2 class="main-heading">Transforming Intelligence into Innovation</h2>
+                    <p class="paragraph">Bridging AI with real-world applications, NAST pioneers
+                        cutting-edge solutions across healthcare, business, education, e-commerce,
+                        entertainment, and finance. From advanced software ecosystems to integrated
+                        AI-driven hardware, we engineer seamless intelligence that powers industries
+                        and transforms possibilities into reality.</p>
+                </div>
+                <div class="image-container">
+                    <img class="img-fluid"
+                         src="https://datatron.com/wp-content/uploads/2021/10/hero-2-2.svg"
+                         alt="AI Model Monitoring">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="
+         container">
+            <div class="section-content">
+                <div class="text-content">
+                    <h2 class="main-heading">Why Your Company Needs AI-Driven Solutions</h2>
+                    <p><b>Optimized Decision-Making:</b> Our AI transforms raw data into clear,
+                        actionable insights. Real-time analytics and predictive modeling drive smart
+                        choices. Empower your business with faster, data-driven strategies.</p>
+
+                    <p><b>Enhanced Operational Efficiency:</b> Automate routine tasks to minimize
+                        errors and save time. Streamline processes to cut costs and boost
+                        productivity. Free your team to focus on innovation and strategic growth.
+                    </p>
+
+                    <p><b>Improved Customer Engagement:</b> Deliver personalized experiences
+                        tailored to each user. Leverage AI to understand and anticipate customer
+                        needs. Create meaningful interactions that build lasting loyalty.</p>
+
+
+                    <p><b>Risk Mitigation and Security:</b> Proactively monitor operations to
+                        identify potential threats. Deploy advanced fraud detection and security
+                        measures. Safeguard your enterprise with continuous, AI-driven oversight.
+                    </p>
+
+                    <p><b>Scalability Across Domains:</b> Our models adapt effortlessly as your
+                        business grows. Handle peak loads and dynamic market demands with ease.
+                        Ensure consistent performance across every operational environment.</p>
+                </div>
+                <div class="video-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="32"
+                         height="32"
+                         fill="currentColor"
+                         class="bi bi-exclamation-circle-fill"
+                         viewBox="0 0 16 16">
+                        <path
+                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    Video unavailable
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-light">
+        <div class="container py-5">
+            <h2 class="font-bold fw-large text-center mb-5">Industries We Serve</h2>
+
+            <div class="row mb-5 py-5 gap-4">
+                <div class="col-md-5">
+                    <img src="./images/business_ai_model.png"
+                         class="img-fluid rounded"
+                         alt="Business Solutions">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fs-2 text-xl mb-4">Business</h3>
+                    <p>At NAST, we empower businesses with AI-driven insights and automation to fuel
+                        smart decisions and streamlined operations. Our solutions optimize
+                        resources, automate routine processes, and reduce costs using real-time
+                        analytics and predictive modeling. Tailored dashboards translate raw data
+                        into actionable insights, supporting strategic planning and competitive
+                        positioning. With scalable, innovative AI solutions, we help your
+                        organization stay agile and ahead in dynamic markets. Embrace a future of
+                        enterprise innovation that transforms your data into a decisive competitive
+                        advantage.</p>
+                </div>
+            </div>
+
+            <div class="row mb-5 py-5 gap-4">
+                <div class="col-md-6">
+                    <h3 class="font-semibold text-xl mb-4">Healthcare</h3>
+                    <p>At NAST, we revolutionize healthcare with AI that accelerates diagnostics and
+                        personalizes patient care. Our solutions integrate seamlessly into existing
+                        medical systems, delivering real-time imaging analysis, predictive
+                        monitoring, and early disease detection. By ensuring robust security and
+                        regulatory compliance, we protect sensitive patient data while empowering
+                        healthcare professionals with actionable insights. Experience improved
+                        treatment outcomes, optimized operations, and enhanced patient care as our
+                        innovations transform modern healthcare delivery.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="./images/healthcare_ai_model.png"
+                         class="img-fluid rounded"
+                         alt="Healthcare Solutions">
+                </div>
+            </div>
+
+            <div class="row mb-5 py-5 gap-4">
+                <div class="col-md-5">
+                    <img src="./images/finance_ai_model.png"
+                         class="img-fluid rounded"
+                         alt="Finance Solutions">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="font-semibold text-xl mb-4">Finance</h3>
+                    <p>At NAST, we redefine finance with cutting-edge AI-powered analytics and risk
+                        management tools. Our solutions provide real-time market insights, advanced
+                        fraud detection, and predictive modeling to support agile financial
+                        strategies. By automating trading systems and optimizing asset management,
+                        we reduce operational costs and bolster decision-making. With secure,
+                        scalable platforms that ensure full regulatory compliance, our technology
+                        delivers a competitive edge in today’s fast-paced financial markets.
+                        Transform your financial operations with precision and agility.</p>
+                </div>
+            </div>
+
+            <div class="row mb-5 py-5 gap-4">
+                <div class="col-md-6">
+                    <h3 class="font-semibold text-xl mb-4">Education</h3>
+                    <p class="">At NAST, we transform education through adaptive AI that
+                        personalizes
+                        learning and boosts student success. Our platforms deliver tailored content,
+                        real-time performance tracking, and automated assessments to support
+                        engaged, efficient teaching. By streamlining administrative tasks, educators
+                        can focus on mentoring and nurturing creativity. Our solutions integrate
+                        seamlessly into both traditional and digital classrooms, ensuring every
+                        learner receives the personalized support needed for academic excellence.
+                        Experience the future of education with data-driven innovation.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="./images/education_ai_model.png"
+                         class="img-fluid rounded"
+                         alt="Education Solutions">
+                </div>
+            </div>
+
+            <div class="row mb-5 py-5 gap-4">
+                <div class="col-md-5">
+                    <img src="./images/e_commerce_ai_ml.png"
+                         class="img-fluid rounded"
+                         alt="E-commerce Solutions">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="font-semibold text-xl mb-4">E-commerce</h3>
+                    <p>At NAST, we empower e-commerce with intelligent AI solutions that elevate
+                        customer engagement and optimize operations. Our technology analyzes user
+                        behavior in real time to deliver personalized recommendations, enable
+                        dynamic pricing, and streamline inventory management. Interactive dashboards
+                        provide actionable insights, enhancing targeted marketing and boosting
+                        conversions. Secure and scalable, our platforms adapt to market trends,
+                        ensuring a seamless shopping experience that turns visitors into loyal
+                        customers. Drive growth and reduce costs with future-ready AI innovations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mb-5 py-5 gap-4">
+                <div class="col-md-6">
+                    <h3 class="font-semibold text-xl mb-4">Entertainment</h3>
+                    <p>At NAST, we elevate entertainment through AI that personalizes content and
+                        enhances audience engagement. Our advanced models analyze viewing habits to
+                        deliver tailored recommendations and optimize streaming quality. By
+                        automating content curation and tagging, we empower creators to focus on
+                        storytelling while our technology drives immersive, interactive experiences.
+                        Robust security measures protect intellectual property, ensuring a safe and
+                        engaging environment. Embrace a new era of entertainment where innovation
+                        captivates audiences and transforms digital experiences.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="./images/entertainment_ai_model.png"
+                         class="img-fluid rounded"
+                         alt="Entertainment Solutions">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <p class="fs-5">Ready to learn more about how NAST's AI-driven solutions can
+                        elevate your
+                        industry? <br>
+                        Let’s embark on your transformation journey together.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Enterprise-Ready Models -->
+    <div class="ai-monitoring-features-section section">
+        <h2 class="fs-1 mb-5">Enterprise-Ready Models</h2>
+        <div class="container">
+            <div class="feature-container">
+                <div class="image-wrapper">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/platform-2.jpg"
+                         alt="Dashboard"
+                         class="feature-image">
+                </div>
+                <div class="text-content">
+                    <h3 class="fs-3">Robust Data Infrastructure & Pipelines</h3>
+                    <p class="paragraph">The ability to quickly get an overview of the health of
+                        your AI models is a
+                        crucial requirement to ensure that you are not exposing your business to
+                        unintended risks with
+                        severe consequences.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overall-health-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-content">
+                    <h2 class="fs-3">Comprehensive Model Development & Testing</h2>
+                    <p class="paragraph">At NAST, models are more than just algorithms—they are
+                        crafted with rigorous experimentation and validation. Our end-to-end testing
+                        environment ensures that every solution meets the highest enterprise
+                        standards before it even reaches production.</p>
+                </div>
+                <div class="image-container">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-1.png"
+                         alt="Overall Health Score Dashboard"
+                         class="section-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Integrated MLOps & CI/CD Practices -->
+    <div class="bias-drift-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                         alt="Bias, Drift, Performance Dashboard"
+                         class="section-image">
+                </div>
+                <div class="text-content">
+                    <h2 class="fs-3">Integrated MLOps & CI/CD Practices</h2>
+                    <p class="paragraph2">We embed automation into every phase of the ML lifecycle.
+                        Utilizing containerization and orchestration, our CI/CD pipelines streamline
+                        continuous integration, testing, and deployment, enabling rapid,
+                        risk-managed production rollouts for both software and hardware solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bias-drift-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                         alt="Bias, Drift, Performance Dashboard"
+                         class="section-image">
+                </div>
+                <div class="text-content">
+                    <h2 class="fs-3">Scalability & Performance Optimization</h2>
+                    <p class="paragraph2">Our systems are engineered to perform under peak loads.
+                        Through distributed computing and advanced optimization techniques like
+                        model compression and pruning, we ensure that our solutions remain agile,
+                        responsive, and efficient at every scale.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bias-drift-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                         alt="Bias, Drift, Performance Dashboard"
+                         class="section-image">
+                </div>
+                <div class="text-content">
+                    <h2 class="fs-3">Advanced Monitoring, Logging & Observability</h2>
+                    <p class="paragraph2">With real-time dashboards and alert mechanisms, we
+                        continuously track model performance and operational metrics. Our proactive
+                        monitoring framework quickly identifies anomalies, ensuring prompt updates
+                        and consistent performance in dynamic environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bias-drift-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                         alt="Bias, Drift, Performance Dashboard"
+                         class="section-image">
+                </div>
+                <div class="text-content">
+                    <h2 class="fs-3">Ironclad Security, Governance & Compliance</h2>
+                    <p class="paragraph2">Trust is core to our approach. At NAST, enforcing robust
+                        security measures—including data encryption, access controls, and compliance
+                        with regulatory standards like HIPAA and GDPR—is non-negotiable. Our
+                        solutions are designed to protect your data and uphold ethical AI practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bias-drift-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                         alt="Bias, Drift, Performance Dashboard"
+                         class="section-image">
+                </div>
+                <div class="text-content">
+                    <h2 class="fs-3">Strategic Deployment & Lifecycle Management</h2>
+                    <p class="paragraph2">We employ deployment strategies like canary releases and
+                        blue-green deployments to seamlessly integrate new models. Our comprehensive
+                        lifecycle management approach covers every stage—ensuring your AI systems
+                        remain current, reliable, and ready for future challenges.
+
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-light py-5">
+
+        <div class="container py-5 d-flex flex-column align-items-center">
+            <h2 class="text-center mb-5">AI Ecosystem</h2>
+            <p class="text-center mb-5 fs-6 w-50">At NAST, we believe that an enterprise-ready AI
+                model must have a holistic ecosystem built around the model to ensure sustained
+                performance, reliability, and transparency. Here are some of the key practices we
+                implement to support performance monitoring, updating, logging, and more
+            </p>
+
+        </div>
+
+        <div class="container w-75">
+            <div id="aiEcosystemCarousel"
+                 class="carousel slide"
+                 data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"
+                         style="background-image: url('https://www.freepik.com/free-photo/robot-handshake-human-background-futuristic-digital-age_17850426.htm#fromView=search&page=1&position=4&uuid=71141f54-28e0-4c8f-a66a-ea4a97b6190b&query=technologies')">
+                        <div class="carousel-caption py-5">
+                            <h3 class="mb-5">Real-Time Performance Monitoring</h3>
+                            <p class="text-center">Maintain dashboards with key metrics such as
+                                accuracy,
+                                latency,
+                                throughput, and system resource utilization using tools like Grafana
+                                or Prometheus. Incorporate data and concept drift detection to alert
+                                when the model’s performance or the underlying data distribution
+                                shifts.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                         style="background-image: url('https://source.unsplash.com/1920x600/?automation,data');">
+                        <div class="carousel-caption">
+                            <h3>Automated Model Updating</h3>
+                            <p>Use continuous integration and deployment pipelines that
+                                automatically trigger model retraining when performance degradation
+                                is detected. Adopt canary and blue-green deployment strategies to
+                                update models with minimal disruption, ensuring version control for
+                                both data and model iterations.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                         style="background-image: url('https://source.unsplash.com/1920x600/?logging,system');">
+                        <div class="carousel-caption">
+                            <h3>Comprehensive Logging & Observability</h3>
+                            <p>Implement end-to-end logging that captures prediction flows, errors,
+                                system events, and user feedback—centralized through platforms like
+                                the ELK stack or Splunk. Leverage real-time log analytics to surface
+                                anomalies and quickly diagnose critical issues.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                         style="background-image: url('https://source.unsplash.com/1920x600/?transparency,ai');">
+                        <div class="carousel-caption">
+                            <h3>Explainability & Transparency</h3>
+                            <p>Integrate explainable AI tools (e.g., SHAP, LIME) to make model
+                                predictions transparent and interpretable for auditors and end
+                                users. Provide detailed audit trails that track model decisions,
+                                changes, and performance over time to ensure regulatory compliance.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                         style="background-image: url('https://source.unsplash.com/1920x600/?resilience,management');">
+                        <div class="carousel-caption">
+                            <h3>Resilience & Incident Management</h3>
+                            <p>Couple automated incident alert systems (for example, using
+                                PagerDuty) with proactive rollback mechanisms, ensuring swift
+                                responses to any production issues. Regularly simulate failure
+                                scenarios to test and enhance the system’s resilience, ensuring
+                                robust fault tolerance.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"
+                         style="background-image: url('https://source.unsplash.com/1920x600/?data,lifecycle');">
+                        <div class="carousel-caption">
+                            <h3>Data Quality & Lifecycle Tracking</h3>
+                            <p>Enforce strict data versioning and lineage tracking, ensuring that
+                                every update is reproducible and its impact is well-documented.
+                                Schedule periodic evaluations for model performance in sync with
+                                business cycles to capture and address any degradation before it
+                                affects end-users.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#aiEcosystemCarousel"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"
+                          aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#aiEcosystemCarousel"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon"
+                          aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

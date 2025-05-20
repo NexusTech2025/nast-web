@@ -6,16 +6,22 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Web & Mobile Application Development</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
           crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
             crossorigin="anonymous"></script>
+
+
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="../scripts/header.js"></script>
+
+    <link rel="stylesheet"
+          href="../styles/styles.css">
 
     <style>
         .mlops-section {
@@ -895,18 +901,23 @@
         }
     </style>
 
+
+
 </head>
 
 <body>
 
-    <header id="navbar-container"></header>
+    <header id="navbar-container"
+            class="shadow-sm sticky-top"></header>
     <script>
         createNavbar(navbarConfig);
     </script>
 
-    <div class="container mlops-section">
-        <div class="mlops-content">
-            <div class="mlops-text">
+
+    <!-- Hero Section -->
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
                 <h2>Web & Mobile Frameworks</h2>
                 <h2 class="fs-4">AI-Powered Development for Future-Ready Applications</h2>
                 <p>At NAST, we revolutionize web and mobile development with cutting-edge AI
@@ -915,13 +926,15 @@
                     and elevate user experiences.
                 </p>
             </div>
-            <div class="mlops-image">
-                <img src="https://datatron.com/wp-content/uploads/2021/10/hero-2-4.svg"
-                     alt="MLOps Diagram">
+            <div class="col-12 col-md-6">
+                <img class="img-fluid"
+                     src="./images/ai_powered_dev2.png"
+                     alt="AI Powered Web & Mobile Development">
             </div>
         </div>
     </div>
 
+    <!-- Rapid Development -->
     <div class="container-fluid mlops-what-is-section mb-5">
         <div class="mlops-what-is-content">
             <h2 class="mlops-what-is-title fs-1">Rapid Development with AI Tools</h2>
@@ -944,12 +957,11 @@
     </div>
 
 
-    <div class="container challenges-section mb-5 ">
-        <div class="row py-5">
-
-            <div class="container-fluid col-7 col-md-7">
-                <h1 class="mb-5 fs-2">AI-Powered Solutions
-                    for Developer Challenges</h1>
+    <!-- AI Powered Solutions For Developer -->
+    <div class="container challenges-section mb-5">
+        <div class="row py-5 gap-2">
+            <div class="col-12 col-md-6">
+                <h3 class="mb-3 fs-3">AI-Powered Solutions for Developer Challenges</h3>
                 <ul class="list-group">
                     <li class="list-group-item border-0">
                         <h2 class="h5 mb-2">Time-Consuming Code Generation</h2>
@@ -996,17 +1008,20 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-5 col-md-5 d-flex align-items-center justify-content-center">
-                <img class="w-100 img-fluid"
-                     src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
-                     alt="Challenges Illustration">
+            <div class="col-12 col-md-5 d-flex align-items-center justify-content-center">
+                <img class="img-fluid"
+                     style="width: 100%; max-width: 400px;"
+                     src="./images/ai_solutions_2.jpg"
+                     alt="AI Solutions for Developer Challenges">
             </div>
         </div>
     </div>
 
+
+    <!-- Frontend & Backend Solutions -->
     <div class="container mb-5">
         <div class="row">
-            <div class="col-6 col-md-6">
+            <div class="col-12 col-md-6">
                 <div class="mlops-features-header">
                     <h2 class="fs-2">Frontend & Mobile Experience</h2>
                     <p>Rect + Next.js, Flutter, Kotlin, Python</p>
@@ -1037,175 +1052,227 @@
 
             </div>
 
-            <div class="col-6 col-md-6">
+            <div class="d-flex col-12 col-md-6">
 
-                <div>
-                    <img class="w-100 img-fluid"
-                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-2.jpg"
+                <div class="d-flex justify-content-center col-6">
+                    <img class="img-fluid object-fit-contain"
+                         src="./images/frontend-stack.png"
+                         alt="SAS">
+                </div>
+                <div class="d-flex justify-content-center col-6 object-fit-contain">
+                    <img class="img-fluid object-fit-contain"
+                         src="./images/backend-stack.png"
                          alt="SAS">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container py-5 my-5 bg-light">
-        <div class="mb-4 py-5">
-            <div class="text-center mb-5">
-                <h2 class="fs-2">Backend & AI Integration</h2>
-                <p>Python, Java, Php, Node.js</p>
-                <p class="text-center fs-5">Our backend architecture forms the core of our
-                    applications—ensuring speed,
-                    scalability, and security while integrating AI-driven automation. We embrace a
-                    microservices-based approach that offers modularity and flexibility, using
-                    Node.js with Express for handling RESTful APIs and asynchronous tasks, alongside
-                    Python with FastAPI for AI services, such as machine learning and predictive
-                    analytics.</p>
-
-            </div>
-
-            <div class="row px-4 my-5">
-                <div class="col-6 col-md-6">
-                    <img class="w-100 img-fluid"
-                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-3.jpg"
-                         alt="Backend Integration">
-                </div>
-                <div class="col-6 col-md-6">
-                    <h3 class="fs-3 mb-4">Expanding Backend Capabilities with Django & Flask</h3>
-                    <p class="mlops-features-description">
-                        For Python-based web development, we incorporate Django, a high-level
-                        framework that simplifies backend logic, manages databases efficiently, and
-                        enhances security with built-in authentication systems. When lightweight
-                        solutions are needed, we turn to Flask, which offers rapid prototyping and
-                        flexibility for creating microservices that interact seamlessly with larger
-                        architectures.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row px-4">
-
-                <div class="col-6 col-md-6">
-                    <h3 class="fs-3 mb-4">Java Spring & Spring Boot for Enterprise-Grade
-                        Applications</h3>
-                    <p class="mlops-features-description">
-                        For enterprise-level backends, we use Spring and Spring Boot, enabling
-                        highly scalable, maintainable applications with built-in security
-                        mechanisms. These frameworks streamline complex workflows and database
-                        interactions while supporting cloud-native deployments, making them ideal
-                        for business applications that demand reliability at scale.
+    <!-- Backend & AI Integrations -->
+    <div class="bg-light">
+        <div class="container py-5 my-5">
+            <div>
+                <div class="text-center mb-5">
+                    <h2 class="fs-2">Backend & AI Integration</h2>
+                    <p>Python, Java, Php, Node.js</p>
+                    <p class="text-center">
+                        Our backend architecture forms the core of our applications—ensuring speed,
+                        scalability, and security while integrating AI-driven automation. We embrace
+                        a microservices-based approach that offers modularity and flexibility, using
+                        Node.js with Express for handling RESTful APIs and asynchronous tasks,
+                        alongside Python with FastAPI for AI services, such as machine learning and
+                        predictive analytics.
                     </p>
                 </div>
 
-                <div class="col-6 col-md-6">
-                    <img class="w-100 img-fluid"
-                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-3.jpg"
-                         alt="Backend Integration">
-                </div>
-            </div>
-
-            <div class="row px-4 my-5">
-                <div class="col-6 col-md-6">
-                    <img class="w-100 img-fluid"
-                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-3.jpg"
-                         alt="Backend Integration">
-                </div>
-                <div class="col-6 col-md-6">
-                    <h3 class="fs-3 mb-4">AI-Powered Backend Innovation</h3>
-                    <p class="mlops-features-description">
-                        We supercharge our backend with Firebase Studio, an AI-enhanced full-stack
-                        workspace that accelerates development through AI-assisted coding,
-                        debugging, and API generation. Firebase Studio allows seamless integration
-                        with database systems, authentication services, and real-time analytics,
-                        optimizing backend processes and enabling intelligent automation.
-                    </p>
-                </div>
-            </div>
-
-            <div class="text-center mb-5 py-5 px-4">
-                <h3 class="fs-3 mb-4">CI/CD & Scalability</h3>
-                <p class="fs-5">
-                    By containerizing services using Docker and orchestrating them with Kubernetes,
-                    we ensure fault tolerance and elastic scalability, keeping our applications
-                    adaptable to demand. Through AI-powered insights, predictive analytics, and
-                    intelligent monitoring, we build backends that are not only robust and efficient
-                    but also future-proofed for evolving technological advancements.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="container my-5 bg-primary-subtle mb-5">
-        <h1 class="fs-1 text-center mb-5">Key Features</h1>
-
-        <div class="row g-4 d-flex text-center">
-            <div class="col-md-4 d-flex">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title fs-5">Cross-Platform Excellence</h2>
-                        <p class="card-text">Leverage React/Next.js, Flutter, React Native, Kotlin,
-                            Java, and Python for stunning, responsive apps with a consistent user
-                            experience across web and mobile.</p>
+                <div class="row px-4 my-5">
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid img-w-400"
+                             src="./images/backed_django_flask.png"
+                             alt="Backend Capabilities with Django & Flask">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h3 class="fs-3 mb-4">Expanding Backend Capabilities with Django & Flask
+                        </h3>
+                        <p class="mlops-features-description">
+                            For Python-based web development, we incorporate Django, a high-level
+                            framework that simplifies backend logic, manages databases efficiently,
+                            and
+                            enhances security with built-in authentication systems. When lightweight
+                            solutions are needed, we turn to Flask, which offers rapid prototyping
+                            and
+                            flexibility for creating microservices that interact seamlessly with
+                            larger
+                            architectures.
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 d-flex">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title fs-5">AI-Driven Automation</h2>
-                        <p class="card-text">Accelerate development with AI tools like Bolt, GitHub
-                            Copilot, Cursor, and Firebase Studio for rapid code generation and
-                            backend automation.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title fs-5">Robust and Scalable Backend</h2>
-                        <p class="card-text">Build a resilient infrastructure with Node.js, Python
-                            frameworks (FastAPI, Django, Flask), and Java’s Spring Boot for
-                            high-performance backend operations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row g-4 mt-4 d-flex text-center">
-            <div class="col-md-4 d-flex">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title fs-5">Enterprise-Level Security</h2>
-                        <p class="card-text">Incorporate JWT/OAuth, vulnerability scanning, Docker
-                            containerization, and Kubernetes orchestration for a fortified
-                            environment against threats.</p>
+                <div class="row px-4">
+                    <div class="col-12 col-md-6">
+                        <h3 class="fs-3 mb-4">Java Spring & Spring Boot for Enterprise-Grade
+                            Applications</h3>
+                        <p class="mlops-features-description">
+                            For enterprise-level backends, we use Spring and Spring Boot, enabling
+                            highly scalable, maintainable applications with built-in security
+                            mechanisms. These frameworks streamline complex workflows and database
+                            interactions while supporting cloud-native deployments, making them
+                            ideal
+                            for business applications that demand reliability at scale.
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <img class="img-400 img-fluid object-fit-contain"
+                             src="./images/java_spring_arcit.png"
+                             alt="Backend Integration">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 d-flex">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title fs-5">Intelligent API and Data Management</h2>
-                        <p class="card-text">Utilize Firebase's real-time database, API integration,
-                            and AI-supported analytics to streamline data flow and automate testing.
+
+                <div class="row px-4 my-5">
+                    <div class="col-12 col-md-6">
+                        <img class="img-400 object-fit-contain img-fluid"
+                             src="./images/ai_powered_backend_innovation.png"
+                             alt="AI Powered Backend Innovation">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h3 class="fs-3 mb-4">AI-Powered Backend Innovation</h3>
+                        <p class="mlops-features-description">
+                            We supercharge our backend with Firebase Studio, an AI-enhanced
+                            full-stack
+                            workspace that accelerates development through AI-assisted coding,
+                            debugging, and API generation. Firebase Studio allows seamless
+                            integration
+                            with database systems, authentication services, and real-time analytics,
+                            optimizing backend processes and enabling intelligent automation.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title fs-5">Enhanced Developer Productivity</h2>
-                        <p class="card-text">Empower teams with AI-driven tools for streamlined code
-                            editing, automated documentation, and collaboration, leading to faster
-                            development cycles.</p>
+        </div>
+    </div>
+
+
+    <div class="mb-5 my-5">
+        <div class="container text-center mb-5 py-5 px-4">
+            <h3 class="fs-3 mb-4">CI/CD & Scalability</h3>
+            <p class="fs-5">
+                By containerizing services using Docker and orchestrating them with
+                Kubernetes,
+                we ensure fault tolerance and elastic scalability, keeping our applications
+                adaptable to demand. Through AI-powered insights, predictive analytics, and
+                intelligent monitoring, we build backends that are not only robust and
+                efficient
+                but also future-proofed for evolving technological advancements.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="nast-bg-gradient-1">
+        <div class="container my-5 mb-5">
+            <h1 class="fs-1 text-center mb-5">Key Features</h1>
+
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-md-4 d-flex">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <img src="./images/Layer 1-1.png"
+                                 alt="Cross-Platform Excellence"
+                                 class="img-fluid mb-3 mx-auto"
+                                 style="width: 72px; height: 72px;">
+                            <h2 class="card-title fs-5">Cross-Platform Excellence</h2>
+                            <p class="card-text">Leverage React/Next.js, Flutter, React Native,
+                                Kotlin,
+                                Java, and Python for stunning, responsive apps with a consistent
+                                user
+                                experience across web and mobile.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <img src="./images/Layer 2-1.png"
+                                 alt="AI-Driven Automation"
+                                 class="img-fluid mb-3 mx-auto"
+                                 style="width: 72px; height: 72px;">
+                            <h2 class="card-title fs-5">AI-Driven Automation</h2>
+                            <p class="card-text">Accelerate development with AI tools like Bolt,
+                                GitHub
+                                Copilot, Cursor, and Firebase Studio for rapid code generation and
+                                backend automation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <img src="./images/Layer 3-3.png"
+                                 alt="Robust and Scalable Backend"
+                                 class="img-fluid mb-3 mx-auto"
+                                 style="width: 72px; height: 72px;">
+                            <h2 class="card-title fs-5">Robust and Scalable Backend</h2>
+                            <p class="card-text">Build a resilient infrastructure with Node.js,
+                                Python
+                                frameworks (FastAPI, Django, Flask), and Java’s Spring Boot for
+                                high-performance backend operations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <img src="./images/Layer 4-4.png"
+                                 alt="Enterprise-Level Security"
+                                 class="img-fluid mb-3 mx-auto"
+                                 style="width: 72px; height: 72px;">
+                            <h2 class="card-title fs-5">Enterprise-Level Security</h2>
+                            <p class="card-text">Incorporate JWT/OAuth, vulnerability scanning,
+                                Docker
+                                containerization, and Kubernetes orchestration for a fortified
+                                environment against threats.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <img src="./images/Layer 5-5.png"
+                                 alt="Intelligent API and Data Management"
+                                 class="img-fluid mb-3 mx-auto"
+                                 style="width: 72px; height: 72px;">
+                            <h2 class="card-title fs-5">Intelligent API and Data Management</h2>
+                            <p class="card-text">Utilize Firebase's real-time database, API
+                                integration,
+                                and AI-supported analytics to streamline data flow and automate
+                                testing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <img src="./images/Layer 6-6.png"
+                                 alt="Enhanced Developer Productivity"
+                                 class="img-fluid mb-3 mx-auto"
+                                 style="width: 72px; height: 72px;">
+                            <h2 class="card-title fs-5">Enhanced Developer Productivity</h2>
+                            <p class="card-text">Empower teams with AI-driven tools for streamlined
+                                code
+                                editing, automated documentation, and collaboration, leading to
+                                faster
+                                development cycles.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
 
     <footer class="bg-dark text-white py-4 fw-lighter"

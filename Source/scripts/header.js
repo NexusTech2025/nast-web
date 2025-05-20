@@ -71,7 +71,15 @@ function createNavbar(config) {
 
 //============================================================//
 
-const BASE_URL = "http://127.0.0.1:5550/"
+let BASE_URL = "http://127.0.0.1:5550"
+
+
+let href_location = window.location.href;
+if (href_location.startsWith("https://nexustech2025.github.io/nast-web/")) {
+    BASE_URL = "https://nexustech2025.github.io/nast-web"
+}
+
+
 
 const PLATFORMS = BASE_URL + "/Source/platforms"
 const SOLUTIONS = BASE_URL + "/Source/solutions"
@@ -108,18 +116,18 @@ const navbarConfig = {
                 { href: SOLUTIONS + '/healthcare.html', label: 'Healthcare' },
             ]
         },
-        {
-            type: 'dropdown',
-            id: 'learnDropdown',
-            label: 'LEARN',
-            dropdownLinks: [
-                { href: './MOPS & AI GOVERENCE', label: 'MLOPS & AI GOVERENCE' },
-                { href: './EVENTS.HTML', label: 'EVENTS' },
-                { href: './WEBINAR', label: 'WEBINAR' },
-                { href: './WHITE PAPERS.HTML', label: 'WHITE PAPERS' },
-                { href: './BLOGS.HTML', label: 'BLOGS' }
-            ]
-        },
+        // {
+        //     type: 'dropdown',
+        //     id: 'learnDropdown',
+        //     label: 'LEARN',
+        //     dropdownLinks: [
+        //         { href: './MOPS & AI GOVERENCE', label: 'MLOPS & AI GOVERENCE' },
+        //         { href: './EVENTS.HTML', label: 'EVENTS' },
+        //         { href: './WEBINAR', label: 'WEBINAR' },
+        //         { href: './WHITE PAPERS.HTML', label: 'WHITE PAPERS' },
+        //         { href: './BLOGS.HTML', label: 'BLOGS' }
+        //     ]
+        // },
         {
             type: 'dropdown',
             id: 'companyDropdown',

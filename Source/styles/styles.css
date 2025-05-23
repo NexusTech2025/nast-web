@@ -1,12 +1,399 @@
 .img-400 {
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .img-w-400 {
-    width: 400px;
+    max-width: 400px;
 }
 
 .img-h-400 {
-    height: 400px;
+    max-height: 400px;
+}
+
+
+.sub-lead {
+    font-size: 1.13rem;
+    line-height: 1.5;
+}
+
+
+.nast-bg-gradient-2 {
+
+
+    background:
+        /* Primary linear gradient for the dominant color flow */
+        linear-gradient(135deg,
+            /* Angle from top-left to bottom-right, similar to the icon's flow */
+            #B3E0FF 0%,
+            /* Very Light Blue (start) */
+            #87CEEB 40%,
+            /* Medium Blue */
+            #A0D9D0 75%,
+            /* Light Teal/Green */
+            #66B2B2 100%
+            /* Medium Teal/Blue (end) */
+        ),
+        /* Subtle radial gradient for a soft, almost imperceptible "glow" or atmospheric effect */
+        radial-gradient(circle at 80% 20%,
+            /* Positioned towards the top-right, creating a subtle light source */
+            rgba(255, 255, 255, 0.1) 0%,
+            /* Very subtle transparent white */
+            rgba(255, 255, 255, 0) 70%
+            /* Fades out quickly */
+        );
+}
+
+.nast-bg-gradient-body {
+    margin: 0;
+    /* Remove default body margin */
+    min-height: 100vh;
+    /* Ensure the gradient covers the full viewport height */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Example font */
+    color: #333;
+    /* Default text color */
+
+    /* The main background: A linear gradient */
+    background:
+        /* Layer 1: The subtle base linear gradient (top-left to bottom-right) */
+        linear-gradient(135deg,
+            #D7EEF7 0%,
+            /* Light Blue */
+            #87CEEB 35%,
+            /* Medium Blue */
+            #BCEAE4 70%,
+            /* Teal/Light Green */
+            #5FB7B0 100%
+            /* Medium Teal/Blue */
+        ),
+
+        /* Layer 2: A large, soft radial "glow" for general lightness (subtle glassy highlight) */
+        radial-gradient(circle at 20% 10%,
+            /* Positioned subtly top-left */
+            rgba(255, 255, 255, 0.2) 0%,
+            /* Very light, almost transparent white */
+            rgba(255, 255, 255, 0) 60%
+            /* Fades out */
+        ),
+
+        /* Layer 3: Another large, soft radial "glow" for general lightness (different position) */
+        radial-gradient(circle at 75% 85%,
+            /* Positioned subtly bottom-right */
+            rgba(255, 255, 255, 0.15) 0%,
+            /* Slightly less bright */
+            rgba(255, 255, 255, 0) 50%
+            /* Fades out */
+        ),
+
+        /* Layer 4: A smaller, slightly more defined radial highlight for glassy effect (top-center) */
+        radial-gradient(circle at 50% 15%,
+            /* Slightly off-center top */
+            rgba(255, 255, 255, 0.25) 0%,
+            /* Noticeable but still subtle */
+            rgba(255, 255, 255, 0) 30%
+            /* Fades out faster */
+        ),
+
+        /* Layer 5: A subtle "shadow" radial gradient for depth (bottom-left) */
+        radial-gradient(circle at 10% 90%,
+            /* Bottom-left corner */
+            rgba(0, 0, 0, 0.05) 0%,
+            /* Very subtle transparent black */
+            rgba(0, 0, 0, 0) 40%
+            /* Fades out */
+        );
+
+    background-attachment: fixed;
+    /* Ensures the background stays put during scroll */
+}
+
+
+.nast-bg-gradient-body-2 {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar if background-size exceeds 100% */
+
+    background:
+        /* Layer 1: Main linear gradient with refined HSL colors */
+        linear-gradient(135deg,
+            hsl(198, 70%, 95%) 0%,
+            /* Very Light Blue */
+            hsl(203, 75%, 80%) 20%,
+            /* Lighter Medium Blue */
+            hsl(200, 70%, 65%) 45%,
+            /* True Medium Blue */
+            hsl(170, 45%, 80%) 70%,
+            /* Light Teal */
+            hsl(175, 45%, 55%) 100%
+            /* Deeper Teal/Blue */
+        ),
+
+        /* Layer 2: A large, soft radial "glow" for general lightness (subtle glassy highlight) */
+        radial-gradient(circle at 20% 10%,
+            /* Positioned subtly top-left */
+            rgba(255, 255, 255, 0.18) 0%,
+            /* Very light, almost transparent white */
+            rgba(255, 255, 255, 0) 60%
+            /* Fades out */
+        ),
+
+        /* Layer 3: Another large, soft radial "glow" for general lightness (different position) */
+        radial-gradient(circle at 75% 85%,
+            /* Positioned subtly bottom-right */
+            rgba(255, 255, 255, 0.12) 0%,
+            /* Slightly less bright */
+            rgba(255, 255, 255, 0) 50%
+            /* Fades out */
+        ),
+
+        /* Layer 4: Smaller, sharper highlight for more direct reflections (top-center) */
+        radial-gradient(ellipse at 50% 15%,
+            /* Slightly off-center top, elliptical for more dynamic shape */
+            rgba(255, 255, 255, 0.28) 0%,
+            rgba(255, 255, 255, 0) 30%),
+
+        /* Layer 5: A subtle "shadow" radial gradient for depth (bottom-left) */
+        radial-gradient(circle at 10% 90%,
+            /* Bottom-left corner */
+            rgba(0, 0, 0, 0.03) 0%,
+            /* Very subtle transparent black */
+            rgba(0, 0, 0, 0) 40%
+            /* Fades out */
+        ),
+
+        /* Layer 6: VERY subtle noise/texture (simulated with tiny repeating linear gradients) */
+        linear-gradient(rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 50%,
+            /* Horizontal lines of noise */
+            transparent 50%, transparent 100%),
+        linear-gradient(90deg,
+            /* Vertical lines of noise */
+            rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 50%,
+            transparent 50%, transparent 100%);
+
+    background-size: cover;
+    /* Ensure gradient covers the entire area */
+    background-attachment: fixed;
+    /* Stays fixed during scroll */
+}
+
+.section {
+    margin-block: 4rem;
+    padding-block: 4rem;
+    padding-inline: 4rem;
+}
+
+
+
+.hero-section {
+    padding: 5rem 0;
+    /* Vertical padding */
+}
+
+
+.header {
+    /* Ample padding for height and horizontal space */
+
+    /* Vertically align content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    background:
+        linear-gradient(90deg,
+            /* Horizontal gradient for the header */
+            hsl(198, 70%, 95%) 0%,
+            /* Very Light Blue */
+            hsl(203, 75%, 80%) 50%,
+            /* Lighter Medium Blue */
+            hsl(170, 45%, 80%) 100%
+            /* Light Teal */
+        ),
+
+
+        radial-gradient(circle at 10% 50%,
+            /* Positioned towards the left edge, vertically centered */
+            rgba(255, 255, 255, 0.3) 0%,
+            /* Slightly stronger white for a defined highlight */
+            rgba(255, 255, 255, 0) 60%
+            /* Fades out */
+        );
+
+    /* Optional: Add a very subtle border-bottom that matches a darker color */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Very light, almost invisible line */
+
+    /* Text color for header content (e.g., logo, nav links) */
+    color: hsl(200, 70%, 30%);
+    /* A darker blue from the body's palette for good contrast */
+}
+
+/* Typography */
+
+.text-justify {
+    text-align: justify;
+    /* Justify text for a clean look */
+}
+
+
+.glassy-bg-filter {
+    /* The correlating gradient background for the header */
+    background-color: rgba(234, 233, 233, 0.15);
+    backdrop-filter: blur(6px);
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassy Cards */
+
+.hover-lift-shadow {
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for all properties */
+}
+
+.hover-lift-shadow:hover {
+    transform: translateY(-5px);
+    /* Lifts the box up by 5px */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    /* Adds a light shadow */
+}
+
+
+.glassy-card {
+    background: rgba(255, 255, 255, 0.3);
+    /* Glassy effect - more transparent*/
+    backdrop-filter: blur(10px);
+    /* Add blur to the background */
+    border: 1px solid rgba(255, 255, 255, 0.);
+    /* Add a border */
+    border-radius: 1rem;
+    /* Rounded corners */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* Slightly stronger shadow */
+    padding: 1rem 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+    margin-bottom: 2rem;
+    height: 90%;
+    text-align: center;
+}
+
+.glassy-card:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    /* Increased shadow on hover */
+}
+
+.glassy-card h3 {
+    color: #2c3e50;
+    /* Darker heading color */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.glassy-card p {
+    color: #34495e;
+    /* Slightly darker paragraph color */
+    line-height: 1.7;
+    /* Improved line height for readability */
+}
+
+.feature-icon {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    /* Larger icon size */
+    color: #4299e1;
+    /* Example icon color: blue */
+}
+
+
+/* ============================= */
+
+.glassy-card-enhanced {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 350px;
+    /* Specific max-width not available in Bootstrap utilities */
+}
+
+.glassy-card-inline {
+    max-width: 350px;
+    /* Specific max-width for the simple card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Flexbox properties for centering content vertically */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.glassy-simple-card-layout.hover-lift-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    /* Reapply hover-lift-shadow effect */
+}
+
+.glassy-card-enhanced:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    /* Custom font size */
+    color: #4299e1;
+    /* Custom color */
+}
+
+.card-icon svg {
+    width: 3.5rem;
+    /* Ensure SVG takes the specified size */
+    height: 3.5rem;
+    color: #4299e1;
+}
+
+.card-title {
+    color: #2c3e50;
+    /* Custom color */
+    font-size: 1.5rem;
+    /* Custom font size */
+}
+
+.card-subtitle {
+    color: #5a6a7a;
+    /* Custom color */
+    line-height: 1.4;
+    /* Custom line height */
+    font-size: 1rem;
+    /* Custom font size */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+    .glassy-card-enhanced {
+        padding: 1rem;
+        /* Overriding Bootstrap padding for mobile */
+        max-width: 90%;
+        /* Custom max-width for mobile */
+    }
+
+    .card-icon {
+        font-size: 3rem;
+    }
+
+    .card-icon svg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
+    }
 }

@@ -1,0 +1,10 @@
+@media (max-width: 767.98px) {
+    .section {
+        margin-block: 2rem;
+        /* Reduced vertical margin for smaller screens */
+        padding-block: 2rem;
+        /* Reduced vertical padding */
+        padding-inline: 0.5rem;
+        /* Reduced horizontal padding for mobile */
+    }
+}

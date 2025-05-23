@@ -1,0 +1,23 @@
+        /* Custom spacing utilities to mimic Tailwind-like larger values */
+        .py-6 {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .my-6 {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Responsive adjustments for larger spacing */
+        @media (min-width: 768px) {
+            .py-md-7 {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+
+            .my-md-7 {
+                margin-top: 6rem;
+                margin-bottom: 6rem;
+            }
+        }

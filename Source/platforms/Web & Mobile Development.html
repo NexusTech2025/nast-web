@@ -19,9 +19,21 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="../scripts/header.js"></script>
+    <script src="./Source/scripts/cards.js"></script>
+    <script src="./Source/scripts/cards-data.js"></script>
 
     <link rel="stylesheet"
-          href="../styles/styles.css">
+          href="./Source/styles/index.css">
+
+    <link rel="stylesheet"
+          href="./Source/styles/styles.css">
+
+    <link rel="stylesheet"
+          href="./Source/styles/styles_mobile.css">
+
+    <link rel="stylesheet"
+          href="./Source/styles/spacing.css">
+
 
     <style>
         .mlops-section {
@@ -901,14 +913,12 @@
         }
     </style>
 
-
-
 </head>
 
 <body>
 
     <header id="navbar-container"
-            class="shadow-sm sticky-top"></header>
+            class="shadow-sm sticky-top header"></header>
     <script>
         createNavbar(navbarConfig);
     </script>
@@ -935,142 +945,166 @@
     </div>
 
     <!-- Rapid Development -->
-    <div class="container-fluid mlops-what-is-section mb-5">
-        <div class="mlops-what-is-content">
-            <h2 class="mlops-what-is-title fs-1">Rapid Development with AI Tools</h2>
-            <p class="mlops-what-is-description">
-                At our company, we harness revolutionary AI tools for rapid, intelligent development
-                that transforms ideas into scalable apps. Using Bolt for swift code generation,
-                GitHub Copilot for context-aware coding insights, and Cursor to streamline our code
-                editing, we enhance developer productivity and deliver quality solutions faster.
-                Integrating Firebase Studio from Google empowers our full-stack workflows with AI
-                assistance, enabling seamless prototyping, testing, and deployment across web and
-                mobile platforms.
-            </p>
-            <p class="mlops-what-is-description">
-                Our advanced stack, including Flutter, Kotlin, Node.js, and Python, ensures robust
-                performance, security, and scalability while driving innovative, AI-powered
-                application development that meets real-world challenges head-on. Accelerating
-                progress and digital transformation.
-            </p>
+    <div class="section nast-bg-gradient-2">
+        <div class="container-fluid">
+            <div class="text-center">
+                <h2 class="fs-2">Rapid Development with AI Tools</h2>
+                <p class="mlops-what-is-description">
+                    At our company, we harness revolutionary AI tools for rapid, intelligent
+                    development
+                    that transforms ideas into scalable apps. Using Bolt for swift code generation,
+                    GitHub Copilot for context-aware coding insights, and Cursor to streamline our
+                    code
+                    editing, we enhance developer productivity and deliver quality solutions faster.
+                    Integrating Firebase Studio from Google empowers our full-stack workflows with
+                    AI
+                    assistance, enabling seamless prototyping, testing, and deployment across web
+                    and
+                    mobile platforms.
+                </p>
+                <p class="mlops-what-is-description">
+                    Our advanced stack, including Flutter, Kotlin, Node.js, and Python, ensures
+                    robust
+                    performance, security, and scalability while driving innovative, AI-powered
+                    application development that meets real-world challenges head-on. Accelerating
+                    progress and digital transformation.
+                </p>
+            </div>
         </div>
     </div>
 
 
     <!-- AI Powered Solutions For Developer -->
-    <div class="container challenges-section mb-5">
-        <div class="row py-5 gap-2">
-            <div class="col-12 col-md-6">
-                <h3 class="mb-3 fs-3">AI-Powered Solutions for Developer Challenges</h3>
-                <ul class="list-group">
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Time-Consuming Code Generation</h2>
-                        <p>Manually writing repetitive boilerplate code can slow progress. Tools
-                            like <strong>Bolt</strong> instantly generate scaffold code, letting
-                            developers focus on complex logic.</p>
-                    </li>
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Debugging and Code Quality</h2>
-                        <p>Identifying bugs in extensive codebases is challenging. <strong>GitHub
-                                Copilot</strong> and <strong>Cursor</strong> provide context-aware
-                            suggestions and in-editor hints that streamline debugging and elevate
-                            code quality.</p>
-                    </li>
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Complex Integration Processes</h2>
-                        <p>Merging diverse technologies (Flutter, Kotlin, Node.js, Python) can lead
-                            to integration errors. AI-powered insights ease connector development
-                            and compatibility checks.</p>
-                    </li>
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Testing and Deployment Hurdles</h2>
-                        <p>Comprehensive testing and smooth deployments are crucial.
-                            <strong>Firebase Studio</strong> from Google automates end-to-end tests,
-                            previews deployments, and ensures robust security.
-                        </p>
-                    </li>
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Security Vulnerabilities</h2>
-                        <p>Continuously monitoring for vulnerabilities is time-intensive. AI-driven
-                            tools detect potential risks early and recommend proactive security
-                            measures.</p>
-                    </li>
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Scalability and Performance Optimization</h2>
-                        <p>Balancing loads and scaling efficiently is intricate. AI analytics
-                            pinpoint performance bottlenecks and suggest resource optimizations.</p>
-                    </li>
-                    <li class="list-group-item border-0">
-                        <h2 class="h5 mb-2">Maintaining Documentation</h2>
-                        <p>Keeping documentation current is often overlooked. In-editor AI like
-                            GitHub Copilot auto-generates contextual documentation, reducing manual
-                            overhead.</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12 col-md-5 d-flex align-items-center justify-content-center">
-                <img class="img-fluid"
-                     style="width: 100%; max-width: 400px;"
-                     src="./images/ai_solutions_2.jpg"
-                     alt="AI Solutions for Developer Challenges">
+    <div class="section">
+        <div class="container challenges-section mb-5">
+            <div class="row py-5 gap-2">
+                <div class="col-12 col-md-6">
+                    <h3 class="mb-3 fs-3">AI-Powered Solutions for Developer Challenges</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Time-Consuming Code Generation</h2>
+                            <p>Manually writing repetitive boilerplate code can slow progress. Tools
+                                like <strong>Bolt</strong> instantly generate scaffold code, letting
+                                developers focus on complex logic.</p>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Debugging and Code Quality</h2>
+                            <p>Identifying bugs in extensive codebases is challenging.
+                                <strong>GitHub
+                                    Copilot</strong> and <strong>Cursor</strong> provide
+                                context-aware
+                                suggestions and in-editor hints that streamline debugging and
+                                elevate
+                                code quality.
+                            </p>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Complex Integration Processes</h2>
+                            <p>Merging diverse technologies (Flutter, Kotlin, Node.js, Python) can
+                                lead
+                                to integration errors. AI-powered insights ease connector
+                                development
+                                and compatibility checks.</p>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Testing and Deployment Hurdles</h2>
+                            <p>Comprehensive testing and smooth deployments are crucial.
+                                <strong>Firebase Studio</strong> from Google automates end-to-end
+                                tests,
+                                previews deployments, and ensures robust security.
+                            </p>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Security Vulnerabilities</h2>
+                            <p>Continuously monitoring for vulnerabilities is time-intensive.
+                                AI-driven
+                                tools detect potential risks early and recommend proactive security
+                                measures.</p>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Scalability and Performance Optimization</h2>
+                            <p>Balancing loads and scaling efficiently is intricate. AI analytics
+                                pinpoint performance bottlenecks and suggest resource optimizations.
+                            </p>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <h2 class="h5 mb-2">Maintaining Documentation</h2>
+                            <p>Keeping documentation current is often overlooked. In-editor AI like
+                                GitHub Copilot auto-generates contextual documentation, reducing
+                                manual
+                                overhead.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-5 d-flex align-items-center justify-content-center">
+                    <img class="img-fluid"
+                         style="width: 100%; max-width: 400px;"
+                         src="./images/ai_solutions_2.jpg"
+                         alt="AI Solutions for Developer Challenges">
+                </div>
             </div>
         </div>
     </div>
 
 
     <!-- Frontend & Backend Solutions -->
-    <div class="container mb-5">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <div class="mlops-features-header">
-                    <h2 class="fs-2">Frontend & Mobile Experience</h2>
-                    <p>Rect + Next.js, Flutter, Kotlin, Python</p>
+    <div class="section">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="mlops-features-header">
+                        <h2 class="fs-2">Frontend & Mobile Experience</h2>
+                        <p>Rect + Next.js, Flutter, Kotlin, Python</p>
+                    </div>
+                    <p class="mlops-features-description">
+                        We build immersive digital experiences by leveraging cutting-edge tools and
+                        frameworks. For the web, we use React with Next.js to craft dynamic,
+                        server-rendered pages that are fast, SEO-friendly, and visually captivating.
+                    </p>
+                    <p class="mlops-features-description">
+                        On mobile, our approach is equally versatile. Flutter lets us write once and
+                        deploy natively across Android, iOS, web, and desktop—accelerating release
+                        cycles with stunning designs. To further enhance cross-platform performance,
+                        we
+                        also employ React Native for seamless native app experiences.
+                    </p>
+                    <p class="mlops-features-description">
+                        We don’t stop there. For rapid prototyping and specialized solutions, we
+                        integrate Python-based frameworks like Kivy and BeeWare, offering
+                        platform-agnostic development options. For Android-specific needs, we
+                        harness
+                        the modern safety and conciseness of Kotlin alongside the robust,
+                        time-tested
+                        ecosystem of Java.
+                    </p>
+
+                    <p class="mlops-features-description">
+                        This streamlined yet diverse toolkit empowers us to deliver responsive,
+                        high-performance applications that delight users at every touch point.
+                    </p>
+
                 </div>
-                <p class="mlops-features-description">
-                    We build immersive digital experiences by leveraging cutting-edge tools and
-                    frameworks. For the web, we use React with Next.js to craft dynamic,
-                    server-rendered pages that are fast, SEO-friendly, and visually captivating.
-                </p>
-                <p class="mlops-features-description">
-                    On mobile, our approach is equally versatile. Flutter lets us write once and
-                    deploy natively across Android, iOS, web, and desktop—accelerating release
-                    cycles with stunning designs. To further enhance cross-platform performance, we
-                    also employ React Native for seamless native app experiences.
-                </p>
-                <p class="mlops-features-description">
-                    We don’t stop there. For rapid prototyping and specialized solutions, we
-                    integrate Python-based frameworks like Kivy and BeeWare, offering
-                    platform-agnostic development options. For Android-specific needs, we harness
-                    the modern safety and conciseness of Kotlin alongside the robust, time-tested
-                    ecosystem of Java.
-                </p>
 
-                <p class="mlops-features-description">
-                    This streamlined yet diverse toolkit empowers us to deliver responsive,
-                    high-performance applications that delight users at every touch point.
-                </p>
+                <div class="d-flex col-12 col-md-6">
 
-            </div>
-
-            <div class="d-flex col-12 col-md-6">
-
-                <div class="d-flex justify-content-center col-6">
-                    <img class="img-fluid object-fit-contain"
-                         src="./images/frontend-stack.png"
-                         alt="SAS">
-                </div>
-                <div class="d-flex justify-content-center col-6 object-fit-contain">
-                    <img class="img-fluid object-fit-contain"
-                         src="./images/backend-stack.png"
-                         alt="SAS">
+                    <div class="d-flex justify-content-center col-6">
+                        <img class="img-fluid object-fit-contain"
+                             src="./images/frontend-stack.png"
+                             alt="SAS">
+                    </div>
+                    <div class="d-flex justify-content-center col-6 object-fit-contain">
+                        <img class="img-fluid object-fit-contain"
+                             src="./images/backend-stack.png"
+                             alt="SAS">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Backend & AI Integrations -->
-    <div class="bg-light">
-        <div class="container py-5 my-5">
+    <div class="bg-light section">
+        <div class="container">
             <div>
                 <div class="text-center mb-5">
                     <h2 class="fs-2">Backend & AI Integration</h2>
@@ -1087,8 +1121,8 @@
 
                 <div class="row px-4 my-5">
                     <div class="col-12 col-md-6">
-                        <img class="img-fluid img-w-400"
-                             src="./images/backed_django_flask.png"
+                        <img class="img-fluid img-h-400 object-fit-contain"
+                             src="./images/backend_django_flask_2.png"
                              alt="Backend Capabilities with Django & Flask">
                     </div>
                     <div class="col-12 col-md-6">
@@ -1153,7 +1187,7 @@
     </div>
 
 
-    <div class="mb-5 my-5">
+    <div class="nast-bg-gradient-2  mb-5 my-5 section">
         <div class="container text-center mb-5 py-5 px-4">
             <h3 class="fs-3 mb-4">CI/CD & Scalability</h3>
             <p class="fs-5">
@@ -1169,7 +1203,7 @@
     </div>
 
 
-    <div class="nast-bg-gradient-1">
+    <div class="section">
         <div class="container my-5 mb-5">
             <h1 class="fs-1 text-center mb-5">Key Features</h1>
 

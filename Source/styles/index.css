@@ -32,15 +32,7 @@
 }
 
 
-.hero-section {
-    padding: 5rem 0;
-    /* Vertical padding */
-    background-color: #f8f9fa;
-    /* Light background */
-    /* If you want the subtle background pattern,
-   it would require a background-image CSS rule.
-   Example: background-image: url('path/to/your/pattern.svg'); */
-}
+
 
 .hero-section h1 {
     font-weight: 700;
@@ -50,11 +42,7 @@
     line-height: 1.3;
 }
 
-.hero-section p {
-    color: #6c757d;
-    /* Grey text color for subheading */
-    font-size: 1.1rem;
-}
+
 
 .hero-image-container {
     display: flex;
@@ -229,21 +217,8 @@ body {
 
 
 
-/* --- Top Section (MLOps Intro) --- */
-.mlops-intro-section {
-    padding: 4rem 0;
-    /* Vertical padding */
-    background-color: #ffffff;
-    /* White background */
-}
 
 
-.mlops-intro-section p {
-    margin-bottom: 1rem;
-    /* Space below paragraphs */
-    color: #495057;
-    /* Slightly lighter paragraph text */
-}
 
 .mlops-image {
     border-radius: 0.5rem;

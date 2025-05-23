@@ -6,12 +6,11 @@ function createNavbar(config) {
     }
 
     let navbarHTML = `
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container gap-3" style="background-color: ${config.backgroundColor};">
-                <h1 style='font-size:50px; 
+        <nav class="navbar navbar-expand-lg">
+            <div class="container gap-3">
+                <h1 class="m-0" style='font-size:50px; 
                     font-family: inter; 
-                    color: #212529;' 
-                    class='navbar-brand'>NAST</h1>
+                    color: #212529;'>NAST</h1>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -35,6 +35,157 @@
     <link rel="stylesheet"
           href="./Source/styles/spacing.css">
 
+    <style>
+        /* Styling for the tab panes to ensure consistent height and appearance */
+        .tab-pane {
+            min-height: 550px;
+            /* Minimum height for tab content on small screens */
+            display: flex;
+            /* Use flexbox for vertical centering of content */
+            align-items: center;
+            /* Vertically center content */
+            justify-content: center;
+            /* Horizontally center content */
+            background-color: #ffffff42;
+            /* White background for the content area */
+            padding: 1.5rem;
+            /* Padding inside the tab pane */
+            border-radius: 0.75rem;
+            /* Rounded corners for the tab pane */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            /* Stronger shadow for the tab content area */
+        }
+
+        /* Responsive adjustments for tab panes on medium screens (md) */
+        @media (min-width: 768px) {
+            .tab-pane {
+                min-height: 480px;
+                /* Adjusted min-height for medium screens */
+                padding: 2.5rem;
+                /* Increased padding for medium screens */
+            }
+
+            /* Bootstrap utility class overrides for text alignment and order */
+            .text-md-start {
+                text-align: left !important;
+            }
+
+            .text-md-end {
+                text-align: right !important;
+            }
+
+            .justify-content-md-end {
+                justify-content: flex-end !important;
+            }
+
+            .justify-content-md-start {
+                justify-content: flex-start !important;
+            }
+
+            .order-md-1 {
+                order: 1 !important;
+            }
+
+            .order-md-2 {
+                order: 2 !important;
+            }
+
+            .offset-md-1 {
+                margin-left: 8.333333% !important;
+            }
+
+            /* Bootstrap's offset-md-1 equivalent */
+            .mt-md-0 {
+                margin-top: 0 !important;
+            }
+
+            .my-md-7 {
+                margin-top: 3rem !important;
+                margin-bottom: 3rem !important;
+            }
+
+            /* Increased vertical margin */
+            .h2 {
+                font-size: 2.5rem;
+            }
+
+            /* Larger font size for h2 headings */
+        }
+
+        /* Responsive adjustments for tab panes on large screens (lg) */
+        @media (min-width: 992px) {
+            .tab-pane {
+                min-height: 400px;
+                /* Further adjusted min-height for large screens */
+            }
+
+            .col-lg-4 {
+                flex: 0 0 auto;
+                /* Ensure columns behave as expected */
+                width: 33.33333333%;
+                /* Bootstrap's col-lg-4 equivalent */
+            }
+        }
+
+        /* Ensure the article content within the tab pane takes full width available */
+        .tab-pane article {
+            width: 100%;
+        }
+
+
+        /* Custom styling for Bootstrap tab navigation links */
+        .nav-tabs .nav-link {
+            color: #4a5568;
+            /* Default tab text color */
+            border: none;
+            /* Remove default borders */
+            border-bottom: 3px solid transparent;
+            /* Transparent bottom border for active indicator */
+            font-weight: 600;
+            /* Semi-bold font weight */
+            padding: 0.75rem 1.25rem;
+            /* Padding for tab links */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover/active states */
+        }
+
+        /* Hover state for tab navigation links */
+        .nav-tabs .nav-link:hover {
+            color: #2563eb;
+            /* Blue text on hover */
+            border-bottom-color: #a78bfa;
+            /* Light purple border on hover */
+        }
+
+        /* Active state for tab navigation links */
+        .nav-tabs .nav-link.active {
+            color: #2563eb;
+            /* Blue text when active */
+            background-color: transparent;
+            /* Transparent background when active */
+            border-color: #2563eb;
+            /* Blue border when active */
+        }
+
+        /* Styling for the overall tab navigation container */
+        .nav-tabs {
+            border-bottom: 1px solid #e2e8f0;
+            /* Light border at the bottom of the tab navigation */
+            margin-bottom: 1.5rem;
+            /* Space between tabs and content */
+            justify-content: center;
+            /* Center the tab links */
+        }
+
+        /* Styling for the main container holding both tabs and content */
+        .container-main {
+            max-width: 1200px;
+            /* Maximum width for the entire component */
+            width: 100%;
+            /* Ensure it takes full width up to max-width */
+        }
+    </style>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -84,150 +235,235 @@
     <!-- Transforming Ideas -->
     <section class="py-6 py-md-7 px-3">
         <div class="container text-center">
-            <header class="mb-5 mb-md-6">
-                <h1 class="display-3 fw-bold mb-4 lh-base">
-                    Transforming Ideas into Seamless Digital Experiences
-                </h1>
-                <p class="lead text-dark mx-auto"
-                   style="max-width: 700px;">
-                    At NAST, we bring your vision to life with cutting-edge web and mobile
-                    development solutions.
-                    Whether it's a dynamic website, a feature-rich mobile app, or a scalable
-                    enterprise platform,
-                    we craft high-performance applications that drive engagement and innovation.
-                </p>
-            </header>
-
-            <article class="row align-items-center my-6 my-md-7">
-                <div class="col-12 col-md-6 text-center text-md-start order-md-1">
-                    <h3 class="h2 fw-semibold mb-4">Frontend Development</h3>
-                    <p class="lead text-justify text-md-start lh-md">
-                        We create stunning, responsive, and intuitive user interfaces that deliver
-                        seamless
-                        experiences across devices. Our front-end solutions are designed for speed,
-                        accessibility,
-                        and engagement, ensuring smooth interactions and a modern aesthetic that
-                        captivates users.
-                        With cutting-edge frameworks and innovative design principles, we craft web
-                        and mobile
-                        applications that are as powerful as they are visually compelling.
-                    </p>
-                </div>
-                <div class="col-12 col-md-5 offset-md-1 order-md-2">
-                    <div
-                         class="d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">React</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Next.js</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Wordpress</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">React Native
-                            </div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Flutter</div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="row align-items-center my-6 my-md-7">
-                <div class="col-12 col-md-6 text-center text-md-end order-md-2">
-                    <h3 class="h2 fw-semibold mb-4">Backend Development</h3>
-                    <p class="lead text-justify text-md-end lh-md">
-                        Powering every great application is a robust, secure, and scalable backend.
-                        We build high-performance server-side architectures that handle complex
-                        computations,
-                        data management, and seamless integrations with third-party services. Our
-                        backend
-                        solutions are optimized for efficiency, reliability, and security, ensuring
-                        that
-                        your applications run flawlessly while maintaining scalability for future
-                        growth.
-                    </p>
-                </div>
-                <div class="col-12 col-md-5 offset-md-1 order-md-1">
-                    <div
-                         class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3">
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Python Django
-                            </div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Flask</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Node.js</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Java Spring
-                            </div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Spring Boot
-                            </div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Php</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Wordpress</div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="row align-items-center my-6 my-md-7">
-                <div class="col-12 col-md-6 text-center text-md-start order-md-1">
-                    <h3 class="h2 fw-semibold mb-4">Secure Data Storage Solutions</h3>
-                    <p class="lead text-justify text-md-start lh-md">
-                        We deliver secure and scalable data management solutions, optimizing
-                        storage,
-                        retrieval, and processing for businesses. Our structured and unstructured
-                        database
-                        systems ensure seamless performance for mission-critical applications,
-                        enabling
-                        real-time insights and efficient analytics. With a focus on security, we
-                        implement
-                        encryption, automated backups, and monitoring to safeguard sensitive data
-                        while
-                        maintaining compliance. Our flexible architecture adapts to evolving
-                        business needs,
-                        ensuring reliability and scalability.
-                    </p>
-                </div>
-                <div class="col-12 col-md-5 offset-md-1 order-md-2">
-                    <div
-                         class="d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">MySQL</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">PostgresQL
-                            </div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">Oracle</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">MongoDB</div>
-                        </div>
-                        <div class="col-5 col-sm-4 col-lg-4">
-                            <div class="glassy-card p-3 lift-shadow-hover fw-medium">MS Access</div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
+            <h1 class="display-3 fw-bold mb-4 lh-base">
+                Transforming Ideas into Seamless Digital Experiences
+            </h1>
+            <p class="lead text-dark mx-auto"
+               style="max-width: 700px;">
+                At NAST, we bring your vision to life with cutting-edge web and mobile
+                development solutions.
+                Whether it's a dynamic website, a feature-rich mobile app, or a scalable
+                enterprise platform,
+                we craft high-performance applications that drive engagement and innovation.
+            </p>
         </div>
     </section>
 
 
+    <section class="section py-5 py-md-7 px-3 d-flex justify-content-center">
+        <div class="container-main">
+            <ul class="nav nav-tabs"
+                id="myTab"
+                role="tablist">
+                <li class="nav-item"
+                    role="presentation">
+                    <button class="nav-link active"
+                            id="frontend-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#frontend"
+                            type="button"
+                            role="tab"
+                            aria-controls="frontend"
+                            aria-selected="true">Frontend Development</button>
+                </li>
+                <li class="nav-item"
+                    role="presentation">
+                    <button class="nav-link"
+                            id="backend-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#backend"
+                            type="button"
+                            role="tab"
+                            aria-controls="backend"
+                            aria-selected="false">Backend Development</button>
+                </li>
+                <li class="nav-item"
+                    role="presentation">
+                    <button class="nav-link"
+                            id="data-storage-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#data-storage"
+                            type="button"
+                            role="tab"
+                            aria-controls="data-storage"
+                            aria-selected="false">Secure Data Storage</button>
+                </li>
+            </ul>
+
+            <div class="tab-content"
+                 id="myTabContent">
+                <div class="tab-pane fade show active"
+                     id="frontend"
+                     role="tabpanel"
+                     aria-labelledby="frontend-tab">
+                    <article class="row align-items-center my-6 my-md-7">
+                        <div class="col-12 col-md-6 text-center text-md-start order-md-1">
+                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900">Frontend
+                                Development
+                            </h3>
+                            <p class="sub-lead text-justify text-md-start lh-md text-gray-700">
+                                We create stunning, responsive, and intuitive user interfaces that
+                                deliver
+                                seamless experiences across devices. Our front-end solutions are
+                                designed for speed,
+                                accessibility, and engagement, ensuring smooth interactions and a
+                                modern
+                                aesthetic that
+                                captivates users. With cutting-edge frameworks and innovative design
+                                principles, we craft web
+                                and mobile applications that are as powerful as they are visually
+                                compelling.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-5 offset-md-1 order-md-2 mt-4 mt-md-0">
+                            <div
+                                 class="d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">React
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Next.js
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">
+                                        Wordpress
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">React
+                                        Native</div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Flutter
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="tab-pane fade"
+                     id="backend"
+                     role="tabpanel"
+                     aria-labelledby="backend-tab">
+                    <article class="row my-6 my-md-7">
+                        <div class="col-12 col-md-6 text-start">
+                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900">Backend
+                                Development
+                            </h3>
+                            <p class="sub-lead text-justify  lh-md text-gray-700">
+                                Powering every great application is a robust, secure, and scalable
+                                backend.
+                                We build high-performance server-side architectures that handle
+                                complex
+                                computations, data management, and seamless integrations with
+                                third-party services. Our
+                                backend solutions are optimized for efficiency, reliability, and
+                                security, ensuring
+                                that your applications run flawlessly while maintaining scalability
+                                for
+                                future
+                                growth.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-5 offset-md-1  mt-4 mt-md-0">
+                            <div class="d-flex flex-wrap justify-content-end gap-3">
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Python
+                                        Django</div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Flask
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Node.js
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Java
+                                        Spring
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Spring
+                                        Boot
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Php
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">
+                                        Wordpress
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="tab-pane fade"
+                     id="data-storage"
+                     role="tabpanel"
+                     aria-labelledby="data-storage-tab">
+                    <article class="row align-items-center my-6 my-md-7">
+                        <div class="col-12 col-md-6 text-center text-md-start order-md-1">
+                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900">Secure Data
+                                Storage
+                                Solutions</h3>
+                            <p class="sub-lead text-justify text-md-start lh-md text-gray-700">
+                                We deliver secure and scalable data management solutions, optimizing
+                                storage, retrieval, and processing for businesses. Our structured
+                                and
+                                unstructured
+                                database systems ensure seamless performance for mission-critical
+                                applications,
+                                enabling real-time insights and efficient analytics. With a focus on
+                                security, we
+                                implement encryption, automated backups, and monitoring to safeguard
+                                sensitive data
+                                while maintaining compliance. Our flexible architecture adapts to
+                                evolving
+                                business needs, ensuring reliability and scalability.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-5 offset-md-1 order-md-2 mt-4 mt-md-0">
+                            <div
+                                 class="d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">MySQL
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">
+                                        PostgresQL
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">Oracle
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">MongoDB
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-4 col-lg-4">
+                                    <div class="glassy-card p-3 lift-shadow-hover fw-medium">MS
+                                        Access
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <!-- ----------------------------------------------------------------------------------- 
 
                             Web & Mobile Development Application
@@ -331,17 +567,20 @@
             </h1>
 
             <div class="mb-4 text-center">
-                <h3 class="mb-4 fs-3">AI-Driven Digital Transformation with NAST</h3>
-                <p>At NAST, we power businesses with AI-driven web and mobile solutions, enhancing
+                <h3 class="mb-4 display-6">AI-Driven Digital Transformation with NAST</h3>
+                <p class="lead text-dark mx-auto mb-5">At NAST, we power businesses with AI-driven
+                    web and mobile solutions, enhancing
                     user experiences and automating workflows. Our cutting-edge development ensures
                     seamless, scalable applications built on secure, high-performance backend
                     architectures.</p>
 
-                <p>AI transforms insights into action, and our data analysis solutions empower
+                <p class="sub-lead text-gray-700 mx-auto mb-5">AI transforms insights into action,
+                    and our data analysis solutions empower
                     businesses with real-time intelligence. From small-scale reporting to big data
                     analytics, our tools ensure accuracy, efficiency, and strategic advantage.</p>
 
-                <p>Our custom AI models, trained on company-specific data, provide tailored
+                <p class="sub-lead text-gray-700 mx-auto mb-5">Our custom AI models, trained on
+                    company-specific data, provide tailored
                     automation, predictive insights, and optimized workflows. With a focus on
                     privacy, security, and governance, we ensure AI integrates seamlessly into your
                     business while maintaining data integrity.</p>
@@ -442,7 +681,7 @@
                      class="col-12 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center order-1 order-md-2">
                     <img src="./Source/images/MLOps2.png"
                          alt="MLOps Platform Screenshot Placeholder"
-                         class="img-fluid glassy-bg-filter rounded-3 img-400">
+                         class="img-fluid glassy-bg-filter rounded-5 p-3 img-400">
                 </div>
             </div>
         </div>
@@ -466,7 +705,7 @@
                 <div class="col-md-6  d-flex justify-content-center">
                     <img src="./Source/images/Privacy, Security & AI Governance Features4.png"
                          alt="AI Monitoring Dashboard Placeholder"
-                         class="img-fluid glassy-bg-filter rounded-3 img-400">
+                         class="img-fluid glassy-bg-filter rounded-5 p-3 img-400">
                 </div>
                 <div class="col-md-6">
                     <h3 class="display-6 fw-bold mb-5 lh-base">Privacy, Security & AI Governance
@@ -541,7 +780,7 @@
                     </p>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
-                    <img class="img-fluid glassy-bg-filter rounded-3 img-400"
+                    <img class="img-fluid glassy-bg-filter rounded-5 p-3 img-400"
                          src="./Source/images/Enterprise-ready2.png"
                          alt="Enterprise Tools Integration">
                 </div>

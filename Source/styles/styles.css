@@ -12,9 +12,92 @@
 }
 
 
+/* --------------------- Typography --------------------- */
+
+.text-gray-900 {
+    color: #1a202c;
+}
+
+/* Very dark gray */
+.text-gray-700 {
+    color: #4a5568;
+}
+
+/* Light Grays (closer to white) */
+.text-gray-50 {
+    color: #f8f9fa !important;
+    /* Very light gray, often used for subtle backgrounds */
+}
+
+.text-gray-100 {
+    color: #e9ecef !important;
+    /* Lighter than 200 */
+}
+
+.text-gray-200 {
+    color: #dee2e6 !important;
+    /* Light gray */
+}
+
+.text-gray-300 {
+    color: #ced4da !important;
+    /* Slightly darker light gray */
+}
+
+.text-gray-400 {
+    color: #adb5bd !important;
+    /* Medium-light gray */
+}
+
+/* Mid Gray */
+.text-gray-500 {
+    color: #6c757d !important;
+    /* Standard medium gray, often used for secondary text */
+}
+
+/* Dark Grays (closer to black) */
+.text-gray-600 {
+    color: #495057 !important;
+    /* Medium-dark gray */
+}
+
+.text-gray-700 {
+    color: #343a40 !important;
+    /* Dark gray, good for body text on light backgrounds */
+}
+
+.text-gray-800 {
+    color: #212529 !important;
+    /* Very dark gray, almost black */
+}
+
+.text-gray-900 {
+    color: #101010 !important;
+    /* Near black, slightly softer than pure black */
+}
+
+/* Custom font sizes for headings and cards */
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+/* Large font size */
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+/* Extra large font size */
+.text-xl {
+    font-size: 1.25rem;
+}
+
+/* --------------------- Typography --------------------- */
+
+
 .sub-lead {
     font-size: 1.13rem;
-    line-height: 1.5;
+    line-height: 1.7;
+    color: #5e5e5e;
 }
 
 
@@ -49,7 +132,7 @@
     /* Remove default body margin */
     min-height: 100vh;
     /* Ensure the gradient covers the full viewport height */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Inter", 'sans-serif';
     /* Example font */
     color: #333;
     /* Default text color */
@@ -60,11 +143,11 @@
         linear-gradient(135deg,
             #D7EEF7 0%,
             /* Light Blue */
-            #87CEEB 35%,
+            #9fbfca 35%,
             /* Medium Blue */
             #BCEAE4 70%,
             /* Teal/Light Green */
-            #5FB7B0 100%
+            #b7d3d1 100%
             /* Medium Teal/Blue */
         ),
 
@@ -112,7 +195,6 @@
 .nast-bg-gradient-body-2 {
     margin: 0;
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     overflow-x: hidden;
     /* Prevent horizontal scrollbar if background-size exceeds 100% */
@@ -120,15 +202,15 @@
     background:
         /* Layer 1: Main linear gradient with refined HSL colors */
         linear-gradient(135deg,
-            hsl(198, 70%, 95%) 0%,
+            hsla(199, 100%, 91%, 0.949) 0%,
             /* Very Light Blue */
-            hsl(203, 75%, 80%) 20%,
+            hsl(202, 25%, 94%) 20%,
             /* Lighter Medium Blue */
-            hsl(200, 70%, 65%) 45%,
+            hsl(268, 88%, 97%) 45%,
             /* True Medium Blue */
-            hsl(170, 45%, 80%) 70%,
+            hsl(171, 45%, 91%) 70%,
             /* Light Teal */
-            hsl(175, 45%, 55%) 100%
+            hsl(175, 22%, 68%) 100%
             /* Deeper Teal/Blue */
         ),
 
@@ -186,50 +268,28 @@
     padding-inline: 4rem;
 }
 
-
-
 .hero-section {
     padding: 5rem 0;
     /* Vertical padding */
 }
 
-
 .header {
-    /* Ample padding for height and horizontal space */
-
-    /* Vertically align content */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     z-index: 10;
     background:
-        linear-gradient(90deg,
-            /* Horizontal gradient for the header */
-            hsl(198, 70%, 95%) 0%,
-            /* Very Light Blue */
-            hsl(203, 75%, 80%) 50%,
-            /* Lighter Medium Blue */
-            hsl(170, 45%, 80%) 100%
-            /* Light Teal */
-        ),
+        linear-gradient(135deg,
+            hsl(199, 100%, 91%) 0%,
 
+            hsl(202, 25%, 94%) 20%,
 
-        radial-gradient(circle at 10% 50%,
-            /* Positioned towards the left edge, vertically centered */
-            rgba(255, 255, 255, 0.3) 0%,
-            /* Slightly stronger white for a defined highlight */
-            rgba(255, 255, 255, 0) 60%
-            /* Fades out */
-        );
+            hsl(268, 88%, 97%) 70%,
 
+            hsl(171, 45%, 91%) 100%);
     /* Optional: Add a very subtle border-bottom that matches a darker color */
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     /* Very light, almost invisible line */
 
-    /* Text color for header content (e.g., logo, nav links) */
-    color: hsl(200, 70%, 30%);
-    /* A darker blue from the body's palette for good contrast */
 }
 
-/* Typography */
 
 .text-justify {
     text-align: justify;
@@ -308,7 +368,56 @@
 }
 
 
-/* ============================= */
+/* ============================= Glassy Card CSS  ============================= */
+
+
+.glassy-bg-filter:has(.card-toggle:checked) {
+    /* When the card toggle is checked, apply the glassy background filter */
+    background-color: rgba(234, 233, 233, 0.15);
+    backdrop-filter: initial;
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-toggle:checked+.glassy-card-enhanced {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 90% !important;
+    height: auto;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-toggle:checked+.glassy-card-enhanced {
+
+
+    .see-more-btn {
+        display: none;
+    }
+}
+
+.card-toggle:not(:checked)+.glassy-card-enhanced {
+
+    .card-extra-text {
+        display: none;
+    }
+}
+
+
+
+
+.transition-card {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.glassy-card-wrapper {
+    position: relative;
+    /* perspective: 1000px; */
+}
 
 .glassy-card-enhanced {
     background: rgba(255, 255, 255, 0.3);
@@ -317,6 +426,7 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 350px;
+    height: 100%;
     /* Specific max-width not available in Bootstrap utilities */
 }
 
@@ -396,4 +506,70 @@
     .card-subtitle {
         font-size: 0.9rem;
     }
+}
+
+
+.mix-blend-multiply {
+    mix-blend-mode: multiply;
+    /* Blend mode for the background */
+}
+
+
+.logo-shadow {
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(-17px 5px 20px var(--shadow-color));
+}
+
+/* =================================== Overlay =================================== */
+
+
+/* Base Section Styling (similar to Bootstrap's container-fluid or specific section padding) */
+.section-bg {
+    background-size: cover;
+    /* Changed from 'contain' for a more common full-bleed background */
+    background-position: center;
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image Utility (can be applied to .section-bg or other elements) */
+.bg-ci-cd {
+    background-image: url('./images/CI-CD\ bg.png');
+}
+
+/* Dark Overlay Utility (can be combined with .section-bg or other elements needing an overlay) */
+.bg-overlay-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, hsla(199, 100%, 91%, 0.4) 0%, hsla(268, 88%, 97%, 0.1) 45%, hsla(171, 45%, 91%, 0.1) 70%, hsla(175, 22%, 68%, 0.1) 100%);
+    z-index: 1;
+    backdrop-filter: blur(4px);
+}
+
+/* Content Container (similar to Bootstrap's .container or .container-sm/md/lg) */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Text Alignment Utility */
+.text-center {
+    text-align: center;
+}
+
+/* Hover Effect Utility (can be applied to any element that needs a slight lift on hover) */
+.hover-lift-sm {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-lift-sm:hover {
+    transform: translateY(-5px);
 }

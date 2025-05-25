@@ -304,3 +304,180 @@ const data_analysis_stack = [
 ];
 
 
+
+// Developer Challenges Carouse Items Data
+
+const developer_challenges = [
+    {
+        title: "Time-Consuming Code Generation",
+        paragraph: "Manually writing repetitive boilerplate code can slow progress. Tools like Bolt instantly generate scaffold code, letting developers focus on complex logic.",
+        active: true,
+        imageSrc: "./images/Time-consuming.png"
+    },
+    {
+        title: "Debugging and Code Quality",
+        paragraph: "Identifying bugs in extensive codebases is challenging. GitHub Copilot and Cursor provide context-aware suggestions and in-editor hints that streamline debugging and elevate code quality.",
+        active: false,
+        imageSrc: "./images/Time-consuming.png"
+    },
+    {
+        title: "Complex Integration Processes",
+        paragraph: "Merging diverse technologies (Flutter, Kotlin, Node.js, Python) can lead to integration errors. AI-powered insights ease connector development and compatibility checks.",
+        active: false,
+        imageSrc: "./images/Time-consuming.png"
+    },
+    {
+        title: "Testing and Deployment Hurdles",
+        paragraph: "Comprehensive testing and smooth deployments are crucial. Firebase Studio from Google automates end-to-end tests, previews deployments, and ensures robust security.",
+        active: false,
+        imageSrc: "./images/Time-consuming.png"
+    },
+    {
+        title: "Security Vulnerabilities",
+        paragraph: "Continuously monitoring for vulnerabilities is time-intensive. AI-driven tools detect potential risks early and recommend proactive security measures.",
+        active: false,
+        imageSrc: "./images/Time-consuming.png"
+    },
+    {
+        title: "Scalability and Performance Optimization",
+        paragraph: "Balancing loads and scaling efficiently is intricate. AI analytics pinpoint performance bottlenecks and suggest resource optimizations.",
+        active: false,
+        imageSrc: "./images/Time-consuming.png"
+    },
+    {
+        title: "Maintaining Documentation",
+        paragraph: "Keeping documentation current is often overlooked. In-editor AI like GitHub Copilot auto-generates contextual documentation, reducing manual overhead.",
+        active: false,
+        imageSrc: "./images/Time-consuming.png"
+    }
+];
+
+
+
+// Solutions for Traditional Data Analysis tools
+const data_analysis_ai_solutions = [
+    {
+        iconType: 'i',
+        iconContent: 'bi bi-hdd-network',
+        title: 'Data Engineering Services',
+        subtitle: 'Handling large, complex datasets with robust engineering.',
+        text: 'NAST offers robust data engineering services designed to handle large, complex datasets with ease. By utilizing Python libraries such as Pandas and Dask alongside cloud-based solutions, we efficiently process and store data before it even reaches tools like Excel, Power BI, or Tableau. This means you never have to worry about system slowdowns or data crashes due to overwhelming volumes—the heavy lifting is done for you.'
+    },
+    {
+        iconType: 'i',
+        iconContent: 'bi bi-lightning-charge-fill',
+        title: 'Custom Analytical Solutions',
+        subtitle: 'Tailored solutions using advanced statistical analysis and machine learning.',
+        text: 'Our team develops tailor-made analytical solutions using Python and R to perform complex data manipulation, advanced statistical analysis, and machine learning. These solutions go far beyond the out-of-the-box capabilities of traditional platforms. Whether it’s uncovering hidden trends or solving specific business challenges, our customized analysis provides deep insights that standard tools simply can’t match.'
+    },
+    {
+        iconType: 'i',
+        iconContent: 'bi bi-arrow-repeat',
+        title: 'Automation and Reporting Pipelines',
+        subtitle: 'Streamlining data workflows with automated pipelines.',
+        text: 'NAST designs and implements automated pipelines that extract data from various sources, process it efficiently, and generate accurate reports or feed seamlessly into your visualization tools. By automating recurring tasks and reducing the potential for human error, we ensure your data remains fresh and your analysis is always up to date—empowering you to focus on strategic decision-making.'
+    },
+    {
+        iconType: 'i',
+        iconContent: 'bi bi-puzzle-fill',
+        title: 'Integration and Extension',
+        subtitle: 'Enhancing your tools with advanced programming integration.',
+        text: 'We extend the functionality of your favorite tools by integrating Python and R directly with Excel, Power BI, and Tableau. This integration bridges the gap between familiar interfaces and the powerful capabilities of advanced programming, providing you with enhanced control and flexibility. In doing so, you get the best of both worlds: an intuitive user experience with the robustness of custom analytics.'
+    },
+    {
+        iconType: 'i',
+        iconContent: 'bi bi-mortarboard',
+        title: 'Training and Support',
+        subtitle: 'Empowering teams to master advanced data analytics.',
+        text: 'At NAST, we don’t just deliver solutions—we empower your team. Our comprehensive training programs and ongoing support help your staff master these advanced analytical tools and techniques. With expert guidance, your team can leverage Python and R to become truly self-sufficient in navigating complex data challenges.'
+    },
+    {
+        iconType: 'i',
+        iconContent: 'bi bi-chat-dots-fill',
+        title: 'Consulting Services',
+        subtitle: 'Expert guidance tailored to your unique data needs.',
+        text: 'Our consulting services are designed to assess your unique data analysis needs and craft a strategy that integrates the right mix of traditional tools and custom-built solutions. We provide expert guidance to ensure that every step, from data ingestion to actionable insights, is optimized for your business. With NAST on your side, you can maximize your data’s potential and set a course for sustainable growth.'
+    }
+];
+
+
+const data_analysis_key_points = [
+    {
+        iconType: "i",
+        iconContent: "fas fa-robot", // AI-related
+        title: "AI-Powered Intelligence",
+        subtitle: "Leverage advanced AI and machine learning to convert complex, large-scale datasets into actionable insights. This minimizes human error and accelerates decision-making for growth across various industries."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-cogs", // tool integration
+        title: "Integrated Tool Ecosystem",
+        subtitle: "Seamlessly blend intuitive visualization tools (Excel, Power BI, Tableau) with powerful programming environments (Python and R). This combination provides both accessible reporting and custom, in-depth analysis tailored to unique business needs."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-database", // data engineering
+        title: "Advanced Data Engineering",
+        subtitle: "Employ modern libraries like Pandas and Dask alongside cloud-based solutions to efficiently process and store massive data volumes. This robust infrastructure ensures smooth data management and scalability."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-sync-alt", // automation
+        title: "Automated Analytics Pipelines",
+        subtitle: "Develop automated workflows for data extraction, transformation, and reporting. By streamlining recurring tasks, businesses benefit from up-to-date, error-free analysis that frees up valuable time for strategic initiatives."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-chart-line", // analytics
+        title: "Tailored Analytical Solutions",
+        subtitle: "Create customized models and statistical analyses that address specific challenges unique to each industry. This personalized approach uncovers hidden trends and drives solutions that standard tools cannot match."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-shield-alt", // security
+        title: "Secure & Compliant Data Handling",
+        subtitle: "Integrate stringent security protocols and ensure compliance with global standards. This commitment safeguards sensitive information while maintaining the integrity and reliability of your analytical processes."
+    }
+];
+
+
+// Big Data Tool Kit
+
+const big_data_features = [
+    {
+        iconType: "i",
+        iconContent: "fas fa-expand-arrows-alt", // scalable systems
+        title: "Scalable Data Solutions",
+        subtitle: "Your company should ensure that all data analysis tools and workflows can seamlessly handle small to massive datasets across various domains without performance issues."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-brain", // AI & ML
+        title: "AI-Powered Analytics",
+        subtitle: "Implement machine learning and AI-driven approaches to enhance data processing, predictive analytics, and automation, making analysis more efficient and insightful."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-plug", // integration
+        title: "Seamless Integration",
+        subtitle: "Ensure compatibility between Excel, Power BI, Tableau, and programming languages like Python and R, enabling businesses to use AI alongside traditional tools without disrupting existing workflows."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-sync", // automation
+        title: "Automation & Optimization",
+        subtitle: "Develop automated data pipelines that reduce manual workload, minimize human error, and optimize the speed and accuracy of data analysis."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-sliders-h", // customization
+        title: "User-Centric Customization",
+        subtitle: "Provide tailored analytics solutions that address industry-specific needs, ensuring businesses get deeper insights beyond standard visualizations and reporting."
+    },
+    {
+        iconType: "i",
+        iconContent: "fas fa-lock", // security & compliance
+        title: "Security & Compliance",
+        subtitle: "Maintain stringent data security protocols and ensure compliance with global regulations, safeguarding sensitive business and customer data while providing reliable analytics solutions."
+    }
+];

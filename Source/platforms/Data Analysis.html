@@ -10,18 +10,59 @@
           rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+
+
+    <!-- Owl Carousel Script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+    <!-- Owl Carousel CSS -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="../scripts/header.js"></script>
+
 
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="../scripts/header.js"></script>
+
+    <script src="../scripts/cards.js"
+            type="text/javascript"></script>
+    <script src="../scripts/cards-data.js"
+            type="text/javascript"></script>
+    <script src="../scripts/bsComponents.js"
+            type="text/javascript"></script>
+
+    <link rel="stylesheet"
+          href="../styles/index.css">
+
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+
 
     <style>
         .mlops-section {
@@ -901,87 +942,268 @@
         }
     </style>
 
-</head>
 
-<body>
+    <!-- Owl Carousel Styles -->
+    <style>
+        .owl-theme .owl-nav.disabled+.owl-dots {
+            margin-top: 20px;
+            /* Space between slider and dots */
+        }
 
-    <header id="navbar-container"></header>
+        .owl-theme .owl-dots .owl-dot span {
+            background: #cbd5e0;
+            /* Light gray dots */
+        }
+
+        .owl-theme .owl-dots .owl-dot.active span {
+            background: ;
+            /* Active dot color, corresponds to Bootstrap primary */
+        }
+
+        /* Removed custom gradient styles as cards will now be white */
+
+        .owl-carousel .item {
+            padding: 10px;
+            height: 400px;
+            max-width: 600px;
+            width: 100%;
+        }
+    </style>
+
     <script>
-        createNavbar(navbarConfig);
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+            // data_analysis_ai_solution
+            createGlassyCards(data_analysis_ai_solutions, 'data_analysis_ai_solution');
+
+        });
     </script>
 
-    <div class="container mlops-section">
-        <div class="mlops-content">
-            <div class="mlops-text">
-                <h2>Empowering Decisions with Intelligent Data Analysis</h2>
+</head>
 
-                <p>Transforming raw data into strategic insights using cutting-edge AI and advanced
+<body class="nast-bg-gradient-body-2">
+
+    <header class="header"
+            id="navbar-container"></header>
+
+    <!-- Hero Section -->
+    <div class="container py-5 ">
+        <div class="row align-items-center justify-content-between my-6">
+            <div class="col-12 col-md-6">
+
+                <h2 class="display-2 mb-4">Empowering Decisions with Intelligent Data Analysis</h2>
+
+                <p class="lead">Transforming raw data into strategic insights using cutting-edge AI
+                    and advanced
                     analytics.</p>
             </div>
-            <div class="mlops-image">
-                <img src="https://datatron.com/wp-content/uploads/2021/10/hero-2-4.svg"
-                     alt="MLOps Diagram">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <img class="img-fluid rounded-5 mix-blend-multiply"
+                     src="https://datatron.com/wp-content/uploads/2021/10/hero-2-4.svg"
+                     alt="
+                     AI
+                     Powered
+                     Web
+                     &
+                     Mobile
+                     Development">
             </div>
         </div>
     </div>
 
-    <div class="container-fluid mlops-what-is-section  d-flex justify-content-center">
-        <div class="w-50 text-center ml-auto">
-            <h2 class="fs-1">Data Analysis</h2>
-            <p class="">
-                At NAST, our mission is to revolutionize data analysis by automating complex
-                processes. We're committed to minimizing human error and maximizing efficiency,
-                giving businesses like yours the invaluable gift of time.
-            </p>
-            <p class="">
-                Our vision is to harmonize intelligent automation with advanced analytics,
-                transforming raw data into actionable insights that fuel growth across diverse
-                sectors from healthcare to marketing. To achieve this, we blend user-friendly tools
-                like Excel, Power BI, and Tableau for accessible reporting with the power of Python
-                and R for custom, in-depth analysis, ensuring every client unlocks the full
-                potential of their data.
-            </p>
+
+    <!-- Data Analysis Intro Section -->
+    <div class="section">
+        <div class="container">
+
+            <header class="text-center my-6">
+                <h1 class="display-4 fw-bold text-gray-600 mb-3">
+                    Unlock Your Data's Full Potential
+                </h1>
+                <p class="fs-5 text-secondary">
+                    Transform complex data into clear, actionable insights with our cutting-edge AI
+                    and data solutions.
+                </p>
+            </header>
+
+
+            <div id="data-analysis__owl-carousel"
+                 class="owl-carousel owl-theme">
+                <!-- All the Items are populated by script -->
+            </div>
         </div>
     </div>
 
-    <div class="container-fluid mlops-what-is-section d-flex justify-content-center">
-        <div class="w-50 text-center ml-auto">
-            <h2 class="fs-1">Our Approach</h2>
-            <p class="">
-                Tools like Excel, Power BI, and Tableau serve as the foundation of our data
-                visualization and reporting capabilities. These platforms enable us to create
-                intuitive, interactive dashboards and detailed reports that cater to both everyday
-                business questions and complex analytical challenges.
-            </p>
-            <p class="">
-                For deeper customization and precise control over our analytical processes, our team
-                harnesses the power of Python and R. These programming languages allow us to build
-                custom models, perform sophisticated statistical analyses, and tailor solutions that
-                address the unique challenges of each industry.
-            </p>
+    <script>
+        $(document).ready(function () {
 
-            <p class="">
-                At NAST, our commitment is to blend the strengths of automation with the expertise
-                of data scientists, delivering solutions that not only enhance operational
-                efficiency but also unlock the full potential of your data.
-            </p>
+            populateOwlCarouselItems(
+                'data-analysis__owl-carousel',
+                data_analysis_key_points
+            );
+
+            $("#data-analysis__owl-carousel").owlCarousel({
+                loop: true, // Loop the items
+                margin: 10, // Space between items
+                nav: true, // Show navigation buttons
+                dots: true, // Show pagination dots
+                responsive: {
+                    0: {
+                        items: 1 // 1 item on extra small devices (mobile)
+                    },
+                    576: { // Bootstrap's sm breakpoint
+                        items: 2 // 2 items on small devices
+                    },
+                    768: { // Bootstrap's md breakpoint
+                        items: 2 // 2 items on medium devices
+                    },
+                    992: { // Bootstrap's lg breakpoint
+                        items: 2 // 3 items on large devices
+                    },
+                    1200: { // Bootstrap's xl breakpoint
+                        items: 3 // 3 items on extra large devices
+                    }
+                }
+            });
+        });
+    </script>
+
+
+    <!-- NAST Approach Section -->
+    <section>
+        <section class="section py-6 text-center bg-light position-relative my-6">
+            <div class="bg-overlay-dark">
+                <div class="container"
+                     style="z-index: 10;  position: relative;">
+                    <h1 class="display-4 mb-3">Our Advanced Data Approach</h1>
+                    <p class="lead mb-5">
+                        At NAST, we blend cutting-edge technology with expert insights to transform
+                        your
+                        data into actionable intelligence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container my-6 py-6">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="mb-4 fw-bold">Empowering Your Business Through Data</h2>
+                    <p class="lead text-muted">
+                        Discover how our comprehensive approach, combining powerful tools and
+                        custom
+                        solutions, unlocks the full potential of your information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card flex-fill glassy-bg-filter border-0 shadow-lg">
+                        <div class="card-body text-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="60"
+                                     height="60"
+                                     fill="currentColor"
+                                     class="bi bi-bar-chart-line-fill"
+                                     viewBox="0 0 16 16">
+                                    <path
+                                          d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm-5 7a1 1 0 0 0-1 1v3h2v-3a1 1 0 0 0-1-1zm4 0a1 1 0 0 0-1 1v3h2v-3a1 1 0 0 0-1-1z" />
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Intuitive Data Visualization</h3>
+                            <p class="card-text">
+                                Tools like Excel, Power BI, and Tableau serve as the foundation
+                                of
+                                our data visualization and reporting capabilities. These
+                                platforms
+                                enable us to create intuitive, interactive dashboards and
+                                detailed
+                                reports that cater to both everyday business questions and
+                                complex
+                                analytical challenges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card flex-fill glassy-bg-filter border-0 shadow-lg">
+                        <div class="card-body text-center ">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="60"
+                                     height="60"
+                                     fill="currentColor"
+                                     class="bi bi-code-slash"
+                                     viewBox="0 0 16 16">
+                                    <path
+                                          d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Advanced Customization</h3>
+                            <p class="card-text">
+                                For deeper customization and precise control over our analytical
+                                processes, our team harnesses the power of Python and R. These
+                                programming languages allow us to build custom models, perform
+                                sophisticated statistical analyses, and tailor solutions that
+                                address the unique challenges of each industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="card flex-fill glassy-bg-filter border-0 shadow-lg">
+                        <div class="card-body text-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="60"
+                                     height="60"
+                                     fill="currentColor"
+                                     class="bi bi-robot"
+                                     viewBox="0 0 16 16">
+                                    <path
+                                          d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM.5 8.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5ZM13 4a4 4 0 0 1 4 4v.5a.5.5 0 0 1-1 0V8a3 3 0 0 0-3-3H3a3 3 0 0 0-3 3v.5a.5.5 0 0 1-1 0V8a4 4 0 0 1 4-4z" />
+                                    <path
+                                          d="M9.5 16a2.5 2.5 0 0 1-5 0 .5.5 0 0 0-1 0 3.5 3.5 0 1 0 7 0 .5.5 0 0 0-1 0ZM2 3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2H2z" />
+                                    <path
+                                          d="M8 1.918l-.797.161A4 4 0 0 0 4.905 3.104 2.5 2.5 0 0 0 3 5h10a2.5 2.5 0 0 0-1.905-1.896 4 4 0 0 0-2.298-1.026ZM12 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM4 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" />
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Automation & Expertise</h3>
+                            <p class="card-text">
+                                At NAST, our commitment is to blend the strengths of automation
+                                with
+                                the expertise of data scientists, delivering solutions that not
+                                only
+                                enhance operational efficiency but also unlock the full
+                                potential of
+                                your data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
 
 
     <!-- Data Analysis tools Challenges -->
-    <div class="bg-light py-5">
-        <div class="container challenges-section py-5 my-5">
+    <div class="glassy-bg-filter py-5">
+        <div class="container py-5 my-5">
 
-            <div class="challenges-text">
-
+            <div class="">
                 <div class="d-flex flex-column align-items-center mb-5">
-                    <div class="w-50">
-                        <h2 class="challenges-title mb-5 text-center">Challenges with Traditional
+                    <div class="w-md-75 w-sm-75">
+                        <h2 class="display-4 mb-5 text-center">Challenges with Traditional
                             Data
                             Analysis
                             Tools</h2>
-                        <p class="text-center">Organizations frequently rely on familiar tools such
+                        <p class="lead text-center">Organizations frequently rely on familiar tools
+                            such
                             as
                             Excel, Power BI,
                             and
@@ -991,106 +1213,163 @@
                     </div>
                 </div>
 
-                <div class="row mb-5">
-                    <div class="col-md-6">
-                        <h4 class="fs-4 mb-3">Excel’s Limitations in Handling Large-Scale Data and
-                            Complex
-                            Analysis</h4>
-                        <p class="challenges-paragraph">
-                            Excel, for instance,
-                            often
-                            struggles with large volumes of data—exceeding its optimal capacity of
-                            one
-                            million rows—which results in sluggish processing or even crashes.
-                            Additionally,
-                            while Excel is widely used for basic tasks, its built-in functions can
-                            fall
-                            short for more complex data manipulation, such as merging and reshaping
-                            datasets. Statistical analysis in Excel can also be prone to
-                            inaccuracies, and
-                            its collaboration features often prove cumbersome. Moreover, although
-                            Excel
-                            supports macros and VBA, automating intricate tasks remains challenging
-                            compared
-                            to more flexible programming solutions like Python.
-                        </p>
-                    </div>
+                <div class="container-main">
+                    <ul class="nav nav-tabs justify-content-center"
+                        id="myTab"
+                        role="tablist">
+                        <li class="nav-item"
+                            role="presentation">
+                            <button class="nav-link active"
+                                    id="frontend-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#frontend"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="frontend"
+                                    aria-selected="true">Excel Limitation</button>
+                        </li>
+                        <li class="nav-item"
+                            role="presentation">
+                            <button class="nav-link"
+                                    id="backend-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#backend"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="backend"
+                                    aria-selected="false">Power BI</button>
+                        </li>
+                        <li class="nav-item"
+                            role="presentation">
+                            <button class="nav-link"
+                                    id="data-storage-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#data-storage"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="data-storage"
+                                    aria-selected="false">Tableau</button>
+                        </li>
+                    </ul>
 
-                    <div class="col-md-6 img-fluid">
-                        <img class="w-100"
-                             style="height: 300px; width: 300px;"
-                             src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
-                             alt="test-img">
+                    <div class="tab-content"
+                         id="myTabContent">
+                        <div class="tab-pane fade show active"
+                             id="frontend"
+                             role="tabpanel"
+                             aria-labelledby="frontend-tab">
+
+                            <article class="row align-items-center my-6 my-md-7">
+                                <div class="col-12 col-md-6">
+                                    <img class="img-fluid img-h-400 object-fit-contain mix-blend-multiply"
+                                         src="./images/backend_django_flask_2.png"
+                                         alt="Backend Capabilities with Django & Flask">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <h3 class="display-6 mb-4">Excel’s Limitations in Handling
+                                        Large-Scale
+                                        Data and Complex Analysis
+                                    </h3>
+                                    <p class="sub-lead">
+                                        Excel, for instance, often struggles with large volumes of
+                                        data—exceeding its optimal capacity of one million
+                                        rows—which
+                                        results in sluggish processing or even crashes.
+                                        Additionally, while
+                                        Excel is widely used for basic tasks, its built-in functions
+                                        can
+                                        fall short for more complex data manipulation, such as
+                                        merging and
+                                        reshaping datasets. Statistical analysis in Excel can also
+                                        be prone
+                                        to inaccuracies, and its collaboration features often prove
+                                        cumbersome. Moreover, although Excel supports macros and
+                                        VBA,
+                                        automating intricate tasks remains challenging compared to
+                                        more
+                                        flexible programming solutions like Python.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="tab-pane fade"
+                             id="backend"
+                             role="tabpanel"
+                             aria-labelledby="backend-tab">
+
+                            <article class="row align-items-center my-6 my-md-7">
+                                <div class="col-12 col-md-6">
+                                    <h3 class="display-6 mb-4">Power BI: Performance and
+                                        Customization
+                                        Limitations</h3>
+                                    <p class="sub-lead">
+                                        Power BI offers powerful visualizations and dynamic
+                                        dashboards;
+                                        however, it, too, encounters performance issues with very
+                                        large
+                                        datasets. Its inherent data cleaning and preprocessing
+                                        capabilities
+                                        lack the flexibility of Python’s advanced libraries, and
+                                        customizing
+                                        visuals often requires intricate workarounds beyond the
+                                        standard
+                                        templates. The platform’s built-in statistical functions and
+                                        machine
+                                        learning tools are limited, which may necessitate the use of
+                                        additional specialized software for in-depth analysis.
+                                    </p>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <img class="img-400 img-fluid object-fit-contain mix-blend-multiply"
+                                         src="./images/java_spring_arcit.png"
+                                         alt="Backend Integration">
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="tab-pane fade"
+                             id="data-storage"
+                             role="tabpanel"
+                             aria-labelledby="data-storage-tab">
+
+                            <article class="row align-items-center my-6 my-md-7">
+                                <div class="col-12 col-md-6">
+                                    <img class="img-400 object-fit-contain img-fluid mix-blend-multiply"
+                                         src="./images/ai_powered_backend_innovation.png"
+                                         alt="AI Powered Backend Innovation">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <h3 class="display-6 mb-4">Tableau: Licensing, Data Preparation,
+                                        and
+                                        Advanced Analytics Limitations
+                                    </h3>
+                                    <p class="sub-lead">
+                                        Tableau is celebrated for its interactive visualizations but
+                                        comes
+                                        with its own set of challenges. Licensing fees and
+                                        associated costs
+                                        can be high for large organizations, potentially limiting
+                                        its
+                                        accessibility. Its data preparation features aren’t as
+                                        robust as
+                                        those in specialized analytical tools, frequently compelling
+                                        users
+                                        to depend on external systems for comprehensive data
+                                        cleaning.
+                                        Furthermore, Tableau’s capabilities for advanced statistical
+                                        analysis and machine learning remain limited, and its
+                                        automation and
+                                        scripting functionalities do not offer the same level of
+                                        flexibility
+                                        as programming-based solutions.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
-
-
-                <div class="row mb-5 ">
-                    <div class="col-md-6 img-fluid">
-                        <img class="w-100"
-                             style="height: 300px; width: 300px;"
-                             src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
-                             alt="test-img">
-                    </div>
-
-                    <div class="col-md-6">
-                        <h4 class="fs-4 mb-3">Power BI: Performance and Customization Limitations
-                        </h4>
-                        <p class="challenges-paragraph">
-                            Power BI offers powerful visualizations and dynamic dashboards; however,
-                            it,
-                            too, encounters performance issues with very large datasets. Its
-                            inherent
-                            data
-                            cleaning and preprocessing capabilities lack the flexibility of Python’s
-                            advanced libraries, and customizing visuals often requires intricate
-                            workarounds
-                            beyond the standard templates. The platform’s built-in statistical
-                            functions
-                            and
-                            machine learning tools are limited, which may necessitate the use of
-                            additional
-                            specialized software for in-depth analysis.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="row mb-5 ">
-                    <div class="col-md-6">
-                        <h4 class="fs-4 mb-3">Tableau: Licensing, Data Preparation, and Advanced
-                            Analytics
-                            Limitations</h4>
-                        <p class="challenges-paragraph">
-                            Tableau is celebrated for its interactive visualizations but comes with
-                            its
-                            own
-                            set of challenges. Licensing fees and associated costs can be high for
-                            large
-                            organizations, potentially limiting its accessibility. Its data
-                            preparation
-                            features aren’t as robust as those in specialized analytical tools,
-                            frequently
-                            compelling users to depend on external systems for comprehensive data
-                            cleaning.
-                            Furthermore, Tableau’s capabilities for advanced statistical analysis
-                            and
-                            machine learning remain limited, and its automation and scripting
-                            functionalities do not offer the same level of flexibility as
-                            programming-based
-                            solutions.
-                        </p>
-                    </div>
-                    <div class="col-md-6 img-fluid">
-                        <img class="w-100"
-                             style="height: 300px; width: 300px;"
-                             src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
-                             alt="test-img">
-                    </div>
-
-
-                </div>
-
 
                 <div class="d-flex justify-content-center mb-5">
                     <p class="w-75 fs-5 text-center">
@@ -1105,188 +1384,48 @@
         </div>
     </div>
 
-    <!--  -->
-    <div class="container-fluid mlops-what-is-section d-flex justify-content-center">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <h2 class="fs-1 text-center mb-5 w-50">Overcoming the Limitations of
-                    Traditional
-                    Data Tools
-                </h2>
-            </div>
 
-            <div class="container px-4 py-5">
+    <!-- Solution For Limitation of Data Tools -->
+    <div class="section my-6 py-6">
+        <div class="d-flex justify-content-center">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="display-4 text-center mb-5">Breaking the Data Mold
+                    </h2>
+                    <p class="lead text-center">
+                        NAST’s AI-driven solutions redefine data analysis, overcoming traditional
+                        tool
+                        limitations to deliver unparalleled insights and efficiency.
+                        Unleashing Next-Gen Analytics Step into a realm where agile, AI-driven
+                        insight shatters legacy barriers
+                    </p>
+                </div>
 
-                <div class="row g-4">
+                <div class="container px-4 py-5">
 
-                    <div class="col-12 col-md-6 col-lg-4 d-flex">
-                        <div class="card shadow-lg flex-fill">
-                            <div class="card-header rounded-top text-center">
-                                <i class="bi bi-database-gear fs-1"></i>
-                                <h3 class="card-title text-xl font-semibold">Data
-                                    Engineering
-                                    Services</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-gray-700">
-                                    NAST offers robust data engineering services designed to handle
-                                    large,
-                                    complex datasets with ease. By utilizing Python libraries such
-                                    as Pandas
-                                    and Dask alongside cloud-based solutions, we efficiently process
-                                    and
-                                    store data before it even reaches tools like Excel, Power BI, or
-                                    Tableau. This means you never have to worry about system
-                                    slowdowns or
-                                    data crashes due to overwhelming volumes—the heavy lifting is
-                                    done for
-                                    you.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 d-flex">
-                        <div class="card shadow-lg flex-fill">
-                            <div class="card-header rounded-top text-center">
-                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
-                                <h3 class="card-title text-xl font-semibold">Custom
-                                    Analytical
-                                    Solutions</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-gray-700">
-                                    Our team develops tailor-made analytical solutions using Python
-                                    and R to
-                                    perform complex data manipulation, advanced statistical
-                                    analysis, and
-                                    machine learning. These solutions go far beyond the
-                                    out-of-the-box
-                                    capabilities of traditional platforms. Whether it’s uncovering
-                                    hidden
-                                    trends or solving specific business challenges, our customized
-                                    analysis
-                                    provides deep insights that standard tools simply can’t match.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 d-flex">
-                        <div class="card shadow-lg flex-fill">
-                            <div class="card-header rounded-top text-center">
-                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
-                                <h3 class="card-title text-xl font-semibold">Automation
-                                    and
-                                    Reporting Pipelines</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-gray-700">
-                                    NAST designs and implements automated pipelines that extract
-                                    data from
-                                    various sources, process it efficiently, and generate accurate
-                                    reports
-                                    or feed seamlessly into your visualization tools. By automating
-                                    recurring tasks and reducing the potential for human error, we
-                                    ensure
-                                    your data remains fresh and your analysis is always up to
-                                    date—empowering you to focus on strategic decision-making.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 d-flex">
-                        <div class="card shadow-lg flex-fill">
-                            <div class="card-header rounded-top text-center">
-                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
-                                <h3 class="card-title text-xl font-semibold">Integration
-                                    and
-                                    Extension</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-gray-700">
-                                    We extend the functionality of your favorite tools by
-                                    integrating Python
-                                    and R directly with Excel, Power BI, and Tableau. This
-                                    integration
-                                    bridges the gap between familiar interfaces and the powerful
-                                    capabilities of advanced programming, providing you with
-                                    enhanced
-                                    control and flexibility. In doing so, you get the best of both
-                                    worlds:
-                                    an intuitive user experience with the robustness of custom
-                                    analytics.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 d-flex">
-                        <div class="card shadow-lg flex-fill">
-                            <div class="card-header rounded-top text-center">
-                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
-                                <h3 class="card-title text-xl font-semibold">Training
-                                    and
-                                    Support</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-gray-700">
-                                    At NAST, we don’t just deliver solutions—we empower your team.
-                                    Our
-                                    comprehensive training programs and ongoing support help your
-                                    staff
-                                    master these advanced analytical tools and techniques. With
-                                    expert
-                                    guidance, your team can leverage Python and R to become truly
-                                    self-sufficient in navigating complex data challenges.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 d-flex">
-                        <div class="card shadow-lg flex-fill">
-                            <div class="card-header rounded-top text-center">
-                                <i class="fa-solid fa-magnifying-glass-chart fs-1"></i>
-                                <h3 class="card-title text-xl font-semibold">Consulting
-                                    Services
-                                </h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-gray-700">
-                                    Our consulting services are designed to assess your unique data
-                                    analysis
-                                    needs and craft a strategy that integrates the right mix of
-                                    traditional
-                                    tools and custom-built solutions. We provide expert guidance to
-                                    ensure
-                                    that every step, from data ingestion to actionable insights, is
-                                    optimized for your business. With NAST on your side, you can
-                                    maximize
-                                    your data’s potential and set a course for sustainable growth.
-                                </p>
-                            </div>
-                        </div>
+                    <div id="data_analysis_ai_solution"
+                         class="row g-4 justify-content-center glassy-card-wrapper">
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 
 
-    <div class="bg-light py-5">
+    <!-- Our Bit Data Toolkit -->
+    <section class="my-6 py-6">
         <div class="container">
             <div class="d-flex justify-content-center">
-                <h2 class="fs-1 text-center mb-5 w-50">Our Big Data Toolkit</h2>
+                <h2 class="display-4 text-center mb-5 w-50">Our Big Data Toolkit</h2>
             </div>
 
+
+            <!--  -->
             <div class="row mb-5">
                 <div class="col-md-6">
-                    <img width="400px"
-                         height="400px"
-                         src="https://datatron.com/wp-content/uploads/2021/10/img-6-1.jpg"
+                    <img class="img-fluid rounded-3 img-400"
+                         src="./images/big_tool_kit-2.png"
                          alt="test-img"
                          class="img-fluid">
                 </div>
@@ -1311,57 +1450,60 @@
                 </div>
             </div>
 
+            <div class="container my-6"
+                 style="margin-top: 40px;">
 
-            <div class="container w-75">
-                <h2 class="fs-2 text-center">Key Features</h2>
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><strong>Scalable Data Solutions</strong><br>Your
-                                company
-                                should ensure
-                                that all data analysis tools and workflows can seamlessly handle
-                                small
-                                to massive datasets across various domains without performance
-                                issues.
-                            </li>
-                            <li class="mb-3"><strong>AI-Powered Analytics</strong><br>Implement
-                                machine
-                                learning and
-                                AI-driven approaches to enhance data processing, predictive
-                                analytics,
-                                and automation, making analysis more efficient and insightful.</li>
-                            <li class="mb-3"><strong>Seamless Integration</strong><br>Ensure
-                                compatibility between
-                                Excel, Power BI, Tableau, and programming languages like Python and
-                                R,
-                                enabling businesses to use AI alongside traditional tools without
-                                disrupting existing workflows.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><strong>Automation & Optimization</strong><br>Develop
-                                automated data
-                                pipelines that reduce manual workload, minimize human error, and
-                                optimize the speed and accuracy of data analysis.</li>
-                            <li class="mb-3"><strong>User-Centric Customization</strong><br>Provide
-                                tailored
-                                analytics solutions that address industry-specific needs, ensuring
-                                businesses get deeper insights beyond standard visualizations and
-                                reporting.</li>
-                            <li class="mb-3"><strong>Security & Compliance</strong><br>Maintain
-                                stringent data
-                                security protocols and ensure compliance with global regulations,
-                                safeguarding sensitive business and customer data while providing
-                                reliable analytics solutions.</li>
-                        </ul>
-                    </div>
+
+                <h2 class="display-6 text-center mb-5">Explore Our Big Data Tools</h2>
+                <!-- create a subtitle  -->
+                <p class="lead text-center mb-5">
+                    Discover how our big data tools can transform your data into actionable insights
+                    and drive your business forward.
+                </p>
+
+                <div id="big-data-tools__owl-carousel"
+                     class="owl-carousel owl-theme">
+                    <!-- All the Items are populated by script -->
                 </div>
             </div>
 
         </div>
-    </div>
+    </section>
+
+
+    <script>
+        $(document).ready(function () {
+
+            populateOwlCarouselItems(
+                'big-data-tools__owl-carousel',
+                big_data_features
+            );
+
+            $("#big-data-tools__owl-carousel").owlCarousel({
+                loop: true, // Loop the items
+                margin: 10, // Space between items
+                nav: true, // Show navigation buttons
+                dots: true, // Show pagination dots
+                responsive: {
+                    0: {
+                        items: 1 // 1 item on extra small devices (mobile)
+                    },
+                    576: { // Bootstrap's sm breakpoint
+                        items: 2 // 2 items on small devices
+                    },
+                    768: { // Bootstrap's md breakpoint
+                        items: 2 // 2 items on medium devices
+                    },
+                    992: { // Bootstrap's lg breakpoint
+                        items: 2 // 3 items on large devices
+                    },
+                    1200: { // Bootstrap's xl breakpoint
+                        items: 3 // 3 items on extra large devices
+                    }
+                }
+            });
+        });
+    </script>
 
     <footer class="bg-dark text-white py-4 fw-lighter"
             style="--bs-body-font-size: 0.8rem;">

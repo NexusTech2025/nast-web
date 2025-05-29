@@ -11,6 +11,23 @@
     max-height: 400px;
 }
 
+.img-w-300 {
+    max-width: 300px;
+
+}
+
+.img-h-300 {
+    max-height: 300px;
+}
+
+
+
+
+.icon-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
 
 /* --------------------- Typography --------------------- */
 
@@ -271,6 +288,7 @@
 .hero-section {
     padding: 5rem 0;
     /* Vertical padding */
+    height: 90vh;
 }
 
 .header {
@@ -547,9 +565,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, hsla(199, 100%, 91%, 0.4) 0%, hsla(268, 88%, 97%, 0.1) 45%, hsla(171, 45%, 91%, 0.1) 70%, hsla(175, 22%, 68%, 0.1) 100%);
+    background: rgba(0, 0, 0, 0.65);
     z-index: 1;
-    backdrop-filter: blur(4px);
+
 }
 
 /* Content Container (similar to Bootstrap's .container or .container-sm/md/lg) */

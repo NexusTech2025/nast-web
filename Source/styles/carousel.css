@@ -1,0 +1,23 @@
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 20px;
+    /* Space between slider and dots */
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: #cbd5e0;
+    /* Light gray dots */
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+
+    /* Active dot color, corresponds to Bootstrap primary */
+}
+
+/* Removed custom gradient styles as cards will now be white */
+
+.owl-carousel .item {
+    padding: 10px;
+    height: 400px;
+    max-width: 600px;
+    width: 100%;
+}

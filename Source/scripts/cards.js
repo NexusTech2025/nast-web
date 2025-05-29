@@ -17,7 +17,7 @@ function createGlassyCards(cardData, containerId) {
             iconHtml = card.iconContent; // SVG string
         } else if (card.iconType === 'img') {
             // Include onerror for fallback image
-            iconHtml = `<img class="${card.imgClass}" src="${card.iconContent}" alt="${card.title} icon" onerror="this.onerror=null;this.src='https://placehold.co/48x48/cccccc/ffffff?text=Icon'">`;
+            iconHtml = `<img class="${card.imgClass} icon-logo" src="${card.iconContent}" alt="${card.title} icon" onerror="this.onerror=null;this.src='https://placehold.co/48x48/cccccc/ffffff?text=Icon'">`;
         } else if (card.iconType === 'i' || card.iconType === 'span') {
             iconHtml = `<${card.iconType} class="${card.iconContent}"></${card.iconType}>`;
         } else {
@@ -132,7 +132,7 @@ function createOwlCarouselItemHtml({ iconType, iconContent, title, subtitle }) {
     } else if (iconType === 'img') {
         // For <img>, iconContent is expected to be the image source URL
         // Added img-fluid for responsiveness and max-width for consistent sizing.
-        iconHtml = `<img src="${iconContent}" alt="icon" class="img-fluid mb-3" style="max-width: 80px; height: auto;">`;
+        iconHtml = `<img src="${iconContent}" alt="icon" class="img-fluid mb-3 icon-logo">`;
     } else {
         // Log a warning if an unsupported iconType is provided
         console.warn(`Unsupported iconType: ${iconType}. No icon will be rendered.`);
@@ -144,7 +144,9 @@ function createOwlCarouselItemHtml({ iconType, iconContent, title, subtitle }) {
     <div class="item">
         <div class="card glassy-bg-filter shadow rounded-4 h-100 border-0">
             <div class="card-body p-4 text-center">
-                ${iconHtml}
+                <div class="d-flex justify-content-center mb-4"">
+                    ${iconHtml}
+                </div>
                 <h2 class="h4 fw-semibold text-gray-700 mb-3">${title}</h2>
                 <p class="sub-lead lh-base">
                     ${subtitle}
@@ -188,4 +190,41 @@ function populateOwlCarouselItems(containerId, itemsData) {
         const itemHtml = createOwlCarouselItemHtml(item);
         containerElement.insertAdjacentHTML('beforeend', itemHtml);
     });
+}
+
+
+function initOwlCarousel(itemsData, containerId) {
+
+    $(document).ready(function () {
+
+        populateOwlCarouselItems(
+            containerId,
+            itemsData
+        );
+
+        $(`#${containerId}`).owlCarousel({
+            loop: true, // Loop the items
+            margin: 10, // Space between items
+            nav: true, // Show navigation buttons
+            dots: true, // Show pagination dots
+            responsive: {
+                0: {
+                    items: 1 // 1 item on extra small devices (mobile)
+                },
+                576: { // Bootstrap's sm breakpoint
+                    items: 2 // 2 items on small devices
+                },
+                768: { // Bootstrap's md breakpoint
+                    items: 2 // 2 items on medium devices
+                },
+                992: { // Bootstrap's lg breakpoint
+                    items: 2 // 3 items on large devices
+                },
+                1200: { // Bootstrap's xl breakpoint
+                    items: 3 // 3 items on extra large devices
+                }
+            }
+        });
+    });
+
 }

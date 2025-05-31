@@ -21,3 +21,438 @@
                 margin-bottom: 6rem;
             }
         }
+
+
+        /* Margin utilities */
+        .m-6 {
+            margin: 3.5rem !important;
+        }
+
+        .m-7 {
+            margin: 4.5rem !important;
+        }
+
+        .m-8 {
+            margin: 5.5rem !important;
+        }
+
+        .m-9 {
+            margin: 6.5rem !important;
+        }
+
+        .m-10 {
+            margin: 7.5rem !important;
+        }
+
+        .m-11 {
+            margin: 8.5rem !important;
+        }
+
+        .m-12 {
+            margin: 10rem !important;
+        }
+
+        /* Margin Top utilities */
+        .mt-6 {
+            margin-top: 3.5rem !important;
+        }
+
+        .mt-7 {
+            margin-top: 4.5rem !important;
+        }
+
+        .mt-8 {
+            margin-top: 5.5rem !important;
+        }
+
+        .mt-9 {
+            margin-top: 6.5rem !important;
+        }
+
+        .mt-10 {
+            margin-top: 7.5rem !important;
+        }
+
+        .mt-11 {
+            margin-top: 8.5rem !important;
+        }
+
+        .mt-12 {
+            margin-top: 10rem !important;
+        }
+
+        /* Margin Bottom utilities */
+        .mb-6 {
+            margin-bottom: 3.5rem !important;
+        }
+
+        .mb-7 {
+            margin-bottom: 4.5rem !important;
+        }
+
+        .mb-8 {
+            margin-bottom: 5.5rem !important;
+        }
+
+        .mb-9 {
+            margin-bottom: 6.5rem !important;
+        }
+
+        .mb-10 {
+            margin-bottom: 7.5rem !important;
+        }
+
+        .mb-11 {
+            margin-bottom: 8.5rem !important;
+        }
+
+        .mb-12 {
+            margin-bottom: 10rem !important;
+        }
+
+        /* Margin Left utilities */
+        .ms-6 {
+            margin-left: 3.5rem !important;
+        }
+
+        .ms-7 {
+            margin-left: 4.5rem !important;
+        }
+
+        .ms-8 {
+            margin-left: 5.5rem !important;
+        }
+
+        .ms-9 {
+            margin-left: 6.5rem !important;
+        }
+
+        .ms-10 {
+            margin-left: 7.5rem !important;
+        }
+
+        .ms-11 {
+            margin-left: 8.5rem !important;
+        }
+
+        .ms-12 {
+            margin-left: 10rem !important;
+        }
+
+        /* Margin Right utilities */
+        .me-6 {
+            margin-right: 3.5rem !important;
+        }
+
+        .me-7 {
+            margin-right: 4.5rem !important;
+        }
+
+        .me-8 {
+            margin-right: 5.5rem !important;
+        }
+
+        .me-9 {
+            margin-right: 6.5rem !important;
+        }
+
+        .me-10 {
+            margin-right: 7.5rem !important;
+        }
+
+        .me-11 {
+            margin-right: 8.5rem !important;
+        }
+
+        .me-12 {
+            margin-right: 10rem !important;
+        }
+
+        /* Margin X-axis utilities */
+        .mx-6 {
+            margin-left: 3.5rem !important;
+            margin-right: 3.5rem !important;
+        }
+
+        .mx-7 {
+            margin-left: 4.5rem !important;
+            margin-right: 4.5rem !important;
+        }
+
+        .mx-8 {
+            margin-left: 5.5rem !important;
+            margin-right: 5.5rem !important;
+        }
+
+        .mx-9 {
+            margin-left: 6.5rem !important;
+            margin-right: 6.5rem !important;
+        }
+
+        .mx-10 {
+            margin-left: 7.5rem !important;
+            margin-right: 7.5rem !important;
+        }
+
+        .mx-11 {
+            margin-left: 8.5rem !important;
+            margin-right: 8.5rem !important;
+        }
+
+        .mx-12 {
+            margin-left: 10rem !important;
+            margin-right: 10rem !important;
+        }
+
+        /* Margin Y-axis utilities */
+        .my-6 {
+            margin-top: 3.5rem !important;
+            margin-bottom: 3.5rem !important;
+        }
+
+        .my-7 {
+            margin-top: 4.5rem !important;
+            margin-bottom: 4.5rem !important;
+        }
+
+        .my-8 {
+            margin-top: 5.5rem !important;
+            margin-bottom: 5.5rem !important;
+        }
+
+        .my-9 {
+            margin-top: 6.5rem !important;
+            margin-bottom: 6.5rem !important;
+        }
+
+        .my-10 {
+            margin-top: 7.5rem !important;
+            margin-bottom: 7.5rem !important;
+        }
+
+        .my-11 {
+            margin-top: 8.5rem !important;
+            margin-bottom: 8.5rem !important;
+        }
+
+        .my-12 {
+            margin-top: 10rem !important;
+            margin-bottom: 10rem !important;
+        }
+
+        /* Padding utilities */
+        .p-6 {
+            padding: 3.5rem !important;
+        }
+
+        .p-7 {
+            padding: 4.5rem !important;
+        }
+
+        .p-8 {
+            padding: 5.5rem !important;
+        }
+
+        .p-9 {
+            padding: 6.5rem !important;
+        }
+
+        .p-10 {
+            padding: 7.5rem !important;
+        }
+
+        .p-11 {
+            padding: 8.5rem !important;
+        }
+
+        .p-12 {
+            padding: 10rem !important;
+        }
+
+        /* Padding Top utilities */
+        .pt-6 {
+            padding-top: 3.5rem !important;
+        }
+
+        .pt-7 {
+            padding-top: 4.5rem !important;
+        }
+
+        .pt-8 {
+            padding-top: 5.5rem !important;
+        }
+
+        .pt-9 {
+            padding-top: 6.5rem !important;
+        }
+
+        .pt-10 {
+            padding-top: 7.5rem !important;
+        }
+
+        .pt-11 {
+            padding-top: 8.5rem !important;
+        }
+
+        .pt-12 {
+            padding-top: 10rem !important;
+        }
+
+        /* Padding Bottom utilities */
+        .pb-6 {
+            padding-bottom: 3.5rem !important;
+        }
+
+        .pb-7 {
+            padding-bottom: 4.5rem !important;
+        }
+
+        .pb-8 {
+            padding-bottom: 5.5rem !important;
+        }
+
+        .pb-9 {
+            padding-bottom: 6.5rem !important;
+        }
+
+        .pb-10 {
+            padding-bottom: 7.5rem !important;
+        }
+
+        .pb-11 {
+            padding-bottom: 8.5rem !important;
+        }
+
+        .pb-12 {
+            padding-bottom: 10rem !important;
+        }
+
+        /* Padding Left utilities */
+        .ps-6 {
+            padding-left: 3.5rem !important;
+        }
+
+        .ps-7 {
+            padding-left: 4.5rem !important;
+        }
+
+        .ps-8 {
+            padding-left: 5.5rem !important;
+        }
+
+        .ps-9 {
+            padding-left: 6.5rem !important;
+        }
+
+        .ps-10 {
+            padding-left: 7.5rem !important;
+        }
+
+        .ps-11 {
+            padding-left: 8.5rem !important;
+        }
+
+        .ps-12 {
+            padding-left: 10rem !important;
+        }
+
+        /* Padding Right utilities */
+        .pe-6 {
+            padding-right: 3.5rem !important;
+        }
+
+        .pe-7 {
+            padding-right: 4.5rem !important;
+        }
+
+        .pe-8 {
+            padding-right: 5.5rem !important;
+        }
+
+        .pe-9 {
+            padding-right: 6.5rem !important;
+        }
+
+        .pe-10 {
+            padding-right: 7.5rem !important;
+        }
+
+        .pe-11 {
+            padding-right: 8.5rem !important;
+        }
+
+        .pe-12 {
+            padding-right: 10rem !important;
+        }
+
+        /* Padding X-axis utilities */
+        .px-6 {
+            padding-left: 3.5rem !important;
+            padding-right: 3.5rem !important;
+        }
+
+        .px-7 {
+            padding-left: 4.5rem !important;
+            padding-right: 4.5rem !important;
+        }
+
+        .px-8 {
+            padding-left: 5.5rem !important;
+            padding-right: 5.5rem !important;
+        }
+
+        .px-9 {
+            padding-left: 6.5rem !important;
+            padding-right: 6.5rem !important;
+        }
+
+        .px-10 {
+            padding-left: 7.5rem !important;
+            padding-right: 7.5rem !important;
+        }
+
+        .px-11 {
+            padding-left: 8.5rem !important;
+            padding-right: 8.5rem !important;
+        }
+
+        .px-12 {
+            padding-left: 10rem !important;
+            padding-right: 10rem !important;
+        }
+
+        /* Padding Y-axis utilities */
+        .py-6 {
+            padding-top: 3.5rem !important;
+            padding-bottom: 3.5rem !important;
+        }
+
+        .py-7 {
+            padding-top: 4.5rem !important;
+            padding-bottom: 4.5rem !important;
+        }
+
+        .py-8 {
+            padding-top: 5.5rem !important;
+            padding-bottom: 5.5rem !important;
+        }
+
+        .py-9 {
+            padding-top: 6.5rem !important;
+            padding-bottom: 6.5rem !important;
+        }
+
+        .py-10 {
+            padding-top: 7.5rem !important;
+            padding-bottom: 7.5rem !important;
+        }
+
+        .py-11 {
+            padding-top: 8.5rem !important;
+            padding-bottom: 8.5rem !important;
+        }
+
+        .py-12 {
+            padding-top: 10rem !important;
+            padding-bottom: 10rem !important;
+        }

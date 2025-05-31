@@ -66,38 +66,38 @@ const ml_ai_technology_stack = [
 
 const mlops_cards = [
     {
-        iconType: 'i',
-        iconContent: 'bi bi-shield-lock-fill', // Bootstrap icon for security and training
+        iconType: 'img',
+        iconContent: "./Source/images/secure_ai_training_200x200.png",  // Bootstrap icon for security and training
         title: 'Secure AI Model Training',
         subtitle: 'Ensuring integrity and confidentiality of AI models throughout training lifecycle.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-heart-fill', // Bootstrap icon for ethics/fairness
+        iconType: 'img',
+        iconContent: "./Source/images/ethical_development-remove_200x200.png", // Bootstrap icon for ethics/fairness
         title: 'Ethical AI Development',
         subtitle: 'Developing AI systems responsibly with fairness, transparency, and accountability.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-file-earmark-lock-fill', // Bootstrap icon for encryption and data protection
+        iconType: 'img',
+        iconContent: "./Source/images/advance_encryption_data_protection-remove_200x200.png", // Bootstrap icon for encryption and data protection
         title: 'Advanced Encryption & Data Protection',
         subtitle: 'Implementing robust encryption and data protection to safeguard sensitive AI data.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-clipboard-check-fill', // Bootstrap icon for compliance and auditing
+        iconType: 'img',
+        iconContent: "./Source/images/ai_compaliance_auditing-remove_200x200.png",  // Bootstrap icon for compliance and auditing
         title: 'Automated AI Compliance & Auditing',
         subtitle: 'Automating processes for AI systems to adhere to regulatory standards.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-person-badge-fill', // Bootstrap icon for access control and identity
+        iconType: 'img',
+        iconContent: "./Source/images/access_control_identity_management-remove_200X200.png",  // Bootstrap icon for access control and identity
         title: 'Access Control & Identity Management',
         subtitle: 'Managing user access and identities for controlling AI model interactions.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-mask', // Bootstrap icon for privacy
+        iconType: 'img',
+        iconContent: "./Source/images/privacy_ai_governance-remove_200x200.png",// Bootstrap icon for privacy
         title: 'Privacy-Focused AI Governance',
         subtitle: 'Establishing frameworks and policies to govern AI development emphasizing data privacy.'
     }
@@ -109,50 +109,50 @@ const mlops_cards = [
 
 const security_features = [
     {
-        iconType: 'i',
-        iconContent: 'bi bi-robot', // Bootstrap icon for automation
+        iconType: 'img',
+        iconContent: "./Source/images/automated_model_training_200x200.png", // Bootstrap icon for automation
         title: 'Automated Model Training & Deployment',
         subtitle: 'Automating the entire lifecycle from training to deployment for efficiency.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-activity', // Bootstrap icon for real-time monitoring
+        iconType: 'img',
+        iconContent: "./Source/images/real_time_modeling_200x200.png", // Bootstrap icon for real-time monitoring
         title: 'Real-Time Model Monitoring',
         subtitle: 'Continuously tracking model performance and detecting anomalies in real-time.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-server', // Bootstrap icon for serving/scalability
+        iconType: 'img',
+        iconContent: "./Source/images/scalable_model_serving_200x200.png", // Bootstrap icon for serving/scalability
         title: 'Scalable Model Serving',
         subtitle: 'Efficiently serving models at scale to handle varying demand.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-speedometer', // Bootstrap icon for optimization
+        iconType: 'img',
+        iconContent: "./Source/images/automated_model_optimization_200x200.png", // Bootstrap icon for optimization
         title: 'Automated Model Optimization',
         subtitle: 'Automatically fine-tuning models for improved performance and efficiency.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-git', // Bootstrap icon for version control
+        iconType: 'img',
+        iconContent: "./Source/images/version_control_tracking_200x200.png", // Bootstrap icon for version control
         title: 'Version Control & Experiment Tracking',
         subtitle: 'Managing model versions and tracking experiments for reproducibility.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-gpu-card', // Bootstrap icon for GPU
+        iconType: 'img',
+        iconContent: "./Source/images/gpu_support_500x500.png", // Bootstrap icon for GPU
         title: 'GPU Support',
         subtitle: 'Leveraging GPU acceleration for faster model training and inference.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-columns-gap', // Bootstrap icon for parallelization/distributed
+        iconType: 'img',
+        iconContent: "./Source/images/parallelization_distributed_computing_200x200.png", // Bootstrap icon for parallelization/distributed
         title: 'Parallelization and Distributed Computing',
         subtitle: 'Distributing workloads across multiple resources for enhanced processing.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-box-arrow-in-right', // Bootstrap icon for rollout
+        iconType: 'img',
+        iconContent: "./Source/images/model_rollout_200x200.png", // Bootstrap icon for rollout
         title: 'Model Rollout',
         subtitle: 'Strategically deploying new model versions into production environments.'
     }
@@ -163,56 +163,56 @@ const security_features = [
 // Data Analysis Cards
 const enterprise_ready = [
     {
-        iconType: 'i',
-        iconContent: 'bi bi-layout-text-sidebar-reverse', // Bootstrap icon for GUI/API
+        iconType: 'img',
+        iconContent: "./Source/images/flexible_gui_api_interface_200x200.png", // Bootstrap icon for GUI/API
         title: 'Flexible GUI and API Interface',
         subtitle: 'Providing adaptable graphical and programmatic interfaces for user interaction.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-person-check-fill', // Bootstrap icon for access control
+        iconType: 'img',
+        iconContent: "./Source/images/role_based_access_control_200x200.png", // Bootstrap icon for access control
         title: 'Role-based Access Control',
         subtitle: 'Managing user permissions based on their roles within the system.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-key-fill', // Bootstrap icon for authentication
+        iconType: 'img',
+        iconContent: "./Source/images/ldap_authentication_200x200.png", // Bootstrap icon for authentication
         title: 'LDAP Authentication',
         subtitle: 'Integrating with LDAP for centralized user authentication and management.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-graph-up-arrow', // Bootstrap icon for analytics/insights
+        iconType: 'img',
+        iconContent: "./Source/images/data_analytics_ai_insights_200x200.png", // Bootstrap icon for analytics/insights
         title: 'Advanced Data Analytics & AI Insights',
         subtitle: 'Extracting deep insights from data using advanced analytics and AI.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-plug-fill', // Bootstrap icon for integration
+        iconType: 'img',
+        iconContent: "./Source/images/api_system_integration_200x200.png", // Bootstrap icon for integration
         title: 'Intelligent API & System Integration',
         subtitle: 'Seamlessly connecting diverse systems through smart API integrations.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-cpu-fill', // Bootstrap icon for automation/AI power
+        iconType: 'img',
+        iconContent: "./Source/images/ai_powered_automation_200x200.png", // Bootstrap icon for automation/AI power
         title: 'AI-Powered Business Automation',
         subtitle: 'Automating business processes with intelligence provided by AI.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-cloud-fill', // Bootstrap icon for cloud integration
+        iconType: 'img',
+        iconContent: "./Source/images/end_to_end_cloud_integration_200x200.png", // Bootstrap icon for cloud integration
         title: 'End-to-End Cloud Integration',
         subtitle: 'Achieving complete integration with cloud services across all operations.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-gear-fill', // Bootstrap icon for backend architecture
+        iconType: 'img',
+        iconContent: "./Source/images/high_performance_backend_200x200.png", // Bootstrap icon for backend architecture
         title: 'High-Performance Backend Architecture',
         subtitle: 'Designing robust and efficient backend systems for optimal performance.'
     },
     {
-        iconType: 'i',
-        iconContent: 'bi bi-arrows-expand', // Bootstrap icon for scalability
+        iconType: 'img',
+        iconContent: "./Source/images/adaptive_scalability_200x200.png", // Bootstrap icon for scalability
         title: 'Adaptive Scalability',
         subtitle: 'Ensuring the system can scale dynamically to meet changing demands.'
     }

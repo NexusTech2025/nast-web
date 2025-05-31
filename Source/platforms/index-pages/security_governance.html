@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>NAST ML Solutions - Privacy, Security & AI Governance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        /* Custom style for the hero section gradient, using Bootstrap's CSS variables */
+        /* This is an unavoidable inline style for a specific effect not achievable with Bootstrap utilities directly,
+           but it prioritizes Bootstrap's own CSS variables to stay within the spirit of the constraint. */
+        .hero-gradient-bg {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-dark) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 50vh;
+            /* Ensure hero section has a decent height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Ensure rounded corners on all elements as per general instructions */
+        .rounded,
+        .card,
+        .btn,
+        .form-control,
+        .accordion-item,
+        .p-3.border.rounded {
+            border-radius: 0.5rem !important;
+            /* Bootstrap's default is often 0.375rem, increasing slightly */
+        }
+
+        /* Adjust font-family to Inter, if not already picked up by Bootstrap's default stack */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Ensure smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4"
+               href="#">NAST ML Solutions</a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"
+                 id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           aria-current="page"
+                           href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active"
+                           href="#"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                   href="#">MLOps</a></li>
+                            <li><a class="dropdown-item active"
+                                   href="#overview">Privacy, Security & AI Governance</a></li>
+                            <li><a class="dropdown-item"
+                                   href="#">AI Solutions</a></li>
+                            <li><a class="dropdown-item"
+                                   href="#">Data Analytics</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex"
+                      role="search">
+                    <input class="form-control me-2 rounded"
+                           type="search"
+                           placeholder="Search"
+                           aria-label="Search">
+                    <button class="btn btn-outline-light rounded"
+                            type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 text-center text-white hero-gradient-bg">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Guardian of Tomorrow: Privacy, Security & AI
+                Governance</h1>
+            <p class="lead fs-4 mb-4">Building Trust in the Age of AI-Driven Innovation</p>
+            <p class="col-lg-8 mx-auto mb-5">
+                At NAST ML Solutions, protecting your data and ensuring ethical AI deployment is our
+                top priority. Our Privacy, Security & AI Governance framework is engineered to
+                safeguard every byte of information—empowering your digital transformation while
+                ensuring compliance, risk mitigation, and trust in every operation.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="#overview"
+                   class="btn btn-primary btn-lg px-4 me-sm-2 rounded">Learn About Our Framework</a>
+                <a href="#contact"
+                   class="btn btn-outline-light btn-lg px-4 rounded">Secure Your Future</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview"
+             class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Empowering Trust Through Robust
+                Governance</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <p class="fs-5 text-muted mb-4">
+                        In an era defined by data, the responsible handling of information and
+                        ethical deployment of AI are paramount. NAST ML Solutions recognizes the
+                        increasing importance of stringent privacy laws, comprehensive
+                        cybersecurity, and transparent AI governance. We leverage advanced
+                        encryption, adhere to global compliance protocols (like GDPR, CCPA), and
+                        champion ethical guidelines to build a foundation of trust for your AI
+                        initiatives.
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-4 text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-light shadow-sm h-100">
+                        <h5 class="mb-3"><i
+                               class="bi bi-journal-check text-primary me-2 fs-3"></i>Regulatory
+                            Compliance</h5>
+                        <p class="small text-muted mb-0">Adherence to ethical AI practices and
+                            global data protection standards.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-light shadow-sm h-100">
+                        <h5 class="mb-3"><i
+                               class="bi bi-shield-lock-fill text-primary me-2 fs-3"></i>Data
+                            Sanctity</h5>
+                        <p class="small text-muted mb-0">State-of-the-art encryption and security
+                            protocols protecting your valuable data.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-light shadow-sm h-100">
+                        <h5 class="mb-3"><i
+                               class="bi bi-universal-access text-primary me-2 fs-3"></i>Transparent
+                            Governance</h5>
+                        <p class="small text-muted mb-0">Clear, fair, and accountable structures for
+                            AI development and deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pillars"
+             class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Our Privacy, Security & Governance
+                Pillars</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm rounded">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="mb-3 fs-1 text-primary text-center">
+                                <i class="bi bi-key-fill"></i>
+                            </div>
+                            <h5 class="card-title text-center mb-3">Advanced Encryption & Data
+                                Protection</h5>
+                            <p class="card-text flex-grow-1 text-muted">
+                                Employing cutting-edge encryption protocols (e.g., AES-256) at rest
+                                and in transit to safeguard sensitive data throughout its lifecycle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm rounded">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="mb-3 fs-1 text-primary text-center">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <h5 class="card-title text-center mb-3">Ethical AI & Responsible Data
+                                Usage</h5>
+                            <p class="card-text flex-grow-1 text-muted">
+                                Ensuring transparency, fairness, and accountability in AI model
+                                training, validation, and deployment to prevent bias and promote
+                                ethical outcomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm rounded">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="mb-3 fs-1 text-primary text-center">
+                                <i class="bi bi-card-checklist"></i>
+                            </div>
+                            <h5 class="card-title text-center mb-3">Compliance & Regulatory
+                                Alignment</h5>
+                            <p class="card-text flex-grow-1 text-muted">
+                                Proactively adapting to global standards such as GDPR, CCPA, HIPAA,
+                                and emerging AI regulations to ensure your solutions meet all legal
+                                requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm rounded">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="mb-3 fs-1 text-primary text-center">
+                                <i class="bi bi-person-badge-fill"></i>
+                            </div>
+                            <h5 class="card-title text-center mb-3">Access Control & Identity
+                                Management</h5>
+                            <p class="card-text flex-grow-1 text-muted">
+                                Robust measures including multi-factor authentication (MFA) and
+                                role-based access control (RBAC) to manage user permissions and
+                                secure data access.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm rounded">
+                        <div class="card-body d-flex flex-column p-4">
+                            <div class="mb-3 fs-1 text-primary text-center">
+                                <i class="bi bi-hdd-network-fill"></i>
+                            </div>
+                            <h5 class="card-title text-center mb-3">Continuous Monitoring & Audit
+                                Trails</h5>
+                            <p class="card-text flex-grow-1 text-muted">
+                                Real-time security monitoring, vulnerability scanning, and detailed,
+                                immutable logs to track data integrity, system access, and ensure
+                                security posture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact"
+             class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">In Practice: Real-World Impact</h2>
+            <div class="accordion accordion-flush rounded shadow"
+                 id="useCasesAccordion">
+                <div class="accordion-item rounded-top">
+                    <h3 class="accordion-header"
+                        id="headingFinance">
+                        <button class="accordion-button collapsed rounded-top"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseFinance"
+                                aria-expanded="false"
+                                aria-controls="collapseFinance">
+                            <i class="bi bi-building-shield me-3 fs-4 text-primary"></i>Financial
+                            Sector
+                        </button>
+                    </h3>
+                    <div id="collapseFinance"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingFinance"
+                         data-bs-parent="#useCasesAccordion">
+                        <div class="accordion-body text-muted">
+                            Safeguarding sensitive financial data with end-to-end encryption, fraud
+                            detection models built with privacy-preserving techniques, and ensuring
+                            compliance with PCI DSS and other financial regulations.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header"
+                        id="headingHealthcare">
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseHealthcare"
+                                aria-expanded="false"
+                                aria-controls="collapseHealthcare">
+                            <i class="bi bi-heart-pulse-fill me-3 fs-4 text-primary"></i>Healthcare
+                            Systems
+                        </button>
+                    </h3>
+                    <div id="collapseHealthcare"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingHealthcare"
+                         data-bs-parent="#useCasesAccordion">
+                        <div class="accordion-body text-muted">
+                            Maintaining patient confidentiality (HIPAA compliance) while enabling
+                            advanced AI diagnostic tools through anonymization, federated learning,
+                            and secure data enclaves.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item rounded-bottom">
+                    <h3 class="accordion-header"
+                        id="headingRetail">
+                        <button class="accordion-button collapsed rounded-bottom"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseRetail"
+                                aria-expanded="false"
+                                aria-controls="collapseRetail">
+                            <i class="bi bi-cart-check-fill me-3 fs-4 text-primary"></i>Retail &
+                            E-Commerce
+                        </button>
+                    </h3>
+                    <div id="collapseRetail"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="headingRetail"
+                         data-bs-parent="#useCasesAccordion">
+                        <div class="accordion-body text-muted">
+                            Ensuring customer data privacy (GDPR/CCPA) through secure online
+                            transactions, personalized experiences with consent management, and
+                            transparent data usage policies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack"
+             class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Powered by Cutting-Edge Technologies &
+                Frameworks</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                        <div class="fs-1 text-primary mb-3">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h4 class="mb-3">Security Frameworks</h4>
+                        <p class="small text-muted mb-0">
+                            Integration of best-in-class encryption libraries (OpenSSL),
+                            cybersecurity protocols (TLS/SSL), SIEM solutions, and adherence to
+                            frameworks like NIST Cybersecurity Framework and ISO 27001.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                        <div class="fs-1 text-primary mb-3">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <h4 class="mb-3">AI Governance Models</h4>
+                        <p class="small text-muted mb-0">
+                            Implementing frameworks for ensuring ethical AI practices, bias
+                            detection and mitigation tools (e.g., AIF360, Fairlearn), model
+                            explainability (XAI techniques like LIME, SHAP), and transparent model
+                            behavior reporting.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                        <div class="fs-1 text-primary mb-3">
+                            <i class="bi bi-clipboard2-data-fill"></i>
+                        </div>
+                        <h4 class="mb-3">Compliance Tools & Automation</h4>
+                        <p class="small text-muted mb-0">
+                            Utilizing automated tools for continuous compliance monitoring, data
+                            mapping, consent management platforms, and reporting against global data
+                            protection standards (e.g., OneTrust, BigID integrations).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-trust-nast"
+             class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Why Trust NAST ML Solutions with Your AI
+                Governance?</h2>
+            <div class="row align-items-center">
+                <div class="col-md-7 mb-4 mb-md-0">
+                    <ul class="list-unstyled fs-5">
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="bi bi-patch-check-fill text-primary fs-4 me-3 mt-1"></i>
+                            <div>
+                                <strong>Innovation with Integrity:</strong> Balancing rapid AI
+                                innovation with uncompromising ethics, robust security, and
+                                unwavering commitment to privacy.
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="bi bi-lock-fill text-primary fs-4 me-3 mt-1"></i>
+                            <div>
+                                <strong>End-to-End Protection:</strong> From data collection and
+                                preparation to AI model deployment and monitoring, every step is
+                                secured and governed by stringent protocols.
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="bi bi-people-fill text-primary fs-4 me-3 mt-1"></i>
+                            <div>
+                                <strong>Client-Centric Approach:</strong> We develop tailored
+                                governance models and security postures that prioritize your
+                                industry's unique compliance needs and risk appetite.
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="bi bi-graph-up-arrow text-primary fs-4 me-3 mt-1"></i>
+                            <div>
+                                <strong>Future-Ready Solutions:</strong> Our scalable infrastructure
+                                and adaptive frameworks are designed to evolve with emerging
+                                threats, new regulations, and the dynamic landscape of AI.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 d-none d-md-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/400x300/e9ecef/212529?text=Secure+AI+Governance"
+                         class="img-fluid rounded shadow"
+                         alt="AI Governance Concept: Shield protecting data and AI">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">NAST ML Solutions</h5>
+                    <p class="small text-muted">Guardian of Tomorrow: Ensuring ethical, secure, and
+                        compliant AI innovation for a trusted digital future.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"
+                               class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#"
+                               class="text-white text-decoration-none">Services</a></li>
+                        <li><a href="#"
+                               class="text-white text-decoration-none">Careers</a></li>
+                        <li><a href="#"
+                               class="text-white text-decoration-none">Blog</a></li>
+                        <li><a href="/privacy-policy.html"
+                               class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html"
+                               class="text-white text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+                     id="contact">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-telephone-fill me-2"></i>+1 (555) 123-4567</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i>contact@nastml.solutions</li>
+                        <li><i class="bi bi-geo-alt-fill me-2"></i>123 Secure Ave, Trustville, TC
+                            00700</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Connect</h5>
+                    <div class="d-flex">
+                        <a href="#"
+                           class="text-white me-3 fs-4"
+                           aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"
+                           class="text-white me-3 fs-4"
+                           aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"
+                           class="text-white fs-4"
+                           aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center border-top border-secondary pt-4 mt-4">
+                <p class="small text-muted mb-0">©
+                    <script>document.write(new Date().getFullYear());</script> NAST ML Solutions
+                    (Nexus Autonomous Systems & Technologies). All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

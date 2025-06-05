@@ -23,6 +23,8 @@
 
 
 
+
+
 .icon-logo {
     width: 80px;
     height: 80px;
@@ -287,9 +289,38 @@
 }
 
 .hero-section {
-    padding: 5rem 0;
+
+    --bg-img: url('./images/hero-bg.png');
+
+
     /* Vertical padding */
     height: 90vh;
+    background-image: var(--bg-img);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section-content {
+    position: relative;
+    z-index: 3;
+    /* Ensure content is above the background */
+    color: #fff;
+}
+
+
+.hero-section-bg-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgb(25 43 67 / 45%) 35%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 100%);
+    /* Dark overlay */
+    z-index: 1;
+    mix-blend-mode: multiply;
 }
 
 .header-x {
@@ -309,9 +340,16 @@
 
 }
 
-.header {
+.header,
+.header .dropdown .dropdown-menu {
     background-color: #18355d;
     color: #f7f7f7 !important;
+}
+
+.header .dropdown-menu .dropdown-item:hover {
+    background-color: #f7f7f730 !important;
+
+    /* Ensures dropdown items are also light */
 }
 
 .header * {
@@ -433,7 +471,12 @@
     }
 }
 
-
+.card-h-auto {
+    height: clamp(70vh, 85vh, 90vh) !important;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+}
 
 
 .transition-card {
@@ -509,32 +552,7 @@
     /* Custom font size */
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 767.98px) {
-    .glassy-card-enhanced {
-        padding: 1rem;
-        /* Overriding Bootstrap padding for mobile */
-        max-width: 90%;
-        /* Custom max-width for mobile */
-    }
 
-    .card-icon {
-        font-size: 3rem;
-    }
-
-    .card-icon svg {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    .card-title {
-        font-size: 1.3rem;
-    }
-
-    .card-subtitle {
-        font-size: 0.9rem;
-    }
-}
 
 
 .mix-blend-multiply {
@@ -569,17 +587,45 @@
     background-image: url('./images/CI-CD\ bg.png');
 }
 
+.bg-img {
+    --bg-image: url('https://placehold.co/600x450/e9ecef/212529?text=Image+Not+Available');
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-img-right {
+    background-position: right;
+}
+
+.bg-img-left {
+    background-position: left;
+}
+
+
+
+
 /* Dark Overlay Utility (can be combined with .section-bg or other elements needing an overlay) */
-.bg-overlay-dark::before {
+.bg-overlay::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.65);
     z-index: 1;
+    mix-blend-mode: multiply;
+    backdrop-filter: blur(0.6px);
 
+}
+
+.bg-overlay-dark::before {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.bg-overlay-blue::before {
+    background: rgba(15, 83, 125, 0.4);
 }
 
 /* Content Container (similar to Bootstrap's .container or .container-sm/md/lg) */

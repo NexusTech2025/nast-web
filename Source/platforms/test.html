@@ -5,82 +5,316 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>Responsive Horizontal Card Layout</title>
+    <title>Generic Responsive Web Page Layout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          xintegrity="sha384-QWTKZyjpPEjL/rX9J7i/yQp/1Tz9q/XvX+z/V4b/pP0d/8m7b8Q"
           crossorigin="anonymous">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5;
-            /* Light gray background */
+        /* Custom CSS for the 3x3 grid structure */
+        /* These properties are necessary for the specific 3x3 grid layout and spanning,
+           as Bootstrap's grid system does not directly support CSS Grid's row/column spanning. */
+        .custom-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            /* Equivalent to Bootstrap's g-4 */
+            flex-grow: 1;
+            /* Allows the grid to take available space */
+        }
+
+        /* Grid item spanning classes - direct CSS Grid properties */
+        .grid-col-span-3 {
+            grid-column: span 3 / span 3;
+        }
+
+        .grid-row-span-1 {
+            grid-row: span 1 / span 1;
+        }
+
+        .grid-col-span-1 {
+            grid-column: span 1 / span 1;
+        }
+
+        .grid-row-span-2 {
+            grid-row: span 2 / span 2;
+        }
+
+        .grid-col-span-2 {
+            grid-column: span 2 / span 2;
+        }
+
+        /* Animation classes - custom as Bootstrap doesn't provide direct equivalents */
+        .grid-transition {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .grid-hidden {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .grid-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* General styling for grid items */
+        .grid-item {
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            /* Equivalent to Bootstrap's rounded-3 */
+            text-align: center;
+            font-size: 0.875rem;
+            /* Equivalent to Bootstrap's text-sm */
         }
 
-        /* Custom class for image container to apply max-height on small screens and remove on large */
-        .card-img-custom-height {
-            max-height: 200px;
-            /* Limit height on small screens */
-            overflow: hidden;
-            /* Ensure content is clipped for rounded corners */
+        /* Specific background colors for grid items - custom as Bootstrap doesn't provide these shades */
+        .bg-blue-200 {
+            background-color: #bfdbfe;
         }
 
-        .card-img-custom-height img {
-            object-fit: cover;
-            /* Ensure image covers the area while maintaining aspect ratio */
+        .bg-green-200 {
+            background-color: #d1fae5;
         }
 
-        /* Remove max-height constraint on large screens */
-        @media (min-width: 992px) {
+        .bg-yellow-200 {
+            background-color: #fef08a;
+        }
 
-            /* Equivalent to Bootstrap's lg breakpoint */
-            .card-img-custom-height {
-                max-height: none;
-            }
+        .bg-purple-200 {
+            background-color: #e9d5ff;
+        }
+
+        .bg-red-200 {
+            background-color: #fee2e2;
+        }
+
+        .bg-orange-200 {
+            background-color: #fed7aa;
+        }
+
+        .bg-teal-200 {
+            background-color: #ccfbf1;
+        }
+
+        .bg-indigo-200 {
+            background-color: #c7d2fe;
+        }
+
+        .bg-pink-200 {
+            background-color: #fbcfe8;
+        }
+
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        /* Custom text color */
+
+        /* Custom button active state */
+        .btn-custom-active {
+            background-color: #0d6efd;
+            /* Bootstrap primary blue */
+            color: white;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-custom-inactive {
+            background-color: #e0f2fe;
+            /* Light blue */
+            color: #0d6efd;
+            /* Bootstrap primary blue */
+        }
+
+        .btn-custom-inactive:hover {
+            background-color: #bfdbfe;
+            /* Slightly darker light blue on hover */
         }
     </style>
 </head>
 
-<body>
-    <div class="container my-4">
-        <div class="card rounded-3 shadow">
-            <div class="row g-0">
-                <div class="col-lg-5 card-img-custom-height"> <img
-                         src="https://placehold.co/800x600/4F46E5/FFFFFF?text=Card+Image"
-                         class="img-fluid w-100 h-100 rounded-top-3 rounded-lg-top-0 rounded-lg-bottom-start-3"
-                         alt="Placeholder Image"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
-                </div>
+<body class="bg-light p-4 font-sans d-flex justify-content-center align-items-center min-vh-100">
 
-                <div class="col-lg-7">
-                    <div class="card-body p-4">
-                        <h5 class="card-title text-2xl font-semibold mb-2">Dynamic Card Title</h5>
-                        <p class="card-text text-gray-700 mb-4">
-                            This is a responsive horizontal card layout built with Bootstrap 5.3.x.
-                            The layout dynamically adjusts for all screen sizes, stacking vertically
-                            on smaller screens and
-                            displaying horizontally on larger screens. The image also resizes
-                            automatically to fit its container.
-                        </p>
-                        <a href="#"
-                           class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="app-root"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+
+    <script>
+        /**
+         * Creates a dynamic web page layout with a two-column structure,
+         * a responsive 3x3 grid, and tab-controlled content with animations.
+         *
+         * @param {object} config - The configuration object for the layout.
+         * @param {string} config.rootElementId - The ID of the HTML element where the layout will be rendered.
+         * @param {Array<object>} config.tabsData - An array of tab configuration objects.
+         * @param {string} config.tabsData[].id - Unique ID for the tab (e.g., 'tab1').
+         * @param {string} config.tabsData[].label - Text to display on the tab button.
+         * @param {string} config.tabsData[].title - Title to display in the grid column for this tab.
+         * @param {Array<object>} config.tabsData[].gridItems - An array of grid item objects for this tab.
+         * @param {string} config.tabsData[][].id - Unique ID for the grid item.
+         * @param {string} config.tabsData[][].content - The content to display inside the grid item.
+         * @param {string} config.tabsData[][].classes - CSS classes for styling and spanning the grid item.
+         * @param {string} config.initialTabId - The ID of the tab to display initially.
+         */
+        function createDynamicLayout(config) {
+            const rootElement = document.getElementById(config.rootElementId);
+            if (!rootElement) {
+                console.error(`Root element with ID '${config.rootElementId}' not found.`);
+                return;
+            }
+
+            // Map tabsData array to an object for easier lookup by tab ID
+            const tabContentMap = config.tabsData.reduce((acc, tab) => {
+                acc[tab.id] = tab;
+                return acc;
+            }, {});
+
+            let currentActiveTab = config.initialTabId;
+
+            // HTML template string for the entire layout structure
+            const layoutHtml = `
+                <div class="container-fluid bg-white shadow-lg rounded-3 p-4 p-md-5 d-flex flex-column flex-lg-row gap-4" style="max-width: 1200px;">
+                    <div class="col-lg-8 bg-light p-4 rounded-3 border border-light-subtle d-flex flex-column">
+                        <h2 id="grid-title" class="fs-4 fw-bold text-dark mb-4 text-center"></h2>
+                        <div id="grid-container" class="custom-grid grid-transition grid-visible">
+                            </div>
+                    </div>
+
+                    <div class="col-lg-4 bg-light p-4 rounded-3 border border-light-subtle d-flex flex-column align-items-center justify-content-start">
+                        <h2 class="fs-5 fw-semibold text-dark mb-4">Select Content</h2>
+                        <div id="tab-buttons-container" class="d-flex flex-column gap-3 w-100">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Inject the main layout structure into the root element
+            rootElement.innerHTML = layoutHtml;
+
+            // Get references to the elements AFTER they have been injected into the DOM
+            const gridContainer = document.getElementById('grid-container');
+            const gridTitle = document.getElementById('grid-title');
+            const tabButtonsContainer = document.getElementById('tab-buttons-container');
+
+            // Function to render the grid content based on the active tab
+            function renderGrid(tabId) {
+                const content = tabContentMap[tabId];
+                if (!content) {
+                    console.error(`Content for tab ID '${tabId}' not found.`);
+                    return;
+                }
+                gridTitle.textContent = content.title;
+
+                const gridItemsHtml = content.gridItems.map(item => `
+                    <div id="${item.id}" class="grid-item ${item.classes} text-gray-700">
+                        ${item.content}
+                    </div>
+                `).join('');
+
+                gridContainer.innerHTML = gridItemsHtml;
+            }
+
+            // Function to handle tab changes with animation
+            function handleTabChange(tabId) {
+                if (tabId === currentActiveTab) return;
+
+                gridContainer.classList.remove('grid-visible');
+                gridContainer.classList.add('grid-hidden');
+
+                const tabButtons = tabButtonsContainer.querySelectorAll('.tab-button');
+                tabButtons.forEach(button => {
+                    if (button.dataset.tab === tabId) {
+                        button.classList.remove('btn-custom-inactive');
+                        button.classList.add('btn-custom-active');
+                    } else {
+                        button.classList.remove('btn-custom-active');
+                        button.classList.add('btn-custom-inactive');
+                    }
+                });
+
+                setTimeout(() => {
+                    renderGrid(tabId);
+                    currentActiveTab = tabId;
+                    gridContainer.classList.remove('grid-hidden');
+                    gridContainer.classList.add('grid-visible');
+                }, 300);
+            }
+
+            // Function to create tab buttons dynamically
+            function createTabButtons() {
+                config.tabsData.forEach(tab => {
+                    const button = document.createElement('button');
+                    button.dataset.tab = tab.id;
+                    button.textContent = tab.label;
+                    button.classList.add('tab-button', 'btn', 'py-3', 'px-4', 'rounded-3', 'fw-semibold', 'transition-all', 'duration-300', 'ease-in-out');
+
+                    if (tab.id === currentActiveTab) {
+                        button.classList.add('btn-custom-active');
+                    } else {
+                        button.classList.add('btn-custom-inactive');
+                    }
+
+                    button.addEventListener('click', (event) => {
+                        handleTabChange(event.target.dataset.tab);
+                    });
+                    tabButtonsContainer.appendChild(button);
+                });
+            }
+
+            // Initial calls
+            createTabButtons();
+            renderGrid(currentActiveTab);
+        }
+
+        // Example Usage:
+        document.addEventListener('DOMContentLoaded', () => {
+            const myLayoutConfig = {
+                rootElementId: 'app-root',
+                tabsData: [
+                    {
+                        id: 'tab1',
+                        label: 'Tab 1 Content',
+                        title: 'Dynamic Content for Section One',
+                        gridItems: [
+                            { id: 'item1-1', content: 'This is the first element for Tab 1, spanning all three columns and the first row.', classes: 'grid-col-span-3 grid-row-span-1 bg-blue-200' },
+                            { id: 'item1-2', content: 'This is the second element for Tab 1, spanning the remaining rows in the first column.', classes: 'grid-col-span-1 grid-row-span-2 bg-green-200' },
+                            { id: 'item1-3', content: 'This is the third element for Tab 1, spanning the remaining grid area.', classes: 'grid-col-span-2 grid-row-span-2 bg-yellow-200' },
+                        ],
+                    },
+                    {
+                        id: 'tab2',
+                        label: 'Tab 2 Details',
+                        title: 'Exploring Details in Section Two',
+                        gridItems: [
+                            { id: 'item2-1', content: 'Welcome to Tab 2! This element covers the top section with specific details.', classes: 'grid-col-span-3 grid-row-span-1 bg-purple-200' },
+                            { id: 'item2-2', content: 'Tab 2 specific content in the left vertical section, focusing on data points.', classes: 'grid-col-span-1 grid-row-span-2 bg-red-200' },
+                            { id: 'item2-3', content: 'More comprehensive details for Tab 2 in the larger right section, including charts.', classes: 'grid-col-span-2 grid-row-span-2 bg-orange-200' },
+                        ],
+                    },
+                    {
+                        id: 'tab3',
+                        label: 'Tab 3 Features',
+                        title: 'Showcasing Features in Section Three',
+                        gridItems: [
+                            { id: 'item3-1', content: 'Tab 3 introduces new concepts across the top, highlighting key features.', classes: 'grid-col-span-3 grid-row-span-1 bg-teal-200' },
+                            { id: 'item3-2', content: 'Key information for Tab 3 in this narrow column, detailing specifications.', classes: 'grid-col-span-1 grid-row-span-2 bg-indigo-200' },
+                            { id: 'item3-3', content: 'Comprehensive overview for Tab 3 in the main area, with user testimonials.', classes: 'grid-col-span-2 grid-row-span-2 bg-pink-200' },
+                        ],
+                    },
+                ],
+                initialTabId: 'tab1'
+            };
+
+            createDynamicLayout(myLayoutConfig);
+        });
+    </script>
 </body>
 
 </html>

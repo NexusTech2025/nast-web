@@ -5,920 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>MODEL & MONOTERING</title>
-
+    <title>Data Analysis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+
+
+    <!-- Owl Carousel Script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+    <!-- Owl Carousel CSS -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <script src="../scripts/header.js"></script>
-    <style>
-        .ai-monitoring-section {
-            padding: 40px 0;
-        }
 
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
+    <script src="../scripts/cards.js"
+            type="text/javascript"></script>
+    <script src="../scripts/cards-data.js"
+            type="text/javascript"></script>
+    <script src="../scripts/bsComponents.js"
+            type="text/javascript"></script>
 
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
+    <link rel="stylesheet"
+          href="../styles/index.css">
 
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 20px;
-        }
+    <link rel="stylesheet"
+          href="../styles/styles.css">
 
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
 
-        .image-container {
-            max-width: 400px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            text-align: center;
-            /* Center image */
-        }
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+    <link rel="stylesheet"
+          href="../styles/carousel.css">
 
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
 
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-        }
 
-
-
-        .why-ai-monitoring-section {
-            background-color: #343a40;
-            /* Dark background */
-            color: white;
-            padding: 50px 0;
-            text-align: left;
-            /* Align text to the left */
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .text-content {
-            max-width: 600px;
-            /* Adjust as needed */
-        }
-
-        .main-heading {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .paragraph1 {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .video-placeholder {
-            background-color: #212529;
-            /* Darker background for video placeholder */
-            width: 400px;
-            /* Adjust as needed */
-            height: 225px;
-            /* Maintain 16:9 aspect ratio */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            color: #6c757d;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-
-        .video-placeholder svg {
-            font-size: 2rem;
-            margin-right: 10px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 767px) {
-            .section-content {
-                flex-direction: column;
-                /* Stack content on smaller screens */
-                align-items: flex-start;
-                /* Align text to the left */
-            }
-
-            .video-placeholder {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 16 / 9;
-                /* Maintain aspect ratio */
-            }
-        }
-
-
-        .ai-monitoring-features-section {
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 30px;
-        }
-
-        .feature-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .image-wrapper {
-            max-width: 500px;
-            /* Adjust as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .feature-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust as needed */
-        }
-
-        .feature-sub-heading {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #007bff;
-            /* Bootstrap primary color */
-            margin-bottom: 15px;
-        }
-
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 767px) {
-            .feature-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .text-content {
-                text-align: center;
-            }
-        }
-
-
-        .overall-health-section {
-            padding: 40px 0;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
-
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 20px;
-        }
-
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .image-container {
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-
-            .text-content {
-                order: 1;
-                /* Place text before image on larger screens */
-            }
-
-            .image-container {
-                order: 2;
-                /* Place image after text on larger screens */
-            }
-        }
-
-
-
-        .bias-drift-section {
-            padding: 40px 0;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            /* Align items to the top */
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .image-container {
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
-
-        .main-heading {
-            font-size: 2.2rem;
-            /* Slightly smaller than other main headings */
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 20px;
-        }
-
-        .sub-headin {
-            font-size: 1.5rem;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
-        .paragraph2 {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .list-style {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 0;
-        }
-
-        .list-style li {
-            margin-bottom: 5px;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-
-            .image-container {
-                order: 1;
-                /* Place image before text on larger screens */
-            }
-
-            .text-content {
-                order: 2;
-                /* Place text after image on larger screens */
-            }
-        }
-
-
-
-        .drift-performance-section {
-            padding: 40px 0;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            /* Align items to the top */
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .image-container {
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
-
-        .sub-heading {
-            font-size: 1.5rem;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .list-style {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 0;
-        }
-
-        .list-style li {
-            margin-bottom: 5px;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-
-            .image-container {
-                order: 2;
-                /* Place image after text on larger screens */
-            }
-
-            .text-content {
-                order: 1;
-                /* Place text before image on larger screens */
-            }
-        }
-
-
-
-        .alerts-section {
-            padding: 40px 0;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            /* Vertically align text and image */
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
-
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 20px;
-        }
-
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .image-container {
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-
-            .text-content {
-                order: 1;
-                /* Place text before image on larger screens */
-            }
-
-            .image-container {
-                order: 2;
-                /* Place image after text on larger screens */
-            }
-        }
-
-
-
-        .custom-metrics-section {
-            padding: 40px 0;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            /* Vertically align text and image */
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .image-container {
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
-
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 20px;
-        }
-
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-
-            .image-container {
-                order: 1;
-                /* Place image before text on larger screens */
-            }
-
-            .text-content {
-                order: 2;
-                /* Place text after image on larger screens */
-            }
-        }
-
-
-
-        .activity-log-section {
-            padding: 40px 0;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            /* Align items to the top */
-            justify-content: center;
-            /* Center content on smaller screens */
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .image-container {
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .section-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .text-content {
-            text-align: left;
-            max-width: 500px;
-            /* Adjust maximum width as needed */
-        }
-
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 20px;
-        }
-
-        .sub-heading {
-            font-size: 1.5rem;
-            color: #007bff;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .paragraph {
-            font-size: 1rem;
-            color: #6c757d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .list-style {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 0;
-        }
-
-        .list-style li {
-            margin-bottom: 5px;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .section-content {
-                justify-content: space-around;
-                /* Distribute space on larger screens */
-            }
-
-            .image-container {
-                order: 2;
-                /* Place image after text on larger screens */
-            }
-
-            .text-content {
-                order: 1;
-                /* Place text before image on larger screens */
-            }
-        }
-
-
-
-        .why-executives-section {
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .main-heading {
-            font-size: 2rem;
-            /* Adjusted font size */
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 30px;
-        }
-
-        .problem-solution-container {
-            display: flex;
-            flex-wrap: wrap;
-            /* Allow columns to wrap on smaller screens */
-            justify-content: center;
-            /* Center the problem and solution boxes */
-            gap: 20px;
-            /* Space between the boxes */
-            padding: 0 20px;
-            /* Add some horizontal padding for the container */
-        }
-
-        .problem-box,
-        .solution-box {
-            background-color: #f8f9fa;
-            /* Light gray background for boxes */
-            border: 1px solid #dee2e6;
-            /* Light gray border */
-            border-radius: 5px;
-            padding: 20px;
-            text-align: left;
-            flex: 1 1 400px;
-            /* Grow and shrink, with a minimum width */
-        }
-
-        .sub-heading {
-            font-size: 1.5rem;
-            /* Adjust as needed */
-            font-weight: bold;
-            color: #007bff;
-            /* Bootstrap primary color */
-            margin-bottom: 15px;
-        }
-
-        .problem-list {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 0;
-        }
-
-        .problem-list li {
-            margin-bottom: 8px;
-        }
-
-        .solution-paragraph {
-            margin-bottom: 15px;
-        }
-
-        .learn-more-link {
-            color: #6c757d;
-            /* Gray link color */
-            text-decoration: none;
-        }
-
-        .learn-more-link:hover {
-            text-decoration: underline;
-        }
-
-        .executives-button {
-            background-color: #007bff;
-            /* Bootstrap primary color */
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            display: inline-block;
-            /* To control margin */
-        }
-
-        .executives-button:hover {
-            background-color: #0056b3;
-        }
-
-
-        .whitepapers-section {
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .main-heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 30px;
-        }
-
-        .card-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        .card {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            overflow: hidden;
-            width: 300px;
-            /* Adjust card width as needed */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        .card-image-container {
-            width: 100%;
-            height: auto;
-        }
-
-        .card-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 10px;
-            text-decoration: none;
-            /* Remove default link underline */
-        }
-
-        .card-title:hover {
-            color: #007bff;
-            /* Change color on hover */
-            text-decoration: underline;
-        }
-
-        .card-text {
-            font-size: 0.9rem;
-            color: #6c757d;
-            margin-bottom: 10px;
-            /* Add more specific styling for the text within the card if needed */
-        }
-
-        .card-link {
-            color: #007bff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .card-link:hover {
-            text-decoration: underline;
-        }
-
-
-
-        .footer {
-            background-color: #b1b3b5;
-            /* Light background */
-            padding: 20px 0;
-            font-size: 14px;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .footer-top ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 0;
-        }
-
-        .footer-top ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-top ul li a {
-            color: #555;
-            /* Darker text for links */
-            text-decoration: none;
-        }
-
-        .footer-top ul li a:hover {
-            color: #007bff;
-            /* Highlight on hover */
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* Vertically center items */
-            border-top: 1px solid #ddd;
-            /* Subtle border */
-            padding-top: 20px;
-            font-size: 12px;
-            color: #777;
-        }
-
-        .footer-logo img {
-            max-height: 30px;
-            /* Adjust as needed */
-            margin-right: 10px;
-        }
-
-        .social-icons a {
-            color: #555;
-            margin-left: 10px;
-            font-size: 18px;
-            /* Adjust size as needed */
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #007bff;
-        }
-    </style>
 
     <style>
         body {
@@ -993,39 +141,52 @@
         .content-block {}
     </style>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+            // data_analysis_ai_solution
+            BSComponents.BSCarousel.DevChallenges("ai_driven_solutions_carousel_inner", ai_driven_solutions)
+            BSComponents.BSCarousel.Indicators("ai_driven_solutions_carousel_indicators", ai_driven_solutions.length)
+
+        });
+    </script>
+
 </head>
 
 <body>
-    <header id="navbar-container"></header>
-    <script>
-        createNavbar(navbarConfig);
-    </script>
+    <header class="header"
+            id="navbar-container"></header>
 
 
 
 
-    <div class="ai-monitoring-section mt-5">
-        <div class="container">
-            <div class="section-content">
-                <div class="text-content">
-                    <h2 class="main-heading">Transforming Intelligence into Innovation</h2>
-                    <p class="paragraph">Bridging AI with real-world applications, NAST pioneers
+    <!-- Hero Section -->
+    <div class="hero-section hero-section-bg-overlay"
+         style="background-image: url('./images/hero-bg-6.png');
+         ">
+        <div class="container hero-section-content">
+            <div class="row">
+                <div class="col-12 col-md-7">
+                    <h2 class="display-2 fw-bold">Transforming Intelligence into Innovation</h2>
+                    <h4 class="fs-3 mb-5">Where Intelligent Design Meets Scalable
+                        Innovation—Powering
+                        Your Digital Future.</h4>
+                    <p class="lead d-none">Bridging AI with real-world applications, NAST
+                        pioneers
                         cutting-edge solutions across healthcare, business, education, e-commerce,
                         entertainment, and finance. From advanced software ecosystems to integrated
                         AI-driven hardware, we engineer seamless intelligence that powers industries
                         and transforms possibilities into reality.</p>
                 </div>
                 <div class="image-container">
-                    <img class="img-fluid"
-                         src="https://datatron.com/wp-content/uploads/2021/10/hero-2-2.svg"
-                         alt="AI Model Monitoring">
+
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div class="section">
+    <div class="section d-none">
         <div class="
          container">
             <div class="section-content">
@@ -1071,19 +232,73 @@
     </div>
 
 
-    <div class="bg-light">
-        <div class="container py-5">
-            <h2 class="font-bold fw-large text-center mb-5">Industries We Serve</h2>
+    <!-- Why Need AI-Driven Solutions : Carousel-->
+    <div class="container my-10 py-10">
 
+        <header class="text-center mb-7">
+            <h2 class="display-2 fw-bold">AI-Driven Solutions</h2>
+            <h4 class="lead fs-3 f2-semibold mb-3">Why Your Company Need Ai-Driven Solutions</h4>
+            <p class="sub-lead mb-5">Explore our AI-driven solutions that empower businesses
+                to achieve
+                operational excellence, enhance customer experiences, and drive innovation across
+                industries.</p>
+        </header>
+
+        <div id="ai_driven_solutions_carousel"
+             class="carousel slide shadow-lg rounded-3 py-6 px-5"
+             data-bs-ride="carousel">
+            <div id="ai_driven_solutions_carousel_indicators"
+                 class="carousel-indicators">
+            </div>
+
+            <!-- All Carousel items are insert using js script -->
+            <div id="ai_driven_solutions_carousel_inner"
+                 class="carousel-inner text-start"></div>
+
+
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#ai_driven_solutions_carousel"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"
+                      aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#ai_driven_solutions_carousel"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon"
+                      aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Industries we serve -->
+    <div class="my-10">
+        <div class="container py-5">
+            <header class="mb-8">
+                <h2 class="display-2 fw-bold text-center text-gray-700">Industries We Serve</h2>
+                <h4 class="fs-3 fs-semibold text-center text-gray-700">Empowering Innovation Across
+                    Every Industry</h4>
+            </header>
+
+            <!-- Business -->
             <div class="row mb-5 py-5 gap-4">
                 <div class="col-md-5">
-                    <img src="./images/business_ai_model.png"
-                         class="img-fluid rounded"
+                    <img src="./images/business_ai_2_600x450.png"
+                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
                          alt="Business Solutions">
                 </div>
                 <div class="col-md-6">
-                    <h3 class="fs-2 text-xl mb-4">Business</h3>
-                    <p>At NAST, we empower businesses with AI-driven insights and automation to fuel
+                    <h3 class="display-4 text-gray-700">Business</h3>
+                    <h4 class="fs-3 text-gray-700 mb-4">Empowering Smart Decisions with Intelligent
+                        Automation</h4>
+
+                    <p class="">At NAST, we empower businesses with AI-driven insights and
+                        automation to fuel
                         smart decisions and streamlined operations. Our solutions optimize
                         resources, automate routine processes, and reduce costs using real-time
                         analytics and predictive modeling. Tailored dashboards translate raw data
@@ -1091,13 +306,17 @@
                         positioning. With scalable, innovative AI solutions, we help your
                         organization stay agile and ahead in dynamic markets. Embrace a future of
                         enterprise innovation that transforms your data into a decisive competitive
-                        advantage.</p>
+                        advantage.</>
                 </div>
             </div>
 
             <div class="row mb-5 py-5 gap-4">
                 <div class="col-md-6">
-                    <h3 class="font-semibold text-xl mb-4">Healthcare</h3>
+
+                    <h3 class="display-4 text-gray-700">Healthcare</h3>
+                    <h4 class="fs-3 text-gray-700 mb-4">Eransforming Care Through Intelligent
+                        Diagnostics</h4>
+
                     <p>At NAST, we revolutionize healthcare with AI that accelerates diagnostics and
                         personalizes patient care. Our solutions integrate seamlessly into existing
                         medical systems, delivering real-time imaging analysis, predictive
@@ -1108,20 +327,22 @@
                         innovations transform modern healthcare delivery.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="./images/healthcare_ai_model.png"
-                         class="img-fluid rounded"
+                    <img src="./images/healthcare_ai_600x450.png"
+                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
                          alt="Healthcare Solutions">
                 </div>
             </div>
 
             <div class="row mb-5 py-5 gap-4">
                 <div class="col-md-5">
-                    <img src="./images/finance_ai_model.png"
-                         class="img-fluid rounded"
-                         alt="Finance Solutions">
+                    <img src="./images/finance_ai_600x450.png"
+                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                         alt="Finance AI Solutions">
                 </div>
                 <div class="col-md-6">
-                    <h3 class="font-semibold text-xl mb-4">Finance</h3>
+                    <h3 class="display-4 text-gray-700">Finance</h3>
+                    <h4 class="fs-3 text-gray-700 mb-4">Redefining Financial Strategies with
+                        Predictive Analytics.</h4>
                     <p>At NAST, we redefine finance with cutting-edge AI-powered analytics and risk
                         management tools. Our solutions provide real-time market insights, advanced
                         fraud detection, and predictive modeling to support agile financial
@@ -1135,7 +356,9 @@
 
             <div class="row mb-5 py-5 gap-4">
                 <div class="col-md-6">
-                    <h3 class="font-semibold text-xl mb-4">Education</h3>
+                    <h3 class="display-4 text-gray-700">Education</h3>
+                    <h4 class="fs-3 text-gray-700 mb-4">Cultivating Future Minds with Adaptive
+                        Learning Technologies.</h4>
                     <p class="">At NAST, we transform education through adaptive AI that
                         personalizes
                         learning and boosts student success. Our platforms deliver tailored content,
@@ -1147,20 +370,23 @@
                         Experience the future of education with data-driven innovation.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="./images/education_ai_model.png"
-                         class="img-fluid rounded"
-                         alt="Education Solutions">
+                    <img src="./images/education_ai_600x450.png"
+                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                         alt="Eduction AI Solutions">
                 </div>
             </div>
 
             <div class="row mb-5 py-5 gap-4">
                 <div class="col-md-5">
-                    <img src="./images/e_commerce_ai_ml.png"
-                         class="img-fluid rounded"
-                         alt="E-commerce Solutions">
+                    <img src="./images/e_commerce_ai_600x450.png"
+                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                         alt="E-Commerce AI Solutions">
                 </div>
                 <div class="col-md-6">
-                    <h3 class="font-semibold text-xl mb-4">E-commerce</h3>
+
+                    <h3 class="display-4 text-gray-700">E-commerce</h3>
+                    <h4 class="fs-3 text-gray-700 mb-4">Crafting Seamless Shopping Experiences with
+                        Data-Driven Insights.</h4>
                     <p>At NAST, we empower e-commerce with intelligent AI solutions that elevate
                         customer engagement and optimize operations. Our technology analyzes user
                         behavior in real time to deliver personalized recommendations, enable
@@ -1175,8 +401,13 @@
 
             <div class="row mb-5 py-5 gap-4">
                 <div class="col-md-6">
-                    <h3 class="font-semibold text-xl mb-4">Entertainment</h3>
-                    <p>At NAST, we elevate entertainment through AI that personalizes content and
+
+                    <h3 class="display-4 text-gray-700">Entertainment</h3>
+                    <h4 class="fs-3 text-gray-700 mb-4">Elevating Engagement with Curated Digital
+                        Experiences</h4>
+
+                    <p class="">At NAST, we elevate entertainment through AI that personalizes
+                        content and
                         enhances audience engagement. Our advanced models analyze viewing habits to
                         deliver tailored recommendations and optimize streaming quality. By
                         automating content curation and tagging, we empower creators to focus on
@@ -1186,9 +417,9 @@
                         captivates audiences and transforms digital experiences.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="./images/entertainment_ai_model.png"
-                         class="img-fluid rounded"
-                         alt="Entertainment Solutions">
+                    <img src="./images/entertainment_ai_600x450.png"
+                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                         alt="Entertainment AI Solutions">
                 </div>
             </div>
 
@@ -1206,152 +437,168 @@
 
 
 
-    <!-- Enterprise-Ready Models -->
-    <div class="ai-monitoring-features-section section">
-        <h2 class="fs-1 mb-5">Enterprise-Ready Models</h2>
-        <div class="container">
-            <div class="feature-container">
-                <div class="image-wrapper">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/platform-2.jpg"
-                         alt="Dashboard"
-                         class="feature-image">
-                </div>
-                <div class="text-content">
-                    <h3 class="fs-3">Robust Data Infrastructure & Pipelines</h3>
-                    <p class="paragraph">The ability to quickly get an overview of the health of
-                        your AI models is a
-                        crucial requirement to ensure that you are not exposing your business to
-                        unintended risks with
-                        severe consequences.</p>
+    <section class="d-none">
+        <!-- Enterprise-Ready Models -->
+        <div class="ai-monitoring-features-section section">
+            <h2 class="fs-1 mb-5">Enterprise-Ready Models</h2>
+            <div class="container">
+                <div class="feature-container">
+                    <div class="image-wrapper">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/platform-2.jpg"
+                             alt="Dashboard"
+                             class="feature-image">
+                    </div>
+                    <div class="text-content">
+                        <h3 class="fs-3">Robust Data Infrastructure & Pipelines</h3>
+                        <p class="paragraph">The ability to quickly get an overview of the health of
+                            your AI models is a
+                            crucial requirement to ensure that you are not exposing your business to
+                            unintended risks with
+                            severe consequences.</p>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="overall-health-section">
-        <div class="container">
-            <div class="section-content">
-                <div class="text-content">
-                    <h2 class="fs-3">Comprehensive Model Development & Testing</h2>
-                    <p class="paragraph">At NAST, models are more than just algorithms—they are
-                        crafted with rigorous experimentation and validation. Our end-to-end testing
-                        environment ensures that every solution meets the highest enterprise
-                        standards before it even reaches production.</p>
-                </div>
-                <div class="image-container">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-1.png"
-                         alt="Overall Health Score Dashboard"
-                         class="section-image">
+        <div class="overall-health-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="text-content">
+                        <h2 class="fs-3">Comprehensive Model Development & Testing</h2>
+                        <p class="paragraph">At NAST, models are more than just algorithms—they are
+                            crafted with rigorous experimentation and validation. Our end-to-end
+                            testing
+                            environment ensures that every solution meets the highest enterprise
+                            standards before it even reaches production.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-1.png"
+                             alt="Overall Health Score Dashboard"
+                             class="section-image">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Integrated MLOps & CI/CD Practices -->
-    <div class="bias-drift-section">
-        <div class="container">
-            <div class="section-content">
-                <div class="image-container">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
-                         alt="Bias, Drift, Performance Dashboard"
-                         class="section-image">
-                </div>
-                <div class="text-content">
-                    <h2 class="fs-3">Integrated MLOps & CI/CD Practices</h2>
-                    <p class="paragraph2">We embed automation into every phase of the ML lifecycle.
-                        Utilizing containerization and orchestration, our CI/CD pipelines streamline
-                        continuous integration, testing, and deployment, enabling rapid,
-                        risk-managed production rollouts for both software and hardware solutions.
-                    </p>
+        <!-- Integrated MLOps & CI/CD Practices -->
+        <div class="bias-drift-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                             alt="Bias, Drift, Performance Dashboard"
+                             class="section-image">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="fs-3">Integrated MLOps & CI/CD Practices</h2>
+                        <p class="paragraph2">We embed automation into every phase of the ML
+                            lifecycle.
+                            Utilizing containerization and orchestration, our CI/CD pipelines
+                            streamline
+                            continuous integration, testing, and deployment, enabling rapid,
+                            risk-managed production rollouts for both software and hardware
+                            solutions.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="bias-drift-section">
-        <div class="container">
-            <div class="section-content">
-                <div class="image-container">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
-                         alt="Bias, Drift, Performance Dashboard"
-                         class="section-image">
-                </div>
-                <div class="text-content">
-                    <h2 class="fs-3">Scalability & Performance Optimization</h2>
-                    <p class="paragraph2">Our systems are engineered to perform under peak loads.
-                        Through distributed computing and advanced optimization techniques like
-                        model compression and pruning, we ensure that our solutions remain agile,
-                        responsive, and efficient at every scale.
-                    </p>
+        <div class="bias-drift-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                             alt="Bias, Drift, Performance Dashboard"
+                             class="section-image">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="fs-3">Scalability & Performance Optimization</h2>
+                        <p class="paragraph2">Our systems are engineered to perform under peak
+                            loads.
+                            Through distributed computing and advanced optimization techniques like
+                            model compression and pruning, we ensure that our solutions remain
+                            agile,
+                            responsive, and efficient at every scale.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="bias-drift-section">
-        <div class="container">
-            <div class="section-content">
-                <div class="image-container">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
-                         alt="Bias, Drift, Performance Dashboard"
-                         class="section-image">
-                </div>
-                <div class="text-content">
-                    <h2 class="fs-3">Advanced Monitoring, Logging & Observability</h2>
-                    <p class="paragraph2">With real-time dashboards and alert mechanisms, we
-                        continuously track model performance and operational metrics. Our proactive
-                        monitoring framework quickly identifies anomalies, ensuring prompt updates
-                        and consistent performance in dynamic environments.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="bias-drift-section">
-        <div class="container">
-            <div class="section-content">
-                <div class="image-container">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
-                         alt="Bias, Drift, Performance Dashboard"
-                         class="section-image">
-                </div>
-                <div class="text-content">
-                    <h2 class="fs-3">Ironclad Security, Governance & Compliance</h2>
-                    <p class="paragraph2">Trust is core to our approach. At NAST, enforcing robust
-                        security measures—including data encryption, access controls, and compliance
-                        with regulatory standards like HIPAA and GDPR—is non-negotiable. Our
-                        solutions are designed to protect your data and uphold ethical AI practices.
-                    </p>
+        <div class="bias-drift-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                             alt="Bias, Drift, Performance Dashboard"
+                             class="section-image">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="fs-3">Advanced Monitoring, Logging & Observability</h2>
+                        <p class="paragraph2">With real-time dashboards and alert mechanisms, we
+                            continuously track model performance and operational metrics. Our
+                            proactive
+                            monitoring framework quickly identifies anomalies, ensuring prompt
+                            updates
+                            and consistent performance in dynamic environments.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="bias-drift-section">
-        <div class="container">
-            <div class="section-content">
-                <div class="image-container">
-                    <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
-                         alt="Bias, Drift, Performance Dashboard"
-                         class="section-image">
-                </div>
-                <div class="text-content">
-                    <h2 class="fs-3">Strategic Deployment & Lifecycle Management</h2>
-                    <p class="paragraph2">We employ deployment strategies like canary releases and
-                        blue-green deployments to seamlessly integrate new models. Our comprehensive
-                        lifecycle management approach covers every stage—ensuring your AI systems
-                        remain current, reliable, and ready for future challenges.
-
-
-
-                    </p>
+        <div class="bias-drift-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                             alt="Bias, Drift, Performance Dashboard"
+                             class="section-image">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="fs-3">Ironclad Security, Governance & Compliance</h2>
+                        <p class="paragraph2">Trust is core to our approach. At NAST, enforcing
+                            robust
+                            security measures—including data encryption, access controls, and
+                            compliance
+                            with regulatory standards like HIPAA and GDPR—is non-negotiable. Our
+                            solutions are designed to protect your data and uphold ethical AI
+                            practices.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="bias-drift-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="image-container">
+                        <img src="https://datatron.com/wp-content/uploads/2021/10/3-img-2.png"
+                             alt="Bias, Drift, Performance Dashboard"
+                             class="section-image">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="fs-3">Strategic Deployment & Lifecycle Management</h2>
+                        <p class="paragraph2">We employ deployment strategies like canary releases
+                            and
+                            blue-green deployments to seamlessly integrate new models. Our
+                            comprehensive
+                            lifecycle management approach covers every stage—ensuring your AI
+                            systems
+                            remain current, reliable, and ready for future challenges.
+
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <div class="bg-light py-5">

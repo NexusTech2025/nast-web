@@ -1,4 +1,6 @@
-@media (max-width: 767.98px) {
+/* small phone and mobile */
+@media only screen and (max-width: 768px) {
+
     .section {
         margin-block: 2rem;
         /* Reduced vertical margin for smaller screens */
@@ -6,5 +8,42 @@
         /* Reduced vertical padding */
         padding-inline: 0.5rem;
         /* Reduced horizontal padding for mobile */
+    }
+
+    .card-h-auto {
+        height: fit-content !important;
+        max-height: fit-content !important;
+    }
+
+    .container {
+        padding: 0.5rem;
+
+    }
+
+    .hero-section-bg-overlay::after {
+        background: linear-gradient(to bottom, rgb(25 43 67 / 45%) 80%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .glassy-card-enhanced {
+        padding: 0.5rem;
+        /* Overriding Bootstrap padding for mobile */
+
+    }
+
+    .card-icon {
+        font-size: 3rem;
+    }
+
+    .card-icon svg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
     }
 }

@@ -9,8 +9,9 @@ function createNavbar(config) {
         <nav class="navbar navbar-expand-lg">
             <div class="container gap-3">
                 <h1 class="m-0" style='font-size:50px; 
-                    font-family: inter; 
-                    color: #212529;'>NAST</h1>
+                    font-family: inter;'>
+                <a class='text-decoration-none' href='${config.logo.homeRef}' alt='${config.logo.alt}'>NAST</a>    
+                </h1>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +88,7 @@ const LEARN = BASE_URL + "/Source/learn"
 const navbarConfig = {
     backgroundColor: 'rgb(246, 246, 246)',
     logo: {
+        homeRef: BASE_URL + "/index.html",
         src: 'https://datatron.com/wp-content/uploads/2021/10/logo.svg',
         alt: 'Datatron Logo'
     },

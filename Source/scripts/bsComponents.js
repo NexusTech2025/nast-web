@@ -17,15 +17,16 @@ function bsCarouseItem_DeveloperChallenges(title, paragraph, imageSrc, active) {
     // The image has rounded corners, a shadow, and a mix-blend-multiply effect for visual appeal.
     return `
     <div class="carousel-item ${active ? 'active' : ''}">
-        <div class="row align-items-center justify-content-center p-4 p-md-8">
-            <div class="col-12 col-md-6 p-4">
-                <h2 class="display-5 fw-bold text-dark mb-4">${title}</h2>
+        <div class="row align-items-center justify-content-center py-1 px-2 py-md-4  g-4">
+            <div class="col-12 col-md-6 order-2 order-md-1">
+                <h2 class="display-5 fw-bold text-gray-600 mb-3">${title}</h2>
                 <p class="fs-5 text-secondary lh-base">
                     ${paragraph}
                 </p>
             </div>
-            <div class="col-12 col-md-6 p-4">
-                <img class="img-fluid rounded-3 shadow-lg mix-blend-multiply object-fit-cover"
+            <div class="col-12 col-md-6 order-1 order-md-2">
+                <img class="img-fluid img-h-400 w-auto rounded-3 mix-blend-multiply object-fit-cover"
+                    
                      src="${imageSrc}"
                      alt="${title} image">
             </div>

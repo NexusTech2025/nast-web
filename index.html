@@ -71,6 +71,7 @@
             /* Stronger shadow for the tab content area */
         }
 
+
         /* Responsive adjustments for tab panes on medium screens (md) */
         @media (min-width: 768px) {
             .tab-pane {
@@ -229,15 +230,15 @@
             class="shadow-sm sticky-top header"></header>
 
 
-    <section class="hero-section py-6 position-relative"
+    <section class="hero-section hero-section-bg-overlay"
              style="background-image: url('./Source/images/hero_section2.png');
              background-size: cover;
              ">
-        <div class="container">
+        <div class="container hero-section-content">
             <div class="row align-items-center">
 
                 <div class="col-md-7">
-                    <h1 class="display-4 mb-3 text-white fw-bold">
+                    <h1 class="display-2 mb-3 text-white fw-bold">
                         Empowering Innovation with AI & Data-Driven Solutions
                     </h1>
                     <p class="fs-5 mb-4 text-white">
@@ -315,11 +316,17 @@
                      role="tabpanel"
                      aria-labelledby="frontend-tab">
                     <article class="row align-items-center my-6 my-md-7">
-                        <div class="col-12 col-md-6 text-center text-md-start order-md-1">
-                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900">Frontend
-                                Development
-                            </h3>
-                            <p class="sub-lead text-justify text-md-start lh-md text-gray-700">
+                        <div class="col-12 col-md-6  text-md-start mt-sm-4 order-sm-2 order-md-1">
+                            <header class="mb-4">
+                                <h3 class="display-5 fw-semibold text-gray-700">Frontend
+                                    Development
+                                </h3>
+                                <h5 class="lead text-gray-600">Designing Dynamic, Responsive Designs
+                                    that Captivate and Connect.</h5>
+                            </header>
+
+
+                            <p class="sub-lead lh-md text-gray-700 mb-4">
                                 We create stunning, responsive, and intuitive user interfaces that
                                 deliver
                                 seamless experiences across devices. Our front-end solutions are
@@ -332,8 +339,30 @@
                                 and mobile applications that are as powerful as they are visually
                                 compelling.
                             </p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/frontend-icon-flutter_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/frontend-icon-wordpress_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/frontend-icon-reactnative_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/frontend-icon-react_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/frontend-icon-nextjs_300x300.png"
+                                     alt="frontend with flutter">
+                            </div>
                         </div>
-                        <div class="col-12 col-md-5 offset-md-1 order-md-2 mt-4 mt-md-0">
+                        <div class="col-12 col-md-5 offset-md-1 order-sm-1 order-md-2 mt-4 mt-md-0">
                             <div
                                  class="d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
                                 <img class="img-fluid img-400 w-auto object-fit-contain rounded-3"
@@ -350,10 +379,16 @@
                      aria-labelledby="backend-tab">
                     <article class="row my-6 my-md-7">
                         <div class="col-12 col-md-6 text-start">
-                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900">Backend
-                                Development
-                            </h3>
-                            <p class="sub-lead text-justify  lh-md text-gray-700">
+
+                            <header class="mb-4">
+                                <h3 class="display-5 fw-semibold text-gray-700">Backend
+                                    Development
+                                </h3>
+                                <h5 class="lead text-gray-600">Building Robust, Scalable Systems to
+                                    Power Dynamic Digital Experiences.</h5>
+                            </header>
+
+                            <p class="sub-lead lh-md text-gray-700 mb-4">
                                 Powering every great application is a robust, secure, and scalable
                                 backend.
                                 We build high-performance server-side architectures that handle
@@ -367,6 +402,33 @@
                                 future
                                 growth.
                             </p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/backend_icon_django_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/backend_icon_nodejs_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/backend_icon_php_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/backend_icon_springboot_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/backend_icon_wordpress_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/backend_icon_javaspring_300x300.png"
+                                     alt="frontend with flutter">
+                            </div>
+
                         </div>
                         <div class="col-12 col-md-5 offset-md-1  mt-4 mt-md-0">
                             <div class="d-flex flex-wrap justify-content-end gap-3">
@@ -384,11 +446,19 @@
                      role="tabpanel"
                      aria-labelledby="data-storage-tab">
                     <article class="row align-items-center my-6 my-md-7">
-                        <div class="col-12 col-md-6 text-center text-md-start order-md-1">
-                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900">Secure Data
-                                Storage
-                                Solutions</h3>
-                            <p class="sub-lead text-justify text-md-start lh-md text-gray-700">
+                        <div class="col-12 col-md-6  text-md-start order-md-1">
+                            <h3 class="h2 fw-semibold mb-4 text-3xl text-gray-900"></h3>
+
+                            <header class="mb-4">
+                                <h3 class="display-5 fw-semibold text-gray-700">Secure Data
+                                    Storage
+                                    Solutions
+                                </h3>
+                                <h5 class="lead text-gray-600">Ensuring Trust and Integrity Through
+                                    Intelligent, Future-Ready Security Solutions.</h5>
+                            </header>
+
+                            <p class="sub-lead  text-md-start lh-md text-gray-700 mb-4">
                                 We deliver secure and scalable data management solutions, optimizing
                                 storage, retrieval, and processing for businesses. Our structured
                                 and
@@ -403,6 +473,30 @@
                                 evolving
                                 business needs, ensuring reliability and scalability.
                             </p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/database_icon_mysql_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/database_icon_postgresql_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/database_icon_mongodb_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/database_icon_oracle_300x300.png"
+                                     alt="frontend with flutter">
+
+                                <img class="icon-logo mix-blend-multiply"
+                                     src="./Source/images/database_icon_msaccess_300x300.png"
+                                     alt="frontend with flutter">
+
+
+                            </div>
                         </div>
                         <div class="col-12 col-md-5 offset-md-1 order-md-2 mt-4 mt-md-0">
                             <div

@@ -29,7 +29,7 @@ function createGlassyCards(cardData, containerId) {
                         <div class="col-12 col-sm-6 col-md-4 col-lg-4 d-flex justify-content-center mb-4">
                             <div class="glassy-bg-filter">
                                 <input type="checkbox" class="card-toggle d-none" id="toggle-${card.title.replace(/\s+/g, '-')}">
-                                <div class="glassy-card-enhanced p-4 rounded-xl w-100 mx-auto hover-lift-shadow text-center" id="card-${card.title.replace(/\s+/g, '-')}">
+                                <div class="glassy-card-enhanced px-2 py-3 rounded-xl w-100 mx-auto hover-lift-shadow text-center" id="card-${card.title.replace(/\s+/g, '-')}">
                                     <div class="card-icon mb-3">
                                         ${iconHtml}
                                     </div>
@@ -142,12 +142,12 @@ function createOwlCarouselItemHtml({ iconType, iconContent, title, subtitle }) {
     // The dynamically generated icon HTML is inserted before the title.
     return `
     <div class="item">
-        <div class="card glassy-bg-filter shadow rounded-4 h-100 border-0">
-            <div class="card-body p-4 text-center">
-                <div class="d-flex justify-content-center mb-4"">
+        <div class="card overflow-hidden glassy-bg-filter shadow rounded-4 h-100 border-0">
+            <div class="card-body p-3 px-md-4 text-center">
+                <div class="d-flex justify-content-center mb-2"">
                     ${iconHtml}
                 </div>
-                <h2 class="h4 fw-semibold text-gray-700 mb-3">${title}</h2>
+                <h2 class="h4 fw-semibold text-gray-600 mb-3">${title}</h2>
                 <p class="sub-lead lh-base">
                     ${subtitle}
                 </p>

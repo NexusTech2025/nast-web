@@ -376,43 +376,43 @@ const developer_challenges = [
         title: "Time-Consuming Code Generation",
         paragraph: "Manually writing repetitive boilerplate code can slow progress. Tools like Bolt instantly generate scaffold code, letting developers focus on complex logic.",
         active: true,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/time_consuming_600x450.png"
     },
     {
         title: "Debugging and Code Quality",
         paragraph: "Identifying bugs in extensive codebases is challenging. GitHub Copilot and Cursor provide context-aware suggestions and in-editor hints that streamline debugging and elevate code quality.",
         active: false,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/debugging_600x450.png"
     },
     {
         title: "Complex Integration Processes",
         paragraph: "Merging diverse technologies (Flutter, Kotlin, Node.js, Python) can lead to integration errors. AI-powered insights ease connector development and compatibility checks.",
         active: false,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/integration_complex_600x450.png"
     },
     {
         title: "Testing and Deployment Hurdles",
         paragraph: "Comprehensive testing and smooth deployments are crucial. Firebase Studio from Google automates end-to-end tests, previews deployments, and ensures robust security.",
         active: false,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/testing_deployment_600x450.png"
     },
     {
         title: "Security Vulnerabilities",
         paragraph: "Continuously monitoring for vulnerabilities is time-intensive. AI-driven tools detect potential risks early and recommend proactive security measures.",
         active: false,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/security_600x450.png"
     },
     {
         title: "Scalability and Performance Optimization",
         paragraph: "Balancing loads and scaling efficiently is intricate. AI analytics pinpoint performance bottlenecks and suggest resource optimizations.",
         active: false,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/scalability_600x450.png"
     },
     {
         title: "Maintaining Documentation",
         paragraph: "Keeping documentation current is often overlooked. In-editor AI like GitHub Copilot auto-generates contextual documentation, reducing manual overhead.",
         active: false,
-        imageSrc: "./images/Time-consuming.png"
+        imageSrc: "./images/maintainance_documaintation_600x450.png"
     }
 ];
 
@@ -544,5 +544,53 @@ const big_data_features = [
         iconContent: "./images/security_compliance.png", // security & compliance
         title: "Security & Compliance",
         subtitle: "Maintain stringent data security protocols and ensure compliance with global regulations, safeguarding sensitive business and customer data while providing reliable analytics solutions."
+    }
+];
+
+
+
+// ============================ AI Modeling & Monitoring ================================//
+
+
+const ai_driven_solutions = [
+    {
+        title: "Optimized Decision Making",
+        subtitle: "Transforming Data into Actionable Insights",
+        paragraph:
+            "Our solutions convert complex data sets into clear, strategic guidance, enabling businesses to make informed decisions swiftly and confidently.",
+        active: true,
+        imageSrc: "images/optimize_decision_making_600x400.png"
+    },
+    {
+        title: "Enhanced Operational Efficiency",
+        subtitle: "Streamlining Processes with Automation",
+        paragraph:
+            "Automate routine tasks and scale operations with our innovative AI tools that minimize errors, boost productivity, and liberate your team for creative growth.",
+        active: false,
+        imageSrc: "./images/enhanced_efficiency_600x400.png"
+    },
+    {
+        title: "Improved Customer Engagement",
+        subtitle: "Personalized Experiences for Every User",
+        paragraph:
+            "Deliver tailored interactions and build lasting relationships by leveraging real-time analytics to understand and anticipate customer needs.",
+        active: false,
+        imageSrc: "images/customer_engagement_600x400.png"
+    },
+    {
+        title: "Risk Mitigation & Security",
+        subtitle: "Proactive Protection of Your Digital Assets",
+        paragraph:
+            "Ensure robust data security and compliance with advanced monitoring and encryption, safeguarding your business against potential risks and threats.",
+        active: false,
+        imageSrc: "images/security_mitigation_600x400.png"
+    },
+    {
+        title: "Scalability Across Domains",
+        subtitle: "Adaptable Solutions for Growing Businesses",
+        paragraph:
+            "Our AI models are engineered to scale seamlessly, maintaining high performance and reliability amid evolving market demands and operational growth.",
+        active: false,
+        imageSrc: "images/scalability_across_domain_600x400.png"
     }
 ];

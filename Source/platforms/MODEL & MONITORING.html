@@ -74,7 +74,8 @@
         }
 
         .carousel-item {
-            height: 450px;
+            height: 550px;
+            max-height: clamp(520px, 550px, 80vh);
             /* Increased height for better visibility */
             background-size: cover;
             background-position: center;
@@ -87,30 +88,18 @@
             padding: 3rem;
             border-radius: 10px;
             left: 0;
-            bottom: 50px;
+            bottom: 0;
             /* Increased distance from bottom */
             text-align: center;
             width: 100%;
             /* Increased width of caption */
             margin: auto;
             /* Center the caption */
-            height: 400px;
+            height: 100%;
+
 
         }
 
-        .carousel-caption h3 {
-            font-size: 2rem;
-            /* Increased font size for heading */
-            font-weight: bold;
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .carousel-caption p {
-            font-size: 1.2rem;
-            /* Increased font size for paragraph */
-            color: white;
-        }
 
         .carousel-control-prev,
         .carousel-control-next {
@@ -147,14 +136,15 @@
             // data_analysis_ai_solution
             BSComponents.BSCarousel.DevChallenges("ai_driven_solutions_carousel_inner", ai_driven_solutions)
             BSComponents.BSCarousel.Indicators("ai_driven_solutions_carousel_indicators", ai_driven_solutions.length)
-
+            BSComponents.BSCarousel.AiEcoSystem("ai_ecosystem_carousel_inner", ai_ecosystem)
+            BSComponents.Layouts.SplitLayout("ai_industries", ai_industries, true)
         });
     </script>
 
 </head>
 
 <body>
-    <header class="header"
+    <header class="header sticky-top shadow-lg"
             id="navbar-container"></header>
 
 
@@ -186,66 +176,20 @@
     </div>
 
 
-    <div class="section d-none">
-        <div class="
-         container">
-            <div class="section-content">
-                <div class="text-content">
-                    <h2 class="main-heading">Why Your Company Needs AI-Driven Solutions</h2>
-                    <p><b>Optimized Decision-Making:</b> Our AI transforms raw data into clear,
-                        actionable insights. Real-time analytics and predictive modeling drive smart
-                        choices. Empower your business with faster, data-driven strategies.</p>
-
-                    <p><b>Enhanced Operational Efficiency:</b> Automate routine tasks to minimize
-                        errors and save time. Streamline processes to cut costs and boost
-                        productivity. Free your team to focus on innovation and strategic growth.
-                    </p>
-
-                    <p><b>Improved Customer Engagement:</b> Deliver personalized experiences
-                        tailored to each user. Leverage AI to understand and anticipate customer
-                        needs. Create meaningful interactions that build lasting loyalty.</p>
-
-
-                    <p><b>Risk Mitigation and Security:</b> Proactively monitor operations to
-                        identify potential threats. Deploy advanced fraud detection and security
-                        measures. Safeguard your enterprise with continuous, AI-driven oversight.
-                    </p>
-
-                    <p><b>Scalability Across Domains:</b> Our models adapt effortlessly as your
-                        business grows. Handle peak loads and dynamic market demands with ease.
-                        Ensure consistent performance across every operational environment.</p>
-                </div>
-                <div class="video-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         width="32"
-                         height="32"
-                         fill="currentColor"
-                         class="bi bi-exclamation-circle-fill"
-                         viewBox="0 0 16 16">
-                        <path
-                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                    </svg>
-                    Video unavailable
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Why Need AI-Driven Solutions : Carousel-->
     <div class="container my-10 py-10">
 
-        <header class="text-center mb-7">
+        <header class="text-center mb-7 text-gray-600 mb-10">
             <h2 class="display-2 fw-bold">AI-Driven Solutions</h2>
-            <h4 class="lead fs-3 f2-semibold mb-3">Why Your Company Need Ai-Driven Solutions</h4>
-            <p class="sub-lead mb-5">Explore our AI-driven solutions that empower businesses
+            <h4 class="fs-3 f2-semibold mb-3">Why Your Company Need Ai-Driven Solutions</h4>
+            <p class="head-desc fs-5 mb-5">Explore our AI-driven solutions that empower businesses
                 to achieve
                 operational excellence, enhance customer experiences, and drive innovation across
                 industries.</p>
         </header>
 
         <div id="ai_driven_solutions_carousel"
-             class="carousel slide shadow-lg rounded-3 py-6 px-5"
+             class="carousel slide shadow-lg rounded-3"
              data-bs-ride="carousel">
             <div id="ai_driven_solutions_carousel_indicators"
                  class="carousel-indicators">
@@ -253,7 +197,8 @@
 
             <!-- All Carousel items are insert using js script -->
             <div id="ai_driven_solutions_carousel_inner"
-                 class="carousel-inner text-start"></div>
+                 class="carousel-inner text-start pt-3 pb-5"
+                 style="height: fit-content;"></div>
 
 
             <button class="carousel-control-prev"
@@ -277,151 +222,181 @@
 
 
     <!-- Industries we serve -->
-    <div class="my-10">
+    <section class="my-10">
         <div class="container py-5">
-            <header class="mb-8">
-                <h2 class="display-2 fw-bold text-center text-gray-700">Industries We Serve</h2>
-                <h4 class="fs-3 fs-semibold text-center text-gray-700">Empowering Innovation Across
+            <header class="mb-10 text-center text-gray-600">
+                <h2 class="display-2 fw-bold">Industries We Serve</h2>
+                <h4 class="fs-3 fs-semibold">Empowering Innovation Across
                     Every Industry</h4>
             </header>
 
-            <!-- Business -->
-            <div class="row mb-5 py-5 gap-4">
-                <div class="col-md-5">
-                    <img src="./images/business_ai_2_600x450.png"
-                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
-                         alt="Business Solutions">
-                </div>
-                <div class="col-md-6">
-                    <h3 class="display-4 text-gray-700">Business</h3>
-                    <h4 class="fs-3 text-gray-700 mb-4">Empowering Smart Decisions with Intelligent
-                        Automation</h4>
+            <section class="d-none">
+                <!-- Business -->
+                <div class="row mb-5 py-5 gap-4">
+                    <div class="col-md-5">
+                        <img src="./images/business_ai_2_600x450.png"
+                             class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                             alt="Business Solutions">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="display-5 fw-bold text-gray-600">Business</h3>
+                        <h4 class="fs-3 text-gray-600 mb-4">Empowering Smart Decisions with
+                            Intelligent
+                            Automation</h4>
 
-                    <p class="">At NAST, we empower businesses with AI-driven insights and
-                        automation to fuel
-                        smart decisions and streamlined operations. Our solutions optimize
-                        resources, automate routine processes, and reduce costs using real-time
-                        analytics and predictive modeling. Tailored dashboards translate raw data
-                        into actionable insights, supporting strategic planning and competitive
-                        positioning. With scalable, innovative AI solutions, we help your
-                        organization stay agile and ahead in dynamic markets. Embrace a future of
-                        enterprise innovation that transforms your data into a decisive competitive
-                        advantage.</>
+                        <p class="lead text-gray-500">At NAST, we empower businesses with AI-driven
+                            insights and
+                            automation to fuel
+                            smart decisions and streamlined operations. Our solutions optimize
+                            resources, automate routine processes, and reduce costs using real-time
+                            analytics and predictive modeling. Tailored dashboards translate raw
+                            data
+                            into actionable insights, supporting strategic planning and competitive
+                            positioning. With scalable, innovative AI solutions, we help your
+                            organization stay agile and ahead in dynamic markets. Embrace a future
+                            of
+                            enterprise innovation that transforms your data into a decisive
+                            competitive
+                            advantage.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-5 py-5 gap-4">
-                <div class="col-md-6">
+                <div class="row mb-5 py-5 gap-4">
+                    <div class="col-md-6">
 
-                    <h3 class="display-4 text-gray-700">Healthcare</h3>
-                    <h4 class="fs-3 text-gray-700 mb-4">Eransforming Care Through Intelligent
-                        Diagnostics</h4>
+                        <h3 class="display-4 text-gray-700">Healthcare</h3>
+                        <h4 class="fs-3 text-gray-700 mb-4">Eransforming Care Through Intelligent
+                            Diagnostics</h4>
 
-                    <p>At NAST, we revolutionize healthcare with AI that accelerates diagnostics and
-                        personalizes patient care. Our solutions integrate seamlessly into existing
-                        medical systems, delivering real-time imaging analysis, predictive
-                        monitoring, and early disease detection. By ensuring robust security and
-                        regulatory compliance, we protect sensitive patient data while empowering
-                        healthcare professionals with actionable insights. Experience improved
-                        treatment outcomes, optimized operations, and enhanced patient care as our
-                        innovations transform modern healthcare delivery.</p>
+                        <p>At NAST, we revolutionize healthcare with AI that accelerates diagnostics
+                            and
+                            personalizes patient care. Our solutions integrate seamlessly into
+                            existing
+                            medical systems, delivering real-time imaging analysis, predictive
+                            monitoring, and early disease detection. By ensuring robust security and
+                            regulatory compliance, we protect sensitive patient data while
+                            empowering
+                            healthcare professionals with actionable insights. Experience improved
+                            treatment outcomes, optimized operations, and enhanced patient care as
+                            our
+                            innovations transform modern healthcare delivery.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="./images/healthcare_ai_600x450.png"
+                             class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                             alt="Healthcare Solutions">
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <img src="./images/healthcare_ai_600x450.png"
-                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
-                         alt="Healthcare Solutions">
-                </div>
-            </div>
 
-            <div class="row mb-5 py-5 gap-4">
-                <div class="col-md-5">
-                    <img src="./images/finance_ai_600x450.png"
-                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
-                         alt="Finance AI Solutions">
+                <div class="row mb-5 py-5 gap-4">
+                    <div class="col-md-5">
+                        <img src="./images/finance_ai_600x450.png"
+                             class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                             alt="Finance AI Solutions">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="display-4 text-gray-700">Finance</h3>
+                        <h4 class="fs-3 text-gray-700 mb-4">Redefining Financial Strategies with
+                            Predictive Analytics.</h4>
+                        <p>At NAST, we redefine finance with cutting-edge AI-powered analytics and
+                            risk
+                            management tools. Our solutions provide real-time market insights,
+                            advanced
+                            fraud detection, and predictive modeling to support agile financial
+                            strategies. By automating trading systems and optimizing asset
+                            management,
+                            we reduce operational costs and bolster decision-making. With secure,
+                            scalable platforms that ensure full regulatory compliance, our
+                            technology
+                            delivers a competitive edge in today’s fast-paced financial markets.
+                            Transform your financial operations with precision and agility.</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="display-4 text-gray-700">Finance</h3>
-                    <h4 class="fs-3 text-gray-700 mb-4">Redefining Financial Strategies with
-                        Predictive Analytics.</h4>
-                    <p>At NAST, we redefine finance with cutting-edge AI-powered analytics and risk
-                        management tools. Our solutions provide real-time market insights, advanced
-                        fraud detection, and predictive modeling to support agile financial
-                        strategies. By automating trading systems and optimizing asset management,
-                        we reduce operational costs and bolster decision-making. With secure,
-                        scalable platforms that ensure full regulatory compliance, our technology
-                        delivers a competitive edge in today’s fast-paced financial markets.
-                        Transform your financial operations with precision and agility.</p>
-                </div>
-            </div>
 
-            <div class="row mb-5 py-5 gap-4">
-                <div class="col-md-6">
-                    <h3 class="display-4 text-gray-700">Education</h3>
-                    <h4 class="fs-3 text-gray-700 mb-4">Cultivating Future Minds with Adaptive
-                        Learning Technologies.</h4>
-                    <p class="">At NAST, we transform education through adaptive AI that
-                        personalizes
-                        learning and boosts student success. Our platforms deliver tailored content,
-                        real-time performance tracking, and automated assessments to support
-                        engaged, efficient teaching. By streamlining administrative tasks, educators
-                        can focus on mentoring and nurturing creativity. Our solutions integrate
-                        seamlessly into both traditional and digital classrooms, ensuring every
-                        learner receives the personalized support needed for academic excellence.
-                        Experience the future of education with data-driven innovation.</p>
+                <div class="row mb-5 py-5 gap-4">
+                    <div class="col-md-6">
+                        <h3 class="display-4 text-gray-700">Education</h3>
+                        <h4 class="fs-3 text-gray-700 mb-4">Cultivating Future Minds with Adaptive
+                            Learning Technologies.</h4>
+                        <p class="">At NAST, we transform education through adaptive AI that
+                            personalizes
+                            learning and boosts student success. Our platforms deliver tailored
+                            content,
+                            real-time performance tracking, and automated assessments to support
+                            engaged, efficient teaching. By streamlining administrative tasks,
+                            educators
+                            can focus on mentoring and nurturing creativity. Our solutions integrate
+                            seamlessly into both traditional and digital classrooms, ensuring every
+                            learner receives the personalized support needed for academic
+                            excellence.
+                            Experience the future of education with data-driven innovation.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="./images/education_ai_600x450.png"
+                             class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                             alt="Eduction AI Solutions">
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <img src="./images/education_ai_600x450.png"
-                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
-                         alt="Eduction AI Solutions">
-                </div>
-            </div>
 
-            <div class="row mb-5 py-5 gap-4">
-                <div class="col-md-5">
-                    <img src="./images/e_commerce_ai_600x450.png"
-                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
-                         alt="E-Commerce AI Solutions">
-                </div>
-                <div class="col-md-6">
+                <div class="row mb-5 py-5 gap-4">
+                    <div class="col-md-5">
+                        <img src="./images/e_commerce_ai_600x450.png"
+                             class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                             alt="E-Commerce AI Solutions">
+                    </div>
+                    <div class="col-md-6">
 
-                    <h3 class="display-4 text-gray-700">E-commerce</h3>
-                    <h4 class="fs-3 text-gray-700 mb-4">Crafting Seamless Shopping Experiences with
-                        Data-Driven Insights.</h4>
-                    <p>At NAST, we empower e-commerce with intelligent AI solutions that elevate
-                        customer engagement and optimize operations. Our technology analyzes user
-                        behavior in real time to deliver personalized recommendations, enable
-                        dynamic pricing, and streamline inventory management. Interactive dashboards
-                        provide actionable insights, enhancing targeted marketing and boosting
-                        conversions. Secure and scalable, our platforms adapt to market trends,
-                        ensuring a seamless shopping experience that turns visitors into loyal
-                        customers. Drive growth and reduce costs with future-ready AI innovations.
-                    </p>
+                        <h3 class="display-4 text-gray-700">E-commerce</h3>
+                        <h4 class="fs-3 text-gray-700 mb-4">Crafting Seamless Shopping Experiences
+                            with
+                            Data-Driven Insights.</h4>
+                        <p>At NAST, we empower e-commerce with intelligent AI solutions that elevate
+                            customer engagement and optimize operations. Our technology analyzes
+                            user
+                            behavior in real time to deliver personalized recommendations, enable
+                            dynamic pricing, and streamline inventory management. Interactive
+                            dashboards
+                            provide actionable insights, enhancing targeted marketing and boosting
+                            conversions. Secure and scalable, our platforms adapt to market trends,
+                            ensuring a seamless shopping experience that turns visitors into loyal
+                            customers. Drive growth and reduce costs with future-ready AI
+                            innovations.
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-5 py-5 gap-4">
-                <div class="col-md-6">
+                <div class="row mb-5 py-5 gap-4">
+                    <div class="col-md-6">
 
-                    <h3 class="display-4 text-gray-700">Entertainment</h3>
-                    <h4 class="fs-3 text-gray-700 mb-4">Elevating Engagement with Curated Digital
-                        Experiences</h4>
+                        <h3 class="display-4 text-gray-700">Entertainment</h3>
+                        <h4 class="fs-3 text-gray-700 mb-4">Elevating Engagement with Curated
+                            Digital
+                            Experiences</h4>
 
-                    <p class="">At NAST, we elevate entertainment through AI that personalizes
-                        content and
-                        enhances audience engagement. Our advanced models analyze viewing habits to
-                        deliver tailored recommendations and optimize streaming quality. By
-                        automating content curation and tagging, we empower creators to focus on
-                        storytelling while our technology drives immersive, interactive experiences.
-                        Robust security measures protect intellectual property, ensuring a safe and
-                        engaging environment. Embrace a new era of entertainment where innovation
-                        captivates audiences and transforms digital experiences.</p>
+                        <p class="">At NAST, we elevate entertainment through AI that personalizes
+                            content and
+                            enhances audience engagement. Our advanced models analyze viewing habits
+                            to
+                            deliver tailored recommendations and optimize streaming quality. By
+                            automating content curation and tagging, we empower creators to focus on
+                            storytelling while our technology drives immersive, interactive
+                            experiences.
+                            Robust security measures protect intellectual property, ensuring a safe
+                            and
+                            engaging environment. Embrace a new era of entertainment where
+                            innovation
+                            captivates audiences and transforms digital experiences.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="./images/entertainment_ai_600x450.png"
+                             class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
+                             alt="Entertainment AI Solutions">
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <img src="./images/entertainment_ai_600x450.png"
-                         class="img-fluid rounded img-h-400 w-auto mix-blend-multiply"
-                         alt="Entertainment AI Solutions">
-                </div>
-            </div>
+            </section>
+
+            <section id="ai_industries">
+            </section>
 
             <div class="row">
                 <div class="col-12 text-center mt-4">
@@ -433,7 +408,7 @@
             </div>
         </div>
 
-    </div>
+    </section>
 
 
 
@@ -601,11 +576,11 @@
     </section>
 
 
-    <div class="bg-light py-5">
+    <section class="my-10">
 
-        <div class="container py-5 d-flex flex-column align-items-center">
-            <h2 class="text-center mb-5">AI Ecosystem</h2>
-            <p class="text-center mb-5 fs-6 w-50">At NAST, we believe that an enterprise-ready AI
+        <div class="container py-5 d-flex flex-column align-items-center mb-8">
+            <h2 class="display-4 fw-bold text-center text-gray-600 mb-3">AI Ecosystem</h2>
+            <p class="fs-5 head-desc mb-5">At NAST, we believe that an enterprise-ready AI
                 model must have a holistic ecosystem built around the model to ensure sustained
                 performance, reliability, and transparency. Here are some of the key practices we
                 implement to support performance monitoring, updating, logging, and more
@@ -613,82 +588,20 @@
 
         </div>
 
-        <div class="container w-75">
-            <div id="aiEcosystemCarousel"
+        <div class="container">
+            <div id="ai_ecosystem_carousel"
                  class="carousel slide"
                  data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active"
-                         style="background-image: url('https://www.freepik.com/free-photo/robot-handshake-human-background-futuristic-digital-age_17850426.htm#fromView=search&page=1&position=4&uuid=71141f54-28e0-4c8f-a66a-ea4a97b6190b&query=technologies')">
-                        <div class="carousel-caption py-5">
-                            <h3 class="mb-5">Real-Time Performance Monitoring</h3>
-                            <p class="text-center">Maintain dashboards with key metrics such as
-                                accuracy,
-                                latency,
-                                throughput, and system resource utilization using tools like Grafana
-                                or Prometheus. Incorporate data and concept drift detection to alert
-                                when the model’s performance or the underlying data distribution
-                                shifts.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item"
-                         style="background-image: url('https://source.unsplash.com/1920x600/?automation,data');">
-                        <div class="carousel-caption">
-                            <h3>Automated Model Updating</h3>
-                            <p>Use continuous integration and deployment pipelines that
-                                automatically trigger model retraining when performance degradation
-                                is detected. Adopt canary and blue-green deployment strategies to
-                                update models with minimal disruption, ensuring version control for
-                                both data and model iterations.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item"
-                         style="background-image: url('https://source.unsplash.com/1920x600/?logging,system');">
-                        <div class="carousel-caption">
-                            <h3>Comprehensive Logging & Observability</h3>
-                            <p>Implement end-to-end logging that captures prediction flows, errors,
-                                system events, and user feedback—centralized through platforms like
-                                the ELK stack or Splunk. Leverage real-time log analytics to surface
-                                anomalies and quickly diagnose critical issues.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item"
-                         style="background-image: url('https://source.unsplash.com/1920x600/?transparency,ai');">
-                        <div class="carousel-caption">
-                            <h3>Explainability & Transparency</h3>
-                            <p>Integrate explainable AI tools (e.g., SHAP, LIME) to make model
-                                predictions transparent and interpretable for auditors and end
-                                users. Provide detailed audit trails that track model decisions,
-                                changes, and performance over time to ensure regulatory compliance.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="carousel-item"
-                         style="background-image: url('https://source.unsplash.com/1920x600/?resilience,management');">
-                        <div class="carousel-caption">
-                            <h3>Resilience & Incident Management</h3>
-                            <p>Couple automated incident alert systems (for example, using
-                                PagerDuty) with proactive rollback mechanisms, ensuring swift
-                                responses to any production issues. Regularly simulate failure
-                                scenarios to test and enhance the system’s resilience, ensuring
-                                robust fault tolerance.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item"
-                         style="background-image: url('https://source.unsplash.com/1920x600/?data,lifecycle');">
-                        <div class="carousel-caption">
-                            <h3>Data Quality & Lifecycle Tracking</h3>
-                            <p>Enforce strict data versioning and lineage tracking, ensuring that
-                                every update is reproducible and its impact is well-documented.
-                                Schedule periodic evaluations for model performance in sync with
-                                business cycles to capture and address any degradation before it
-                                affects end-users.</p>
-                        </div>
-                    </div>
+
+                <div id="ai_ecosystem_carousel_inner"
+                     class="carousel-inner">
+
                 </div>
+
+
                 <button class="carousel-control-prev"
                         type="button"
-                        data-bs-target="#aiEcosystemCarousel"
+                        data-bs-target="#ai_ecosystem_carousel"
                         data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"
                           aria-hidden="true"></span>
@@ -696,15 +609,21 @@
                 </button>
                 <button class="carousel-control-next"
                         type="button"
-                        data-bs-target="#aiEcosystemCarousel"
+                        data-bs-target="#ai_ecosystem_carousel"
                         data-bs-slide="next">
                     <span class="carousel-control-next-icon"
                           aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+
+
             </div>
         </div>
-    </div>
+
+    </section>
+
+
+
 
     <footer class="bg-dark text-white py-4 fw-lighter"
             style="--bs-body-font-size: 0.8rem;">

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>About Us - NAST</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          xintegrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+          crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS files (assuming these paths are relative to the final deployment) -->
+    <!-- These links might still be relevant if they contain other global styles not replaced by Bootstrap -->
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous">
+            </script>
+
+    <script src="../scripts/header.js"></script>
+
+    <style>
+        .hero-section-bg-overlay::after {
+            background: linear-gradient(45deg, rgba(25, 43, 67, 0.50) 50%, rgba(17, 36, 59, 0.50) 100%);
+            transition: background-image 1s ease-in-out;
+        }
+
+        .hero-section-bg-overlay:hover::after {
+            background: linear-gradient(45deg, rgba(25, 43, 67, 0.8) 50%, rgba(17, 36, 59, 0.8) 100%);
+        }
+
+
+
+        /* Custom hover effects for value cards */
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .values-card {
+            background-color: #07152de0;
+            backdrop-filter: blur(3px);
+
+        }
+
+        /* Specific line-height that Bootstrap doesn't provide directly */
+        .lh-1-8 {
+            line-height: 1.8;
+        }
+
+
+        /*Our values section*/
+        #our_values::before {
+            backdrop-filter: blur(7px);
+        }
+
+        /* Styles for the "Why Choose Us" section with image hover effect */
+        .image-hover-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.9375rem;
+            /* 15px / 16px = 0.9375rem */
+            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.08);
+            /* 0 4px 20px */
+            height: 100%;
+        }
+
+        .image-hover-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.5s ease-in-out;
+            display: block;
+        }
+
+        .image-hover-card .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            padding: 1.25rem;
+            /* 20px / 16px = 1.25rem */
+            text-align: center;
+            backdrop-filter: blur(0px);
+        }
+
+        .image-hover-card:hover img {
+            filter: blur(5px);
+        }
+
+        .image-hover-card:hover .overlay-content {
+            opacity: 1;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Styles for the right-side feature cards in the "Why Choose Us" section */
+        .feature-card {
+            background-color: #fff;
+            border-radius: 0.9375rem;
+            /* 15px */
+            padding: 1.5625rem;
+            /* 25px / 16px = 1.5625rem */
+            box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.05);
+            /* 0 4px 15px */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-card .icon-circle {
+            width: 3.125rem;
+            /* 50px */
+            height: 3.125rem;
+            /* 50px */
+            border-radius: 50%;
+            background-color: #e0f7fa;
+            color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 0.9375rem;
+            /* 15px */
+        }
+
+        /* Styles for the new "How We Do It" section's left feature cards */
+        .how-we-do-it-feature-card {
+            background-color: #fff;
+            border-radius: 0.9375rem;
+            /* 15px */
+            padding: 1.5625rem;
+            /* 25px */
+            box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.05);
+            /* 0 4px 15px */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .how-we-do-it-feature-card .icon-circle {
+            width: 3.125rem;
+            /* 50px */
+            height: 3.125rem;
+            /* 50px */
+            border-radius: 50%;
+            background-color: #e0f7fa;
+            color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 0.9375rem;
+            /* 15px */
+        }
+
+        /* New styles for the updated 'Our Values' section */
+        .values-grid-item {
+            position: relative;
+            padding-left: 3.75rem;
+            /* 60px / 16px = 3.75rem */
+            margin-bottom: 2.5rem;
+            /* 40px / 16px = 2.5rem */
+        }
+
+        .values-grid-item .number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #dee2e6;
+            line-height: 1;
+        }
+
+        .values-grid-item h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 0.625rem;
+            /* 10px */
+        }
+
+        .values-grid-item p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        /* Styles for the "Future of Digital Transformation" section */
+        .future-section {
+            background-color: #f0f2f5;
+            padding: 5rem 0;
+            /* 80px */
+        }
+
+        .future-section .graphic-card {
+            background-color: #fff;
+            border-radius: 0.9375rem;
+            /* 15px */
+            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.08);
+            /* 0 4px 20px */
+            padding: 1.875rem;
+            /* 30px */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .future-section .graphic-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.625rem;
+            /* 10px */
+        }
+
+        .future-section .text-content h2 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 1.5625rem;
+            /* 25px */
+        }
+
+        .future-section .text-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .future-section .text-content ul li {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 0.9375rem;
+            /* 15px */
+            position: relative;
+            padding-left: 1.875rem;
+            /* 30px */
+        }
+
+        .future-section .text-content ul li::before {
+            content: "\f26a";
+            font-family: "bootstrap-icons";
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive adjustments where Bootstrap utilities might not provide exact values */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 5rem;
+                /* 80px */
+                padding-bottom: 5rem;
+                /* 80px */
+            }
+
+            .py-md-60 {
+                /* This custom class can be removed from HTML if replaced */
+                padding-top: 3.75rem;
+                /* 60px */
+                padding-bottom: 3.75rem;
+                /* 60px */
+            }
+
+            .team-member-card img {
+                width: 6.25rem;
+                /* 100px */
+                height: 6.25rem;
+                /* 100px */
+            }
+
+            .image-hover-card,
+            .feature-card,
+            .how-we-do-it-feature-card {
+                margin-bottom: 1.25rem;
+                /* 20px */
+            }
+
+            .values-grid-item {
+                margin-bottom: 1.875rem;
+                /* 30px */
+            }
+
+            .values-grid-item .number {
+                font-size: 2.5rem;
+            }
+
+            .values-grid-item h3 {
+                font-size: 1.6rem;
+            }
+
+            .future-section .text-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .future-section .text-content ul li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar Container -->
+    <header id="navbar-container"
+            class="header sticky-top"></header>
+
+    <main class="mb-5">
+
+        <!-- Hero Section -->
+        <section class="hero-section hero-section-bg-overlay text-light"
+                 style="background-image: url('./images/hero-bg.png'); background-size: cover; background-position: center; min-height: 400px;">
+
+            <div class="container hero-section-content justify-content-center ">
+                <div class="text-center">
+                    <h1 class="display-1 fw-bold mb-4">About NAST</h1>
+                    <p class="fs-3">Pioneering AI-Powered Transformation and Digital Innovation</p>
+                    <p class="fs-5 text-light">We develop tailored AI and digital
+                        solutions to drive your business forward. <br>Innovate, optimize, and scale
+                        with our expert team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Why Choose Us - with Image Hover Effect -->
+        <section class="py-5 bg-white my-10">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-md-6 d-flex">
+                        <div class="image-hover-card w-100 rounded-4 shadow-lg">
+                            <img src="./images/why_choose_us1.png"
+                                 alt="Why Choose Us"
+                                 class="img-fluid w-100 h-100 object-fit-cover">
+                            <div
+                                 class="overlay-content position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50 text-white d-flex justify-content-center align-items-center text-center p-4">
+                                <h2 class="fs-1 fw-bold">Why Choose Us</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex flex-column justify-content-between">
+                        <div class="feature-card mb-4 bg-white rounded-4 p-4 shadow">
+                            <div class="icon-circle d-flex justify-content-center align-items-center rounded-circle bg-info-subtle text-primary mb-3"
+                                 style="width: 50px; height: 50px;">
+                                <i class="bi bi-cpu-fill fs-4"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Intelligent Automation</h3>
+                            <p class="fs-6 text-secondary">Transforming operations with AI-driven
+                                automation for enhanced efficiency and reduced manual effort across
+                                your business processes.</p>
+                        </div>
+                        <div class="feature-card bg-white rounded-4 p-4 shadow">
+                            <div class="icon-circle d-flex justify-content-center align-items-center rounded-circle bg-info-subtle text-primary mb-3"
+                                 style="width: 50px; height: 50px;">
+                                <i class="bi bi-phone fs-4"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Seamless Digital Experiences
+                            </h3>
+                            <p class="fs-6 text-secondary">Crafting intuitive web and mobile
+                                platforms that ensure engaging and seamless user journeys, from
+                                e-commerce to educational solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: How We Do It -->
+        <section class="py-5 bg-light my-10">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-md-6 d-flex flex-column justify-content-between order-md-2">
+                        <div class="ps-md-4">
+                            <p class="text-uppercase text-secondary fw-bold mb-2">HOW WE DO IT</p>
+                            <h2 class="display-5 fw-bold text-dark mb-4">We build innovative
+                                solutions by integrating cutting-edge AI with a client-centric
+                                approach.</h2>
+                            <p class="fs-6 text-secondary lh-1-8">At NAST, our methodology combines
+                                deep technical expertise in AI, data analysis, and web/mobile
+                                development with an unwavering focus on client success. We begin by
+                                understanding your unique challenges and goals. Our iterative
+                                process ensures robust, scalable, and intelligent systems that drive
+                                transformation and deliver measurable business outcomes, from
+                                initial concept to deployment and ongoing support.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex flex-column justify-content-between order-md-1">
+                        <div class="how-we-do-it-feature-card mb-4 bg-white rounded-4 p-4 shadow">
+                            <div class="icon-circle d-flex justify-content-center align-items-center rounded-circle bg-info-subtle text-primary mb-3"
+                                 style="width: 50px; height: 50px;">
+                                <i class="bi bi-bar-chart-line fs-4"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Data-Driven Insights & MLOps
+                            </h3>
+                            <p class="fs-6 text-secondary">Leveraging advanced data analytics and
+                                MLOps practices to extract actionable insights and ensure seamless
+                                deployment and monitoring of AI models for informed decision-making.
+                            </p>
+                        </div>
+                        <div class="how-we-do-it-feature-card bg-white rounded-4 p-4 shadow">
+                            <div class="icon-circle d-flex justify-content-center align-items-center rounded-circle bg-info-subtle text-primary mb-3"
+                                 style="width: 50px; height: 50px;">
+                                <i class="bi bi-cloud-check fs-4"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Robust & Scalable Infrastructure
+                            </h3>
+                            <p class="fs-6 text-secondary">Designing and deploying secure,
+                                high-performance, and resilient infrastructures that ensure your
+                                digital solutions grow seamlessly with your evolving business needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Our Core Values Section -->
+        <section id="our_values"
+                 class="py-5 text-white text-center bg-overlay bg-overlay-blue-60 position-relative mix-blend-none my-10"
+                 style="background-image: url(./images/bg-img1.png); background-size:cover; backdrop-filter:blur(4px)">
+            <div class="container position-relative z-3">
+                <h2 class="display-2 fw-bold mb-5 py-5">Our Values</h2>
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 text-dark rounded-4 shadow-lg values-card py-5">
+                            <div class="card-body">
+                                <span class="display-3 fw-bold  text-gray-400">01</span>
+                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Innovation in
+                                    AI & Tech
+                                </h3>
+                                <p class="card-text fs-6  text-gray-100">We continuously explore and
+                                    integrate cutting-edge advancements in artificial intelligence,
+                                    machine learning, and digital technologies to deliver
+                                    revolutionary solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 text-dark rounded-4 shadow-lg values-card py-5">
+                            <div class="card-body">
+                                <span class="display-3 fw-bold  text-gray-400">02</span>
+                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Integrity in
+                                    Data & Service
+                                </h3>
+                                <p class="card-text fs-6  text-gray-100">We uphold the highest
+                                    standards of honesty, transparency, and ethical practices in
+                                    data handling, project management, and all client interactions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 text-dark rounded-4 shadow-lg values-card py-5">
+                            <div class="card-body">
+                                <span class="display-3 fw-bold text-gray-400">03</span>
+                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Excellence in
+                                    Delivery</h3>
+                                <p class="card-text fs-6 text-gray-100">We're committed to
+                                    delivering top-notch quality and unparalleled performance in
+                                    every web, mobile, and AI solution we craft, striving for client
+                                    success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Future of Digital Transformation Section -->
+            <div class="row g-4 align-items-center mt-5 mx-2 py-3  rounded-4 shadow-lg position-relative z-3"
+                 style="--bg-opacity:0.1">
+                <div class="col-lg-5 mb-4 mb-lg-0 d-flex justify-content-center order-lg-1">
+                    <div class="w-100 h-100 d-flex flex-column justify-content-center">
+                        <img src="./images/digital_transformation.png"
+                             alt="NAST Analytics Graphic"
+                             class="img-fluid rounded-3">
+                    </div>
+                </div>
+
+                <div class="col-lg-7 text-start order-lg-2">
+                    <h2 class="display-5 fw-bold text-white mb-4">The Future of Digital
+                        Transformation with NAST</h2>
+
+                    <div class="row g-4 px-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 text-gray-100 mb-3 position-relative ps-4">
+                                    <i
+                                       class="bi bi-check-circle-fill text-success position-absolute top-0 start-0 fs-5 me-2"></i>
+                                    Time Efficiency: Accelerate operations through intelligent
+                                    automation and streamlined development processes.
+                                </li>
+                                <li class="fs-6 text-gray-100 mb-3 position-relative ps-4">
+                                    <i
+                                       class="bi bi-check-circle-fill text-success position-absolute top-0 start-0 fs-5 me-2"></i>
+                                    Versatility and Adaptability: Our solutions are designed with
+                                    flexibility to evolve and adapt to your dynamic business needs
+                                    and market changes.
+                                </li>
+                                <li class="fs-6 text-gray-100 mb-3 position-relative ps-4">
+                                    <i
+                                       class="bi bi-check-circle-fill text-success position-absolute top-0 start-0 fs-5 me-2"></i>
+                                    Consistent Quality: Delivering reliable, secure, and
+                                    high-performing digital products with rigorous testing and
+                                    continuous improvement.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="fs-6 text-gray-100 mb-3 position-relative ps-4">
+                                    <i
+                                       class="bi bi-check-circle-fill text-success position-absolute top-0 start-0 fs-5 me-2"></i>
+                                    Enhanced Creativity: Empowering innovative solutions and
+                                    strategic thinking with advanced AI capabilities and data
+                                    insights.
+                                </li>
+                                <li class="fs-6 text-gray-100 mb-3 position-relative ps-4">
+                                    <i
+                                       class="bi bi-check-circle-fill text-success position-absolute top-0 start-0 fs-5 me-2"></i>
+                                    Customization: Tailored development to perfectly match your
+                                    unique business requirements, ensuring a precise and impactful
+                                    digital footprint.
+                                </li>
+                                <li class="fs-6 text-gray-100 mb-3 position-relative ps-4">
+                                    <i
+                                       class="bi bi-check-circle-fill text-success position-absolute top-0 start-0 fs-5 me-2"></i>
+                                    Cost-Efficiency: Optimizing resources and reducing operational
+                                    costs through smart technology implementation and efficient
+                                    project management.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Our Story / Introduction Section -->
+        <section class="py-5 bg-white my-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0 mt-4">
+                        <img src="./images/img2.png"
+                             alt="NAST Team"
+                             class="img-fluid rounded-3 shadow-sm">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="display-3 fw-bold text-gray-600">Our Story</h2>
+                        <h4 class="fs-1 mb-4 text-gray-700">Empowering the
+                            Future
+                            with AI</h4>
+                        <p class="lead mb-4 text-gray-700">At NAST, we harness the
+                            transformative power of AI to drive innovative digital solutions.
+                            Founded in Jaipur, India, our mission is to bridge advanced technology
+                            with real-world business needs. We craft flexible, robust, and
+                            intelligent systems that empower organizations across diverse sectors.
+                            Our agile team develops cutting-edge web and mobile applications powered
+                            by deep data insights and AI.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Our Approach Section -->
+        <section class="py-5 bg-white my-10">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h2 class="display-3 fw-bold text-gray-600">Our Approach</h2>
+
+                        <h4 class="fs-1 mb-4 text-gray-700 mb-4">Collaborative and Agile</h4>
+                        <p class="lead mb-4 text-gray-700">At NAST, our approach is
+                            anchored in
+                            agile collaboration and continuous, iterative development.
+
+                            We kick off with an in-depth discovery phase, closely aligning our
+                            objectives with your unique challenges.
+
+                            Through ongoing feedback and transparent communication, we refine our
+                            solutions at every step.
+
+                            This flexible process merges deep technical expertise with adaptive
+                            project management.
+
+                            The result is customized, robust digital innovations that evolve
+                            alongside your business needs.
+                        </p>
+
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./images/img3.png"
+                             alt="Our Approach"
+                             class="img-fluid rounded-3 shadow-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Leadership Team Section -->
+        <section class="py-5 bg-light my-10">
+            <div class="container">
+                <h2 class="fs-1 fw-bold text-dark mb-5 text-center">Meet Our Leadership Team</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="text-center p-4 rounded-3 bg-light shadow-sm mb-4">
+                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=John+D"
+                                 alt="John Doe"
+                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
+                            <h4 class="fs-4 fw-bold text-dark mb-1">John Doe</h4>
+                            <p class="fs-6 text-secondary mb-3">CEO & Founder</p>
+                            <p class="fs-6 text-secondary">John is a visionary leader with over 20
+                                years of experience in technology and AI, driving NAST's strategic
+                                direction.</p>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-linkedin"></i></a>
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="text-center p-4 rounded-3 bg-light shadow-sm mb-4">
+                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=Jane+S"
+                                 alt="Jane Smith"
+                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
+                            <h4 class="fs-4 fw-bold text-dark mb-1">Jane Smith</h4>
+                            <p class="fs-6 text-secondary mb-3">Chief Technology Officer</p>
+                            <p class="fs-6 text-secondary">Jane leads our technical teams,
+                                specializing in scalable architectures and advanced AI development.
+                            </p>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-linkedin"></i></a>
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="text-center p-4 rounded-3 bg-light shadow-sm mb-4">
+                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=Michael+B"
+                                 alt="Michael Brown"
+                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
+                            <h4 class="fs-4 fw-bold text-dark mb-1">Michael Brown</h4>
+                            <p class="fs-6 text-secondary mb-3">Head of Operations</p>
+                            <p class="fs-6 text-secondary">Michael ensures operational excellence
+                                and client satisfaction, streamlining our project delivery
+                                processes.</p>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-linkedin"></i></a>
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose NAST / Differentiators Section (Original location, now moved down) -->
+        <section class="py-5 bg-white text-center my-10">
+            <div class="container">
+                <h2 class="fs-1 fw-bold text-dark mb-5">Why Choose NAST?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="differentiator-item text-center mb-5">
+                            <i class="bi bi-cpu-fill fs-1 text-success mb-3"></i>
+                            <h3 class="fs-3 fw-bold text-dark mb-3">Deep AI Expertise</h3>
+                            <p class="fs-6 text-secondary">Leveraging advanced machine learning and
+                                deep learning to build intelligent systems that deliver measurable
+                                results.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="differentiator-item text-center mb-5">
+                            <i class="bi bi-phone-fill fs-1 text-success mb-3"></i>
+                            <h3 class="fs-3 fw-bold text-dark mb-3">End-to-End Solutions</h3>
+                            <p class="fs-6 text-secondary">From concept to deployment and beyond, we
+                                offer comprehensive full-stack development for robust web and mobile
+                                platforms.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="differentiator-item text-center mb-5">
+                            <i class="bi bi-industry-fill fs-1 text-success mb-3"></i>
+                            <h3 class="fs-3 fw-bold text-dark mb-3">Multi-Industry Impact</h3>
+                            <p class="fs-6 text-secondary">Proven success in transforming diverse
+                                sectors like healthcare, education, and e-commerce with tailored
+                                digital strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact"
+                 class="bg-secondary text-white py-5 my-10">
+            <div class="container text-center">
+                <h2 class="display-5 fw-bold mb-4">Join the Transformation</h2>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-8">
+                        <p class="lead mb-2">Discover how our AI-driven strategies are
+                            revolutionizing various industries.</p>
+                        <p class="lead">Partner with us to implement solutions that drive success
+                            and innovation.</p>
+                    </div>
+                </div>
+                <h3 class="h2 fw-semibold mb-3">Let's Build the Future Together</h3>
+                <p class="text-light opacity-75 mb-4 mx-auto"
+                   style="max-width: 600px;">
+                    Reach out to us to learn more about our tailored solutions and how we can
+                    empower your business.
+                </p>
+                <a href="#contact-form-placeholder"
+                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">
+                    Contact Us Today
+                </a>
+                <div id="contact-form-placeholder"
+                     class="mt-4 text-light small">
+                    <!-- Placeholder for actual contact form or link -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training
+                        & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright <span id="currentYear">2025</span>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

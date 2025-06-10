@@ -6,119 +6,147 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Business Solutions</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          xintegrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
           crossorigin="anonymous">
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"></script>
+
+
+
+    <!-- Custom CSS files -->
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+
+    <!-- Header Script -->
     <script src="../scripts/header.js"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
 
-        .solution-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            height: 100%;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-        }
-
-        .key-feature-badge {
-            font-size: 0.85em;
-        }
-
-        .section-image {
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: 0.375rem;
-        }
-
-        .overview-image {
-            max-height: 300px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 0.375rem;
-        }
-
-        .nast-bg-gradient-1 {
-            background: linear-gradient(90deg, #66ADD9 0%, #6B54BF 100%);
-        }
-    </style>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+        });
+    </script>
 </head>
 
-<body class="text-dark">
-    <header id="navbar-container"></header>
-    <script>
-        createNavbar(navbarConfig);
-    </script>
+<body>
+    <!-- Navbar Container -->
+    <header id="navbar-container"
+            class="header sticky-top shadow-lg"></header>
 
     <main class="mb-5">
-        <div class="bg-light py-5">
-            <div class="container">
-                <section class="row mb-5 bg-light">
-                    <div class="col-md-6">
-                        <h2>Business Solutions: AI-Driven Transformation for Modern Enterprises</h2>
-                        <p class="lead">Provide flexible, robust, and intelligent solutions that
-                            empower businesses across various domains.</p>
-                        <p>Seamlessly integrate web and mobile technologies with advanced AI to
-                            optimize every facet of business operations.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="https://placehold.co/600x400/EEE/31343C"
-                             alt="AI in Business Solutions"
-                             class="img-fluid rounded">
+
+        <!-- Hero Section -->
+        <section class="hero-section hero-section-bg-overlay text-light"
+                 style="background-image:url(./images/business/hero-bg.png)">
+            <div class="container hero-section-content">
+                <section class="row mb-5">
+                    <div class="col-12 col-md-7">
+                        <h2 class="display-1 fw-bold">AI-Driven Transformation
+                            for Modern Enterprises
+                        </h2>
+                        <p class="fs-3">Provide flexible, robust, and intelligent solutions that
+                            empower businesses
+                            across various domains.</p>
                     </div>
                 </section>
             </div>
-        </div>
+        </section>
 
-        <h1 class="text-center py-5">NAST AI Business Solutions Vision</h1>
+        <!-- Our Vision Section -->
+        <section class="my-10">
+            <h2 class="display-2 fw-bold text-center text-gray-600">Our Vision</h2>
+            <h4 class="fs-3 text-center text-gray-600 mb-4">NAST AI Business Solutions Vision</h4>
+            <div class="container text-center py-5">
+                <div class="row g-4 justify-content-center">
+                    <!-- Vision Card 1: Flexibility -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body p-4">
+                                <img src="./images/business/flexible_solution_600x600.png"
+                                     alt="Flexibility"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Flexible Solutions</h2>
+                                <p class="lead text-gray-600">
+                                    Adaptive AI tailors solutions to meet diverse business needs and
+                                    dynamic market demands.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="nast-bg-gradient-1 text-light mb-5">
-            <section id="overview"
-                     class="text-center py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="p-4 p-md-5">
-                            <h3 class="h4 fw-semibold mb-3">Our Vision</h3>
-                            <p class="mb-2 lead">Provide flexible, robust, and intelligent solutions
-                                that empower businesses across various domains.</p>
-                            <p class="mb-2">Seamlessly integrate web and mobile technologies with
-                                advanced AI to optimize every facet of business operations.</p>
+                    <!-- Vision Card 2: Robustness -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body p-4">
+                                <img src="./images/business/robust_system_600x600.png"
+                                     alt="Robustness"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Robust Systems</h2>
+                                <p class="fs-5 text-gray-600">
+                                    Engineered for resilience and stability, ensuring seamless
+                                    operations under any load.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision Card 3: Intelligence -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body py-4 px-2">
+                                <img src="./images/business/intilligent_automation_600x600.png"
+                                     alt="Intelligence"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Intelligent Automation
+                                </h2>
+                                <p class="fs-5 text-gray-600">
+                                    AI-powered automation drives efficiency and innovation across
+                                    all business facets.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
-        <section id="solutions"
-                 class="py-5">
-            <h2 class="h1 fw-bold text-center mb-5">Our AI-Powered Business Solutions</h2>
+        <!-- Solutions Overview Section -->
+        <section class="py-5">
+            <header class="p-4 p-md-5 text-center">
+                <h3 class="display-2 fw-bold text-gray-600">Our AI-Powered Business Solutions</h3>
+                <p class="fs-3 text-gray-600 head-desc">Seamlessly integrate web and mobile
+                    technologies with advanced
+                    AI to optimize every facet of business operations.</p>
+            </header>
 
-            <div class="bg-light">
+            <!-- Solution 1: Market & Customer Insights -->
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5 mb-4">
-                            <div class="card solution-card shadow-sm p-3">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/business/market_customer_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Market & Customer Insights">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Leverage big data and AI analytics.</li>
                                             <li>✓ Utilize machine learning for customer profiling.
                                             </li>
@@ -126,9 +154,9 @@
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Enhance competitive positioning.</li>
                                             <li>✓ Tailor strategies to customer preferences.</li>
                                         </ul>
@@ -137,15 +165,36 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Market & Customer Insights</h3>
-                            <p>
-                                Leverage big data and AI-powered analytics to monitor market trends.
-                                Utilize machine learning algorithms to profile customer behavior and
-                                segment markets. Extract actionable insights from complex datasets
-                                to drive informed decisions. Enhance competitive positioning by
-                                anticipating market shifts. Enable businesses to tailor strategies
-                                that resonate with customer preferences.
-                            </p>
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">Market & Customer
+                                Insights</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Market Trend
+                                        Analysis:</strong> Leverage big data and AI-powered
+                                    analytics to monitor market
+                                    trends.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Customer
+                                        Segmentation:</strong>
+                                    Utilize machine learning algorithms to profile customer behavior
+                                    and segment markets.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Actionable
+                                        Insights:</strong>
+                                    Extract actionable insights from complex datasets to drive
+                                    informed decisions.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Competitive
+                                        Positioning:</strong>
+                                    Enhance competitive positioning by anticipating market shifts.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Tailored
+                                        Strategies:</strong>
+                                    Enable businesses to tailor strategies that resonate with
+                                    customer preferences.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -161,30 +210,32 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="bg-light">
+            <!-- Solution 2: Predictive Analytics & Decision Support -->
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/business/predictive_analytics_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Predictive Analytics & Decision Support">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Employ predictive models.</li>
                                             <li>✓ Develop interactive dashboards.</li>
                                             <li>✓ Integrate continuous feedback loops.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Empower data-driven decisions.</li>
                                             <li>✓ Enhance business agility.</li>
                                         </ul>
@@ -193,16 +244,39 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Predictive Analytics & Decision Support</h3>
-                            <p>
-                                Employ advanced predictive models to forecast business trends and
-                                outcomes. Develop interactive dashboards that present real-time
-                                insights and decision support. Integrate continuous feedback loops
-                                to refine predictive accuracy over time. Empower decision-makers
-                                with data-driven insights for proactive strategy formulation.
-                                Enhance overall business agility by predicting potential challenges
-                                and opportunities.
-                            </p>
+                            <h3 class="display-4 text-gray-600 fw-bold mb-4">Predictive Analytics &
+                                Decision Support
+                            </h3>
+                            <ul class="lead text-gray-500 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Advanced Predictive
+                                        Models:</strong>
+                                    Employ advanced predictive models to forecast business trends
+                                    and outcomes.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Interactive
+                                        Dashboards:</strong>
+                                    Develop interactive dashboards that present real-time insights
+                                    and decision support.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Continuous Feedback
+                                        Loops:</strong>
+                                    Integrate continuous feedback loops to refine predictive
+                                    accuracy over time.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Data-Driven
+                                        Insights:</strong>
+                                    Empower decision-makers with data-driven insights for proactive
+                                    strategy
+                                    formulation.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Enhanced Business
+                                        Agility:</strong>
+                                    Enhance overall business agility by predicting potential
+                                    challenges and
+                                    opportunities.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -218,30 +292,32 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="bg-light">
+            <!-- Solution 3: Supply Chain Optimization -->
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/business/supply_chain_optimization_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Supply Chain Optimization">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Implement AI for supply chain.</li>
                                             <li>✓ Leverage predictive modeling.</li>
                                             <li>✓ Utilize mobile and web tracking.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Increase operational efficiency.</li>
                                             <li>✓ Foster resilient supply chains.</li>
                                         </ul>
@@ -250,15 +326,35 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Supply Chain Optimization</h3>
-                            <p>
-                                Implement AI solutions to monitor and optimize supply chain
-                                logistics. Leverage predictive modeling to anticipate and mitigate
-                                potential disruptions. Utilize mobile and web-based tracking tools
-                                for real-time monitoring. Increase operational efficiency and reduce
-                                supply chain costs. Foster a resilient supply chain that can swiftly
-                                adapt to market dynamics.
-                            </p>
+                            <h3 class="display-4 text-gray-600 fw-bold mb-4">Supply Chain
+                                Optimization</h3>
+                            <ul class="lead text-gray-500 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">AI Supply Chain
+                                        Management:</strong>
+                                    Implement AI solutions to monitor and optimize supply chain
+                                    logistics.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Disruption
+                                        Mitigation:</strong>
+                                    Leverage predictive modeling to anticipate and mitigate
+                                    potential disruptions.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Real-time
+                                        Tracking:</strong>
+                                    Utilize mobile and web-based tracking tools for real-time
+                                    monitoring.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Operational
+                                        Efficiency:</strong>
+                                    Increase operational efficiency and reduce supply chain costs.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Resilient Supply
+                                        Chains:</strong>
+                                    Foster a resilient supply chain that can swiftly adapt to market
+                                    dynamics.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -274,30 +370,32 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="bg-light">
+            <!-- Solution 4: Process Automation & Efficiency -->
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/business/process_automation_efficiency_2_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Process Automation & Efficiency">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Automate routine processes.</li>
                                             <li>✓ Integrate with web and mobile.</li>
                                             <li>✓ Enhance operation models.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Boost productivity.</li>
                                             <li>✓ Enable strategic initiatives.</li>
                                         </ul>
@@ -306,15 +404,36 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Process Automation & Efficiency</h3>
-                            <p>
-                                Automate routine business processes using intelligent, rule-based
-                                algorithms. Integrate seamlessly with existing web and mobile
-                                platforms for streamlined operations. Continually enhance operation
-                                models using data and machine learning insights. Boost productivity
-                                by eliminating manual, time-consuming tasks. Enable teams to focus
-                                on strategic initiatives that drive business growth.
-                            </p>
+                            <h3 class="display-4 text-gray-600 fw-bold mb-4">Process Automation &
+                                Efficiency</h3>
+                            <ul class="lead text-gray-500 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Intelligent
+                                        Automation:</strong>
+                                    Automate routine business processes using intelligent,
+                                    rule-based algorithms.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Streamlined
+                                        Operations:</strong>
+                                    Integrate seamlessly with existing web and mobile platforms for
+                                    streamlined
+                                    operations.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Continuous
+                                        Enhancement:</strong>
+                                    Continually enhance operation models using data and machine
+                                    learning insights.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Boost
+                                        Productivity:</strong>
+                                    Boost productivity by eliminating manual, time-consuming tasks.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Strategic
+                                        Initiatives:</strong>
+                                    Enable teams to focus on strategic initiatives that drive
+                                    business growth.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -330,30 +449,32 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="bg-light">
+            <!-- Solution 5: Personalized Marketing & Sales Optimization -->
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5 mb-4">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/business/personalized_marketing_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Personalized Marketing & Sales Optimization">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Utilize AI for targeted marketing.</li>
                                             <li>✓ Harness real-time customer data.</li>
                                             <li>✓ Integrate cross-channel analytics.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Increase customer engagement.</li>
                                             <li>✓ Drive revenue growth.</li>
                                         </ul>
@@ -362,16 +483,38 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Personalized Marketing & Sales Optimization</h3>
-                            <p>
-                                Utilize AI to create targeted, personalized marketing campaigns.
-                                Harness real-time customer data to refine sales strategies and
-                                promotional efforts. Integrate cross-channel analytics for agile,
-                                responsive marketing adjustments. Increase customer engagement and
-                                loyalty through tailored communications. Drive revenue growth by
-                                ensuring marketing and sales efforts reach the right audience at the
-                                right time.
-                            </p>
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">Personalized Marketing
+                                & Sales
+                                Optimization</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Targeted
+                                        Marketing:</strong>
+                                    Utilize AI to create targeted, personalized marketing campaigns.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Sales Strategy
+                                        Optimization:</strong>
+                                    Harness real-time customer data to refine sales strategies and
+                                    promotional efforts.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Cross-Channel
+                                        Analytics:</strong>
+                                    Integrate cross-channel analytics for agile, responsive
+                                    marketing adjustments.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Customer
+                                        Engagement:</strong>
+                                    Increase customer engagement and loyalty through tailored
+                                    communications.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Revenue
+                                        Growth:</strong>
+                                    Drive revenue growth by ensuring marketing and sales efforts
+                                    reach the right audience
+                                    at the right time.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -387,29 +530,33 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
+
         </section>
 
+        <!-- Contact Section -->
         <section id="contact"
-                 class="nast-bg-gradient-1 text-white py-5 mt-5">
+                 class="bg-secondary text-white py-5 mt-5">
             <div class="container text-center">
-                <h2 class="h2 fw-bold mb-4">Our Vision for AI-Driven Business Solutions</h2>
+                <h2 class="display-5 fw-bold mb-4">Our Vision for AI-Driven Business Solutions</h2>
                 <div class="row justify-content-center mb-4">
                     <div class="col-lg-8">
                         <p class="lead mb-2">To empower businesses with flexible, robust, and
                             intelligent solutions.</p>
                         <p class="lead">Seamlessly integrate web and mobile technologies with
-                            advanced AI to optimize every facet of business operations.</p>
+                            advanced AI to optimize
+                            every facet of business operations.</p>
                     </div>
                 </div>
                 <h3 class="h2 fw-semibold mb-3">Join the Transformation</h3>
                 <p class="text-light opacity-75 mb-4 mx-auto"
-                   style="max-width: 600px;">Discover how our AI-driven strategies are
-                    revolutionizing business. Partner with us to implement solutions that drive
+                   style="max-width: 600px;">Discover how our AI-driven
+                    strategies are revolutionizing business. Partner with us to implement solutions
+                    that drive
                     success.</p>
                 <a href="#contact-form-placeholder"
-                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">Learn More &
-                    Partner With Us</a>
+                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">Learn
+                    More & Partner With Us</a>
                 <div id="contact-form-placeholder"
                      class="mt-4 text-light small">
                     (Contact Form or Link to Contact Page Coming Soon)
@@ -422,18 +569,24 @@
             style="--bs-body-font-size: 0.8rem;">
         <div class="container">
             <div class="row">
+                <!-- Column 1: Company Info -->
                 <div class="col-md-4 text-center text-md-start">
                     <h3>NAST</h3>
                     <p>Empowering businesses with next-gen web development, AI-driven data
-                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                        analytics, AI Model Training
+                        & Deployment and scalable enterprise solutions.
                     </p>
                 </div>
+
+                <!-- Column 2: Contact Details -->
                 <div class="col-md-4 text-center">
                     <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
                     <p><i class="bi bi-telephone"></i> 8955530880</p>
                     <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
                     <p><i class="bi bi-globe"></i> nast.org.in</p>
                 </div>
+
+                <!-- Column 3: Quick Links -->
                 <div class="col-md-4 text-center text-md-end">
                     <h5>Quick Links</h5>
                     <nav>
@@ -450,31 +603,15 @@
                     </nav>
                 </div>
             </div>
+
             <div class="text-center mt-3">
                 <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
                     intelligent automation—driving the future of digital innovation.</p>
-                <p>© Copyright 2025. All Rights Reserved.</p>
+                <p>© Copyright <span id="currentYear">2025</span>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

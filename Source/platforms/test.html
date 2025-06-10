@@ -5,316 +5,756 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>Generic Responsive Web Page Layout</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    <title>About Us - NAST</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          xintegrity="sha384-QWTKZyjpPEjL/rX9J7i/yQp/1Tz9q/XvX+z/V4b/pP0d/8m7b8Q"
+          xintegrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
           crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="../scripts/header.js"></script>
+
+    <!-- Custom CSS files (assuming these paths are relative to the final deployment) -->
+    <!-- These links might still be relevant if they contain other global styles not replaced by Bootstrap -->
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous">
+            </script>
+
     <style>
-        /* Custom CSS for the 3x3 grid structure */
-        /* These properties are necessary for the specific 3x3 grid layout and spanning,
-           as Bootstrap's grid system does not directly support CSS Grid's row/column spanning. */
-        .custom-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 1rem;
-            /* Equivalent to Bootstrap's g-4 */
-            flex-grow: 1;
-            /* Allows the grid to take available space */
+        .hero-section-bg-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
         }
 
-        /* Grid item spanning classes - direct CSS Grid properties */
-        .grid-col-span-3 {
-            grid-column: span 3 / span 3;
+        /* Custom hover effects for value cards */
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .grid-row-span-1 {
-            grid-row: span 1 / span 1;
+        /* Specific line-height that Bootstrap doesn't provide directly */
+        .lh-1-8 {
+            line-height: 1.8;
         }
 
-        .grid-col-span-1 {
-            grid-column: span 1 / span 1;
+        /* Specific object-fit for images */
+        .object-fit-cover {
+            object-fit: cover;
         }
 
-        .grid-row-span-2 {
-            grid-row: span 2 / span 2;
+        /* Styles for the "Why Choose Us" section with image hover effect */
+        .image-hover-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            /* Rounded corners for the entire card */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            /* Consistent shadow */
+            height: 100%;
+            /* Ensure consistent height for flex alignment */
         }
 
-        .grid-col-span-2 {
-            grid-column: span 2 / span 2;
+        .image-hover-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.5s ease-in-out;
+            /* Smooth blur transition */
+            display: block;
+            /* Remove extra space below image */
         }
 
-        /* Animation classes - custom as Bootstrap doesn't provide direct equivalents */
-        .grid-transition {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .grid-hidden {
-            opacity: 0;
-            transform: scale(0.95);
-        }
-
-        .grid-visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* General styling for grid items */
-        .grid-item {
+        .image-hover-card .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent overlay */
+            color: #fff;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            /* Equivalent to Bootstrap's rounded-3 */
+            align-items: center;
+            opacity: 0;
+            /* Hidden by default */
+            transition: opacity 0.5s ease-in-out;
+            /* Smooth fade-in transition */
+            padding: 20px;
             text-align: center;
-            font-size: 0.875rem;
-            /* Equivalent to Bootstrap's text-sm */
+            backdrop-filter: blur(0px);
+            /* Initial blur state */
         }
 
-        /* Specific background colors for grid items - custom as Bootstrap doesn't provide these shades */
-        .bg-blue-200 {
-            background-color: #bfdbfe;
+        .image-hover-card:hover img {
+            filter: blur(5px);
+            /* Apply blur on hover */
         }
 
-        .bg-green-200 {
-            background-color: #d1fae5;
+        .image-hover-card:hover .overlay-content {
+            opacity: 1;
+            /* Show content on hover */
+            backdrop-filter: blur(5px);
+            /* Apply blur to the overlay content itself, making background blurry */
         }
 
-        .bg-yellow-200 {
-            background-color: #fef08a;
+        /* Styles for the right-side feature cards in the "Why Choose Us" section */
+        .feature-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .bg-purple-200 {
-            background-color: #e9d5ff;
+        .feature-card .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e0f7fa;
+            /* Light blue background for icon */
+            color: #007bff;
+            /* Primary color for icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
-        .bg-red-200 {
-            background-color: #fee2e2;
+        /* Styles for the new "How We Do It" section's left feature cards */
+        .how-we-do-it-feature-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .bg-orange-200 {
-            background-color: #fed7aa;
+        .how-we-do-it-feature-card .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e0f7fa;
+            /* Light blue background for icon */
+            color: #007bff;
+            /* Primary color for icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
-        .bg-teal-200 {
-            background-color: #ccfbf1;
+        /* New styles for the updated 'Our Values' section */
+        .values-grid-item {
+            position: relative;
+            padding-left: 60px;
+            /* Space for the number */
+            margin-bottom: 40px;
+            /* Space between items */
         }
 
-        .bg-indigo-200 {
-            background-color: #c7d2fe;
+        .values-grid-item .number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 3rem;
+            /* Large number */
+            font-weight: bold;
+            color: #dee2e6;
+            /* Light gray for subtle numbers */
+            line-height: 1;
         }
 
-        .bg-pink-200 {
-            background-color: #fbcfe8;
+        .values-grid-item h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 10px;
         }
 
-        .text-gray-700 {
-            color: #374151;
+        .values-grid-item p {
+            font-size: 1rem;
+            color: #6c757d;
         }
 
-        /* Custom text color */
-
-        /* Custom button active state */
-        .btn-custom-active {
-            background-color: #0d6efd;
-            /* Bootstrap primary blue */
-            color: white;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        /* Styles for the "Future of Digital Transformation" section */
+        .future-section {
+            background-color: #f0f2f5;
+            padding: 80px 0;
         }
 
-        .btn-custom-inactive {
-            background-color: #e0f2fe;
-            /* Light blue */
-            color: #0d6efd;
-            /* Bootstrap primary blue */
+        .future-section .graphic-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .btn-custom-inactive:hover {
-            background-color: #bfdbfe;
-            /* Slightly darker light blue on hover */
+        .future-section .graphic-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
-    </style>
-</head>
 
-<body class="bg-light p-4 font-sans d-flex justify-content-center align-items-center min-vh-100">
+        .future-section .text-content h2 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 25px;
+        }
 
-    <div id="app-root"></div>
+        .future-section .text-content ul {
+            list-style: none;
+            /* Remove default bullet points */
+            padding-left: 0;
+        }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        .future-section .text-content ul li {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            /* Space for custom icon */
+        }
 
-    <script>
-        /**
-         * Creates a dynamic web page layout with a two-column structure,
-         * a responsive 3x3 grid, and tab-controlled content with animations.
-         *
-         * @param {object} config - The configuration object for the layout.
-         * @param {string} config.rootElementId - The ID of the HTML element where the layout will be rendered.
-         * @param {Array<object>} config.tabsData - An array of tab configuration objects.
-         * @param {string} config.tabsData[].id - Unique ID for the tab (e.g., 'tab1').
-         * @param {string} config.tabsData[].label - Text to display on the tab button.
-         * @param {string} config.tabsData[].title - Title to display in the grid column for this tab.
-         * @param {Array<object>} config.tabsData[].gridItems - An array of grid item objects for this tab.
-         * @param {string} config.tabsData[][].id - Unique ID for the grid item.
-         * @param {string} config.tabsData[][].content - The content to display inside the grid item.
-         * @param {string} config.tabsData[][].classes - CSS classes for styling and spanning the grid item.
-         * @param {string} config.initialTabId - The ID of the tab to display initially.
-         */
-        function createDynamicLayout(config) {
-            const rootElement = document.getElementById(config.rootElementId);
-            if (!rootElement) {
-                console.error(`Root element with ID '${config.rootElementId}' not found.`);
-                return;
+        .future-section .text-content ul li::before {
+            content: "\f26a";
+            /* Bootstrap icon for check-circle-fill */
+            font-family: "bootstrap-icons";
+            color: #28a745;
+            /* Green checkmark */
+            position: absolute;
+            left: 0;
+            top: 0px;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive adjustments where Bootstrap utilities might not provide exact values */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 80px;
+                padding-bottom: 80px;
             }
 
-            // Map tabsData array to an object for easier lookup by tab ID
-            const tabContentMap = config.tabsData.reduce((acc, tab) => {
-                acc[tab.id] = tab;
-                return acc;
-            }, {});
+            .py-md-60 {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
 
-            let currentActiveTab = config.initialTabId;
+            .team-member-card img {
+                width: 100px;
+                height: 100px;
+            }
 
-            // HTML template string for the entire layout structure
-            const layoutHtml = `
-                <div class="container-fluid bg-white shadow-lg rounded-3 p-4 p-md-5 d-flex flex-column flex-lg-row gap-4" style="max-width: 1200px;">
-                    <div class="col-lg-8 bg-light p-4 rounded-3 border border-light-subtle d-flex flex-column">
-                        <h2 id="grid-title" class="fs-4 fw-bold text-dark mb-4 text-center"></h2>
-                        <div id="grid-container" class="custom-grid grid-transition grid-visible">
+            .image-hover-card,
+            .feature-card,
+            .how-we-do-it-feature-card {
+                margin-bottom: 20px;
+                /* Add space between cards on mobile */
+            }
+
+            .values-grid-item {
+                margin-bottom: 30px;
+            }
+
+            .values-grid-item .number {
+                font-size: 2.5rem;
+            }
+
+            .values-grid-item h3 {
+                font-size: 1.6rem;
+            }
+
+            .future-section .text-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .future-section .text-content ul li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <!-- Navbar Container -->
+    <header id="navbar-container"
+            class="header sticky-top shadow-sm"></header>
+
+    <main class="mb-5">
+
+        <!-- Hero Section -->
+        <section class="hero-section position-relative py-5 text-white text-center"
+                 style="background-image: url('https://placehold.co/1920x800/212529/ffffff?text=About+Us+Hero'); background-size: cover; background-position: center;">
+            <div class="hero-section-bg-overlay"></div>
+            <div class="container position-relative z-2">
+                <h1 class="display-1 fw-bold mb-4">About NAST</h1>
+                <p class="fs-3">Pioneering AI-Powered Transformation and Digital Innovation</p>
+            </div>
+        </section>
+
+        <!-- Section: Why Choose Us - with Image Hover Effect -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-md-6 d-flex">
+                        <div class="image-hover-card w-100">
+                            <img src="image_44a74d.jpg"
+                                 alt="Why Choose Us"
+                                 class="img-fluid">
+                            <div class="overlay-content">
+                                <h2 class="fs-1 fw-bold">Why Choose Us</h2>
                             </div>
+                        </div>
                     </div>
-
-                    <div class="col-lg-4 bg-light p-4 rounded-3 border border-light-subtle d-flex flex-column align-items-center justify-content-start">
-                        <h2 class="fs-5 fw-semibold text-dark mb-4">Select Content</h2>
-                        <div id="tab-buttons-container" class="d-flex flex-column gap-3 w-100">
+                    <div class="col-md-6 d-flex flex-column justify-content-between">
+                        <div class="feature-card mb-4">
+                            <div class="icon-circle">
+                                <i class="bi bi-cpu-fill"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Intelligent Automation</h3>
+                            <p class="fs-6 text-secondary">Transforming operations with AI-driven
+                                automation for enhanced efficiency and reduced manual effort across
+                                your business processes.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-circle">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Seamless Digital Experiences
+                            </h3>
+                            <p class="fs-6 text-secondary">Crafting intuitive web and mobile
+                                platforms that ensure engaging and seamless user journeys, from
+                                e-commerce to educational solutions.</p>
                         </div>
                     </div>
                 </div>
-            `;
+            </div>
+        </section>
 
-            // Inject the main layout structure into the root element
-            rootElement.innerHTML = layoutHtml;
-
-            // Get references to the elements AFTER they have been injected into the DOM
-            const gridContainer = document.getElementById('grid-container');
-            const gridTitle = document.getElementById('grid-title');
-            const tabButtonsContainer = document.getElementById('tab-buttons-container');
-
-            // Function to render the grid content based on the active tab
-            function renderGrid(tabId) {
-                const content = tabContentMap[tabId];
-                if (!content) {
-                    console.error(`Content for tab ID '${tabId}' not found.`);
-                    return;
-                }
-                gridTitle.textContent = content.title;
-
-                const gridItemsHtml = content.gridItems.map(item => `
-                    <div id="${item.id}" class="grid-item ${item.classes} text-gray-700">
-                        ${item.content}
+        <!-- New Section: How We Do It -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-md-6 d-flex flex-column justify-content-between order-md-2">
+                        <div class="ps-md-4">
+                            <p class="text-uppercase text-secondary fw-bold mb-2">HOW WE DO IT</p>
+                            <h2 class="display-5 fw-bold text-dark mb-4">We build innovative
+                                solutions by integrating cutting-edge AI with a client-centric
+                                approach.</h2>
+                            <p class="fs-6 text-secondary lh-1-8">At NAST, our methodology combines
+                                deep technical expertise in AI, data analysis, and web/mobile
+                                development with an unwavering focus on client success. We begin by
+                                understanding your unique challenges and goals. Our iterative
+                                process ensures robust, scalable, and intelligent systems that drive
+                                transformation and deliver measurable business outcomes, from
+                                initial concept to deployment and ongoing support.</p>
+                        </div>
                     </div>
-                `).join('');
+                    <div class="col-md-6 d-flex flex-column justify-content-between order-md-1">
+                        <div class="how-we-do-it-feature-card mb-4">
+                            <div class="icon-circle">
+                                <i class="bi bi-bar-chart-line"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Data-Driven Insights & MLOps
+                            </h3>
+                            <p class="fs-6 text-secondary">Leveraging advanced data analytics and
+                                MLOps practices to extract actionable insights and ensure seamless
+                                deployment and monitoring of AI models for informed decision-making.
+                            </p>
+                        </div>
+                        <div class="how-we-do-it-feature-card">
+                            <div class="icon-circle">
+                                <i class="bi bi-cloud-check"></i>
+                            </div>
+                            <h3 class="fs-4 fw-bold text-dark mb-2">Robust & Scalable Infrastructure
+                            </h3>
+                            <p class="fs-6 text-secondary">Designing and deploying secure,
+                                high-performance, and resilient infrastructures that ensure your
+                                digital solutions grow seamlessly with your evolving business needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                gridContainer.innerHTML = gridItemsHtml;
-            }
+        <!-- Updated Our Core Values Section -->
+        <section class="py-5 bg-dark text-white text-center">
+            <div class="container">
+                <h2 class="display-4 fw-bold mb-5">Our Values</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="values-grid-item text-md-start">
+                            <span class="number">01</span>
+                            <h3 class="text-white mb-2">Innovation in AI & Tech</h3>
+                            <p class="text-white-50">We continuously explore and integrate
+                                cutting-edge advancements in artificial intelligence, machine
+                                learning, and digital technologies to deliver revolutionary
+                                solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="values-grid-item text-md-start">
+                            <span class="number">02</span>
+                            <h3 class="text-white mb-2">Integrity in Data & Service</h3>
+                            <p class="text-white-50">We uphold the highest standards of honesty,
+                                transparency, and ethical practices in data handling, project
+                                management, and all client interactions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="values-grid-item text-md-start">
+                            <span class="number">03</span>
+                            <h3 class="text-white mb-2">Excellence in Delivery</h3>
+                            <p class="text-white-50">We're committed to delivering top-notch quality
+                                and unparalleled performance in every web, mobile, and AI solution
+                                we craft, striving for client success.</p>
+                        </div>
+                    </div>
+                </div>
 
-            // Function to handle tab changes with animation
-            function handleTabChange(tabId) {
-                if (tabId === currentActiveTab) return;
+                <!-- The Future of Digital Transformation Section -->
+                <div class="row g-4 align-items-center mt-5 py-5 future-section">
+                    <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center order-lg-1">
+                        <div class="graphic-card w-100">
+                            <img src="image_449b10.jpg"
+                                 alt="NAST Analytics Graphic"
+                                 class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-start text-content order-lg-2">
+                        <h2 class="display-5 fw-bold text-dark mb-4">The Future of Digital
+                            Transformation with NAST</h2>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Time
+                                Efficiency: Accelerate operations through intelligent automation and
+                                streamlined development processes.</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Versatility and Adaptability: Our solutions are designed with
+                                flexibility to evolve and adapt to your dynamic business needs and
+                                market changes.</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Consistent
+                                Quality: Delivering reliable, secure, and high-performing digital
+                                products with rigorous testing and continuous improvement.</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Enhanced
+                                Creativity: Empowering innovative solutions and strategic thinking
+                                with advanced AI capabilities and data insights.</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Customization: Tailored development to perfectly match your unique
+                                business requirements, ensuring a precise and impactful digital
+                                footprint.</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Cost-Efficiency: Optimizing resources and reducing operational costs
+                                through smart technology implementation and efficient project
+                                management.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                gridContainer.classList.remove('grid-visible');
-                gridContainer.classList.add('grid-hidden');
 
-                const tabButtons = tabButtonsContainer.querySelectorAll('.tab-button');
-                tabButtons.forEach(button => {
-                    if (button.dataset.tab === tabId) {
-                        button.classList.remove('btn-custom-inactive');
-                        button.classList.add('btn-custom-active');
-                    } else {
-                        button.classList.remove('btn-custom-active');
-                        button.classList.add('btn-custom-inactive');
-                    }
-                });
+        <!-- Our Story / Introduction Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="https://placehold.co/600x400/ececec/343a40?text=NAST+Team+Image"
+                             alt="NAST Team"
+                             class="img-fluid rounded-3 shadow-sm">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="fs-1 fw-bold text-dark mb-4">Our Story: Empowering the Future
+                            with AI</h2>
+                        <p class="fs-6 lh-1-8 text-secondary mb-4">At NAST, we believe in the
+                            transformative power of artificial intelligence to redefine industries
+                            and enhance human potential. Founded in Jaipur, Rajasthan, India, we
+                            embarked on a mission to build flexible, robust, and intelligent
+                            solutions that empower businesses across various domains. Our journey
+                            began with a vision to bridge the gap between complex technological
+                            advancements and real-world business needs, providing accessible and
+                            impactful AI-driven solutions.</p>
+                        <p class="fs-6 lh-1-8 text-secondary">Over the years, we have grown into a
+                            team of dedicated professionals passionate about innovation. We
+                            specialize in developing cutting-edge web and mobile applications,
+                            harnessing the full potential of data analytics, and deploying
+                            sophisticated AI models that drive efficiency and growth. Our commitment
+                            extends to delivering solutions that not only meet current demands but
+                            also anticipate future challenges, ensuring our clients stay ahead in a
+                            rapidly evolving digital landscape. We pride ourselves on our
+                            collaborative approach, working closely with clients to understand their
+                            unique challenges and deliver bespoke solutions that truly make a
+                            difference.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                setTimeout(() => {
-                    renderGrid(tabId);
-                    currentActiveTab = tabId;
-                    gridContainer.classList.remove('grid-hidden');
-                    gridContainer.classList.add('grid-visible');
-                }, 300);
-            }
 
-            // Function to create tab buttons dynamically
-            function createTabButtons() {
-                config.tabsData.forEach(tab => {
-                    const button = document.createElement('button');
-                    button.dataset.tab = tab.id;
-                    button.textContent = tab.label;
-                    button.classList.add('tab-button', 'btn', 'py-3', 'px-4', 'rounded-3', 'fw-semibold', 'transition-all', 'duration-300', 'ease-in-out');
+        <!-- Our Approach Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <h2 class="fs-1 fw-bold text-dark mb-4 text-center">Our Approach: Collaborative and
+                    Agile</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <p class="fs-6 lh-1-8 text-secondary mb-4">At NAST, our approach is rooted
+                            in collaboration and agile methodologies. We believe that the best
+                            solutions emerge from a deep understanding of our clients' needs,
+                            combined with iterative development and continuous feedback. Our process
+                            begins with thorough discovery and analysis, where we work hand-in-hand
+                            with your team to define objectives, challenges, and success metrics.
+                        </p>
+                        <p class="fs-6 lh-1-8 text-secondary">Following this, our expert developers
+                            and AI specialists embark on a phased development process, building and
+                            refining solutions with flexibility and adaptability in mind. We
+                            prioritize clear communication, ensuring you are always informed and
+                            involved at every stage. This iterative approach allows us to deliver
+                            high-quality, customized solutions efficiently, ensuring they precisely
+                            align with your strategic goals and deliver tangible value.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://placehold.co/600x400/ececec/343a40?text=Our+Approach+Image"
+                             alt="Our Approach"
+                             class="img-fluid rounded-3 shadow-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    if (tab.id === currentActiveTab) {
-                        button.classList.add('btn-custom-active');
-                    } else {
-                        button.classList.add('btn-custom-inactive');
-                    }
 
-                    button.addEventListener('click', (event) => {
-                        handleTabChange(event.target.dataset.tab);
-                    });
-                    tabButtonsContainer.appendChild(button);
-                });
-            }
+        <!-- Leadership Team Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="fs-1 fw-bold text-dark mb-5 text-center">Meet Our Leadership Team</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-sm-6">
+                        <div
+                             class="team-member-card text-center p-4 rounded-3 bg-light shadow-sm mb-4">
+                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=John+D"
+                                 alt="John Doe"
+                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
+                            <h4 class="fs-4 fw-bold text-dark mb-1">John Doe</h4>
+                            <p class="fs-6 text-secondary mb-3">CEO & Founder</p>
+                            <p class="fs-6 text-secondary">John is a visionary leader with over 20
+                                years of experience in technology and AI, driving NAST's strategic
+                                direction.</p>
+                            <div class="social-icons">
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-linkedin"></i></a>
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div
+                             class="team-member-card text-center p-4 rounded-3 bg-light shadow-sm mb-4">
+                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=Jane+S"
+                                 alt="Jane Smith"
+                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
+                            <h4 class="fs-4 fw-bold text-dark mb-1">Jane Smith</h4>
+                            <p class="fs-6 text-secondary mb-3">Chief Technology Officer</p>
+                            <p class="fs-6 text-secondary">Jane leads our technical teams,
+                                specializing in scalable architectures and advanced AI development.
+                            </p>
+                            <div class="social-icons">
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-linkedin"></i></a>
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div
+                             class="team-member-card text-center p-4 rounded-3 bg-light shadow-sm mb-4">
+                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=Michael+B"
+                                 alt="Michael Brown"
+                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
+                            <h4 class="fs-4 fw-bold text-dark mb-1">Michael Brown</h4>
+                            <p class="fs-6 text-secondary mb-3">Head of Operations</p>
+                            <p class="fs-6 text-secondary">Michael ensures operational excellence
+                                and client satisfaction, streamlining our project delivery
+                                processes.</p>
+                            <div class="social-icons">
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-linkedin"></i></a>
+                                <a href="#"
+                                   class="text-secondary fs-5 mx-2"><i
+                                       class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            // Initial calls
-            createTabButtons();
-            renderGrid(currentActiveTab);
-        }
+        <!-- Why Choose NAST / Differentiators Section (Original location, now moved down) -->
+        <section class="py-5 bg-white text-center">
+            <div class="container">
+                <h2 class="fs-1 fw-bold text-dark mb-5">Why Choose NAST?</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="differentiator-item text-center mb-5">
+                            <i class="bi bi-cpu-fill fs-1 text-success mb-3"></i>
+                            <h3 class="fs-3 fw-bold text-dark mb-3">Deep AI Expertise</h3>
+                            <p class="fs-6 text-secondary">Leveraging advanced machine learning and
+                                deep learning to build intelligent systems that deliver measurable
+                                results.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="differentiator-item text-center mb-5">
+                            <i class="bi bi-phone-fill fs-1 text-success mb-3"></i>
+                            <h3 class="fs-3 fw-bold text-dark mb-3">End-to-End Solutions</h3>
+                            <p class="fs-6 text-secondary">From concept to deployment and beyond, we
+                                offer comprehensive full-stack development for robust web and mobile
+                                platforms.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="differentiator-item text-center mb-5">
+                            <i class="bi bi-industry-fill fs-1 text-success mb-3"></i>
+                            <h3 class="fs-3 fw-bold text-dark mb-3">Multi-Industry Impact</h3>
+                            <p class="fs-6 text-secondary">Proven success in transforming diverse
+                                sectors like healthcare, education, and e-commerce with tailored
+                                digital strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        // Example Usage:
-        document.addEventListener('DOMContentLoaded', () => {
-            const myLayoutConfig = {
-                rootElementId: 'app-root',
-                tabsData: [
-                    {
-                        id: 'tab1',
-                        label: 'Tab 1 Content',
-                        title: 'Dynamic Content for Section One',
-                        gridItems: [
-                            { id: 'item1-1', content: 'This is the first element for Tab 1, spanning all three columns and the first row.', classes: 'grid-col-span-3 grid-row-span-1 bg-blue-200' },
-                            { id: 'item1-2', content: 'This is the second element for Tab 1, spanning the remaining rows in the first column.', classes: 'grid-col-span-1 grid-row-span-2 bg-green-200' },
-                            { id: 'item1-3', content: 'This is the third element for Tab 1, spanning the remaining grid area.', classes: 'grid-col-span-2 grid-row-span-2 bg-yellow-200' },
-                        ],
-                    },
-                    {
-                        id: 'tab2',
-                        label: 'Tab 2 Details',
-                        title: 'Exploring Details in Section Two',
-                        gridItems: [
-                            { id: 'item2-1', content: 'Welcome to Tab 2! This element covers the top section with specific details.', classes: 'grid-col-span-3 grid-row-span-1 bg-purple-200' },
-                            { id: 'item2-2', content: 'Tab 2 specific content in the left vertical section, focusing on data points.', classes: 'grid-col-span-1 grid-row-span-2 bg-red-200' },
-                            { id: 'item2-3', content: 'More comprehensive details for Tab 2 in the larger right section, including charts.', classes: 'grid-col-span-2 grid-row-span-2 bg-orange-200' },
-                        ],
-                    },
-                    {
-                        id: 'tab3',
-                        label: 'Tab 3 Features',
-                        title: 'Showcasing Features in Section Three',
-                        gridItems: [
-                            { id: 'item3-1', content: 'Tab 3 introduces new concepts across the top, highlighting key features.', classes: 'grid-col-span-3 grid-row-span-1 bg-teal-200' },
-                            { id: 'item3-2', content: 'Key information for Tab 3 in this narrow column, detailing specifications.', classes: 'grid-col-span-1 grid-row-span-2 bg-indigo-200' },
-                            { id: 'item3-3', content: 'Comprehensive overview for Tab 3 in the main area, with user testimonials.', classes: 'grid-col-span-2 grid-row-span-2 bg-pink-200' },
-                        ],
-                    },
-                ],
-                initialTabId: 'tab1'
-            };
+        <!-- Contact Section -->
+        <section id="contact"
+                 class="bg-secondary text-white py-5 mt-5">
+            <div class="container text-center">
+                <h2 class="display-5 fw-bold mb-4">Join the Transformation</h2>
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-8">
+                        <p class="lead mb-2">Discover how our AI-driven strategies are
+                            revolutionizing various industries.</p>
+                        <p class="lead">Partner with us to implement solutions that drive success
+                            and innovation.</p>
+                    </div>
+                </div>
+                <h3 class="h2 fw-semibold mb-3">Let's Build the Future Together</h3>
+                <p class="text-light opacity-75 mb-4 mx-auto"
+                   style="max-width: 600px;">
+                    Reach out to us to learn more about our tailored solutions and how we can
+                    empower your business.
+                </p>
+                <a href="#contact-form-placeholder"
+                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">
+                    Contact Us Today
+                </a>
+                <div id="contact-form-placeholder"
+                     class="mt-4 text-light small">
+                    <!-- Placeholder for actual contact form or link -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-            createDynamicLayout(myLayoutConfig);
-        });
-    </script>
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training
+                        & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright <span id="currentYear">2025</span>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>

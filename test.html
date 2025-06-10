@@ -5,208 +5,188 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>Page-Ending Section</title>
+    <title>Split Layout Section Generator</title>
+    <!-- Bootstrap 5.3.3 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-          rel="stylesheet">
     <style>
+        /* Custom height for the image, as Bootstrap doesn't have direct utilities for fixed heights */
+        .img-h-400 {
+            height: 400px;
+            object-fit: cover;
+            /* Ensures image covers the area without distortion */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            /* Apply Inter font */
+            /* Using Inter font as per previous instructions */
         }
 
-        /* Custom styling for the section to ensure visual distinction */
-        .page-end-section {
-            background-color: #f8f9fa;
-            /* Light background for contrast */
-            padding-top: 5rem;
-            /* Ample top padding */
-            padding-bottom: 5rem;
-            /* Ample bottom padding */
-            border-top: 1px solid #e9ecef;
-            /* Subtle top border */
-        }
-
-        .page-end-section .display-4 {
-            font-weight: 700;
-            /* Bold headline */
-            margin-bottom: 1.5rem;
-            color: #212529;
-            /* Darker text for headline */
-        }
-
-        .page-end-section .lead {
-            font-size: 1.25rem;
-            /* Slightly larger font for value proposition */
-            font-weight: 400;
-            margin-bottom: 2.5rem;
-            color: #495057;
-            /* Slightly lighter text for paragraph */
-        }
-
-        .page-end-section .btn-primary {
-            background-color: #0d6efd;
-            /* Bootstrap primary blue */
-            border-color: #0d6efd;
-            padding: 0.8rem 2rem;
-            /* Larger button padding */
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            /* Smooth transition for hover effects */
-        }
-
-        .page-end-section .btn-primary:hover {
-            background-color: #0b5ed7;
-            /* Darker blue on hover */
-            border-color: #0a58ca;
-            transform: translateY(-2px);
-            /* Slight lift on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Subtle shadow on hover */
-        }
-
-        .page-end-section .btn-primary.rounded-pill {
-            border-radius: 50rem !important;
-            /* Extremely rounded corners */
-        }
-
-        .page-end-section .cta-supporting-text {
-            font-size: 1rem;
-            color: #6c757d;
-            margin-top: 1rem;
-        }
-
-        .page-end-section .client-logo {
-            max-height: 60px;
-            /* Max height for client logos */
-            width: auto;
-            /* Maintain aspect ratio */
-            filter: grayscale(100%);
-            /* Grayscale logos for clean look */
-            opacity: 0.7;
-            /* Slightly transparent */
-            transition: all 0.3s ease;
-        }
-
-        .page-end-section .client-logo:hover {
-            filter: grayscale(0%);
-            /* Color on hover */
-            opacity: 1;
-            /* Full opacity on hover */
-        }
-
-        .page-end-section .final-transition-text {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .page-end-section hr.soft-divider {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-            margin-bottom: 0;
-            /* No margin at the bottom to lead into footer */
+        /* Custom mix-blend-multiply as it's not a standard Bootstrap utility */
+        .mix-blend-multiply {
+            mix-blend-mode: multiply;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-light text-dark p-4 p-sm-5 p-md-5">
 
-    <!--
-        1. Section Container:
-        - Purpose: Define a visually distinct block that stands apart from previous content and seamlessly leads into the footer.
-        - Design Tips: Use ample white space and a contrasting background (or subtle graphic) to emphasize separation.
-                       Ensure responsive design so the section reads well on all screens.
-    -->
-    <section class="page-end-section text-center">
-        <div class="container">
-            <!--
-                2. Headline:
-                - Title Example: “Empowering Your Digital Future”
-                - Design: Use a display heading or a large, bold font (e.g., .display-4 or .h1 class in Bootstrap) to draw attention.
-                - Purpose: Establish an immediate connection with the visitor by echoing innovation and readiness to transform.
-            -->
-            <h1 class="display-4 mb-4">Empowering Your Digital Future</h1>
+    <div id="section-container"
+         class="container-fluid container-xl py-5">
+        <!-- Sections will be injected here by JavaScript -->
+    </div>
 
-            <!--
-                3. Value Proposition Paragraph:
-                - Content: "Our industry-leading expertise in web and mobile development, data-driven analytics, and AI-powered solutions ensures that your business is ready for tomorrow’s challenges—today. Discover how our tailored solutions can elevate your digital presence and drive measurable outcomes.”
-                - Design: Use a slightly larger font size like .lead to make the paragraph stand out as an introduction to your core strengths.
-                - Purpose: Reinforce your brand’s promise and technical superiority while clearly communicating the transformation you offer.
-            -->
-            <p class="lead px-lg-5 mx-lg-5">
-                Our industry-leading expertise in web and mobile development, data-driven analytics,
-                and AI-powered solutions ensures that your business is ready for tomorrow’s
-                challenges—today. Discover how our tailored solutions can elevate your digital
-                presence and drive measurable outcomes.
-            </p>
-
-            <!--
-                4. Call-to-Action (CTA):
-                - Primary CTA Button:
-                    - Label Options: “Get in Touch”
-                    - Design: Use a prominent contrasting button style (e.g., using Bootstrap’s btn btn-primary) with rounded corners or subtle animation.
-                - Supporting Text: A concise sentence that motivates immediate action, e.g., “Let’s build the future together.”
-            -->
-            <div class="d-grid gap-2 col-md-6 mx-auto mb-5">
-                <a href="#"
-                   class="btn btn-primary btn-lg rounded-pill">Start Your Transformation</a>
-                <p class="cta-supporting-text">Let’s build the future together.</p>
-            </div>
-
-            <!--
-                5. Trust and Credibility Boosters (Optional):
-                - Client Logos or Testimonials: A horizontal carousel or grid featuring logos of key partners/clients to build credibility.
-                - Quick Stats or Success Stories: Consider a small section highlighting metrics like “Over 500 projects delivered” or a short client testimonial quote.
-                - Design: Keep these elements clean and minimalistic so they enhance rather than clutter the space.
-            -->
-            <div class="row justify-content-center align-items-center mb-5 gx-4 gy-4">
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="https://placehold.co/150x60/cccccc/ffffff?text=Client+A"
-                         alt="Client Logo A"
-                         class="img-fluid client-logo">
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="https://placehold.co/150x60/cccccc/ffffff?text=Client+B"
-                         alt="Client Logo B"
-                         class="img-fluid client-logo">
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="https://placehold.co/150x60/cccccc/ffffff?text=Client+C"
-                         alt="Client Logo C"
-                         class="img-fluid client-logo">
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <img src="https://placehold.co/150x60/cccccc/ffffff?text=Client+D"
-                         alt="Client Logo D"
-                         class="img-fluid client-logo">
-                </div>
-                <div class="col-12 mt-4">
-                    <p class="text-muted fst-italic">"Their solutions transformed our operations.
-                        Truly exceptional!" - Satisfied Client</p>
-                </div>
-            </div>
-
-            <!--
-                6. Final Transition Element:
-                - Closing Statement: Reinforce urgency with a subtle reminder that this is the invitation to take the next step, e.g., “Your digital transformation begins here.”
-                - Visual Cue: Use a soft divider (a thin line or gradient fade) to signal that this section wraps up before the footer.
-                - Purpose: Offer a final, inviting nudge to engage further without overwhelming users with too much content right before the footer.
-            -->
-            <p class="final-transition-text">Your digital transformation begins here.</p>
-            <hr class="soft-divider">
-        </div>
-    </section>
-
+    <!-- Bootstrap 5.3.3 JS CDN (Bundle includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+
+    <script>
+        /**
+         * Generates an HTML section with a split layout for business solutions,
+         * styled using Bootstrap 5.3.x classes.
+         * The layout can be customized to place the image on the left or right on larger screens.
+         * On small mobile devices, the image will always be displayed on top.
+         *
+         * @param {object} options - Configuration options for the section.
+         * @param {string} options.imageUrl - The URL for the business solution image.
+         * @param {string} options.imageAlt - The alt text for the image.
+         * @param {string} options.title - The main title for the section (e.g., "Business").
+         * @param {string} options.subtitle - The subtitle for the section.
+         * @param {string} options.description - The main descriptive text for the section.
+         * @param {boolean} [options.imageOnRight=false] - If true, the image will be on the right for medium+ screens; otherwise, it will be on the left.
+         * @returns {string} The generated HTML string.
+         */
+        function generateSplitLayoutSection({
+            imageUrl,
+            imageAlt,
+            title,
+            subtitle,
+            description,
+            imageOnRight = false
+        }) {
+            // Placeholder image for fallback if the provided URL is invalid or empty
+            const placeholderImageUrl = `https://placehold.co/600x450/6C757D/FFFFFF?text=Placeholder+Image`;
+            const finalImageUrl = imageUrl || placeholderImageUrl; // Use placeholder if imageUrl is empty
+
+            let imageColumnHtml;
+            let textColumnHtml;
+
+            // On mobile, the image column will always be first (order-1)
+            // On medium+ screens, order-md-1 or order-md-2 will apply based on imageOnRight
+            if (imageOnRight) {
+                // For desktop: Text then Image (text order-md-1, image order-md-2)
+                imageColumnHtml = `
+                    <div class="col-12 col-md-5 d-flex justify-content-center align-items-center p-4 order-1 order-md-2">
+                        <img src="${finalImageUrl}"
+                             onerror="this.src='${placeholderImageUrl}'"
+                             class="img-fluid rounded-3 shadow-lg img-h-400 w-auto mix-blend-multiply"
+                             alt="${imageAlt}">
+                    </div>
+                `;
+                textColumnHtml = `
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-4 order-2 order-md-1">
+                        <h3 class="display-5 fw-bold text-dark mb-2">${title}</h3>
+                        <h4 class="fs-3 text-secondary mb-4">${subtitle}</h4>
+                        <p class="lead text-muted">${description}</p>
+                    </div>
+                `;
+            } else {
+                // For desktop: Image then Text (image order-md-1, text order-md-2 - or just default HTML order)
+                imageColumnHtml = `
+                    <div class="col-12 col-md-5 d-flex justify-content-center align-items-center p-4 order-1 order-md-1">
+                        <img src="${finalImageUrl}"
+                             onerror="this.src='${placeholderImageUrl}'"
+                             class="img-fluid rounded-3 shadow-lg img-h-400 w-auto mix-blend-multiply"
+                             alt="${imageAlt}">
+                    </div>
+                `;
+                textColumnHtml = `
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center p-4 order-2 order-md-2">
+                        <h3 class="display-5 fw-bold text-dark mb-2">${title}</h3>
+                        <h4 class="fs-3 text-secondary mb-4">${subtitle}</h4>
+                        <p class="lead text-muted">${description}</p>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="row g-md-5 align-items-center justify-content-between mb-5 py-5 bg-white rounded-4 shadow-lg overflow-hidden">
+                    ${imageColumnHtml}
+                    ${textColumnHtml}
+                </div>
+            `;
+        }
+
+        /**
+         * Populates a given container with multiple split-layout sections.
+         *
+         * @param {string} containerId - The ID of the HTML element to populate.
+         * @param {Array<object>} sectionsArray - An array of objects, where each object
+         * contains the options for a single split-layout section (matching parameters
+         * of generateSplitLayoutSection).
+         */
+        function populateSplitLayoutSections(containerId, sectionsArray) {
+            const container = document.getElementById(containerId);
+            if (!container) {
+                console.error(`Container with ID "${containerId}" not found.`);
+                return;
+            }
+
+            // Clear any existing content in the container before populating
+            container.innerHTML = '';
+
+            sectionsArray.forEach(sectionData => {
+                const sectionHtml = generateSplitLayoutSection(sectionData);
+
+                container.insertAdjacentHTML('beforeend', sectionHtml);
+            });
+        }
+
+        // --- Example Usage with populateSplitLayoutSections ---
+
+        const mySections = [
+            {
+                imageUrl: "https://placehold.co/600x450/28A745/FFFFFF?text=Business+AI+Left",
+                imageAlt: "AI for Business Solutions",
+                title: "Business Insights",
+                subtitle: "Empowering Smart Decisions with Intelligent Automation",
+                description: "At NAST, we empower businesses with AI-driven insights and automation to fuel smart decisions and streamlined operations. Our solutions optimize resources, automate routine processes, and reduce costs using real-time analytics and predictive modeling. Tailored dashboards translate raw data into actionable insights, supporting strategic planning and competitive positioning. With scalable, innovative AI solutions, we help your organization stay agile and ahead in dynamic markets. Embrace a future of enterprise innovation that transforms your data into a decisive competitive advantage.",
+                imageOnRight: false // Image on left for large screens
+            },
+            {
+                imageUrl: "https://placehold.co/600x450/007BFF/FFFFFF?text=Enterprise+Solutions+Right",
+                imageAlt: "Enterprise Solutions AI",
+                title: "Enterprise Innovation",
+                subtitle: "Driving Growth with Scalable AI Architectures",
+                description: "Our enterprise solutions are designed to integrate seamlessly into your existing infrastructure, providing robust AI capabilities that scale with your business needs. From advanced analytics to automated workflows, we build systems that enhance efficiency and foster innovation across all departments. Leverage our expertise to transform your operational challenges into strategic advantages, ensuring long-term success and market leadership.",
+                imageOnRight: true // Image on right for large screens
+            },
+            {
+                imageUrl: "https://placehold.co/600x450/FFC107/343A40?text=Data+Analytics+Left",
+                imageAlt: "Data Analytics",
+                title: "Data Analytics",
+                subtitle: "Unlocking Value from Your Data",
+                description: "Transform raw data into strategic assets with our advanced data analytics solutions. We provide comprehensive tools for data collection, processing, and visualization, enabling you to identify trends, predict outcomes, and make data-driven decisions that propel your business forward. Our customizable dashboards offer real-time insights, ensuring you're always informed and ready to act.",
+                imageOnRight: false // Image on left for large screens
+            },
+            {
+                imageUrl: "https://placehold.co/600x450/DC3545/FFFFFF?text=Custom+Solutions+Right",
+                imageAlt: "Custom Solutions",
+                title: "Custom Solutions",
+                subtitle: "Tailored AI for Your Unique Needs",
+                description: "Every business has unique challenges and opportunities. Our team specializes in developing bespoke AI solutions that are perfectly aligned with your specific operational requirements and strategic goals. From initial consultation to deployment and ongoing support, we partner with you to create innovative, scalable, and effective AI applications that deliver measurable results.",
+                imageOnRight: true // Image on right for large screens
+            }
+        ];
+
+        // Call the new function to populate the section-container
+        document.addEventListener('DOMContentLoaded', () => {
+            populateSplitLayoutSections('section-container', mySections);
+        });
+    </script>
 </body>
 
 </html>

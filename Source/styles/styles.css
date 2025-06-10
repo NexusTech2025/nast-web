@@ -20,11 +20,6 @@
     max-height: 300px;
 }
 
-
-
-
-
-
 .icon-logo {
     width: 80px;
     height: 80px;
@@ -119,6 +114,12 @@
     color: #5e5e5e;
 }
 
+.head-desc {
+    max-width: 600px;
+    text-align: center;
+    margin-inline: auto;
+}
+
 
 .nast-bg-gradient-2 {
 
@@ -210,7 +211,6 @@
     /* Ensures the background stays put during scroll */
 }
 
-
 .nast-bg-gradient-body-2x {
     margin: 0;
     min-height: 100vh;
@@ -292,9 +292,8 @@
 
     --bg-img: url('./images/hero-bg.png');
 
-
     /* Vertical padding */
-    height: 90vh;
+    height: calc(100vh - var(--header-height));
     background-image: var(--bg-img);
     background-position: center;
     background-size: cover;
@@ -302,11 +301,15 @@
     overflow: hidden;
 }
 
+
 .hero-section-content {
     position: relative;
     z-index: 3;
     /* Ensure content is above the background */
     color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -338,6 +341,19 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     /* Very light, almost invisible line */
 
+}
+
+:root {
+    --header-height: clamp(3rem, 10vh, 4rem);
+}
+
+.header {
+    height: var(--header-height);
+    align-items: center;
+}
+
+.header>nav.navbar {
+    height: 100%;
 }
 
 .header,
@@ -562,6 +578,12 @@
         brightness(1.05) contrast(1.1);
 }
 
+.mix-blend-none {
+    background-color: initial;
+    mix-blend-mode: none;
+}
+
+
 
 .logo-shadow {
     --shadow-color: rgba(0, 0, 0, 0.5);
@@ -617,7 +639,9 @@
     z-index: 1;
     mix-blend-mode: multiply;
     backdrop-filter: blur(0.6px);
-
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .bg-overlay-dark::before {
@@ -626,6 +650,18 @@
 
 .bg-overlay-blue::before {
     background: rgba(15, 83, 125, 0.4);
+}
+
+.bg-overlay-blue-50::before {
+    background: rgba(15, 83, 125, 0.5);
+}
+
+.bg-overlay-blue-60::before {
+    background: rgba(15, 83, 125, 0.6);
+}
+
+.bg-overlay-blue-70::before {
+    background: rgba(15, 83, 125, 0.7);
 }
 
 /* Content Container (similar to Bootstrap's .container or .container-sm/md/lg) */

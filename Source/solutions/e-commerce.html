@@ -6,123 +6,206 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Solutions - NAST</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          xintegrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
           crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+
     <script src="../scripts/header.js"></script>
-    <style>
-        body {
-            font-family: 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
 
-        .solution-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            height: 100%;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-        }
-
-        .key-feature-badge {
-            font-size: 0.85em;
-        }
-
-        .section-image {
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: 0.375rem;
-        }
-
-        .overview-image {
-            max-height: 300px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 0.375rem;
-        }
-
-        .nast-bg-gradient-1 {
-            background: linear-gradient(90deg, #66ADD9 0%, #6B54BF 100%)
-        }
-    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+        });
+    </script>
 </head>
 
-<body class="text-dark">
-    <header id="navbar-container"></header>
-    <script>
-        createNavbar(navbarConfig);
-    </script>
-
+<body>
+    <header id="navbar-container"
+            class="header sticky-top shadow-lg"></header>
 
     <main class="mb-5">
-        <div class="bg-light py-5">
-            <div class="container">
-                <section class="row mb-5 bg-light">
-                    <div class="col-md-6">
-                        <h2>E-Commerce Solutions: AI-Powered Innovation for Seamless Shopping</h2>
-                        <p class="lead">Our goal is to transform E-Commerce using intelligent,
-                            adaptive systems.</p>
-                        <p>We aim to create an ecosystem where every customer receives personalized
-                            and secure shopping experience.</p>
-                        <p>Our strategy leverages advanced AI to streamline shopping and selling
-                            processes,
-                            ensuring data-driven insights and continuous improvement.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="https://placehold.co/600x400/EEE/31343C"
-                             alt="AI in E-Commerce"
-                             class="img-fluid rounded">
+
+        <section class="hero-section hero-section-bg-overlay text-light"
+                 style="background-image:url(./images/e-commerce/hero-bg.png)">
+            <div class="container hero-section-content">
+                <section class="row mb-5">
+                    <div class="col-md-7">
+                        <h1 class="display-1 fw-bold mb-4">AI-Powered Innovation
+                            for Seamless
+                            Shopping</h1>
+                        <h2 class="fs-3">Revolutionizing E-Commerce with Adaptive Intelligence and
+                            Secure Personalization</h2>
+
                     </div>
                 </section>
             </div>
-        </div>
-        <h1 class=" text-center py-5">NAST AI E-Commerce Vision</h1>
-        <div class="nast-bg-gradient-1 text-light mb-5">
-            <section id="overview"
-                     class="text-center py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
-                        <div class="p-4 p-md-5">
-                            <h3 class="h4 fw-semibold mb-3">Overview & Vision</h3>
-                            <p class=" mb-2 lead">Deliver flexible, robust, and AI-integrated
-                                solutions that enhance every aspect of e-commerce.</p>
-                            <p class=" mb-2">Leverage web and mobile technologies to create dynamic,
-                                customer-centric shopping experiences.</p>
+        </section>
+
+        <section class="my-10">
+            <h2 class="display-2 fw-bold text-center text-gray-600">Our Vision</h2>
+            <h4 class="fs-3 text-center text-gray-600 mb-4">NAST AI E-Commerce Vision</h4>
+
+            <div class="container text-center py-5">
+                <div class="row g-4 justify-content-center mb-4">
+
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div
+                             class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0 bg-white">
+                            <div class="card-body p-4">
+                                <img src="./images/e-commerce/personalized_journeys_600x600.png"
+                                     alt="Personalized Journeys"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Personalized Journeys
+                                </h2>
+                                <p class="lead text-gray-600">
+                                    Curated experiences that anticipate individual shopper needs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Real-Time Pricing -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div
+                             class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0 bg-white">
+                            <div class="card-body p-4">
+                                <img src="./images/e-commerce/real_time_pricing_600x600.png"
+                                     alt="Real-Time Pricing"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Real-Time Pricing</h2>
+                                <p class="lead text-gray-600">
+                                    Responsive pricing models that adjust dynamically to market
+                                    trends.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Intelligent Support -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div
+                             class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0 bg-white">
+                            <div class="card-body p-4">
+                                <img src="./images/e-commerce/intelligent_support_600x600.png"
+                                     alt="Intelligent Support"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Intelligent Support</h2>
+                                <p class="lead text-gray-600">
+                                    24/7 AI-driven customer service ensuring instant, accurate
+                                    responses.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-        <section id="solutions"
-                 class="py-5">
-            <h2 class="h1 fw-bold text-center mb-5">Our AI-Powered E-Commerce
-                Solutions</h2>
-            <div class="bg-light">
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Card: Operational Excellence -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div
+                             class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0 bg-white">
+                            <div class="card-body p-4">
+                                <img src="./images/e-commerce/operational_excellence_600x600.png"
+                                     alt="Operational Excellence"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Operational Excellence
+                                </h2>
+                                <p class="lead text-gray-600">
+                                    Streamlined supply chain and inventory management for flawless
+                                    delivery.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Fortified Security -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div
+                             class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0 bg-white">
+                            <div class="card-body p-4">
+                                <img src="./images/e-commerce/fortified_security_600x600.png"
+                                     alt="Fortified Security"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Fortified Security</h2>
+                                <p class="lead text-gray-600">
+                                    Robust fraud detection and multi-layered security solutions
+                                    safeguarding data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Innovative Analytics -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div
+                             class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0 bg-white">
+                            <div class="card-body p-4">
+                                <img src="./images/e-commerce/innovative_analytics_600x600.png"
+                                     alt="Innovative Analytics"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Innovative Analytics
+                                </h2>
+                                <p class="lead text-gray-600">
+                                    Data-driven insights that empower smarter business decisions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <header class="p-4 p-md-5 text-center">
+                <h3 class="display-2 fw-bold text-gray-600">Our AI-Powered E-Commerce Solutions</h3>
+                <p class="fs-3 text-gray-600 head-desc">Seamlessly integrate web and mobile
+                    technologies with advanced
+                    AI to optimize every facet of e-commerce operations.</p>
+            </header>
+
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5 mb-4">
-                            <div class="card solution-card shadow-sm p-3">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/e-commerce/product_recommendation_engine_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Product Recommendation Engine">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Utilize AI-driven algorithms.
-                                            </li>
-                                            <li>✓ Implement machine learning models.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Utilize AI-driven algorithms.</li>
+                                            <li>✓ Implement machine learning models.</li>
                                             <li>✓ Optimize cross-selling.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Enhance user engagement.</li>
                                             <li>✓ Increase conversion rates.</li>
                                         </ul>
@@ -131,21 +214,35 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Product Recommendation Engine</h3>
-                            <p>
-                                Utilize AI-driven algorithms to analyze customer behavior and
-                                preferences.
-                                Implement machine learning models for personalized product
-                                suggestions.
-                                Optimize cross-selling and upselling strategies using predictive
-                                analytics.
-                            </p>
-                            <p>
-                                Enhance user engagement by delivering highly relevant product
-                                recommendations.
-                                Increase conversion rates and overall sales through intelligent
-                                personalization.
-                            </p>
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">Product Recommendation
+                                Engine</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">AI-driven
+                                        Algorithms:</strong>
+                                    Utilize AI-driven algorithms to analyze customer behavior and
+                                    preferences.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Machine Learning
+                                        Models:</strong>
+                                    Implement machine learning models for personalized product
+                                    suggestions.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Predictive
+                                        Analytics:</strong>
+                                    Optimize cross-selling and upselling strategies using predictive
+                                    analytics.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Enhanced User
+                                        Engagement:</strong>
+                                    Enhance user engagement by delivering highly relevant product
+                                    recommendations.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Increased Conversion
+                                        Rates:</strong>
+                                    Increase conversion rates and overall sales through intelligent
+                                    personalization.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -161,55 +258,67 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-light">
+            </article>
+
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/e-commerce/dynamic_price_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Dynamic Pricing">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
                                             <li>✓ Apply AI to monitor market trends.</li>
-                                            <li>✓ Adjust pricing dynamically.
-                                            </li>
+                                            <li>✓ Adjust pricing dynamically.</li>
                                             <li>✓ Use predictive analytics.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Maximize profitability.
-                                            </li>
-                                            <li>✓ Ensure pricing strategies align.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Maximize profitability.</li>
+                                            <li>✓ Ensure pricing strategies align.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Dynamic Pricing</h3>
-                            <p>
-                                Apply AI to monitor market trends and competitor pricing in real
-                                time.
-                                Adjust pricing dynamically based on demand, customer behavior,
-                                and stock levels.
-                                Use predictive analytics to anticipate pricing fluctuations
-                                and optimize revenue.
-                            </p>
-                            <p>
-                                Maximize profitability while remaining competitive in the
-                                market.
-                                Ensure pricing strategies align with customer demand and
-                                purchasing patterns.
-                            </p>
+                            <h3 class="display-4 text-gray-600 fw-bold mb-4">Dynamic Pricing</h3>
+                            <ul class="lead text-gray-500 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Real-time
+                                        Monitoring:</strong>
+                                    Apply AI to monitor market trends and competitor pricing in real
+                                    time.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Dynamic
+                                        Adjustments:</strong>
+                                    Adjust pricing dynamically based on demand, customer behavior,
+                                    and stock levels.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Predictive
+                                        Analysis:</strong>
+                                    Use predictive analytics to anticipate pricing fluctuations and
+                                    optimize revenue.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Maximized
+                                        Profitability:</strong>
+                                    Maximize profitability while remaining competitive in the
+                                    market.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Aligned
+                                        Strategies:</strong>
+                                    Ensure pricing strategies align with customer demand and
+                                    purchasing patterns.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -225,57 +334,68 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-light">
+            </article>
+
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/e-commerce/customer_service_chatbots_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Customer Service Chatbots">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Deploy AI-powered chatbots.
-                                            </li>
-                                            <li>✓ Utilize natural language processing.
-                                            </li>
-                                            <li>✓ Continuously refine chatbot capabilities.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Deploy AI-powered chatbots.</li>
+                                            <li>✓ Utilize natural language processing.</li>
+                                            <li>✓ Continuously refine chatbot capabilities.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Improve customer satisfaction.
-                                            </li>
-                                            <li>✓ Reduce operational costs.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Improve customer satisfaction.</li>
+                                            <li>✓ Reduce operational costs.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Customer Service Chatbots</h3>
-                            <p>
-                                Deploy AI-powered chatbots to provide instant, 24/7 customer
-                                support.
-                                Utilize natural language processing for accurate responses
-                                to inquiries.
-                                Continuously refine chatbot capabilities using customer
-                                interaction data.
-                            </p>
-                            <p>
-                                Improve customer satisfaction with fast, automated
-                                assistance.
-                                Reduce operational costs by handling routine queries
-                                efficiently.
-                            </p>
+                            <h3 class="display-4 text-gray-600 fw-bold mb-4">Customer Service
+                                Chatbots</h3>
+                            <ul class="lead text-gray-500 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">AI-powered
+                                        Chatbots:</strong>
+                                    Deploy AI-powered chatbots to provide instant, 24/7 customer
+                                    support.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Natural Language
+                                        Processing:</strong>
+                                    Utilize natural language processing for accurate responses to
+                                    inquiries.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Continuous
+                                        Refinement:</strong>
+                                    Continuously refine chatbot capabilities using customer
+                                    interaction data.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Improved
+                                        Satisfaction:</strong>
+                                    Improve customer satisfaction with fast, automated assistance.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Reduced
+                                        Costs:</strong>
+                                    Reduce operational costs by handling routine queries
+                                    efficiently.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -291,57 +411,68 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-light">
+            </article>
+
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
+                    <div class="row gap-3 py-5 align-items-center">
                         <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/e-commerce/supply_chain_inventory_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Supply Chain & Inventory Optimization">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Leverage AI-driven forecasting.
-                                            </li>
-                                            <li>✓ Implement automation.
-                                            </li>
-                                            <li>✓ Integrate web-based analytics.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Leverage AI-driven forecasting.</li>
+                                            <li>✓ Implement automation.</li>
+                                            <li>✓ Integrate web-based analytics.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Reduce stock shortages.
-                                            </li>
-                                            <li>✓ Enhance supply chain responsiveness.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Reduce stock shortages.</li>
+                                            <li>✓ Enhance supply chain responsiveness.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Supply Chain & Inventory Optimization</h3>
-                            <p>
-                                Leverage AI-driven forecasting for efficient inventory
-                                management.
-                                Implement automation for warehouse logistics and stock
-                                replenishment.
-                                Integrate web-based analytics to track supply chain
-                                operations in real time.
-                            </p>
-                            <p>
-                                Reduce stock shortages and excess inventory through precise
-                                demand predictions.
-                                Enhance supply chain responsiveness and operational
-                                efficiency.
-                            </p>
+                            <h3 class="display-4 text-gray-600 fw-bold mb-4">Supply Chain &
+                                Inventory Optimization</h3>
+                            <ul class="lead text-gray-500 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">AI-driven
+                                        Forecasting:</strong>
+                                    Leverage AI-driven forecasting for efficient inventory
+                                    management.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Warehouse
+                                        Automation:</strong>
+                                    Implement automation for warehouse logistics and stock
+                                    replenishment.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Real-time
+                                        Tracking:</strong>
+                                    Integrate web-based analytics to track supply chain operations
+                                    in real time.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Reduced
+                                        Shortages:</strong>
+                                    Reduce stock shortages and excess inventory through precise
+                                    demand predictions.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Enhanced
+                                        Responsiveness:</strong>
+                                    Enhance supply chain responsiveness and operational efficiency.
+                                </li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -357,57 +488,67 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-light">
+            </article>
+
+            <article class="bg-light">
                 <div class="container">
-                    <div class="row gap-3 py-5">
-                        <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="https://placehold.co/400x250/EEE/31343C"
-                                     class="card-img-top section-image"
+                    <div class="row gap-3 py-5 align-items-center">
+                        <div class="col-md-4 col-lg-5 mb-4">
+                            <div class="card border-0 bg-transparent">
+                                <img src="./images/e-commerce/fraud_detection_600x450.png"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                     style="max-height: 450px;"
                                      alt="Fraud Detection & Security">
                                 <div class="card-body d-flex flex-column">
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Employ AI models.
-                                            </li>
-                                            <li>✓ Utilize behavioral analysis.
-                                            </li>
-                                            <li>✓ Integrate multi-layered security solutions.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Employ AI models.</li>
+                                            <li>✓ Utilize behavioral analysis.</li>
+                                            <li>✓ Integrate multi-layered security solutions.</li>
                                         </ul>
                                     </div>
                                     <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Safeguard customer data.
-                                            </li>
-                                            <li>✓ Build trust.
-                                            </li>
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Safeguard customer data.</li>
+                                            <li>✓ Build trust.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Fraud Detection & Security</h3>
-                            <p>
-                                Employ AI models to detect fraudulent transactions and
-                                anomalies.
-                                Utilize behavioral analysis to identify suspicious activity
-                                before financial loss occurs.
-                                Integrate multi-layered security solutions for end-to-end
-                                protection.
-                            </p>
-                            <p>
-                                Safeguard customer data and transactions from cyber
-                                threats.
-                                Build trust by ensuring a secure and seamless shopping
-                                experience.
-                            </p>
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">Fraud Detection &
+                                Security</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">AI Models:</strong>
+                                    Employ AI models to detect fraudulent transactions and
+                                    anomalies.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Behavioral
+                                        Analysis:</strong>
+                                    Utilize behavioral analysis to identify suspicious activity
+                                    before financial loss occurs.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Multi-layered
+                                        Security:</strong>
+                                    Integrate multi-layered security solutions for end-to-end
+                                    protection.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Data
+                                        Safeguarding:</strong>
+                                    Safeguard customer data and transactions from cyber threats.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Trust
+                                        Building:</strong>
+                                    Build trust by ensuring a secure and seamless shopping
+                                    experience.</li>
+                            </ul>
                             <div class="mt-auto">
                                 <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
                                 <span
@@ -423,28 +564,33 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
+
         </section>
+
         <section id="contact"
-                 class="nast-bg-gradient-1 text-white py-5 mt-5">
+                 class="bg-secondary text-white py-5 mt-5">
             <div class="container text-center">
-                <h2 class="h2 fw-bold mb-4">Our Vision for AI-Powered E-Commerce</h2>
+                <h2 class="display-5 fw-bold mb-4">Our Vision for AI-Powered E-Commerce</h2>
                 <div class="row justify-content-center mb-4">
                     <div class="col-lg-8">
-                        <p class="lead mb-2">Deliver flexible, robust, and AI-integrated
-                            solutions that enhance every aspect of e-commerce.</p>
+                        <p class="lead mb-2">Deliver flexible, robust, and AI-integrated solutions
+                            that enhance every
+                            aspect of e-commerce.</p>
                         <p class="lead">Leverage web and mobile technologies to create dynamic,
-                            customer-centric shopping experiences.</p>
+                            customer-centric
+                            shopping experiences.</p>
                     </div>
                 </div>
                 <h3 class="h2 fw-semibold mb-3">Join the Transformation</h3>
                 <p class="text-light opacity-75 mb-4 mx-auto"
-                   style="max-width: 600px;">Discover how NAST is transforming
-                    e-commerce through AI-powered solutions. Partner with us to implement
-                    solutions that drive success.</p>
+                   style="max-width: 600px;">Discover how NAST is
+                    transforming e-commerce through AI-powered solutions. Partner with us to
+                    implement solutions that
+                    drive success.</p>
                 <a href="#contact-form-placeholder"
-                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">Learn More &
-                    Partner With Us</a>
+                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">Learn
+                    More & Partner With Us</a>
                 <div id="contact-form-placeholder"
                      class="mt-4 text-light small">
                     (Contact Form or Link to Contact Page Coming Soon)
@@ -452,6 +598,7 @@
             </div>
         </section>
     </main>
+
     <footer class="bg-dark text-white py-4 fw-lighter"
             style="--bs-body-font-size: 0.8rem;">
         <div class="container">
@@ -459,15 +606,18 @@
                 <div class="col-md-4 text-center text-md-start">
                     <h3>NAST</h3>
                     <p>Empowering businesses with next-gen web development, AI-driven data
-                        analytics,
-                        AI Model Training & Deployment and scalable enterprise solutions.</p>
+                        analytics, AI Model Training
+                        & Deployment and scalable enterprise solutions.
+                    </p>
                 </div>
+
                 <div class="col-md-4 text-center">
                     <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
                     <p><i class="bi bi-telephone"></i> 8955530880</p>
                     <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
                     <p><i class="bi bi-globe"></i> nast.org.in</p>
                 </div>
+
                 <div class="col-md-4 text-center text-md-end">
                     <h5>Quick Links</h5>
                     <nav>
@@ -484,38 +634,15 @@
                     </nav>
                 </div>
             </div>
+
             <div class="text-center mt-3">
-                <p>💡 AI-Powered Transformation: Seamless development, secure data
-                    management,
-                    and intelligent automation—driving the future of digital
-                    innovation.</p>
-                <p>© Copyright 2025. All Rights Reserved.</p>
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright <span id="currentYear">2025</span>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        // Smooth scrolling for navigation links (Optional: Bootstrap handles this for nav-links with href="#id" if scrollspy is active or via its own JS, but this is a fallback)
-        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                // Ensure it's a valid ID selector and not just "#"
-                if (href.length > 1 && href.startsWith('#')) {
-                    const targetElement = document.querySelector(href);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
+
 </body>
 
 </html>

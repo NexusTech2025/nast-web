@@ -6,466 +6,747 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>AI in Education - NAST</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
           crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
     <script src="../scripts/header.js"></script>
-    <style>
-        body {
 
-            /* Light gray background from Bootstrap */
-            font-family: 'system-ui', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            /* Bootstrap default font stack */
-        }
+    <script src="../scripts/cards.js"
+            type="text/javascript"></script>
 
-        .solution-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            height: 100%;
-            /* Ensure cards in a row have the same height */
-        }
+    <script src="../scripts/cards-data.js"
+            type="text/javascript"></script>
 
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-            /* Bootstrap's shadow-lg equivalent */
-        }
+    <script src="../scripts/bsComponents.js"
+            type="text/javascript"></script>
 
-        .key-feature-badge {
-            font-size: 0.85em;
-        }
 
-        .section-image {
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: 0.375rem;
-            /* Corresponds to Bootstrap's rounded class */
-        }
+    <link rel="stylesheet"
+          href="../styles/styles.css">
 
-        .overview-image {
-            max-height: 300px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 0.375rem;
-        }
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
 
-        .nast-bg-gradient-1 {
-            background: linear-gradient(90deg, #66ADD9 0%, #6B54BF 100%)
-                /* Bootstrap primary color */
-        }
-    </style>
+    <link rel="stylesheet"
+          href="../styles/spacing.css">
+
+    <link rel="stylesheet"
+          href="../styles/scroll.css">
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+
+        });
+    </script>
 </head>
 
-<body class="text-dark">
-    <header id="navbar-container"></header>
-    <script>
-        createNavbar(navbarConfig);
-    </script>
-
+<body class="bg-white">
+    <header id="navbar-container"
+            class="header sticky-top shadow-lg"></header>
 
     <main class="mb-5">
 
-        <div class="bg-light py-5">
-            <div class="container">
-                <section class="row mb-5 bg-light">
-                    <div class="col-md-6">
-                        <h2>Education: Empowering Future Learning with AI</h2>
-                        <p class="lead">Our goal is to transform traditional education using
+        <!-- hero section -->
+        <section class="hero-section hero-section-bg-overlay text-light"
+                 style="background-image: url(./images/education/hero-section-bg.png)">
+            <div class="container hero-section-content">
+                <section class="row mb-5">
+                    <div class="col-md-7">
+                        <h2 class="display-1 fw-bold">Education: Empowering Future Learning with AI
+                        </h2>
+                        <p class="fs-4">Our goal is to transform traditional education using
                             intelligent,
                             adaptive systems.</p>
-                        <p>We aim to create an ecosystem where every learner receives personalized
-                            guidance,
-                            efficient assessment, and accessible academic support.</p>
-                        <p>Our strategy leverages advanced AI to streamline teaching and learning
-                            processes,
-                            ensuring data-driven insights and continuous improvement.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="./eduction_system_400x400.png"
-                             alt="AI in Education"
-                             class="img-fluid rounded">
+
                     </div>
                 </section>
             </div>
-        </div>
+        </section>
 
-        <h1 class=" text-center py-5">NAST AI Education Vision</h1>
+        <section class="my-10">
+            <h2 class="display-2 fw-bold text-center text-gray-600">Our Vision</h2>
+            <h4 class="fs-3 text-center text-gray-600 mb-4">NAST AI Education Vision</h4>
+            <div class="container text-center py-5">
+                <!-- Cards Layout Section 1-->
+                <div class="row g-4 justify-content-center">
+                    <!-- Card 1: Personalized Guidance -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body p-4">
+                                <img src="./images/education/personalized_guidance.png"
+                                     alt="Personalize Guidance"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-2">Personalized Guidance
+                                </h2>
+                                <p class="lead text-gray-600">
+                                    Adaptive AI tailors learning paths to unlock each student's
+                                    unique potential.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="nast-bg-gradient-1 text-light mb-5">
-            <section id="overview"
-                     class="text-center py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7">
+                    <!-- Card 2: Efficient Assessment -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body p-4">
+                                <img src="./images/education/efficient_assessment.png"
+                                     alt="Efficient Assessment"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Efficient Assessment
+                                </h2>
+                                <p class="fs-5 text-gray-600">
+                                    Real-time, data-driven feedback streamlines evaluations and
+                                    fosters continuous improvement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="p-4 p-md-5">
-                            <h3 class="h4 fw-semibold mb-3">Overview & Vision</h3>
-                            <p class=" mb-2 lead">Our goal at NAST is to transform
-                                traditional
-                                education using intelligent, adaptive systems.</p>
-                            <p class=" mb-2">We aim to create an ecosystem where every
-                                learner
-                                receives personalized guidance, efficient assessment, and accessible
-                                academic support.</p>
-                            <p class="">Our strategy leverages advanced AI to streamline
-                                teaching and learning processes, ensuring data-driven insights and
-                                continuous improvement.</p>
+                    <!-- Card 3: Accessible Academic Support -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body py-4 px-2">
+                                <img src="./images/education/accessible_academic_support.png"
+                                     alt="Accessible Academic Support"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Accessible Academic
+                                    Support
+                                </h2>
+                                <p class="fs-5 text-gray-600">
+                                    24/7 AI assistance ensures that quality academic help is always
+                                    within reach.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Cards Layout Section 2-->
+                <div class="row g-4 justify-content-center">
+                    <!-- Card 1: Personalized Guidance -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body p-4">
+                                <img src="./images/education/smart_learning_automation.png"
+                                     alt="Smart Learning Automation"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Smart Learning
+                                    Automation
+                                </h2>
+                                <p class="lead text-gray-600">
+                                    Leveraging AI to optimize classroom processes, ensuring seamless
+                                    teaching and learning.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Efficient Assessment -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body p-4">
+                                <img src="./images/education/insight_driven_strategies.png"
+                                     alt="Insight-Driven Strategies"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Insight-Driven
+                                    Strategies
+                                </h2>
+                                <p class="fs-5 text-gray-600">
+                                    Harnessing real-time data analytics to empower educators and
+                                    refine learning outcomes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Accessible Academic Support -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                            <div class="card-body py-4 px-2">
+                                <img src="./images/education/adaptive_continuous_improvement.png"
+                                     alt="Adaptive Continuous Improvement"
+                                     class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                <h2 class="fs-3 fw-bold text-gray-600 mb-3">Adaptive Continuous
+                                    Improvement
+                                </h2>
+                                <p class="fs-5 text-gray-600">
+                                    Utilizing AI-powered feedback loops to drive relentless growth
+                                    and educational excellence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="py-5">
+
+            <header class="p-4 p-md-5 text-center">
+                <h3 class="display-2 fw-bold text-gray-600">Overview & Vision</h3>
+                <p class="fs-3 text-gray-600 head-desc">Our goal at NAST is to transform
+                    traditional
+                    education using intelligent, adaptive systems.</p>
+            </header>
+
+
+            <section class="scroll-snap">
+                <!-- Personalized Learning & Adaptive Tutoring -->
+                <article class="snap-item">
+                    <div class="container">
+                        <div class="row gap-3 py-5">
+                            <div class="col-md-4 col-lg-5 mb-4">
+                                <div class="card border-0 bg-transparent">
+                                    <img src="./images/education/personalized_learning_600x450.png"
+                                         class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                         style="max-height: 450px;"
+                                         alt="Personalized Learning">
+                                    <div class="card-body d-flex flex-column">
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                                Strategies
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Develop adaptive algorithms for tailored
+                                                    content.
+                                                </li>
+                                                <li>✓ Integrate real-time analytics for dynamic
+                                                    adjustments.
+                                                </li>
+                                                <li>✓ Combine ML with pedagogical expertise.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                                Motives
+                                            </h4>
+                                            <ul class="list-unstyled text-muted text-lg">
+                                                <li>✓ Enhance student engagement and success.</li>
+                                                <li>✓ Empower educators with progress insights.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <h3 class="display-5 mb-4 fw-bold text-gray-600">Personalized
+                                    Learning &
+                                    Adaptive Tutoring
+                                </h3>
+
+                                <div class="content d-none">
+                                    <p>
+                                        NAST is pioneering a transformed education system by
+                                        integrating
+                                        AI-driven solutions into web and mobile platforms. Our
+                                        approach
+                                        to
+                                        Personalized Learning & Adaptive Tutoring involves
+                                        developing
+                                        adaptive algorithms that curate tailored content for each
+                                        learner,
+                                        integrating real-time analytics for dynamic adjustments, and
+                                        combining machine learning with deep pedagogical expertise.
+                                        This
+                                        strategy creates a responsive and engaging learning
+                                        environment
+                                        where every student's progress is continuously monitored and
+                                        optimized.
+                                    </p>
+                                    <p>
+                                        By empowering educators with real-time progress insights,
+                                        NAST
+                                        not
+                                        only boosts student engagement and success but also enhances
+                                        teachers’ abilities to identify and address learning gaps
+                                        promptly.
+                                        This dual focus—personalizing student learning and equipping
+                                        educators with actionable data—reinvents the educational
+                                        experience,
+                                        making high-quality, adaptive learning accessible anytime
+                                        and
+                                        anywhere.
+                                    </p>
+                                </div>
+
+                                <ul class="lead text-gray-700 px-0">
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Tailored
+                                            Learning
+                                            Paths:</strong>
+                                        Adaptive algorithms
+                                        curate content to meet each learner's unique needs.</li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Real-Time
+                                            Adjustments:</strong>
+                                        Continuous analytics
+                                        enable dynamic modifications to learning strategies.</li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Integrated
+                                            Expertise:</strong>
+                                        Combines advanced machine
+                                        learning with deep pedagogical knowledge for effective
+                                        tutoring.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Empowered
+                                            Educators:</strong>
+                                        Provides instant insights,
+                                        helping teachers quickly identify and address learning gaps.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Engaging
+                                            Environment:</strong>
+                                        Fosters a responsive,
+                                        personalized educational experience that boosts student
+                                        engagement and success.</li>
+                                </ul>
+
+                                <div class="mt-auto">
+                                    <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                    <span
+                                          class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">
+                                        Adaptive content</span>
+                                    <span
+                                          class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">
+                                        Instant feedback</span>
+                                    <span
+                                          class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Data-driven
+                                        recommendations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Automated Grading & Feedback System -->
+                <article class="snap-item">
+                    <div class="container">
+                        <div class="row gap-3 py-5">
+                            <div class="col-md-4 col-lg-5">
+                                <div class="card border-0 bg-transparent">
+                                    <img src="./images/education/automated_grading_600x450.png"
+                                         class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                         style="max-height: 450px;"
+                                         alt="Automated Grading">
+                                    <div class="card-body d-flex flex-column">
+
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                                Strategies
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Implement AI grading via NLP & pattern
+                                                    recognition.</li>
+                                                <li>✓ Create personalized, constructive feedback
+                                                    loops.
+                                                </li>
+                                                <li>✓ Balance automation with human oversight.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                                Motives
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Reduce manual grading, increase mentoring
+                                                    time.
+                                                </li>
+                                                <li>✓ Ensure consistent and objective grading.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <h3 class="display-4 text-gray-600 fw-bold mb-4">Automated Grading &
+                                    Feedback
+                                    System</h3>
+
+                                <div class="content d-none">
+                                    <p>
+                                        NAST’s Automated Grading & Feedback System leverages
+                                        advanced AI
+                                        techniques, employing natural language processing and
+                                        pattern
+                                        recognition to assess student work swiftly and accurately.
+                                        Our
+                                        strategy centers on creating personalized, constructive
+                                        feedback
+                                        loops that guide students in understanding their
+                                        performance,
+                                        while
+                                        we carefully balance the speed of technology with critical
+                                        human
+                                        oversight to ensure nuanced evaluation.
+                                    </p>
+                                    <p>
+                                        Our goal is to reduce the burden of manual grading, freeing
+                                        educators to devote more time to mentoring and personalized
+                                        instruction. By ensuring grading consistency and
+                                        objectivity,
+                                        our
+                                        system not only streamlines the assessment process but also
+                                        enhances
+                                        the overall learning experience, ultimately transforming
+                                        traditional
+                                        education into a more efficient and insightful process
+                                    </p>
+                                </div>
+
+                                <ul class="lead text-gray-500 px-0 ">
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">AI-Powered
+                                            Assessment:</strong> Leverages natural
+                                        language processing and pattern recognition to evaluate
+                                        student
+                                        work swiftly and accurately.</li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Personalized
+                                            Feedback:</strong> Generates constructive,
+                                        tailored responses that guide student improvement.</li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Efficiency
+                                            Boost:</strong> Automates grading to reduce
+                                        manual workload and free educators for more personalized
+                                        mentorship.</li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Consistent and
+                                            Objective:</strong> Ensures fair and
+                                        uniform grading standards for all submissions.</li>
+                                    <li type="none"
+                                        class="mb-2"><strong class="text-gray-600">Enhanced
+                                            Learning:</strong> Provides real-time,
+                                        data-driven insights that improve overall learning outcomes.
+                                    </li>
+                                </ul>
+
+                                <div class="mt-auto">
+                                    <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                    <span
+                                          class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">Real-time
+                                        automated grading</span>
+                                    <span
+                                          class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">Comprehensive
+                                        feedback</span>
+                                    <span
+                                          class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">LMS
+                                        integration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Virtual Learning Assistants -->
+                <article class="snap-item">
+                    <div class="container">
+                        <div class="row gap-3 py-5">
+                            <div class="col-md-4 col-lg-5">
+                                <div class="card border-0 bg-transparent">
+                                    <img src="./images/education/virtual_learning_600x450.png"
+                                         class="img-fluid w-auto rounded-top-3 object-fit-cover mix-blend-multiply"
+                                         style="max-height: 450px;"
+                                         alt="Virtual Learning Assistants">
+                                    <div class="card-body d-flex flex-column">
+
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                                Strategies
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Deploy conversational AI for 24/7 support.
+                                                </li>
+                                                <li>✓ Use advanced NLP for queries & resources.</li>
+                                                <li>✓ Continuously update assistant capabilities.
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                                Motives
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Enhance learning support accessibility.</li>
+                                                <li>✓ Foster a supportive student environment.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <h3 class="display-4 text-gray-600 fw-bold mb-4">Virtual Learning
+                                    Assistants</h3>
+
+                                <div class="content d-none">
+                                    <p>
+                                        NAST’s Virtual Learning Assistants harness advanced
+                                        conversational
+                                        AI to provide 24/7 academic support across web and mobile
+                                        platforms.
+                                        By deploying AI solutions that leverage state-of-the-art
+                                        natural
+                                        language processing, our assistants can understand student
+                                        queries
+                                        in real time and deliver precise, context-aware resources.
+                                        We
+                                        continuously update the capabilities of these virtual
+                                        assistants,
+                                        ensuring they remain at the forefront of technological
+                                        innovation
+                                        and dynamically adapt to emerging learning needs.
+                                    </p>
+                                    <p>
+                                        Our primary goal is to enhance learning support
+                                        accessibility
+                                        and
+                                        foster an environment where every student feels supported
+                                        around
+                                        the
+                                        clock. By enabling constant access to reliable, personalized
+                                        assistance, these virtual assistants not only help clarify
+                                        complex
+                                        topics but also work to build a nurturing educational
+                                        atmosphere.
+                                        This ongoing, responsive support empowers students, while
+                                        also
+                                        relieving educators from routine inquiries, allowing them to
+                                        focus
+                                        on deeper mentoring and personalized instruction.
+                                    </p>
+                                </div>
+
+                                <ul class="lead text-gray-500 px-0">
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">24/7 Academic
+                                            Support:</strong>
+                                        Virtual assistants offer round-the-clock help, ensuring
+                                        students
+                                        receive assistance anytime on multiple platforms.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Advanced Conversational
+                                            AI:</strong> They leverage state-of-the-art natural
+                                        language
+                                        processing to understand and respond to student queries in
+                                        real
+                                        time.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Context-Aware
+                                            Assistance:</strong>
+                                        Deliver precise, personalized resources by dynamically
+                                        adapting
+                                        to individual learning needs.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Continuous
+                                            Innovation:</strong>
+                                        Regular updates ensure the assistants remain at the
+                                        technological forefront and responsive to emerging
+                                        educational
+                                        challenges.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Educator Relief:</strong> By
+                                        handling routine inquiries, they free up educators to focus
+                                        on
+                                        deeper mentoring and personalized instruction.
+                                    </li>
+                                </ul>
+
+                                <div class="mt-auto">
+                                    <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                    <span
+                                          class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">On-demand
+                                        tutoring</span>
+                                    <span
+                                          class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">Multi-platform
+                                        support</span>
+                                    <span
+                                          class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">Contextual
+                                        assistance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Predictive Analytics for Student Performance -->
+                <article class="snap-item">
+                    <div class="container">
+                        <div class="row gap-3 py-5">
+
+                            <div class="col-md-4 col-lg-5 mb-4">
+                                <div class="card border-0 bg-transparent">
+                                    <img src="./images/education/predective_learning_600x450.png"
+                                         class="img-fluid w-auto  rounded-top-3 object-fit-cover mix-blend-multiply"
+                                         style="max-height: 450px;"
+                                         alt="Predictive Analytics">
+                                    <div class="card-body d-flex flex-column">
+
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                                Strategies
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Leverage data for predictive student insights.
+                                                </li>
+                                                <li>✓ Develop dashboards for trends & outcomes.</li>
+                                                <li>✓ Refine models with educator feedback.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                                Motives
+                                            </h4>
+                                            <ul class="list-unstyled text-muted">
+                                                <li>✓ Proactively identify academic difficulties.
+                                                </li>
+                                                <li>✓ Enable timely educator intervention.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- content -->
+                            <div class="col-md-6 col-lg-6">
+                                <h3 class="display-4 text-gray-600 fw-bold mb-4">Predictive
+                                    Analytics
+                                    for Student Performance</h3>
+
+                                <div class="content d-none">
+                                    <p>
+                                        NAST’s Predictive Analytics for Student Performance
+                                        leverages
+                                        comprehensive educational data to deliver actionable
+                                        insights
+                                        for
+                                        improved learning outcomes. Our approach involves harnessing
+                                        historical and real-time data to forecast key student
+                                        trends,
+                                        empowering educators with detailed dashboards that visualize
+                                        performance, trends, and outcomes. By continuously refining
+                                        our
+                                        models with direct educator feedback, we ensure that the
+                                        insights
+                                        remain accurate, relevant, and flexible to the evolving
+                                        needs of
+                                        the
+                                        classroom.
+                                    </p>
+                                    <p>
+                                        The primary goal is to proactively identify academic
+                                        difficulties
+                                        before they escalate and to enable timely educator
+                                        intervention.
+                                        With these predictive insights, teachers can quickly
+                                        pinpoint
+                                        areas
+                                        where students may be struggling, ensuring swift and
+                                        targeted
+                                        support. This data-driven strategy not only enhances
+                                        individual
+                                        learning journeys but also fosters a more responsive and
+                                        supportive
+                                        educational environment where every student’s success is
+                                        prioritized.
+                                    </p>
+                                </div>
+
+                                <ul class="lead text-gray-500 px-0">
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Data-Driven
+                                            Forecasting:</strong>
+                                        Combines historical and real-time data to predict student
+                                        performance trends.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Intuitive Dashboard
+                                            Visualization:</strong> Provides clear, actionable
+                                        insights
+                                        via dynamic performance dashboards.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Proactive
+                                            Intervention:</strong>
+                                        Identifies academic challenges early, enabling timely
+                                        support
+                                        and educator intervention.
+                                    </li>
+                                    <li type="none"
+                                        class="mb-2">
+                                        <strong class="text-gray-600">Continuous Model
+                                            Refinement:</strong> Leverages educator feedback to
+                                        enhance
+                                        prediction accuracy and adapt to evolving learning needs.
+                                    </li>
+                                </ul>
+
+
+                                <div class="mt-auto">
+                                    <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                    <span
+                                          class="badge rounded-pill bg-danger key-feature-badge me-1 mb-1">Intuitive
+                                        data visualization</span>
+                                    <span
+                                          class="badge rounded-pill bg-danger key-feature-badge me-1 mb-1">Predictive
+                                        trend alerts</span>
+                                    <span
+                                          class="badge rounded-pill bg-danger key-feature-badge me-1 mb-1">In-depth
+                                        analytics reports</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </section>
-        </div>
-
-        <section id="solutions"
-                 class="py-5">
-            <h2 class="h1 fw-bold text-center mb-5">Our AI-Powered Educational
-                Solutions</h2>
-
-
-            <div class="bg-light">
-                <div class="container">
-                    <div class="row gap-3 py-5">
-                        <div class="col-md-4 col-lg-5 mb-4">
-                            <div class="card solution-card shadow-sm p-3">
-                                <img src="./Personalized Learning_2.png"
-                                     class="card-img-top section-image"
-                                     alt="Personalized Learning">
-                                <div class="card-body d-flex flex-column">
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Develop adaptive algorithms for tailored content.
-                                            </li>
-                                            <li>✓ Integrate real-time analytics for dynamic
-                                                adjustments.
-                                            </li>
-                                            <li>✓ Combine ML with pedagogical expertise.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Enhance student engagement and success.</li>
-                                            <li>✓ Empower educators with progress insights.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Personalized Learning & Adaptive Tutoring</h3>
-
-                            <p>
-                                NAST is pioneering a transformed education system by integrating
-                                AI-driven solutions into web and mobile platforms. Our approach to
-                                Personalized Learning & Adaptive Tutoring involves developing
-                                adaptive algorithms that curate tailored content for each learner,
-                                integrating real-time analytics for dynamic adjustments, and
-                                combining machine learning with deep pedagogical expertise. This
-                                strategy creates a responsive and engaging learning environment
-                                where every student's progress is continuously monitored and
-                                optimized.
-                            </p>
-                            <p>
-                                By empowering educators with real-time progress insights, NAST not
-                                only boosts student engagement and success but also enhances
-                                teachers’ abilities to identify and address learning gaps promptly.
-                                This dual focus—personalizing student learning and equipping
-                                educators with actionable data—reinvents the educational experience,
-                                making high-quality, adaptive learning accessible anytime and
-                                anywhere.
-                            </p>
-
-                            <div class="mt-auto">
-                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Adaptive
-                                    content</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Instant
-                                    feedback</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Data-driven
-                                    recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-light">
-                <div class="container">
-                    <div class="row gap-3 py-5">
-                        <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="./automated_grading_2_400x400.png"
-                                     class="card-img-top section-image"
-                                     alt="Automated Grading">
-                                <div class="card-body d-flex flex-column">
-
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Implement AI grading via NLP & pattern
-                                                recognition.</li>
-                                            <li>✓ Create personalized, constructive feedback loops.
-                                            </li>
-                                            <li>✓ Balance automation with human oversight.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Reduce manual grading, increase mentoring time.
-                                            </li>
-                                            <li>✓ Ensure consistent and objective grading.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mt-auto">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                        <span
-                                              class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">Real-time
-                                            automated grading</span>
-                                        <span
-                                              class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">Comprehensive
-                                            feedback</span>
-                                        <span
-                                              class="badge rounded-pill bg-success key-feature-badge me-1 mb-1">LMS
-                                            integration</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Automated Grading & Feedback System</h3>
-
-                            <p>
-                                NAST’s Automated Grading & Feedback System leverages advanced AI
-                                techniques, employing natural language processing and pattern
-                                recognition to assess student work swiftly and accurately. Our
-                                strategy centers on creating personalized, constructive feedback
-                                loops that guide students in understanding their performance, while
-                                we carefully balance the speed of technology with critical human
-                                oversight to ensure nuanced evaluation.
-                            </p>
-                            <p>
-                                Our goal is to reduce the burden of manual grading, freeing
-                                educators to devote more time to mentoring and personalized
-                                instruction. By ensuring grading consistency and objectivity, our
-                                system not only streamlines the assessment process but also enhances
-                                the overall learning experience, ultimately transforming traditional
-                                education into a more efficient and insightful process
-                            </p>
-
-                            <div class="mt-auto">
-                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Adaptive
-                                    content</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Instant
-                                    feedback</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Data-driven
-                                    recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-light">
-                <div class="container">
-                    <div class="row gap-3 py-5">
-                        <div class="col-md-4 col-lg-5">
-                            <div class="card solution-card shadow-sm">
-                                <img src="./virtual learning2_400x400.png"
-                                     class="card-img-top section-image"
-                                     alt="Virtual Learning Assistants">
-                                <div class="card-body d-flex flex-column">
-
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Deploy conversational AI for 24/7 support.</li>
-                                            <li>✓ Use advanced NLP for queries & resources.</li>
-                                            <li>✓ Continuously update assistant capabilities.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Enhance learning support accessibility.</li>
-                                            <li>✓ Foster a supportive student environment.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mt-auto">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                        <span
-                                              class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">On-demand
-                                            tutoring</span>
-                                        <span
-                                              class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">Multi-platform
-                                            support</span>
-                                        <span
-                                              class="badge rounded-pill bg-warning text-dark key-feature-badge me-1 mb-1">Contextual
-                                            assistance</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Virtual Learning Assistants</h3>
-
-                            <p>
-                                NAST’s Virtual Learning Assistants harness advanced conversational
-                                AI to provide 24/7 academic support across web and mobile platforms.
-                                By deploying AI solutions that leverage state-of-the-art natural
-                                language processing, our assistants can understand student queries
-                                in real time and deliver precise, context-aware resources. We
-                                continuously update the capabilities of these virtual assistants,
-                                ensuring they remain at the forefront of technological innovation
-                                and dynamically adapt to emerging learning needs.
-                            </p>
-                            <p>
-                                Our primary goal is to enhance learning support accessibility and
-                                foster an environment where every student feels supported around the
-                                clock. By enabling constant access to reliable, personalized
-                                assistance, these virtual assistants not only help clarify complex
-                                topics but also work to build a nurturing educational atmosphere.
-                                This ongoing, responsive support empowers students, while also
-                                relieving educators from routine inquiries, allowing them to focus
-                                on deeper mentoring and personalized instruction.
-                            </p>
-
-                            <div class="mt-auto">
-                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Adaptive
-                                    content</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Instant
-                                    feedback</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Data-driven
-                                    recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-light">
-                <div class="container">
-                    <div class="row gap-3 py-5">
-
-                        <div class="col-md-4 col-lg-5 mb-4">
-                            <div class="card solution-card shadow-sm">
-                                <img src="./predictive analytics2 400X600.png"
-                                     class="card-img-top section-image"
-                                     alt="Predictive Analytics">
-                                <div class="card-body d-flex flex-column">
-
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Work & Strategies:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Leverage data for predictive student insights.
-                                            </li>
-                                            <li>✓ Develop dashboards for trends & outcomes.</li>
-                                            <li>✓ Refine models with educator feedback.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Goals & Motives:
-                                        </h4>
-                                        <ul class="list-unstyled text-muted small">
-                                            <li>✓ Proactively identify academic difficulties.</li>
-                                            <li>✓ Enable timely educator intervention.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mt-auto">
-                                        <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                        <span
-                                              class="badge rounded-pill bg-danger key-feature-badge me-1 mb-1">Intuitive
-                                            data visualization</span>
-                                        <span
-                                              class="badge rounded-pill bg-danger key-feature-badge me-1 mb-1">Predictive
-                                            trend alerts</span>
-                                        <span
-                                              class="badge rounded-pill bg-danger key-feature-badge me-1 mb-1">In-depth
-                                            analytics reports</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-6">
-                            <h3 class="mb-4 fs-3">Predictive Analytics for Student Performance</h3>
-
-                            <p>
-                                NAST’s Predictive Analytics for Student Performance leverages
-                                comprehensive educational data to deliver actionable insights for
-                                improved learning outcomes. Our approach involves harnessing
-                                historical and real-time data to forecast key student trends,
-                                empowering educators with detailed dashboards that visualize
-                                performance, trends, and outcomes. By continuously refining our
-                                models with direct educator feedback, we ensure that the insights
-                                remain accurate, relevant, and flexible to the evolving needs of the
-                                classroom.
-                            </p>
-                            <p>
-                                The primary goal is to proactively identify academic difficulties
-                                before they escalate and to enable timely educator intervention.
-                                With these predictive insights, teachers can quickly pinpoint areas
-                                where students may be struggling, ensuring swift and targeted
-                                support. This data-driven strategy not only enhances individual
-                                learning journeys but also fosters a more responsive and supportive
-                                educational environment where every student’s success is
-                                prioritized.
-                            </p>
-
-                            <div class="mt-auto">
-                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Adaptive
-                                    content</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Instant
-                                    feedback</span>
-                                <span
-                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Data-driven
-                                    recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
         </section>
 
         <section id="contact"
-                 class="nast-bg-gradient-1 text-white py-5 mt-5">
+                 class="bg-secondary text-white py-5 mt-5">
 
             <div class="container text-center">
 
-                <h2 class="h2 fw-bold mb-4">Our Vision for the Future of Education</h2>
+                <h2 class="display-5 fw-bold mb-4">Our Vision for the Future of Education</h2>
                 <div class="row justify-content-center mb-4">
                     <div class="col-lg-8">
                         <p class="lead mb-2">To pioneer an educational framework where every learner
@@ -538,31 +819,6 @@
         </div>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Smooth scrolling for navigation links (Optional: Bootstrap handles this for nav-links with href="#id" if scrollspy is active or via its own JS, but this is a fallback)
-        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                // Ensure it's a valid ID selector and not just "#"
-                if (href.length > 1 && href.startsWith('#')) {
-                    const targetElement = document.querySelector(href);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
 
 </body>
 

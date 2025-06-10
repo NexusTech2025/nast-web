@@ -1,0 +1,36 @@
+/* the browser’s main scroll area becomes a snap container */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: var(--header-height);
+    /* if you have a fixed header */
+}
+
+/* any direct children of html/body become snap targets */
+section {
+    scroll-snap-align: start;
+}
+
+.scroll-snap {
+    overflow-y: scroll;
+    /* enable horizontal scrolling */
+    scroll-snap-type: y mandatory;
+    /* set snapping on the x-axis, mandatory behavior */
+    height: 90vh;
+
+}
+
+.snap-item {
+    scroll-snap-align: start;
+    /* align each slide to the container’s start edge */
+    width: 100%;
+
+    /* full viewport width */
+    flex-shrink: 0;
+    /* prevent shrinking in a flex layout */
+}
+
+/* optional: hide scrollbar for clean UI */
+.scroll-snap::-webkit-scrollbar {
+    display: none;
+}

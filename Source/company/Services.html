@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <!-- Bootstrap CSS CDN (kept for existing sections) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS for font, gradients, and blob animations -->
+
+
+    <script src="../scripts/header.js"></script>
+
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+
+
+    <style>
+        /* Custom font import for 'Inter' */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f7f7f7;
+            /* Light background similar to the site */
+        }
+
+        /* Custom styles for gradients */
+        .hero-gradient-bg {
+            background: linear-gradient(135deg, #6b46c1 0%, #a78bfa 100%);
+            /* Example gradient: purple-700 to indigo-800 approximation */
+        }
+
+        .cta-gradient-bg {
+            background: linear-gradient(135deg, #6b46c1 0%, #a78bfa 100%);
+            /* Example gradient: purple-700 to indigo-800 approximation */
+        }
+
+        .testimonial-bg {
+            background-color: #6b46c1;
+            /* Equivalent to purple-700 */
+        }
+
+        .text-gradient-custom {
+            background: linear-gradient(45deg, #6b46c1, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom styles for card icons in the new Bootstrap section */
+        .card-icon-bg {
+            background-color: #e0e7ff;
+            /* Light purple-blue background for icons */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            /* Rounded corners */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon-bg svg {
+            width: 2.5rem;
+            /* Icon size */
+            height: 2.5rem;
+            color: #6b46c1;
+            /* Purple color for the icon itself */
+        }
+
+        /* Custom style for service card images to ensure proper height */
+        .service-card-img {
+            height: 100%;
+            /* Make image fill the height of its container */
+            width: 100%;
+            /* Make image fill the width of its container */
+            object-fit: cover;
+            /* Cover the area, cropping if necessary */
+            border-top-left-radius: calc(0.5rem - 1px);
+            /* Match card border radius */
+            border-bottom-left-radius: calc(0.5rem - 1px);
+            /* Match card border radius */
+        }
+
+        /* Responsive adjustments for service card images */
+        @media (max-width: 767.98px) {
+            .service-card-img {
+                height: 200px;
+                /* Fixed height for images on small screens */
+                border-top-right-radius: calc(0.5rem - 1px);
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        /* Simple animations for background blobs (preserved from original) */
+        @keyframes blob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        /* Custom styling for "How We Work" step numbers */
+        .step-number {
+            width: 4rem;
+            height: 4rem;
+            background-color: #e0e7ff;
+            /* light purple-blue */
+            color: #6b46c1;
+            /* purple */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Header Section (Bootstrap Navbar) -->
+    <header id="navbar-container"
+            class="shadow-sm sticky-top header"></header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="position-relative hero-gradient-bg text-white py-5 py-lg-7 overflow-hidden">
+            <div class="container text-center position-relative z-1">
+                <p class="text-white-50 fs-5 fw-semibold mb-3">Our Offerings</p>
+                <h1 class="display-3 fw-bold lh-base mb-4">
+                    Cutting-Edge Solutions for Modern Businesses
+                </h1>
+                <p class="fs-5 opacity-75 mx-auto mb-5"
+                   style="max-width: 45rem;">
+                    We leverage advanced AI and machine learning to transform your operations,
+                    enhance efficiency, and drive innovation.
+                </p>
+                <a href="#"
+                   class="btn btn-light btn-lg rounded-pill shadow-lg transition duration-300 transform-hover-lift">
+                    Get Started Today
+                </a>
+            </div>
+            <!-- Background Blob/Shape Mimic -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 z-0">
+                <div class="position-absolute top-25 start-25 w-96px h-96px bg-primary rounded-circle mix-blend-multiply filter blur-xl opacity-25 animate-blob"
+                     style="width: 24rem; height: 24rem;">
+                </div>
+                <div class="position-absolute top-50 end-25 w-80px h-80px bg-info rounded-circle mix-blend-multiply filter blur-xl opacity-25 animate-blob animation-delay-2000"
+                     style="width: 20rem; height: 20rem;">
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Explore the power of AI tools (Bootstrap 5.3.x) -->
+        <section class="py-5 bg-light">
+            <div class="container my-5">
+                <div class="row align-items-center justify-content-center g-4">
+                    <!-- Left Column: Four Cards -->
+                    <div class="col-12 col-lg-6">
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            <!-- Card 1: Unique Technology -->
+                            <div class="col">
+                                <div
+                                     class="card h-100 p-4 rounded-4 shadow-sm border-0 text-center">
+                                    <div class="card-icon-bg mx-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="16"
+                                             height="16"
+                                             fill="currentColor"
+                                             class="bi bi-file-earmark-code"
+                                             viewBox="0 0 16 16">
+                                            <path
+                                                  d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                                            <path
+                                                  d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                                        </svg>
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark">Unique Technology
+                                    </h5>
+                                    <p class="card-text text-muted">Innovative and distinctive set
+                                        of tools, methods, or processes.</p>
+                                </div>
+                            </div>
+                            <!-- Card 2: Endless Possibilities -->
+                            <div class="col">
+                                <div
+                                     class="card h-100 p-4 rounded-4 shadow-sm border-0 text-center">
+                                    <div class="card-icon-bg mx-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="16"
+                                             height="16"
+                                             fill="currentColor"
+                                             class="bi bi-infinity"
+                                             viewBox="0 0 16 16">
+                                            <path
+                                                  d="M5.68 10.218c.257.087.52.167.79.24.445.122.95.233 1.5.31C9.065 10.936 10.51 11 11.5 11c1.264 0 2.423-.235 3.402-.843.47-.293.89-.594 1.22-.924l-.164-.165c-.52.26-1.144.524-1.92.751-1.025.286-2.316.368-3.611.368-1.583 0-2.8-.213-3.98-1.127-.728-.568-1.304-1.324-1.724-2.16-.42-.836-.71-1.76-.846-2.736-.136-.976-.104-2.001 0-2.946.104-.945.34-.843.58-.724.24-.12.48-.222.72-.313.445-.122.95-.233 1.5-.31.696-.095 1.511-.166 2.5-.166 1.264 0 2.423.235 3.402.843.47.293.89.594 1.22.924l-.164.165c-.52-.26-1.144-.524-1.92-.751C12.35 4.09 11.06 4.008 9.764 4.008c-1.583 0-2.8-.213-3.98-1.127C5.056 2.313 4.48 1.557 4.06 0.72c-.42-.836-.71-1.76-.846-2.736-.136-.976-.104-2.001 0-2.946.104-.945.34-.843.58-.724.24-.12.48-.222.72-.313.445-.122.95-.233 1.5-.31.696-.095 1.511-.166 2.5-.166z" />
+                                        </svg>
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark">Endless
+                                        Possibilities</h5>
+                                    <p class="card-text text-muted">Applied to technology,
+                                        innovation, or personal development.</p>
+                                </div>
+                            </div>
+                            <!-- Card 3: Reliable Experts -->
+                            <div class="col">
+                                <div
+                                     class="card h-100 p-4 rounded-4 shadow-sm border-0 text-center">
+                                    <div class="card-icon-bg mx-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="16"
+                                             height="16"
+                                             fill="currentColor"
+                                             class="bi bi-person-check"
+                                             viewBox="0 0 16 16">
+                                            <path
+                                                  d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4.5 1.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h1.493l-.853-.854a.5.5 0 0 1 .708-.708l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708-.708l.853-.854H10a.5.5 0 0 1 .5-.5z" />
+                                            <path
+                                                  d="M11 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H11zm-1-9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 0-1h-1.493l.853-.854a.5.5 0 0 0-.708-.708l-1.5 1.5a.5.5 0 0 0 0 .708l1.5 1.5a.5.5 0 0 0 .708-.708l-.853-.854H10a.5.5 0 0 0-.5-.5z" />
+                                            <path fill-rule="evenodd"
+                                                  d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                            <path
+                                                  d="M1.885 15.854A.5.5 0 0 0 2 15.5V14a1 1 0 0 1 1-1h4s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1H1.885zM15 14a1 1 0 0 0 1-1v-1.585c0-.536-.724-1.047-1.488-1.564C13.846 9.613 12.008 8 10 8c-2.009 0-3.845 1.614-4.512 2.051-.764.517-1.488 1.028-1.488 1.564V14a1 1 0 0 0 1 1h4a.5.5 0 0 0 0-1H4a.5.5 0 0 0-.5.5V14a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5.5v1a.5.5 0 0 0 .5.5H10a.5.5 0 0 0 .5-.5V15.5a.5.5 0 0 0 0-1h2a.5.5 0 0 0 .5.5V14a.5.5 0 0 0 0-1H11a.5.5 0 0 0-.5.5z" />
+                                            <path fill-rule="evenodd"
+                                                  d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                        </svg>
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark">Reliable Experts
+                                    </h5>
+                                    <p class="card-text text-muted">Our team comprises
+                                        industry-leading AI specialists with proven track records.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 4: Ongoing Support -->
+                            <div class="col">
+                                <div
+                                     class="card h-100 p-4 rounded-4 shadow-sm border-0 text-center">
+                                    <div class="card-icon-bg mx-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             width="16"
+                                             height="16"
+                                             fill="currentColor"
+                                             class="bi bi-chat-dots"
+                                             viewBox="0 0 16 16">
+                                            <path
+                                                  d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                            <path
+                                                  d="M2.165 15.803c.678.05.868.037 1.076-.027L11.5 13.5l1.639 1.494c.074.067.15.118.225.16.217.113.567.134.794.06.654-.218.826-.958.744-1.631L15.345 13H1c-.084-.31.065-.589.444-.867C2.165 11.235 3.397 10.743 4.31 9.945c.78-.66 1.472-1.626 1.834-2.585.362-.958.5-2.27.468-3.414.032-.15.01-.293-.058-.409-.166-.339-.526-.35-.776-.236-.25.115-.5.292-.725.568-.225.276-.4-.5-.458-.876-.058-.376-.046-.724.035-.88.08-.156.2-.266.368-.372.168-.106.35-.19.53-.26.2-.07.4-.13.6-.18.2-.05.4-.08.6-.1.2-.02.4-.03.6-.03.2 0 .4.004.6.012.2.008.4.02.6.036.2.016.4.036.6.06.2.024.4.048.6.08a.5.5 0 0 1 .5.5v2c0 .323-.17.618-.46.793a.5.5 0 0 1-.64.093l-1.396-1.396-.707-.708.707-.708L10 6l-.707-.707L8.646 6.646a.5.5 0 0 1-.708 0l-.707-.707.707-.707.707-.707L8.646 4.646a.5.5 0 0 1-.708 0L6.5 6.293 5.146 4.94a.5.5 0 0 1-.708.708l1.396 1.396a.5.5 0 0 1-.093.64l-.793.46c-.175.102-.45.163-.79.163-.34 0-.615-.061-.79-.163-.289-.168-.46-.464-.46-.793V9a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5H4a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-.5v.5a.5.5 0 0 0 .5.5h.5V13a.5.5 0 0 0 .5.5h.5V14a.5.5 0 0 0 .5.5H12a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-.5v.5a.5.5 0 0 0 .5.5h.5V14a.5.5 0 0 0 .5.5H13a.5.5 0 0 0 .5-.5V13a.5.5 0 0 0 .5-.5h-.5V12a.5.5 0 0 0 .5-.5h.5V11a.5.5 0 0 0-.5-.5h-.5V10a.5.5 0 0 0-.5-.5h-.5V9a.5.5 0 0 0-.5-.5h-.5zM7 6.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 .5.5z" />
+                                        </svg>
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark">Ongoing Support
+                                    </h5>
+                                    <p class="card-text text-muted">Dedicated assistance to ensure
+                                        seamless integration and optimal performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Text and Button -->
+                    <div class="col-12 col-lg-6 text-center text-lg-start">
+                        <h2 class="display-4 fw-bold text-dark mb-4">
+                            Explore the power of <span class="text-gradient-custom">AI</span> tools
+                        </h2>
+                        <p class="lead text-muted mb-4">
+                            AI's impact extends beyond mere automation; it revolutionizes
+                            decision-making. Machine learning algorithms analyze vast datasets,
+                            extracting valuable insights that guide strategic choices. Whether in
+                            healthcare, finance, or logistics, AI empowers professionals with
+                            data-driven intelligence, enabling them to make informed decisions with
+                            unprecedented precision. In the realm of creativity, AI tools are
+                            proving
+                            to be invaluable collaborators.
+                        </p>
+                        <button class="btn btn-primary rounded-pill px-5 py-3 fw-bold">Let's
+                            Generate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Core Services Section (UPDATED LAYOUT - Bootstrap 5.3.x) -->
+        <section class="py-5 bg-white">
+            <div class="container px-4 px-md-5">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold text-dark mb-3">Our Core Services
+                    </h2>
+                    <p class="fs-5 text-muted mx-auto"
+                       style="max-width: 45rem;">
+                        From conceptualization to implementation, we provide end-to-end AI solutions
+                        tailored to your unique needs.
+                    </p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+                    <!-- Service Card 1: AI Strategy & Consulting -->
+                    <div class="col">
+                        <div class="card h-100 rounded-4 shadow-sm border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://placehold.co/150x150/6b46c1/ffffff?text=AI+Strategy"
+                                         class="img-fluid service-card-img"
+                                         alt="AI Strategy Icon"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/a78bfa/ffffff?text=AI+Strategy';">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-dark">AI Strategy &
+                                            Consulting</h5>
+                                        <p class="card-text text-muted">Develop a robust AI roadmap
+                                            aligned with your business objectives, identifying key
+                                            opportunities and challenges for digital transformation.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2: Custom AI Model Development -->
+                    <div class="col">
+                        <div class="card h-100 rounded-4 shadow-sm border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://placehold.co/150x150/6b46c1/ffffff?text=Model+Dev"
+                                         class="img-fluid service-card-img"
+                                         alt="Machine Learning Icon"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/a78bfa/ffffff?text=ML+Dev';">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-dark">Custom AI Model
+                                            Development</h5>
+                                        <p class="card-text text-muted">Build bespoke AI/ML models
+                                            for predictive analytics, natural language processing,
+                                            computer vision, and specialized tasks.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3: Advanced Data Analytics -->
+                    <div class="col">
+                        <div class="card h-100 rounded-4 shadow-sm border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://placehold.co/150x150/6b46c1/ffffff?text=Data+Analytics"
+                                         class="img-fluid service-card-img"
+                                         alt="NLP Icon"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/a78bfa/ffffff?text=NLP';">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-dark">Advanced Data
+                                            Analytics</h5>
+                                        <p class="card-text text-muted">Transform raw data into
+                                            actionable insights with cutting-edge analytics
+                                            techniques and intuitive visualization dashboards.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4: AI-Powered Automation -->
+                    <div class="col">
+                        <div class="card h-100 rounded-4 shadow-sm border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://placehold.co/150x150/6b46c1/ffffff?text=Automation"
+                                         class="img-fluid service-card-img"
+                                         alt="Computer Vision Icon"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/a78bfa/ffffff?text=CV';">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-dark">AI-Powered
+                                            Automation</h5>
+                                        <p class="card-text text-muted">Streamline business
+                                            processes and enhance operational efficiency through
+                                            intelligent automation and robotic process automation
+                                            (RPA).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 5: Secure Data Management -->
+                    <div class="col">
+                        <div class="card h-100 rounded-4 shadow-sm border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://placehold.co/150x150/6b46c1/ffffff?text=Data+Security"
+                                         class="img-fluid service-card-img"
+                                         alt="Data Analytics Icon"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/a78bfa/ffffff?text=Data';">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-dark">Secure Data
+                                            Management</h5>
+                                        <p class="card-text text-muted">Implement robust data
+                                            governance and security protocols to protect sensitive
+                                            information and ensure compliance with industry
+                                            standards.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 6: Cloud Solutions & Integration -->
+                    <div class="col">
+                        <div class="card h-100 rounded-4 shadow-sm border-0">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://placehold.co/150x150/6b46c1/ffffff?text=Cloud+Integration"
+                                         class="img-fluid service-card-img"
+                                         alt="Cloud Integration Icon"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/a78bfa/ffffff?text=Cloud';">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-dark">Cloud Solutions
+                                            & Integration</h5>
+                                        <p class="card-text text-muted">Design, deploy, and manage
+                                            scalable cloud infrastructures (AWS, Azure, GCP) to
+                                            enhance flexibility and reduce operational costs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial / Quote Section -->
+        <section class="py-5 py-lg-7 testimonial-bg text-white">
+            <div class="container text-center mx-auto"
+                 style="max-width: 45rem;">
+                <blockquote class="display-6 fw-light lh-base fst-italic mb-4">
+                    "AI Copilot revolutionized our data processing capabilities. Their expertise and
+                    dedication are unparalleled, delivering results beyond our expectations."
+                </blockquote>
+                <p class="fs-5 fw-semibold text-white-50">- Jane Doe, CEO of Tech Innovations
+                </p>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section class="py-5 py-lg-7 bg-light">
+            <div class="container px-4 px-md-5">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold text-dark mb-3">How We Work</h2>
+                    <p class="fs-5 text-muted mx-auto"
+                       style="max-width: 45rem;">
+                        Our agile process ensures efficient delivery and collaborative development,
+                        keeping you informed every step of the way.
+                    </p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <!-- Step 1 -->
+                    <div class="col">
+                        <div
+                             class="d-flex flex-column align-items-center text-center p-4 rounded-4 border border-gray-200 shadow-sm bg-white h-100">
+                            <div class="step-number">1</div>
+                            <h3 class="h5 fw-semibold text-dark mb-2">Discovery & Planning
+                            </h3>
+                            <p class="text-muted">
+                                We start by deeply understanding your business, goals, and existing
+                                infrastructure.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="col">
+                        <div
+                             class="d-flex flex-column align-items-center text-center p-4 rounded-4 border border-gray-200 shadow-sm bg-white h-100">
+                            <div class="step-number">2</div>
+                            <h3 class="h5 fw-semibold text-dark mb-2">Design & Development
+                            </h3>
+                            <p class="text-muted">
+                                Our experts craft tailored AI models and solutions, focusing on
+                                scalability and performance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="col">
+                        <div
+                             class="d-flex flex-column align-items-center text-center p-4 rounded-4 border border-gray-200 shadow-sm bg-white h-100">
+                            <div class="step-number">3</div>
+                            <h3 class="h5 fw-semibold text-dark mb-2">Testing & Refinement
+                            </h3>
+                            <p class="text-muted">
+                                Rigorous testing ensures accuracy and robustness, with continuous
+                                refinement based on feedback.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="col">
+                        <div
+                             class="d-flex flex-column align-items-center text-center p-4 rounded-4 border border-gray-200 shadow-sm bg-white h-100">
+                            <div class="step-number">4</div>
+                            <h3 class="h5 fw-semibold text-dark mb-2">Deployment & Support
+                            </h3>
+                            <p class="text-muted">
+                                Seamless deployment and ongoing support ensure your AI solutions run
+                                smoothly and efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-5 py-lg-7 cta-gradient-bg text-white text-center">
+            <div class="container px-4 px-md-5">
+                <h2 class="display-4 fw-bold lh-base mb-4">
+                    Ready to Transform Your Business with AI?
+                </h2>
+                <p class="fs-5 mx-auto mb-5 opacity-75"
+                   style="max-width: 45rem;">
+                    Partner with AI Copilot to unlock new possibilities and stay ahead in the
+                    competitive landscape.
+                </p>
+                <a href="#"
+                   class="btn btn-light btn-lg rounded-pill shadow-xl transition duration-300 transform-hover-lift">
+                    Contact Our Experts
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap Bundle with Popper (added for the new section) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

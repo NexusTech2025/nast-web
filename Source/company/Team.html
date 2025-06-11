@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Our Team - NAST TECH</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts (Inter) - Not a custom class, kept for font consistency -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery and Owl Carousel are kept as they are general libraries, not custom CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <script src="../scripts/header.js"></script>
+
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            /* Consistent light background */
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+        });
+    </script>
+</head>
+
+<body class="bg-light">
+
+    <header id="navbar-container"
+            class="shadow-sm sticky-top header"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section p-5 bg-primary text-white text-center d-flex align-items-center"
+             style="background-image: url('./Source/images/hero_section2.png'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
+        <div class="container position-relative z-1">
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <h1 class="display-2 fw-bold mb-3">
+                        Meet the Minds Shaping the Future of NAST
+                    </h1>
+                    <p class="fs-5 mb-0">
+                        Our diverse team of experts is dedicated to pushing the boundaries of AI and
+                        data-driven solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Simple overlay to mimic hero-section-bg-overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"
+             style="z-index: 0;"></div>
+    </section>
+
+    <!-- CEO Introduction Section -->
+    <section class="container bg-white p-5 rounded-3 shadow-sm my-5">
+        <div class="row align-items-center g-4">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="rounded-3 overflow-hidden shadow-lg"
+                     style="max-width: 450px;">
+                    <!-- Placeholder image matching the split layout. Replace with actual CEO image if available. -->
+                    <img src="https://placehold.co/450x300/a777e3/FFFFFF?text=NAST+CEO"
+                         class="img-fluid"
+                         alt="NAST CEO">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-start">
+                <h2 class="display-5 fw-bold mb-3 text-dark">Introducing Our Visionary Leader</h2>
+                <p class="text-secondary lead mb-3">
+                    **Manish Kumar**, the esteemed CEO of NAST, brings a wealth of experience and a
+                    forward-thinking vision to the helm of our company. With a deep understanding of
+                    cutting-edge technology and market dynamics, Manish leads NAST with a commitment
+                    to innovation, customer success, and driving the future of AI and digital
+                    transformation.
+                </p>
+                <p class="text-secondary lead mb-3">
+                    Under his leadership, NAST has consistently pushed boundaries, delivering
+                    impactful solutions that empower businesses to thrive in the digital age. His
+                    dedication to fostering a culture of excellence and continuous learning is a
+                    cornerstone of our team's success.
+                </p>
+                <p class="text-secondary lead mb-3">
+                    Manish believes in the power of intelligent automation and data-driven insights
+                    to revolutionize industries. He is passionate about leveraging AI to create
+                    seamless, scalable, and secure applications that truly make a difference for our
+                    clients.
+                </p>
+                <a href="#"
+                   class="btn btn-primary mt-3">
+                    Learn More About Our Leadership
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="py-5 px-3">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-dark text-center mb-5">Our Talented Team</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                <!-- Team Member Card 1 -->
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=JD"
+                             alt="John Doe">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">John Doe</h3>
+                        <p class="text-primary fw-medium mb-3">CEO & Founder</p>
+                        <p class="text-secondary fs-6 mb-3">Passionate leader driving innovation in
+                            AI and machine learning.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member Card 2 -->
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=JA"
+                             alt="Jane Adams">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Jane Adams</h3>
+                        <p class="text-primary fw-medium mb-3">Chief Technology Officer</p>
+                        <p class="text-secondary fs-6 mb-3">Visionary architect of our cutting-edge
+                            AI platforms.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member Card 3 -->
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=RS"
+                             alt="Robert Smith">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Robert Smith</h3>
+                        <p class="text-primary fw-medium mb-3">Lead AI Engineer</p>
+                        <p class="text-secondary fs-6 mb-3">Expert in neural networks and natural
+                            language processing.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member Card 4 -->
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=EA"
+                             alt="Emily Adams">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Emily Adams</h3>
+                        <p class="text-primary fw-medium mb-3">Head of Product</p>
+                        <p class="text-secondary fs-6 mb-3">Innovator crafting user-centric AI
+                            solutions.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat for more team members -->
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=MS"
+                             alt="Michael Scott">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Michael Scott</h3>
+                        <p class="text-primary fw-medium mb-3">Senior Data Scientist</p>
+                        <p class="text-secondary fs-6 mb-3">Specializes in predictive modeling and
+                            big data analytics.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=OS"
+                             alt="Olivia Williams">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Olivia Williams</h3>
+                        <p class="text-primary fw-medium mb-3">UX/UI Designer</p>
+                        <p class="text-secondary fs-6 mb-3">Crafting intuitive and beautiful AI
+                            interfaces.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div
+                         class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
+                        <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
+                             style="width: 8rem; height: 8rem; object-fit: cover;"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=JW"
+                             alt="James Wilson">
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">James Wilson</h3>
+                        <p class="text-primary fw-medium mb-3">Research Scientist</p>
+                        <p class="text-secondary fs-6 mb-3">Pioneering breakthroughs in AI
+                            algorithms.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="GitHub">
+                                <i class="bi bi-github fs-5"></i>
+                            </a>
+                            <a href="#"
+                               class="text-secondary"
+                               aria-label="Twitter">
+                                <i class="bi bi-twitter fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Team Section -->
+    <section class="bg-dark py-5 text-white text-center mt-5 rounded-top-3">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-3">Want to Join Our Team?</h2>
+            <p class="lead mb-4">
+                We're always looking for talented individuals to join our mission of innovating with
+                AI.
+            </p>
+            <a href="#"
+               class="btn btn-light px-5 py-3 rounded-pill shadow-lg fw-semibold">
+                Explore Careers
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Section (from index.html) -->
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

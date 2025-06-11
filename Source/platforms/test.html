@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>About Us - NAST</title>
+    <title>Our Services - NAST</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
@@ -16,10 +16,7 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <script src="../scripts/header.js"></script>
-
-    <!-- Custom CSS files (assuming these paths are relative to the final deployment) -->
-    <!-- These links might still be relevant if they contain other global styles not replaced by Bootstrap -->
+    <!-- Custom CSS files -->
     <link rel="stylesheet"
           href="../styles/styles.css">
     <link rel="stylesheet"
@@ -27,682 +24,454 @@
     <link rel="stylesheet"
           href="../styles/spacing.css">
 
-    <!-- Bootstrap Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-            xintegrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-            crossorigin="anonymous">
-            </script>
-
-    <style>
-        .hero-section-bg-overlay::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        /* Custom hover effects for value cards */
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Specific line-height that Bootstrap doesn't provide directly */
-        .lh-1-8 {
-            line-height: 1.8;
-        }
-
-        /* Specific object-fit for images */
-        .object-fit-cover {
-            object-fit: cover;
-        }
-
-        /* Styles for the "Why Choose Us" section with image hover effect */
-        .image-hover-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            /* Rounded corners for the entire card */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            /* Consistent shadow */
-            height: 100%;
-            /* Ensure consistent height for flex alignment */
-        }
-
-        .image-hover-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: filter 0.5s ease-in-out;
-            /* Smooth blur transition */
-            display: block;
-            /* Remove extra space below image */
-        }
-
-        .image-hover-card .overlay-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Semi-transparent overlay */
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            /* Hidden by default */
-            transition: opacity 0.5s ease-in-out;
-            /* Smooth fade-in transition */
-            padding: 20px;
-            text-align: center;
-            backdrop-filter: blur(0px);
-            /* Initial blur state */
-        }
-
-        .image-hover-card:hover img {
-            filter: blur(5px);
-            /* Apply blur on hover */
-        }
-
-        .image-hover-card:hover .overlay-content {
-            opacity: 1;
-            /* Show content on hover */
-            backdrop-filter: blur(5px);
-            /* Apply blur to the overlay content itself, making background blurry */
-        }
-
-        /* Styles for the right-side feature cards in the "Why Choose Us" section */
-        .feature-card {
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            /* Ensure consistent height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .feature-card .icon-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #e0f7fa;
-            /* Light blue background for icon */
-            color: #007bff;
-            /* Primary color for icon */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        /* Styles for the new "How We Do It" section's left feature cards */
-        .how-we-do-it-feature-card {
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            /* Ensure consistent height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .how-we-do-it-feature-card .icon-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #e0f7fa;
-            /* Light blue background for icon */
-            color: #007bff;
-            /* Primary color for icon */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        /* New styles for the updated 'Our Values' section */
-        .values-grid-item {
-            position: relative;
-            padding-left: 60px;
-            /* Space for the number */
-            margin-bottom: 40px;
-            /* Space between items */
-        }
-
-        .values-grid-item .number {
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 3rem;
-            /* Large number */
-            font-weight: bold;
-            color: #dee2e6;
-            /* Light gray for subtle numbers */
-            line-height: 1;
-        }
-
-        .values-grid-item h3 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 10px;
-        }
-
-        .values-grid-item p {
-            font-size: 1rem;
-            color: #6c757d;
-        }
-
-        /* Styles for the "Future of Digital Transformation" section */
-        .future-section {
-            background-color: #f0f2f5;
-            padding: 80px 0;
-        }
-
-        .future-section .graphic-card {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            padding: 30px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .future-section .graphic-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .future-section .text-content h2 {
-            font-size: 2.8rem;
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 25px;
-        }
-
-        .future-section .text-content ul {
-            list-style: none;
-            /* Remove default bullet points */
-            padding-left: 0;
-        }
-
-        .future-section .text-content ul li {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 30px;
-            /* Space for custom icon */
-        }
-
-        .future-section .text-content ul li::before {
-            content: "\f26a";
-            /* Bootstrap icon for check-circle-fill */
-            font-family: "bootstrap-icons";
-            color: #28a745;
-            /* Green checkmark */
-            position: absolute;
-            left: 0;
-            top: 0px;
-            font-size: 1.2rem;
-        }
-
-        /* Responsive adjustments where Bootstrap utilities might not provide exact values */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding-top: 80px;
-                padding-bottom: 80px;
-            }
-
-            .py-md-60 {
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-
-            .team-member-card img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .image-hover-card,
-            .feature-card,
-            .how-we-do-it-feature-card {
-                margin-bottom: 20px;
-                /* Add space between cards on mobile */
-            }
-
-            .values-grid-item {
-                margin-bottom: 30px;
-            }
-
-            .values-grid-item .number {
-                font-size: 2.5rem;
-            }
-
-            .values-grid-item h3 {
-                font-size: 1.6rem;
-            }
-
-            .future-section .text-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .future-section .text-content ul li {
-                font-size: 1rem;
-            }
-        }
-    </style>
-
+    <!-- Header Script -->
+    <script src="../scripts/header.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             createNavbar(navbarConfig);
-
         });
     </script>
 </head>
 
-<body>
-
-
+<body class="nast-bg-gradient-body-2x">
     <!-- Navbar Container -->
     <header id="navbar-container"
-            class="header sticky-top shadow-sm"></header>
+            class="header sticky-top shadow-lg"></header>
 
     <main class="mb-5">
 
-        <!-- Hero Section -->
-        <section class="hero-section position-relative py-5 text-white text-center"
-                 style="background-image: url('https://placehold.co/1920x800/212529/ffffff?text=About+Us+Hero'); background-size: cover; background-position: center;">
-            <div class="hero-section-bg-overlay"></div>
-            <div class="container position-relative z-2">
-                <h1 class="display-1 fw-bold mb-4">About NAST</h1>
-                <p class="fs-3">Pioneering AI-Powered Transformation and Digital Innovation</p>
+        <!-- Hero Section for Services -->
+        <section class="hero-section hero-section-bg-overlay text-light"
+                 style="--bg-image: url('https://placehold.co/1920x1080/18355d/ffffff?text=Our+Services');">
+            <div class="container hero-section-content">
+                <section class="row mb-5">
+                    <div class="col-md-9">
+                        <h2 class="display-1 fw-bold">Comprehensive AI-Powered Solutions for Every
+                            Industry</h2>
+                        <p class="fs-3">At NAST, we blend cutting-edge AI with seamless web and
+                            mobile technologies to
+                            deliver transformative solutions across education, business, e-commerce,
+                            and healthcare.</p>
+                        <p class="fs-4">Our services are designed to drive innovation, enhance
+                            efficiency, and create
+                            unparalleled digital experiences tailored to your specific needs.</p>
+                    </div>
+                </section>
             </div>
         </section>
 
-        <!-- Section: Why Choose Us - with Image Hover Effect -->
-        <section class="py-5 bg-white">
-            <div class="container">
-                <div class="row g-4 align-items-stretch">
-                    <div class="col-md-6 d-flex">
-                        <div class="image-hover-card w-100">
-                            <img src="image_44a74d.jpg"
-                                 alt="Why Choose Us"
-                                 class="img-fluid">
-                            <div class="overlay-content">
-                                <h2 class="fs-1 fw-bold">Why Choose Us</h2>
+        <!-- Our Core Services Overview (Mimicking the new layout) -->
+        <section class="my-10">
+            <h2 class="display-2 fw-bold text-center text-gray-600">Our Core Services</h2>
+            <h4 class="fs-3 text-center text-gray-600 mb-4">Discover the breadth of our AI and
+                digital transformation
+                offerings.</h4>
+            <div class="container py-5">
+                <div class="row g-4 justify-content-center align-items-center">
+                    <!-- Left side: 2x2 grid of cards -->
+                    <div class="col-12 col-lg-6">
+                        <div class="row g-4">
+                            <!-- Service Card: Education -->
+                            <div class="col-12 col-md-6">
+                                <div
+                                     class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                                    <div class="card-body p-4">
+                                        <img src="https://placehold.co/80x80/EEE/31343C?text=Education"
+                                             alt="Education"
+                                             class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                        <h2 class="fs-3 fw-bold text-gray-600 mb-2">Education
+                                            Solutions</h2>
+                                        <p class="lead text-gray-600">
+                                            Empowering future learning with AI-driven personalized
+                                            guidance and
+                                            efficient assessment.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex flex-column justify-content-between">
-                        <div class="feature-card mb-4">
-                            <div class="icon-circle">
-                                <i class="bi bi-cpu-fill"></i>
-                            </div>
-                            <h3 class="fs-4 fw-bold text-dark mb-2">Intelligent Automation</h3>
-                            <p class="fs-6 text-secondary">Transforming operations with AI-driven
-                                automation for enhanced efficiency and reduced manual effort across
-                                your business processes.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="icon-circle">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <h3 class="fs-4 fw-bold text-dark mb-2">Seamless Digital Experiences
-                            </h3>
-                            <p class="fs-6 text-secondary">Crafting intuitive web and mobile
-                                platforms that ensure engaging and seamless user journeys, from
-                                e-commerce to educational solutions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- New Section: How We Do It -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="row g-4 align-items-stretch">
-                    <div class="col-md-6 d-flex flex-column justify-content-between order-md-2">
-                        <div class="ps-md-4">
-                            <p class="text-uppercase text-secondary fw-bold mb-2">HOW WE DO IT</p>
-                            <h2 class="display-5 fw-bold text-dark mb-4">We build innovative
-                                solutions by integrating cutting-edge AI with a client-centric
-                                approach.</h2>
-                            <p class="fs-6 text-secondary lh-1-8">At NAST, our methodology combines
-                                deep technical expertise in AI, data analysis, and web/mobile
-                                development with an unwavering focus on client success. We begin by
-                                understanding your unique challenges and goals. Our iterative
-                                process ensures robust, scalable, and intelligent systems that drive
-                                transformation and deliver measurable business outcomes, from
-                                initial concept to deployment and ongoing support.</p>
+                            <!-- Service Card: Business -->
+                            <div class="col-12 col-md-6">
+                                <div
+                                     class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                                    <div class="card-body p-4">
+                                        <img src="https://placehold.co/80x80/EEE/31343C?text=Business"
+                                             alt="Business"
+                                             class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                        <h2 class="fs-3 fw-bold text-gray-600 mb-3">Business
+                                            Solutions</h2>
+                                        <p class="fs-5 text-gray-600">
+                                            AI-driven transformation for modern enterprises,
+                                            optimizing operations and
+                                            insights.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Service Card: E-Commerce -->
+                            <div class="col-12 col-md-6">
+                                <div
+                                     class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                                    <div class="card-body py-4 px-2">
+                                        <img src="https://placehold.co/80x80/EEE/31343C?text=E-Commerce"
+                                             alt="E-Commerce"
+                                             class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                        <h2 class="fs-3 fw-bold text-gray-600 mb-3">E-Commerce
+                                            Solutions</h2>
+                                        <p class="fs-5 text-gray-600">
+                                            AI-powered innovation for seamless shopping,
+                                            personalized experiences, and
+                                            fraud detection.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Service Card: Healthcare -->
+                            <div class="col-12 col-md-6">
+                                <div
+                                     class="card shadow-sm rounded-3 h-100 card-hover-shadow border-0">
+                                    <div class="card-body p-4">
+                                        <img src="https://placehold.co/80x80/EEE/31343C?text=Healthcare"
+                                             alt="Healthcare"
+                                             class="img-fluid mb-4 mix-blend-multiply icon-logo">
+                                        <h2 class="fs-3 fw-bold text-gray-600 mb-2">Healthcare
+                                            Solutions</h2>
+                                        <p class="lead text-gray-600">
+                                            AI-powered innovations for modern medicine, enhancing
+                                            diagnostics and
+                                            patient care.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex flex-column justify-content-between order-md-1">
-                        <div class="how-we-do-it-feature-card mb-4">
-                            <div class="icon-circle">
-                                <i class="bi bi-bar-chart-line"></i>
-                            </div>
-                            <h3 class="fs-4 fw-bold text-dark mb-2">Data-Driven Insights & MLOps
-                            </h3>
-                            <p class="fs-6 text-secondary">Leveraging advanced data analytics and
-                                MLOps practices to extract actionable insights and ensure seamless
-                                deployment and monitoring of AI models for informed decision-making.
+                    <!-- Right side: Large text block -->
+                    <div class="col-12 col-lg-6">
+                        <div class="p-4 p-md-5 rounded-3 h-100 d-flex flex-column justify-content-center"
+                             style="background-color: #e9ecef;">
+                            <h2 class="display-4 fw-bold text-gray-900 mb-4">Explore the power of AI
+                                tools</h2>
+                            <p class="lead text-gray-700 mb-4">
+                                AI's impact extends beyond mere automation; it revolutionizes
+                                decision-making. Machine
+                                learning algorithms analyze vast datasets, extracting valuable
+                                insights that guide
+                                strategic choices. Whether in healthcare, finance, or logistics, AI
+                                empowers
+                                professionals with data-driven intelligence, enabling them to make
+                                informed decisions
+                                with unprecedented precision. In the realm of creativity, AI tools
+                                are proving to be
+                                invaluable collaborators.
                             </p>
-                        </div>
-                        <div class="how-we-do-it-feature-card">
-                            <div class="icon-circle">
-                                <i class="bi bi-cloud-check"></i>
-                            </div>
-                            <h3 class="fs-4 fw-bold text-dark mb-2">Robust & Scalable Infrastructure
-                            </h3>
-                            <p class="fs-6 text-secondary">Designing and deploying secure,
-                                high-performance, and resilient infrastructures that ensure your
-                                digital solutions grow seamlessly with your evolving business needs.
-                            </p>
+                            <button
+                                    class="btn btn-primary btn-lg fw-bold py-3 px-4 transform-hover align-self-start">
+                                Let's Generate
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Updated Our Core Values Section -->
-        <section class="py-5 bg-dark text-white text-center">
-            <div class="container">
-                <h2 class="display-4 fw-bold mb-5">Our Values</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-4 mb-4">
-                        <div class="values-grid-item text-md-start">
-                            <span class="number">01</span>
-                            <h3 class="text-white mb-2">Innovation in AI & Tech</h3>
-                            <p class="text-white-50">We continuously explore and integrate
-                                cutting-edge advancements in artificial intelligence, machine
-                                learning, and digital technologies to deliver revolutionary
-                                solutions.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="values-grid-item text-md-start">
-                            <span class="number">02</span>
-                            <h3 class="text-white mb-2">Integrity in Data & Service</h3>
-                            <p class="text-white-50">We uphold the highest standards of honesty,
-                                transparency, and ethical practices in data handling, project
-                                management, and all client interactions.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="values-grid-item text-md-start">
-                            <span class="number">03</span>
-                            <h3 class="text-white mb-2">Excellence in Delivery</h3>
-                            <p class="text-white-50">We're committed to delivering top-notch quality
-                                and unparalleled performance in every web, mobile, and AI solution
-                                we craft, striving for client success.</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Detailed Services Sections (Remaining services) -->
+        <section class="py-5">
+            <header class="p-4 p-md-5 text-center">
+                <h3 class="display-2 fw-bold text-gray-600">In-Depth Solutions</h3>
+                <p class="fs-3 text-gray-600 head-desc">Explore the detailed capabilities within
+                    each of our core
+                    service areas.</p>
+            </header>
 
-                <!-- The Future of Digital Transformation Section -->
-                <div class="row g-4 align-items-center mt-5 py-5 future-section">
-                    <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center order-lg-1">
-                        <div class="graphic-card w-100">
-                            <img src="image_449b10.jpg"
-                                 alt="NAST Analytics Graphic"
-                                 class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-start text-content order-lg-2">
-                        <h2 class="display-5 fw-bold text-dark mb-4">The Future of Digital
-                            Transformation with NAST</h2>
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Time
-                                Efficiency: Accelerate operations through intelligent automation and
-                                streamlined development processes.</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Versatility and Adaptability: Our solutions are designed with
-                                flexibility to evolve and adapt to your dynamic business needs and
-                                market changes.</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Consistent
-                                Quality: Delivering reliable, secure, and high-performing digital
-                                products with rigorous testing and continuous improvement.</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Enhanced
-                                Creativity: Empowering innovative solutions and strategic thinking
-                                with advanced AI capabilities and data insights.</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Customization: Tailored development to perfectly match your unique
-                                business requirements, ensuring a precise and impactful digital
-                                footprint.</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>
-                                Cost-Efficiency: Optimizing resources and reducing operational costs
-                                through smart technology implementation and efficient project
-                                management.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Our Story / Introduction Section -->
-        <section class="py-5 bg-white">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-                        <img src="https://placehold.co/600x400/ececec/343a40?text=NAST+Team+Image"
-                             alt="NAST Team"
-                             class="img-fluid rounded-3 shadow-sm">
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="fs-1 fw-bold text-dark mb-4">Our Story: Empowering the Future
-                            with AI</h2>
-                        <p class="fs-6 lh-1-8 text-secondary mb-4">At NAST, we believe in the
-                            transformative power of artificial intelligence to redefine industries
-                            and enhance human potential. Founded in Jaipur, Rajasthan, India, we
-                            embarked on a mission to build flexible, robust, and intelligent
-                            solutions that empower businesses across various domains. Our journey
-                            began with a vision to bridge the gap between complex technological
-                            advancements and real-world business needs, providing accessible and
-                            impactful AI-driven solutions.</p>
-                        <p class="fs-6 lh-1-8 text-secondary">Over the years, we have grown into a
-                            team of dedicated professionals passionate about innovation. We
-                            specialize in developing cutting-edge web and mobile applications,
-                            harnessing the full potential of data analytics, and deploying
-                            sophisticated AI models that drive efficiency and growth. Our commitment
-                            extends to delivering solutions that not only meet current demands but
-                            also anticipate future challenges, ensuring our clients stay ahead in a
-                            rapidly evolving digital landscape. We pride ourselves on our
-                            collaborative approach, working closely with clients to understand their
-                            unique challenges and deliver bespoke solutions that truly make a
-                            difference.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Our Approach Section -->
-        <section class="py-5 bg-white">
-            <div class="container">
-                <h2 class="fs-1 fw-bold text-dark mb-4 text-center">Our Approach: Collaborative and
-                    Agile</h2>
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-                        <p class="fs-6 lh-1-8 text-secondary mb-4">At NAST, our approach is rooted
-                            in collaboration and agile methodologies. We believe that the best
-                            solutions emerge from a deep understanding of our clients' needs,
-                            combined with iterative development and continuous feedback. Our process
-                            begins with thorough discovery and analysis, where we work hand-in-hand
-                            with your team to define objectives, challenges, and success metrics.
-                        </p>
-                        <p class="fs-6 lh-1-8 text-secondary">Following this, our expert developers
-                            and AI specialists embark on a phased development process, building and
-                            refining solutions with flexibility and adaptability in mind. We
-                            prioritize clear communication, ensuring you are always informed and
-                            involved at every stage. This iterative approach allows us to deliver
-                            high-quality, customized solutions efficiently, ensuring they precisely
-                            align with your strategic goals and deliver tangible value.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="https://placehold.co/600x400/ececec/343a40?text=Our+Approach+Image"
-                             alt="Our Approach"
-                             class="img-fluid rounded-3 shadow-sm">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Leadership Team Section -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <h2 class="fs-1 fw-bold text-dark mb-5 text-center">Meet Our Leadership Team</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-4 col-sm-6">
-                        <div
-                             class="team-member-card text-center p-4 rounded-3 bg-light shadow-sm mb-4">
-                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=John+D"
-                                 alt="John Doe"
-                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
-                            <h4 class="fs-4 fw-bold text-dark mb-1">John Doe</h4>
-                            <p class="fs-6 text-secondary mb-3">CEO & Founder</p>
-                            <p class="fs-6 text-secondary">John is a visionary leader with over 20
-                                years of experience in technology and AI, driving NAST's strategic
-                                direction.</p>
-                            <div class="social-icons">
-                                <a href="#"
-                                   class="text-secondary fs-5 mx-2"><i
-                                       class="bi bi-linkedin"></i></a>
-                                <a href="#"
-                                   class="text-secondary fs-5 mx-2"><i
-                                       class="bi bi-twitter"></i></a>
+            <!-- Detailed Section: Web & Mobile Development -->
+            <article class="bg-light"
+                     id="web-mobile-development">
+                <div class="container">
+                    <div class="row gap-3 py-5 align-items-center">
+                        <div class="col-md-4 col-lg-5 mb-4">
+                            <div class="card solution-card shadow-sm">
+                                <img src="https://placehold.co/600x450/18355d/ffffff?text=Web+Mobile+Dev"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover"
+                                     style="max-height: 300px;"
+                                     alt="Web & Mobile Development">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Full-stack development for web and mobile.</li>
+                                            <li>✓ Focus on intuitive UI/UX design.</li>
+                                            <li>✓ Agile development methodologies.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Deliver high-performance, scalable applications.
+                                            </li>
+                                            <li>✓ Ensure seamless cross-platform experiences.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div
-                             class="team-member-card text-center p-4 rounded-3 bg-light shadow-sm mb-4">
-                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=Jane+S"
-                                 alt="Jane Smith"
-                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
-                            <h4 class="fs-4 fw-bold text-dark mb-1">Jane Smith</h4>
-                            <p class="fs-6 text-secondary mb-3">Chief Technology Officer</p>
-                            <p class="fs-6 text-secondary">Jane leads our technical teams,
-                                specializing in scalable architectures and advanced AI development.
-                            </p>
-                            <div class="social-icons">
-                                <a href="#"
-                                   class="text-secondary fs-5 mx-2"><i
-                                       class="bi bi-linkedin"></i></a>
-                                <a href="#"
-                                   class="text-secondary fs-5 mx-2"><i
-                                       class="bi bi-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div
-                             class="team-member-card text-center p-4 rounded-3 bg-light shadow-sm mb-4">
-                            <img src="https://placehold.co/150x150/6c757d/ffffff?text=Michael+B"
-                                 alt="Michael Brown"
-                                 class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
-                            <h4 class="fs-4 fw-bold text-dark mb-1">Michael Brown</h4>
-                            <p class="fs-6 text-secondary mb-3">Head of Operations</p>
-                            <p class="fs-6 text-secondary">Michael ensures operational excellence
-                                and client satisfaction, streamlining our project delivery
-                                processes.</p>
-                            <div class="social-icons">
-                                <a href="#"
-                                   class="text-secondary fs-5 mx-2"><i
-                                       class="bi bi-linkedin"></i></a>
-                                <a href="#"
-                                   class="text-secondary fs-5 mx-2"><i
-                                       class="bi bi-twitter"></i></a>
+                        <div class="col-md-6 col-lg-6">
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">Web & Mobile
+                                Development: Crafting Digital
+                                Experiences</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Full-stack
+                                        Expertise:</strong>
+                                    Comprehensive development covering both front-end and back-end
+                                    for web and mobile
+                                    applications.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Intuitive
+                                        UI/UX:</strong>
+                                    Designing user interfaces and experiences that are engaging,
+                                    efficient, and easy to
+                                    navigate.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Agile
+                                        Methodologies:</strong>
+                                    Employing flexible and iterative development processes to
+                                    deliver results quickly
+                                    and adapt to changing needs.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">High
+                                        Performance:</strong>
+                                    Building applications optimized for speed, reliability, and
+                                    scalability to handle
+                                    growing demands.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Cross-Platform
+                                        Compatibility:</strong>
+                                    Ensuring applications deliver a consistent and seamless
+                                    experience across various
+                                    devices and operating systems.</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Responsive
+                                    Design</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Scalable
+                                    Architecture</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">User-Centric
+                                    UI/UX</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </article>
 
-        <!-- Why Choose NAST / Differentiators Section (Original location, now moved down) -->
-        <section class="py-5 bg-white text-center">
-            <div class="container">
-                <h2 class="fs-1 fw-bold text-dark mb-5">Why Choose NAST?</h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="differentiator-item text-center mb-5">
-                            <i class="bi bi-cpu-fill fs-1 text-success mb-3"></i>
-                            <h3 class="fs-3 fw-bold text-dark mb-3">Deep AI Expertise</h3>
-                            <p class="fs-6 text-secondary">Leveraging advanced machine learning and
-                                deep learning to build intelligent systems that deliver measurable
-                                results.</p>
+            <!-- Detailed Section: Data Analysis -->
+            <article class="bg-light"
+                     id="data-analysis">
+                <div class="container">
+                    <div class="row gap-3 py-5 align-items-center">
+                        <div class="col-md-4 col-lg-5 mb-4">
+                            <div class="card solution-card shadow-sm">
+                                <img src="https://placehold.co/600x450/18355d/ffffff?text=Data+Analysis"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover"
+                                     style="max-height: 300px;"
+                                     alt="Data Analysis">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Collect and process large datasets.</li>
+                                            <li>✓ Apply statistical modeling and machine learning.
+                                            </li>
+                                            <li>✓ Visualize data for clear insights.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Uncover hidden patterns and trends.</li>
+                                            <li>✓ Drive strategic decision-making.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="differentiator-item text-center mb-5">
-                            <i class="bi bi-phone-fill fs-1 text-success mb-3"></i>
-                            <h3 class="fs-3 fw-bold text-dark mb-3">End-to-End Solutions</h3>
-                            <p class="fs-6 text-secondary">From concept to deployment and beyond, we
-                                offer comprehensive full-stack development for robust web and mobile
-                                platforms.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="differentiator-item text-center mb-5">
-                            <i class="bi bi-industry-fill fs-1 text-success mb-3"></i>
-                            <h3 class="fs-3 fw-bold text-dark mb-3">Multi-Industry Impact</h3>
-                            <p class="fs-6 text-secondary">Proven success in transforming diverse
-                                sectors like healthcare, education, and e-commerce with tailored
-                                digital strategies.</p>
+                        <div class="col-md-6 col-lg-6">
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">Data Analysis:
+                                Transforming Data into
+                                Actionable Insights</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Comprehensive Data
+                                        Collection:</strong>
+                                    Methods for gathering and processing large, diverse datasets
+                                    from various sources.
+                                </li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Advanced
+                                        Analytics:</strong>
+                                    Application of statistical modeling, machine learning, and AI
+                                    algorithms to uncover
+                                    hidden patterns and trends.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Clear
+                                        Visualization:</strong>
+                                    Transforming complex data into intuitive and interactive
+                                    visualizations for easy
+                                    understanding and communication.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Actionable
+                                        Insights:</strong>
+                                    Focus on extracting practical, actionable insights that directly
+                                    inform and drive
+                                    strategic decision-making.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Performance
+                                        Optimization:</strong>
+                                    Using data insights to identify areas for improvement, optimize
+                                    processes, and
+                                    enhance overall business performance.</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Predictive
+                                    Analytics</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Data
+                                    Visualization</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Custom
+                                    Reporting</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </article>
+
+            <!-- Detailed Section: AI Model & Monitoring -->
+            <article class="bg-light"
+                     id="ai-model-monitoring">
+                <div class="container">
+                    <div class="row gap-3 py-5 align-items-center">
+                        <div class="col-md-4 col-lg-5 mb-4">
+                            <div class="card solution-card shadow-sm">
+                                <img src="https://placehold.co/600x450/18355d/ffffff?text=AI+Model+Monitoring"
+                                     class="img-fluid w-auto rounded-top-3 object-fit-cover"
+                                     style="max-height: 300px;"
+                                     alt="AI Model & Monitoring">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="mb-3">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Work &
+                                            Strategies:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Develop and deploy robust AI models.</li>
+                                            <li>✓ Implement continuous monitoring.</li>
+                                            <li>✓ Ensure model performance and fairness.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h4 class="fs-5 fw-semibold text-gray-600 mb-2">Goals &
+                                            Motives:</h4>
+                                        <ul class="list-unstyled text-muted">
+                                            <li>✓ Maximize AI impact and reliability.</li>
+                                            <li>✓ Proactive issue detection.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <h3 class="display-5 mb-4 fw-bold text-gray-600">AI Model & Monitoring:
+                                Ensuring Optimal AI
+                                Performance</h3>
+                            <ul class="lead text-gray-700 px-0">
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Model Development &
+                                        Deployment:</strong>
+                                    Expertise in building, training, and deploying high-performance
+                                    AI models across
+                                    various domains.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Continuous
+                                        Monitoring:</strong>
+                                    Implementing robust systems for real-time monitoring of AI model
+                                    performance, drift,
+                                    and biases.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Performance
+                                        Optimization:</strong>
+                                    Regularly evaluating and fine-tuning models to ensure peak
+                                    accuracy, efficiency, and
+                                    reliability.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Bias Detection &
+                                        Mitigation:</strong>
+                                    Proactive identification and reduction of algorithmic biases to
+                                    ensure fair and
+                                    ethical AI systems.</li>
+                                <li type="none"
+                                    class="mb-2"><strong class="text-gray-600">Explainable AI
+                                        (XAI):</strong>
+                                    Providing transparency into AI decision-making processes, making
+                                    models more
+                                    understandable and trustworthy.</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <h4 class="h6 fw-semibold text-dark mb-2">Key Features:</h4>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Real-time
+                                    Monitoring</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Drift
+                                    Detection</span>
+                                <span
+                                      class="badge rounded-pill bg-info text-dark key-feature-badge me-1 mb-1">Bias
+                                    Assessment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
         </section>
+
 
         <!-- Contact Section -->
         <section id="contact"
                  class="bg-secondary text-white py-5 mt-5">
             <div class="container text-center">
-                <h2 class="display-5 fw-bold mb-4">Join the Transformation</h2>
+                <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Industry?</h2>
                 <div class="row justify-content-center mb-4">
                     <div class="col-lg-8">
-                        <p class="lead mb-2">Discover how our AI-driven strategies are
-                            revolutionizing various industries.</p>
-                        <p class="lead">Partner with us to implement solutions that drive success
-                            and innovation.</p>
+                        <p class="lead mb-2">Partner with NAST to unlock the full potential of AI
+                            and digital
+                            technologies.</p>
+                        <p class="lead">Our expert team is ready to craft bespoke solutions that
+                            drive innovation and
+                            achieve your strategic goals.</p>
                     </div>
                 </div>
-                <h3 class="h2 fw-semibold mb-3">Let's Build the Future Together</h3>
+                <h3 class="h2 fw-semibold mb-3">Get in Touch Today!</h3>
                 <p class="text-light opacity-75 mb-4 mx-auto"
-                   style="max-width: 600px;">
-                    Reach out to us to learn more about our tailored solutions and how we can
-                    empower your business.
-                </p>
+                   style="max-width: 600px;">Contact us to discuss your
+                    project and discover how our services can elevate your business.</p>
                 <a href="#contact-form-placeholder"
-                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">
-                    Contact Us Today
-                </a>
+                   class="btn btn-light btn-lg fw-bold py-3 px-4 transform-hover">Start Your
+                    Transformation</a>
                 <div id="contact-form-placeholder"
                      class="mt-4 text-light small">
-                    <!-- Placeholder for actual contact form or link -->
+                    (Contact Form or Link to Contact Page Coming Soon)
                 </div>
             </div>
         </section>
@@ -755,6 +524,25 @@
         </div>
     </footer>
 
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"></script>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

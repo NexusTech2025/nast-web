@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Modern Page</title>
+    <!-- Bootstrap CSS v5.3.x -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+          rel="stylesheet">
+
+    <script src="../scripts/header.js"></script>
+
+    <link rel="stylesheet"
+          href="../styles/styles.css">
+    <link rel="stylesheet"
+          href="../styles/styles_mobile.css">
+    <style>
+        /* Custom CSS to apply Inter font universally and some minor adjustments */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            /* Light grey background */
+            color: #343a40;
+            /* Dark grey text */
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            /* Bootstrap primary blue */
+            border-color: #0d6efd;
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            /* Slightly rounded corners */
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            /* Darker blue on hover */
+            border-color: #0a58ca;
+        }
+
+        /* Styles for the dark, floating form card */
+        .dark-form-card {
+            background-color: rgba(33, 37, 41, 0.85);
+            /* Darker, slightly transparent background */
+            color: #f8f9fa;
+            /* Light text */
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+            /* More prominent shadow */
+        }
+
+        /* Styles for input fields within the dark form */
+        .dark-form-card .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Slightly transparent white for inputs */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* Subtle border */
+            color: #f8f9fa;
+            /* Light text in inputs */
+            padding-left: 3rem;
+            /* Space for icon */
+            border-radius: 0.5rem;
+        }
+
+        /* Placeholder text color for inputs */
+        .dark-form-card .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            /* Lighter placeholder text */
+        }
+
+        /* Focus styles for input fields */
+        .dark-form-card .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: #0d6efd;
+            /* Bootstrap primary blue on focus */
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            color: #f8f9fa;
+        }
+
+        /* Styling for icons inside input fields */
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            /* Icon color */
+            z-index: 2;
+            /* Ensure icon is above input */
+        }
+
+        /* Container for form fields with icons */
+        .form-group-with-icon {
+            position: relative;
+            /* For positioning the icon */
+            margin-bottom: 1rem;
+            /* Space between form groups */
+        }
+
+        /* Styling for the left content section (text and image) */
+        .contact-content {
+            display: flex;
+            align-items: center;
+            /* Vertically center content */
+            height: 100%;
+            /* Take full height of parent column */
+            padding-right: 2rem;
+            /* Space between image/text and form */
+        }
+
+        .contact-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-image img {
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        /* Override default Bootstrap margin for last input in form (if needed) */
+        .dark-form-card form .mb-4:last-of-type {
+            margin-bottom: 1rem !important;
+            /* Adjust if needed to match other form-group-with-icon */
+        }
+
+        /* Media queries for responsive adjustments on smaller screens */
+        @media (max-width: 767.98px) {
+            .contact-content {
+                padding-right: 0;
+                margin-bottom: 3rem;
+                /* Add space below content on small screens */
+                text-align: center;
+                flex-direction: column;
+                /* Stack text and image on small screens */
+            }
+
+            .contact-content h1 {
+                font-size: 2.5rem;
+                /* Smaller heading on mobile */
+            }
+
+            .contact-image {
+                margin-top: 2rem;
+                /* Space between text and image on mobile */
+            }
+
+            .dark-form-card {
+                padding: 2rem;
+                /* Smaller padding on mobile */
+            }
+        }
+
+        /* Styles for the new contact info section */
+        .contact-details-section {
+            background-color: #f1f3f5;
+            /* Light background similar to reference */
+            border-radius: 1rem;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            /* Space from previous section */
+            text-align: center;
+        }
+
+        .contact-details-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #6c757d;
+            /* Muted color for headings */
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            /* To apply margin to line number */
+        }
+
+        .contact-details-section h3::before {
+            content: attr(data-number);
+            /* Use data-number for the large number */
+            position: absolute;
+            top: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            /* Large number size */
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.08);
+            /* Very light grey */
+            z-index: 0;
+            line-height: 1;
+        }
+
+        .contact-details-section .detail-item {
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 1;
+            /* Ensure text is above pseudo-element */
+        }
+
+        .contact-details-section .detail-item a,
+        .contact-details-section .detail-item p {
+            color: #343a40;
+            /* Darker text for links/paragraphs */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-details-section .detail-item a:hover {
+            color: #0d6efd;
+            /* Blue on hover */
+        }
+
+        .contact-details-section .col-md-4:not(:last-child) .detail-item {
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            /* Vertical separator */
+        }
+
+        /* Google Map Styling */
+        .map-container {
+            margin-top: 5rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            /* Fixed height for the map */
+            border: 0;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 2rem 0;
+        }
+    </style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createNavbar(navbarConfig);
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+    <header id="navbar-container"
+            class="shadow-sm sticky-top header"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section p-5 bg-primary text-white text-center d-flex align-items-center"
+             style="background-image: url('./Source/images/hero_section2.png'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
+        <div class="container position-relative z-1">
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <h1 class="display-2 fw-bold mb-3">
+                        Meet the Minds Shaping the Future of NAST
+                    </h1>
+                    <p class="fs-5 mb-0">
+                        Our diverse team of experts is dedicated to pushing the boundaries of AI and
+                        data-driven solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Simple overlay to mimic hero-section-bg-overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"
+             style="z-index: 0;"></div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Left Column: Text and Image -->
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="contact-content">
+                    <div>
+                        <p class="text-uppercase text-muted fw-bold mb-2">HOW TYPE AI WORKS</p>
+                        <h1 class="mb-4">Have a Cool Project? Get in Touch!</h1>
+                        <div class="contact-image">
+                            <!-- Placeholder image mimicking the aspect ratio and style from the reference -->
+                            <img src="https://placehold.co/600x400/212529/f8f9fa?text=Your+Project+Image"
+                                 class="img-fluid"
+                                 alt="Project Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div class="col-md-6">
+                <div class="card p-4 p-md-5 dark-form-card">
+                    <form>
+                        <div class="form-group-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 fill="currentColor"
+                                 class="bi bi-person input-icon"
+                                 viewBox="0 0 16 16">
+                                <path
+                                      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                            <input type="text"
+                                   class="form-control"
+                                   id="nameInput"
+                                   placeholder="Name"
+                                   required>
+                        </div>
+                        <div class="form-group-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 fill="currentColor"
+                                 class="bi bi-phone input-icon"
+                                 viewBox="0 0 16 16">
+                                <path
+                                      d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                            </svg>
+                            <input type="tel"
+                                   class="form-control"
+                                   id="phoneInput"
+                                   placeholder="Phone"
+                                   required>
+                        </div>
+                        <div class="form-group-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 fill="currentColor"
+                                 class="bi bi-envelope input-icon"
+                                 viewBox="0 0 16 16">
+                                <path
+                                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-7 4.2-7-4.2V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                            </svg>
+                            <input type="email"
+                                   class="form-control"
+                                   id="emailInput"
+                                   placeholder="Email Address"
+                                   required>
+                        </div>
+                        <div class="form-group-with-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 fill="currentColor"
+                                 class="bi bi-pencil input-icon"
+                                 viewBox="0 0 16 16">
+                                <path
+                                      d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.5-.5V9z" />
+                            </svg>
+                            <textarea class="form-control"
+                                      id="messageTextarea"
+                                      rows="5"
+                                      placeholder="How can we help you?"
+                                      required></textarea>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit"
+                                    class="btn btn-primary btn-lg">Get In Touch</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Section: Contact Details -->
+        <div class="contact-details-section">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="detail-item">
+                        <h3 data-number="01">PHONE NUMBER</h3>
+                        <p class="lead fw-bold">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="detail-item">
+                        <h3 data-number="02">OUR ADDRESS</h3>
+                        <p class="lead fw-bold">42 Willow Street, Lakeview<br>City, State 12345, USA
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="detail-item">
+                        <h3 data-number="03">EMAIL US</h3>
+                        <p class="lead fw-bold">info@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Map Section -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113992.83656910628!2d75.71383811105906!3d26.88513511871221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db4d3065b93d1%3A0xc3f5f3e9c5c7865c!2sJaipur%2C%20Rajasthan%2C%20India!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer Section (from index.html) -->
+    <footer class="bg-dark text-white py-4 fw-lighter"
+            style="--bs-body-font-size: 0.8rem;">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Company Info -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3>NAST</h3>
+                    <p>Empowering businesses with next-gen web development, AI-driven data
+                        analytics, AI Model Training & Deployment and scalable enterprise solutions.
+                    </p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="col-md-4 text-center">
+                    <p><i class="bi bi-geo-alt"></i> Jaipur, Rajasthan, India</p>
+                    <p><i class="bi bi-telephone"></i> 8955530880</p>
+                    <p><i class="bi bi-envelope"></i> manishkumar9782@gmail.com</p>
+                    <p><i class="bi bi-globe"></i> nast.org.in</p>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Quick Links</h5>
+                    <nav>
+                        <a href="#about"
+                           class="text-white d-block">About Us</a>
+                        <a href="#careers"
+                           class="text-white d-block">Careers</a>
+                        <a href="#blog"
+                           class="text-white d-block">Blog</a>
+                        <a href="#privacy"
+                           class="text-white d-block">Privacy Policy</a>
+                        <a href="#terms"
+                           class="text-white d-block">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p>💡 AI-Powered Transformation: Seamless development, secure data management, and
+                    intelligent automation—driving the future of digital innovation.</p>
+                <p>© Copyright 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS v5.3.x -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

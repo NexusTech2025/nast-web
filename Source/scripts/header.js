@@ -84,6 +84,7 @@ if (href_location.startsWith("https://nexustech2025.github.io/nast-web/")) {
 const PLATFORMS = BASE_URL + "/Source/platforms"
 const SOLUTIONS = BASE_URL + "/Source/solutions"
 const COMPANY = BASE_URL + "/Source/company"
+const CONTACT_US = BASE_URL + "/Source/company/Contact Us.html"
 
 const navbarConfig = {
     backgroundColor: 'rgb(246, 246, 246)',
@@ -136,13 +137,13 @@ const navbarConfig = {
             dropdownLinks: [
                 { href: COMPANY + '/about us.html', label: 'About Us' },
                 { href: COMPANY + '/TEAM.HTML', label: 'Team' },
-                { href: COMPANY + '/CAREERS.HTML', label: 'Careers' }
+                { href: COMPANY + '/Services.html', label: 'Services' }
             ]
         },
         {
             type: 'button',
             label: 'CONTACT US',
-            href: '#',
+            href: CONTACT_US,
             buttonStyle: 'btn-outline-secondary'
         }
     ]

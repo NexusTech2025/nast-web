@@ -360,6 +360,7 @@
 .header .dropdown .dropdown-menu {
     background-color: #18355d;
     color: #f7f7f7 !important;
+    height: auto;
 }
 
 .header .dropdown-menu .dropdown-item:hover {

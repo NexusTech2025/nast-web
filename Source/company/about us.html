@@ -325,6 +325,12 @@
         }
     </style>
 
+    <style>
+        .values-card-img {
+            background-image: url(./images/img_4.png);
+            background-size: cover;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             createNavbar(navbarConfig);
@@ -457,48 +463,61 @@
 
         <!-- Updated Our Core Values Section -->
         <section id="our_values"
-                 class="py-5 text-white text-center bg-overlay bg-overlay-blue-60 position-relative mix-blend-none my-10"
+                 class="py-5 text-white text-center my-10"
                  style="background-image: url(./images/bg-img1.png); background-size:cover; backdrop-filter:blur(4px)">
             <div class="container position-relative z-3">
                 <h2 class="display-2 fw-bold mb-5 py-5">Our Values</h2>
-                <div class="row justify-content-center g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 text-dark rounded-4 shadow-lg values-card py-5">
+                <div class="d-flex justify-content-center gap-4">
+                    <div class="col-md-4 p-0  values-card-img bg-overlay
+                         bg-overlay-blue-50 mix-blend-multiply rounded-3 overflow-hidden">
+                        <div class="card h-100 bg-transparent shadow-lg position-relative z-3">
                             <div class="card-body">
                                 <span class="display-3 fw-bold  text-gray-400">01</span>
-                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Innovation in
+                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">
+                                    Innovation in
                                     AI & Tech
                                 </h3>
-                                <p class="card-text fs-6  text-gray-100">We continuously explore and
-                                    integrate cutting-edge advancements in artificial intelligence,
+                                <p class="card-text fs-6  text-gray-100">We continuously explore
+                                    and
+                                    integrate cutting-edge advancements in artificial
+                                    intelligence,
                                     machine learning, and digital technologies to deliver
                                     revolutionary solutions.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 text-dark rounded-4 shadow-lg values-card py-5">
+                    <div class="col-md-4 p-0 values-card-img bg-overlay
+                         bg-overlay-blue-50 mix-blend-multiply  rounded-3 overflow-hidden">
+
+                        <div
+                             class="card h-100 rounded-4 shadow-lg bg-transparent position-relative z-3">
                             <div class="card-body">
                                 <span class="display-3 fw-bold  text-gray-400">02</span>
-                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Integrity in
+                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Integrity
+                                    in
                                     Data & Service
                                 </h3>
                                 <p class="card-text fs-6  text-gray-100">We uphold the highest
                                     standards of honesty, transparency, and ethical practices in
-                                    data handling, project management, and all client interactions.
+                                    data handling, project management, and all client
+                                    interactions.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100 text-dark rounded-4 shadow-lg values-card py-5">
+                    <div class="col-md-4 p-0 values-card-img bg-overlay
+                         bg-overlay-blue-50 mix-blend-multiply  rounded-3 overflow-hidden">
+                        <div
+                             class="card h-100 rounded-4 shadow-lg bg-transparent position-relative z-3">
                             <div class="card-body">
                                 <span class="display-3 fw-bold text-gray-400">03</span>
-                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">Excellence in
+                                <h3 class="card-title fs-3 fw-bold mb-3 text-gray-300">
+                                    Excellence in
                                     Delivery</h3>
                                 <p class="card-text fs-6 text-gray-100">We're committed to
                                     delivering top-notch quality and unparalleled performance in
-                                    every web, mobile, and AI solution we craft, striving for client
+                                    every web, mobile, and AI solution we craft, striving for
+                                    client
                                     success.</p>
                             </div>
                         </div>
@@ -674,9 +693,9 @@
                                  alt="Ashok Sharma"
                                  class="rounded-circle border border-4 border-primary mb-3 object-fit-cover">
                             <h4 class="fs-4 fw-bold text-dark mb-1">Ashok Sharma</h4>
-                            <p class="fs-6 text-secondary mb-3">Chief Technology Officer</p>
-                            <p class="fs-6 text-secondary">Jane leads our technical teams,
-                                specializing in scalable architectures and advanced AI development.
+                            <p class="fs-6 text-secondary mb-3">Chief Commercial Officer</p>
+                            <p class="fs-6 text-secondary">Ashok Sharma drives commercial strategy,
+                                scaling AI solutions and forging key partnerships for growth.
                             </p>
                             <div class="d-flex justify-content-center mt-3">
                                 <a href="#"
@@ -717,7 +736,7 @@
             <div class="container">
                 <h2 class="fs-1 fw-bold text-dark mb-5">Why Choose NAST?</h2>
                 <div class="row g-4">
-                    <div class="col-md-4">
+                    <div class="col-md-4 px-4">
                         <div class="differentiator-item text-center mb-5">
                             <img src="./images/deep_ai_expert.png"
                                  class="icon-logo mix-blend-multiply object-fit-contain mb-4"
@@ -728,7 +747,7 @@
                                 results.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4  px-4">
                         <div class="differentiator-item text-center mb-5">
                             <img src="./images/end_to_end_solutions.png"
                                  class="icon-logo mix-blend-multiply object-fit-contain mb-4"
@@ -739,7 +758,7 @@
                                 platforms.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 px-4">
                         <div class="differentiator-item text-center mb-5">
                             <img src="./images/multi_industries.png"
                                  class="icon-logo mix-blend-multiply object-fit-contain mb-4"

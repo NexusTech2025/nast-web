@@ -13,9 +13,9 @@ function createNavbar(config) {
                 <a class='text-decoration-none' href='${config.logo.homeRef}' alt='${config.logo.alt}'>NAST</a>    
                 </h1>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="bi bi-list text-gray-600 fs-1"></i>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav gap-4 d-flex">
@@ -136,7 +136,7 @@ const navbarConfig = {
             label: 'COMPANY',
             dropdownLinks: [
                 { href: COMPANY + '/about us.html', label: 'About Us' },
-                { href: COMPANY + '/TEAM.HTML', label: 'Team' },
+                { href: COMPANY + '/Team.html', label: 'Team' },
                 { href: COMPANY + '/Services.html', label: 'Services' }
             ]
         },

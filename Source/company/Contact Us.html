@@ -11,6 +11,9 @@
           rel="stylesheet"
           xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
           rel="stylesheet">
@@ -21,6 +24,8 @@
           href="../styles/styles.css">
     <link rel="stylesheet"
           href="../styles/styles_mobile.css">
+
+
     <style>
         /* Custom CSS to apply Inter font universally and some minor adjustments */
         body {
@@ -31,19 +36,18 @@
             /* Dark grey text */
         }
 
+
+
         .navbar-brand {
             font-weight: 700;
             color: #000;
         }
 
+        .bg-primary,
         .btn-primary {
-            background-color: #0d6efd;
-            /* Bootstrap primary blue */
-            border-color: #0d6efd;
-            font-weight: 500;
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            /* Slightly rounded corners */
+            background: linear-gradient(45deg, #000658, #2164c6) !important;
+            transition: background-image 2s ease-in-out;
+            border: none;
         }
 
         .btn-primary:hover {
@@ -51,6 +55,8 @@
             /* Darker blue on hover */
             border-color: #0a58ca;
         }
+
+        .from-card {}
 
         /* Styles for the dark, floating form card */
         .dark-form-card {
@@ -255,6 +261,73 @@
     </style>
 
 
+    <style>
+        .form-card {
+
+            border-radius: 10px;
+
+
+        }
+
+        .form-card::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-color: #0006585b;*/
+            background-color: #5800525b;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .input-group .form-control,
+        .input-group .input-group-text {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* on focus make it a tad more opaque */
+        .input-group .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+        }
+
+        /* optional: lighten the icon on hover */
+        .input-group .input-group-text:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+        }
+
+
+        /* change placeholder color */
+        .input-group .form-control::placeholder {
+            color: rgba(255, 255, 255, 1);
+            opacity: 1;
+            /* ensure full control of opacity */
+        }
+
+        /* WebKit browsers */
+        .input-group .form-control::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        /* Firefox 19+ */
+        .input-group .form-control::-moz-placeholder {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        /* IE 10+ */
+        .input-group .form-control:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 1);
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             createNavbar(navbarConfig);
@@ -270,18 +343,19 @@
             class="shadow-sm sticky-top header"></header>
 
     <!-- Hero Section -->
-    <section class="hero-section p-5 bg-primary text-white text-center d-flex align-items-center"
-             style="background-image: url('./Source/images/hero_section2.png'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
+    <section class="hero-section p-5 text-white text-center d-flex align-items-center mix-blend-multiply"
+             style="background-image: url(./images/contact-hero-bg.png); background-size: cover; background-position: center; min-height: 400px; position: relative;">
         <div class="container position-relative z-1">
             <div class="row justify-content-center">
                 <div class="col-md-9">
                     <h1 class="display-2 fw-bold mb-3">
-                        Meet the Minds Shaping the Future of NAST
+                        Ready to Shape Tomorrow?
                     </h1>
-                    <p class="fs-5 mb-0">
-                        Our diverse team of experts is dedicated to pushing the boundaries of AI and
-                        data-driven solutions.
+                    <p class="fs-5 mb-5">
+                        “Drop us a line—let’s collaborate and build something amazing together.”
                     </p>
+
+                    <button class="btn btn-primary px-4 py-3">Start the Conversation</button>
                 </div>
             </div>
         </div>
@@ -293,14 +367,14 @@
     <div class="container my-5">
         <div class="row align-items-center">
             <!-- Left Column: Text and Image -->
-            <div class="col-md-6 mb-4 mb-md-0">
+            <div class="col-md-7 mb-4 mb-md-0">
                 <div class="contact-content">
                     <div>
                         <p class="text-uppercase text-muted fw-bold mb-2">HOW TYPE AI WORKS</p>
                         <h1 class="mb-4">Have a Cool Project? Get in Touch!</h1>
                         <div class="contact-image">
                             <!-- Placeholder image mimicking the aspect ratio and style from the reference -->
-                            <img src="https://placehold.co/600x400/212529/f8f9fa?text=Your+Project+Image"
+                            <img src="./images/project_image.png"
                                  class="img-fluid"
                                  alt="Project Image">
                         </div>
@@ -309,68 +383,47 @@
             </div>
 
             <!-- Right Column: Contact Form -->
-            <div class="col-md-6">
-                <div class="card p-4 p-md-5 dark-form-card">
+            <div class="col-md-5 form-card px-0 shadow-lg"
+                 style="background-image: url(./images/img_2.png);">
+                <div class="p-4 p-md-5 position-relative z-2">
                     <form>
-                        <div class="form-group-with-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="20"
-                                 height="20"
-                                 fill="currentColor"
-                                 class="bi bi-person input-icon"
-                                 viewBox="0 0 16 16">
-                                <path
-                                      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                            </svg>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
                             <input type="text"
                                    class="form-control"
-                                   id="nameInput"
                                    placeholder="Name"
-                                   required>
+                                   aria-label="Name" />
                         </div>
-                        <div class="form-group-with-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="20"
-                                 height="20"
-                                 fill="currentColor"
-                                 class="bi bi-phone input-icon"
-                                 viewBox="0 0 16 16">
-                                <path
-                                      d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-                            </svg>
-                            <input type="tel"
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-phone"></i>
+                            </span>
+                            <input type="text"
                                    class="form-control"
-                                   id="phoneInput"
                                    placeholder="Phone"
-                                   required>
+                                   aria-label="Phone" />
                         </div>
-                        <div class="form-group-with-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="20"
-                                 height="20"
-                                 fill="currentColor"
-                                 class="bi bi-envelope input-icon"
-                                 viewBox="0 0 16 16">
-                                <path
-                                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-7 4.2-7-4.2V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-                            </svg>
-                            <input type="email"
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                            <input type="text"
                                    class="form-control"
-                                   id="emailInput"
                                    placeholder="Email Address"
-                                   required>
+                                   aria-label="Email Address" />
                         </div>
-                        <div class="form-group-with-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="20"
-                                 height="20"
-                                 fill="currentColor"
-                                 class="bi bi-pencil input-icon"
-                                 viewBox="0 0 16 16">
-                                <path
-                                      d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.5-.5V9z" />
-                            </svg>
+
+
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-left-text"></i>
+                            </span>
                             <textarea class="form-control"
                                       id="messageTextarea"
                                       rows="5"
@@ -381,6 +434,8 @@
                             <button type="submit"
                                     class="btn btn-primary btn-lg">Get In Touch</button>
                         </div>
+
+
                     </form>
                 </div>
             </div>

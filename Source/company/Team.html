@@ -48,6 +48,18 @@
             background-color: #f9fafb;
             /* Consistent light background */
         }
+
+        .text-gradient-custom {
+            background: linear-gradient(45deg, #000658, #2164c6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-primary,
+        .btn-primary {
+            background: linear-gradient(45deg, #000658, #2164c6) !important;
+            transition: background-image 2s ease-in-out;
+        }
     </style>
 
     <script>
@@ -63,8 +75,8 @@
             class="shadow-sm sticky-top header"></header>
 
     <!-- Hero Section -->
-    <section class="hero-section p-5 bg-primary text-white text-center d-flex align-items-center"
-             style="background-image: url('./Source/images/hero_section2.png'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
+    <section class="hero-section p-5 bg-overlay bg-overlay-50 text-white text-center d-flex align-items-center mix-blend-multiply"
+             style="background-image: url('./images/team-hero-bg.png');">
         <div class="container position-relative z-1">
             <div class="row justify-content-center">
                 <div class="col-md-9">
@@ -84,38 +96,41 @@
     </section>
 
     <!-- CEO Introduction Section -->
-    <section class="container bg-white p-5 rounded-3 shadow-sm my-5">
-        <div class="row align-items-center g-4">
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="rounded-3 overflow-hidden shadow-lg"
+    <section class="container py-5 rounded-3 my-5">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 ">
+                <div class="rounded-3 img-h-300 overflow-hidden shadow-lg mb-3 "
                      style="max-width: 450px;">
                     <!-- Placeholder image matching the split layout. Replace with actual CEO image if available. -->
-                    <img src="https://placehold.co/450x300/a777e3/FFFFFF?text=NAST+CEO"
-                         class="img-fluid"
+                    <img src="./images/leader1.jpg"
+                         class="img-fluid object-fit-cover"
                          alt="NAST CEO">
                 </div>
+
+                <div class="rounded-3 overflow-hidden shadow-lg img-h-300"
+                     style="max-width: 450px;">
+                    <!-- Placeholder image matching the split layout. Replace with actual CEO image if available. -->
+                    <img src="./images/leader2.jpg"
+                         class="img-fluid object-fit-cover"
+                         alt="NAST CEO">
+                </div>
+
+
             </div>
             <div class="col-12 col-md-6 text-center text-md-start">
-                <h2 class="display-5 fw-bold mb-3 text-dark">Introducing Our Visionary Leader</h2>
+                <h2 class="display-3 fw-bold mb-3 text-gradient-custom">Introducing Our Visionary
+                    Leader</h2>
                 <p class="text-secondary lead mb-3">
-                    **Manish Kumar**, the esteemed CEO of NAST, brings a wealth of experience and a
-                    forward-thinking vision to the helm of our company. With a deep understanding of
-                    cutting-edge technology and market dynamics, Manish leads NAST with a commitment
-                    to innovation, customer success, and driving the future of AI and digital
-                    transformation.
+                    Manish Kumar, NAST’s CEO & Founder, brings over eight years of pioneering AI and
+                    tech leadership to chart our strategic course. He’s spearheaded groundbreaking
+                    automation projects that have optimized operations across healthcare, education,
+                    and e-commerce verticals. Driven by a passion for data-driven insights, Manish
+                    fosters a culture of relentless innovation, ethical AI practices, and hands-on
+                    mentorship. Under his guidance, NAST delivers robust, future-proof solutions
+                    that empower clients to seize new market opportunities and stay ahead in the
+                    digital era.
                 </p>
-                <p class="text-secondary lead mb-3">
-                    Under his leadership, NAST has consistently pushed boundaries, delivering
-                    impactful solutions that empower businesses to thrive in the digital age. His
-                    dedication to fostering a culture of excellence and continuous learning is a
-                    cornerstone of our team's success.
-                </p>
-                <p class="text-secondary lead mb-3">
-                    Manish believes in the power of intelligent automation and data-driven insights
-                    to revolutionize industries. He is passionate about leveraging AI to create
-                    seamless, scalable, and secure applications that truly make a difference for our
-                    clients.
-                </p>
+
                 <a href="#"
                    class="btn btn-primary mt-3">
                     Learn More About Our Leadership
@@ -128,16 +143,17 @@
     <section class="py-5 px-3">
         <div class="container">
             <h2 class="display-4 fw-bold text-dark text-center mb-5">Our Talented Team</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div
+                 class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center">
                 <!-- Team Member Card 1 -->
                 <div class="col">
                     <div
                          class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
                         <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
                              style="width: 8rem; height: 8rem; object-fit: cover;"
-                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=JD"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=MK"
                              alt="John Doe">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">John Doe</h3>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Manish Kumar</h3>
                         <p class="text-primary fw-medium mb-3">CEO & Founder</p>
                         <p class="text-secondary fs-6 mb-3">Passionate leader driving innovation in
                             AI and machine learning.</p>
@@ -167,10 +183,10 @@
                          class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
                         <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
                              style="width: 8rem; height: 8rem; object-fit: cover;"
-                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=JA"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=AS"
                              alt="Jane Adams">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">Jane Adams</h3>
-                        <p class="text-primary fw-medium mb-3">Chief Technology Officer</p>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Ashok Sharma</h3>
+                        <p class="text-primary fw-medium mb-3">Chief Commercial Officer</p>
                         <p class="text-secondary fs-6 mb-3">Visionary architect of our cutting-edge
                             AI platforms.</p>
                         <div class="d-flex gap-3">
@@ -201,10 +217,10 @@
                              style="width: 8rem; height: 8rem; object-fit: cover;"
                              src="https://placehold.co/128x128/6B46C1/FFFFFF?text=RS"
                              alt="Robert Smith">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">Robert Smith</h3>
-                        <p class="text-primary fw-medium mb-3">Lead AI Engineer</p>
-                        <p class="text-secondary fs-6 mb-3">Expert in neural networks and natural
-                            language processing.</p>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Yash Raj Sharma</h3>
+                        <p class="text-primary fw-medium mb-3">Head of Operations</p>
+                        <p class="text-secondary fs-6 mb-3">Expert in operational excellence and
+                            client satisfaction.</p>
                         <div class="d-flex gap-3">
                             <a href="#"
                                class="text-secondary"
@@ -231,9 +247,9 @@
                          class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
                         <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
                              style="width: 8rem; height: 8rem; object-fit: cover;"
-                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=EA"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=AR"
                              alt="Emily Adams">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">Emily Adams</h3>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Aasutosh Rana</h3>
                         <p class="text-primary fw-medium mb-3">Head of Product</p>
                         <p class="text-secondary fs-6 mb-3">Innovator crafting user-centric AI
                             solutions.</p>
@@ -263,9 +279,9 @@
                          class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
                         <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
                              style="width: 8rem; height: 8rem; object-fit: cover;"
-                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=MS"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=SP"
                              alt="Michael Scott">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">Michael Scott</h3>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Sarik Parwani</h3>
                         <p class="text-primary fw-medium mb-3">Senior Data Scientist</p>
                         <p class="text-secondary fs-6 mb-3">Specializes in predictive modeling and
                             big data analytics.</p>
@@ -294,9 +310,9 @@
                          class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
                         <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
                              style="width: 8rem; height: 8rem; object-fit: cover;"
-                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=OS"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=AT"
                              alt="Olivia Williams">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">Olivia Williams</h3>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Amisha Tiwari</h3>
                         <p class="text-primary fw-medium mb-3">UX/UI Designer</p>
                         <p class="text-secondary fs-6 mb-3">Crafting intuitive and beautiful AI
                             interfaces.</p>
@@ -325,9 +341,9 @@
                          class="card h-100 shadow-lg rounded-3 p-4 d-flex flex-column align-items-center text-center">
                         <img class="img-fluid rounded-circle mb-3 border border-3 border-secondary"
                              style="width: 8rem; height: 8rem; object-fit: cover;"
-                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=JW"
+                             src="https://placehold.co/128x128/6B46C1/FFFFFF?text=PG"
                              alt="James Wilson">
-                        <h3 class="fs-4 fw-semibold text-dark mb-2">James Wilson</h3>
+                        <h3 class="fs-4 fw-semibold text-dark mb-2">Piyush Gupta</h3>
                         <p class="text-primary fw-medium mb-3">Research Scientist</p>
                         <p class="text-secondary fs-6 mb-3">Pioneering breakthroughs in AI
                             algorithms.</p>

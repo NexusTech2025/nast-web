@@ -645,12 +645,20 @@
     background-repeat: no-repeat;
 }
 
+.bg-overlay {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
 .bg-overlay-dark::before {
-    background: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .bg-overlay-blue::before {
-    background: rgba(15, 83, 125, 0.4);
+    background-color: rgba(15, 83, 125, 0.4);
 }
 
 .bg-overlay-blue-50::before {

@@ -386,7 +386,11 @@
             <div class="col-md-5 form-card px-0 shadow-lg"
                  style="background-image: url(./images/img_2.png);">
                 <div class="p-4 p-md-5 position-relative z-2">
-                    <form>
+
+                    <form id="g_contact_form"
+                          action="https://script.google.com/macros/s/AKfycbxsyE3RPIU9UnSTOJLdciSscQxKVNv6GfoIlqU6bcTxNUgzjk2SVWzJK2dqBwy8IIypBw/exec"
+                          method="post"
+                          enctype="application/x-www-form-urlencoded">
 
                         <div class="input-group mb-3">
                             <span class="input-group-text">
@@ -394,6 +398,7 @@
                             </span>
                             <input type="text"
                                    class="form-control"
+                                   name="entry.995236299"
                                    placeholder="Name"
                                    aria-label="Name" />
                         </div>
@@ -404,6 +409,7 @@
                             </span>
                             <input type="text"
                                    class="form-control"
+                                   name="entry.1336489243"
                                    placeholder="Phone"
                                    aria-label="Phone" />
                         </div>
@@ -415,10 +421,9 @@
                             <input type="text"
                                    class="form-control"
                                    placeholder="Email Address"
+                                   name="entry.124540488"
                                    aria-label="Email Address" />
                         </div>
-
-
 
                         <div class="input-group mb-3">
                             <span class="input-group-text">
@@ -427,16 +432,63 @@
                             <textarea class="form-control"
                                       id="messageTextarea"
                                       rows="5"
+                                      name="entry.637997632"
                                       placeholder="How can we help you?"
                                       required></textarea>
                         </div>
+
                         <div class="d-grid mt-4">
                             <button type="submit"
                                     class="btn btn-primary btn-lg">Get In Touch</button>
                         </div>
 
-
                     </form>
+
+                    <!-- message placeholder -->
+                    <div id="msg"
+                         style="margin-top:1rem;font-weight:bold;"></div>
+
+                    <script>
+                        const form = document.getElementById('g_contact_form');
+                        const msgDiv = document.getElementById('msg');
+
+                        form.addEventListener('submit', e => {
+                            e.preventDefault();
+                            msgDiv.style.color = '';
+                            msgDiv.textContent = 'Submitting…';
+
+                            const formData = new FormData(form);
+                            const urlParams = new URLSearchParams();
+
+                            for (const [key, value] of formData.entries()) {
+                                urlParams.append(key, value);
+                            }
+
+                            // Now use it in fetch
+                            fetch(form.action, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded",
+                                },
+                                body: urlParams.toString(),
+                            })
+                                .then((response) => {
+                                    if (response.ok) {
+                                        msgDiv.style.color = "green";
+                                        msgDiv.textContent = "✅ Thank you—your message has been sent!";
+                                        form.reset();
+                                    } else {
+                                        throw new Error(`Status ${response.status}`);
+                                    }
+                                })
+                                .catch((err) => {
+                                    msgDiv.style.color = "crimson";
+                                    msgDiv.textContent = `⚠️ Submission failed: ${err.message}`;
+                                });
+
+                        });
+                    </script>
+
                 </div>
             </div>
         </div>

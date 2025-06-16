@@ -71,25 +71,25 @@ function createNavbar(config) {
 
 //============================================================//
 
-let BASE_URL = "http://127.0.0.1:5550"
+// let BASE_URL = "http://127.0.0.1:5550"
 
 
-let href_location = window.location.href;
-if (href_location.startsWith("https://nexustech2025.github.io/nast-web/")) {
-    BASE_URL = "https://nexustech2025.github.io/nast-web"
-}
+// let href_location = window.location.href;
+// if (href_location.startsWith("https://nexustech2025.github.io/nast-web/")) {
+//     BASE_URL = "https://nexustech2025.github.io/nast-web"
+// }
 
+let BASE_URL = window.location.host
 
-
-const PLATFORMS = BASE_URL + "/Source/platforms"
-const SOLUTIONS = BASE_URL + "/Source/solutions"
-const COMPANY = BASE_URL + "/Source/company"
-const CONTACT_US = BASE_URL + "/Source/company/Contact Us.html"
+const PLATFORMS = "/Source/platforms"
+const SOLUTIONS = "/Source/solutions"
+const COMPANY = "/Source/company"
+const CONTACT_US = "/Source/company/Contact Us.html"
 
 const navbarConfig = {
     backgroundColor: 'rgb(246, 246, 246)',
     logo: {
-        homeRef: BASE_URL + "/index.html",
+        homeRef: "/index.html",
         src: 'https://datatron.com/wp-content/uploads/2021/10/logo.svg',
         alt: 'Datatron Logo'
     },
